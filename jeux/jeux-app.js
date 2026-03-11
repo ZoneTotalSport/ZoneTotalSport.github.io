@@ -15,6 +15,7 @@ const JEUX_FILES = [
   { file: '../data/jeux/jeux_interieur.json',         cat: 'poursuite' },
   { file: '../data/jeux/jeux_raquettes.json',         cat: 'raquettes' },
   { file: '../data/jeux/jeux_danse_expression.json',  cat: 'expression' },
+  { file: '../data/jeux/jeux_prescolaire_extra.json', cat: 'prescolaire' },
 ];
 
 const CAT_LABELS = {

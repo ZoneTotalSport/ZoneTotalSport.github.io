@@ -1,0 +1,824 @@
+{
+  "sae": [
+    {
+      "id": "SAE_EXT_001",
+      "titre": "Jeux de cour traditionnels revisités",
+      "intentions_pedagogiques": "Redécouvrir les jeux traditionnels de cour d'école québécois, développer la motricité globale dans un contexte extérieur authentique.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans un contexte d'activité physique individuelle",
+      "moyen_action": "Jeux de cour traditionnels et création de variantes",
+      "materiel": ["Craie pour dessiner au sol", "Corde à sauter", "Élastique (macaroni)", "Cerceaux", "Balles de caoutchouc"],
+      "espace": "Cour d'école asphaltée",
+      "situation_depart": "Discussion avec les élèves : à quels jeux jouaient vos parents et grands-parents dans la cour d'école ? Collecte des jeux connus. Présentation de 3 jeux traditionnels québécois.",
+      "tache_complexe": "Apprendre et pratiquer 3 jeux traditionnels (marelle, élastique, balle au mur), puis créer une variante personnalisée d'un des jeux en modifiant une règle.",
+      "deroulement": {
+        "mise_en_train": "Tour de reconnaissance de la cour : identifier les espaces adaptés à chaque jeu. Échauffement avec sauts à la corde en groupe. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Marelle (dessin au sol, apprentissage des sauts). Élastique (niveaux progressifs). Période 2 : Balle au mur. Création de la variante personnalisée. Présentation et test de la variante. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion intergénérationnelle : pourquoi ces jeux ont-ils perduré? Qu'est-ce qui les rend amusants ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise des règles des 3 jeux traditionnels", "echelon_A": "Explique et applique correctement les règles des 3 jeux", "echelon_B": "Maîtrise les règles de 2 jeux correctement", "echelon_C": "Maîtrise partielle d'un seul jeu"},
+          {"critere": "Créativité de la variante proposée", "echelon_A": "La variante change clairement une règle de façon originale et testée avec succès", "echelon_B": "La variante modifie légèrement une règle existante", "echelon_C": "Variante très proche de l'original ou non testée"},
+          {"critere": "Habileté motrice dans les jeux (sauts, lancer, équilibre)", "echelon_A": "Exécute les habiletés requises par les 3 jeux avec aisance et précision", "echelon_B": "Exécute les habiletés de 2 jeux avec quelques difficultés dans le troisième", "echelon_C": "Difficultés importantes dans 2 jeux ou plus"}
+        ]
+      },
+      "variantes": [
+        "Olympiques des jeux traditionnels : tournoi de toutes les disciplines",
+        "Inviter les grands-parents à jouer et enseigner leurs jeux",
+        "Documenter les jeux avec photos et textes pour un livre de classe"
+      ],
+      "adaptations_inclusives": [
+        "Marelle adaptée sur une surface surélevée pour les fauteuils roulants",
+        "Version avec des sauts à deux pieds pour la marelle si les sauts unipodaux sont difficiles",
+        "Élastique au niveau des chevilles pour les élèves qui ont des difficultés de saut"
+      ],
+      "connexion_culturelle": "La marelle existe dans de nombreuses cultures sous des noms et formes différentes : hopscotch en Angleterre, rayuela en Espagne et Amérique latine, campana en Italie. L'élastique est particulièrement populaire en France et au Québec.",
+      "contexte_mondial": "Les jeux traditionnels font partie du patrimoine culturel de chaque pays. L'UNESCO a reconnu l'importance de préserver ces jeux comme héritage culturel immatériel.",
+      "liens_interdisciplinaires": "Mathématiques : géométrie de la marelle (rectangles, carrés). Histoire : évolution des jeux à travers les générations. Arts plastiques : dessin et décoration de la marelle."
+    },
+    {
+      "id": "SAE_EXT_002",
+      "titre": "Athlétisme de plein air : courir, sauter, lancer",
+      "intentions_pedagogiques": "Développer les trois grandes habiletés athlétiques (course, saut, lancer) dans un contexte extérieur, initier aux records personnels et à la progression.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans un contexte d'activité physique individuelle",
+      "moyen_action": "Initiations aux disciplines athlétiques en plein air",
+      "materiel": ["Chronomètre", "Ruban à mesurer", "Balles lestées (300g)", "Cônes", "Fanions de couleur", "Carnet de records personnels"],
+      "espace": "Terrain extérieur avec herbe et asphalte",
+      "situation_depart": "Présentation d'un extrait des Jeux olympiques d'athlétisme. Réflexion : qu'est-ce qu'un record personnel ? C'est l'objectif que chacun se fixe selon ses propres capacités, pas par rapport aux autres.",
+      "tache_complexe": "Établir ses records personnels dans 3 disciplines athlétiques (sprint 40m, saut en longueur depuis l'arrêt, lancer de balle lestée), puis viser à améliorer au moins un record dans la deuxième tentative.",
+      "deroulement": {
+        "mise_en_train": "Échauffement progressif : marche, trot, course légère. Mobilisation articulaire complète. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Sprint 40m (2 tentatives). Saut en longueur depuis l'arrêt (2 tentatives). Inscription des records. Période 2 : Lancer de balle lestée. Nouvelle tentative des disciplines pour amélioration. Période 3 : Mini-décathlon simplifié (scores combinés). Durée : 28 minutes par période.",
+        "retour_au_calme": "Étirements post-effort. Réflexion sur la progression : comment s'est-on amélioré ? Qu'est-ce qui a changé ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Amélioration de la performance entre la 1re et 2e tentative", "echelon_A": "Améliore son record personnel dans au moins 2 des 3 disciplines", "echelon_B": "Améliore dans au moins 1 discipline", "echelon_C": "Aucune amélioration ou régression (peu d'engagement dans les tentatives)"},
+          {"critere": "Technique de base dans chaque discipline", "echelon_A": "Exécute les éléments techniques de base corrects dans les 3 disciplines (départ accroupi, impulsion, rotation du lancer)", "echelon_B": "Technique correcte dans 2 disciplines", "echelon_C": "Technique à travailler dans 2 disciplines ou plus"},
+          {"critere": "Tenue du carnet de records personnels", "echelon_A": "Carnet complet avec mesures précises et commentaires personnels sur les tentatives", "echelon_B": "Carnet complété avec mesures", "echelon_C": "Carnet incomplet ou non tenu"}
+        ]
+      },
+      "variantes": [
+        "Heptathlon simplifié sur 7 disciplines sur 3 séances",
+        "Relais athlétique combiné (chaque coureur a une discipline différente)",
+        "Records par groupe d'âge pour maintenir l'équité"
+      ],
+      "adaptations_inclusives": [
+        "Adapter les distances et les objets lancés selon les capacités",
+        "Chrono en mode adapté (le temps de compléter une distance réduite)",
+        "Lancer assis pour les élèves en fauteuil (para-athlétisme)"
+      ],
+      "connexion_culturelle": "L'athlétisme moderne est né en Grèce antique avec les Jeux olympiques en 776 av. J.-C. Les disciplines du pentathlon grec (course, saut, disque, javelot, lutte) sont les ancêtres directs des épreuves modernes.",
+      "contexte_mondial": "Les Jeux olympiques rassemblent des athlètes de 206 nations. L'Éthiopie et le Kenya dominent les courses de fond depuis les années 1960, l'Amérique du Nord les sprints, et la Russie, la Chine et les États-Unis les épreuves combinées.",
+      "liens_interdisciplinaires": "Mathématiques : mesures, comparaisons, graphiques de progression. Sciences : biomécanique du saut et du lancer. Histoire : Jeux olympiques anciens et modernes."
+    },
+    {
+      "id": "SAE_EXT_003",
+      "titre": "Piste de course de cross-country",
+      "intentions_pedagogiques": "Développer l'endurance cardio-respiratoire par la course en terrain varié, apprendre à gérer son effort sur la durée.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Planifier une pratique d'activité physique axée sur le développement de soi",
+      "moyen_action": "Programme progressif de course en terrain varié",
+      "materiel": ["Parcours balisé (cônes)", "Chronomètre", "Cardiofréquencemètre (si disponible)", "Carnet d'entraînement"],
+      "espace": "Terrain extérieur (parc ou cour étendue avec herbe)",
+      "situation_depart": "Présentation du cross-country scolaire québécois et des championnats provinciaux. Discussion sur l'endurance : comment courir longtemps sans s'essouffler ? Introduction de la notion de zone de fréquence cardiaque cible.",
+      "tache_complexe": "Courir un parcours de cross-country de 1-2 km en gérant son allure (jamais essoufflé au point de ne plus pouvoir parler), compléter 3 sorties sur 3 semaines en visant à améliorer son temps ou augmenter sa distance.",
+      "deroulement": {
+        "mise_en_train": "Marche active 3 minutes, accélération progressive. Exercices de mobilité pour la course (foulées, mollets). Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Découverte du parcours à allure confortable. Introduction du test de conversation. Période 2 : Parcours complet avec segments d'intensité différente. Période 3 : Course chronométrée + défi personnel. Durée : 28 minutes par période.",
+        "retour_au_calme": "Récupération active (marche). Étirements des quadriceps, mollets, ischio-jambiers. Mise à jour du carnet. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Complétion du parcours dans le temps imparti", "echelon_A": "Complète le parcours complet à une allure régulière sans arrêt", "echelon_B": "Complète le parcours avec 1-2 marches courtes", "echelon_C": "Parcours partiellement complété ou avec plusieurs pauses longues"},
+          {"critere": "Gestion de l'allure (régularité)", "echelon_A": "Maintient une allure régulière (variation de moins de 30 sec/km entre les segments)", "echelon_B": "Quelques variations d'allure mais course globalement régulière", "echelon_C": "Allure très irrégulière (départ trop rapide, fin à la marche)"},
+          {"critere": "Tenue du carnet d'entraînement", "echelon_A": "Carnet complet avec temps, distance, ressenti physique et objectif pour la prochaine séance", "echelon_B": "Carnet avec données de base (temps, distance)", "echelon_C": "Carnet incomplet ou non tenu"}
+        ]
+      },
+      "variantes": [
+        "Cross night : course en soirée avec lampe frontale (selon contexte scolaire)",
+        "Cross avec obstacles naturels : zigzaguer entre arbres, enjamber des branches",
+        "Course en équipe : score basé sur les temps des 5 premiers de l'équipe"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la distance selon les capacités individuelles (500m, 1km, 1.5km, 2km)",
+        "Course-marche : intervalles de course/marche préplanifiés",
+        "Parcours en terrain plat uniquement pour les élèves avec problèmes articulaires"
+      ],
+      "connexion_culturelle": "Le cross-country est issu des courses à travers champs pratiquées en Angleterre au 19e siècle. Les kenyans et éthiopiens dominent les courses de fond mondiales en partie grâce à leur entraînement en altitude (1800-2400m), leurs longues distances à pied dans l'enfance et leur morphologie adaptée.",
+      "contexte_mondial": "Le championnat du monde de cross-country est organisé depuis 1903. Les Éthiopiens (Haile Gebrselassie, Kenenisa Bekele) et les Kenyans ont établi la plupart des records mondiaux de fond depuis les années 1990.",
+      "liens_interdisciplinaires": "Sciences : systèmes cardio-vasculaire et respiratoire, VO2max. Mathématiques : calcul de vitesse, temps, distance. Santé : bénéfices de l'endurance aérobie sur la santé à long terme."
+    },
+    {
+      "id": "SAE_EXT_004",
+      "titre": "Soccer de rue : compétences fondamentales",
+      "intentions_pedagogiques": "Développer les habiletés fondamentales du soccer dans un contexte informel de rue, promouvoir la créativité technique et le jeu libre.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Soccer 3v3 avec accent sur la créativité technique individuelle",
+      "materiel": ["Ballons de soccer (5-6)", "Cônes comme buts miniatures", "Gilets de deux couleurs"],
+      "espace": "Cour d'école asphaltée ou terrain gazonné",
+      "situation_depart": "Discussion : qu'est-ce que le 'futsal de rue' ou 'beach soccer' ? Les plus grands joueurs de soccer (Ronaldinho, Neymar, Messi) ont appris dans la rue, sans coach. Pourquoi le jeu libre développe-t-il des qualités différentes du soccer organisé ?",
+      "tache_complexe": "Dans un jeu 3v3 sur petit terrain (15m x 10m), marquer 3 buts en utilisant au moins une feinte ou dribble technique avant de tirer, dans un contexte de jeu libre avec règles minimales.",
+      "deroulement": {
+        "mise_en_train": "Jonglerie libre avec le pied. Exercices de contrôle de balle (intérieur, extérieur, semelle). Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Défi de feintes (roulette, cruyff, elastico) en solo puis contre défenseur passif. Période 2 : 3v3 avec règle : 1 feinte obligatoire avant de tirer. Période 3 : Jeu libre 3v3 avec score. Durée : 28 minutes par période.",
+        "retour_au_calme": "Partage : quelle feinte a le mieux fonctionné ? Pourquoi ? Étirements des jambes. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise d'une feinte ou dribble technique", "echelon_A": "Exécute au moins 1 feinte de façon reconnaissable et efficace face à un défenseur", "echelon_B": "Tente une feinte de façon partiellement efficace", "echelon_C": "Difficultés à exécuter une feinte de base"},
+          {"critere": "Contrôle du ballon (conservation en duel)", "echelon_A": "Conserve le ballon sous pression défensive à travers des mouvements créatifs", "echelon_B": "Conserve le ballon dans la plupart des duels", "echelon_C": "Perd fréquemment le ballon sous la moindre pression"},
+          {"critere": "Lecture du jeu (passe ou dribble)", "echelon_A": "Choisit régulièrement la bonne décision (dribbler ou passer) selon la situation", "echelon_B": "Quelques bonnes décisions de jeu", "echelon_C": "Décisions souvent incorrectes (dribble quand passe serait meilleure, ou vice-versa)"}
+        ]
+      },
+      "variantes": [
+        "Soccer à 1v1 : duel de jonglerie/dribble pur",
+        "Soccer freestyle : concours de jonglerie et de tricks",
+        "Panna : gagner un point en passant le ballon entre les jambes du défenseur"
+      ],
+      "adaptations_inclusives": [
+        "Ballon de taille plus grande pour faciliter le contrôle",
+        "Zone de sécurité autour des joueurs en fauteuil",
+        "Règle anti-pression : défenseur doit laisser 1 mètre d'espace"
+      ],
+      "connexion_culturelle": "Le soccer de rue est la forme la plus populaire de soccer au Brésil, en Argentine, en Afrique du Sud et dans de nombreux pays d'Afrique. Les quartiers pauvres de Rio de Janeiro, Buenos Aires et Johannesburg ont produit les plus grands joueurs de l'histoire.",
+      "contexte_mondial": "Le soccer est le sport le plus populaire de la planète avec 4 milliards de fans. La Coupe du Monde FIFA est regardée par plus de 3,5 milliards de personnes. Le soccer féminin est en croissance exponentielle depuis les années 1990.",
+      "liens_interdisciplinaires": "Mathématiques : angles de tir et de passe. Géographie : pays et tournois de soccer. Santé : bénéfices du sport collectif pour la santé mentale et physique."
+    },
+    {
+      "id": "SAE_EXT_005",
+      "titre": "Pétanque québécoise et jeux de précision",
+      "intentions_pedagogiques": "Développer la précision motrice dans un contexte de jeu traditionnel extérieur, introduire les notions de stratégie, mesure et calcul dans un contexte ludique.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices de précision dans des contextes de compétition saine",
+      "moyen_action": "Tournoi de pétanque ou bocce avec stratégie et mesure",
+      "materiel": ["Boules de pétanque ou bocce (4 sets)", "Cochonnet (jack)", "Ruban à mesurer", "Terrain plat (gravier ou gazon)"],
+      "espace": "Cour d'école ou parc",
+      "situation_depart": "Présentation de la pétanque comme jeu provençal français et du bocce comme jeu romain antique. Discussion sur les jeux de précision dans différentes cultures : quel est le défi commun à tous ces jeux ?",
+      "tache_complexe": "Jouer une partie complète de pétanque ou bocce en équipe de 2 (en appliquant les règles officielles simplifiées) et utiliser alternativement les stratégies de pointage (se rapprocher) et de tir (éloigner les boules adverses).",
+      "deroulement": {
+        "mise_en_train": "Lancer des différentes boules à différentes distances. Techniques de base (prise de la boule, position des pieds, suivi du geste). Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Démonstration des deux stratégies (pointer vs tirer). Mini-jeu d'apprentissage. Période 2 : Tournoi par rotation. Discussion stratégique entre chaque mène. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion : quelle est la stratégie la plus difficile ? La plus efficace ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Précision du lancer (pointer : se rapprocher du cochonnet)", "echelon_A": "Place régulièrement ses boules à moins de 50cm du cochonnet", "echelon_B": "Quelques tirs précis dans la zone du cochonnet", "echelon_C": "Tirs imprécis dépassant souvent 1m du cochonnet"},
+          {"critere": "Choix stratégique (pointer vs tirer selon la situation)", "echelon_A": "Choisit et justifie régulièrement la bonne stratégie selon la position des boules", "echelon_B": "Quelques choix stratégiques pertinents", "echelon_C": "Peu de raisonnement stratégique dans les choix"},
+          {"critere": "Mesure et arbitrage correct", "echelon_A": "Mesure correctement les distances et applique les règles de façon autonome", "echelon_B": "Mesure avec aide et applique les règles principales", "echelon_C": "Difficultés à mesurer les distances ou erreurs fréquentes de règles"}
+        ]
+      },
+      "variantes": [
+        "Pétanque à l'aveugle : les joueurs reçoivent leur lancer puis voient le résultat",
+        "Version géante avec ballons de foot comme boules",
+        "Tournoi intergénérationnel avec parents ou grands-parents invités"
+      ],
+      "adaptations_inclusives": [
+        "Version lancée à plus courte distance pour les élèves avec moins de force",
+        "Lancer depuis une position assise autorisé",
+        "Boules plus légères pour faciliter la manipulation"
+      ],
+      "connexion_culturelle": "La pétanque est une variation provençale (Marseille) du jeu de boules français ancien. Le bocce est l'ancêtre romain de la pétanque, pratiqué depuis 5000 ans. Des variantes existent dans presque toutes les cultures : le curling canadien, le jeu de galets breton.",
+      "contexte_mondial": "La Fédération Internationale de Pétanque regroupe plus de 100 pays et vise l'inclusion aux Jeux olympiques. La pétanque est particulièrement populaire en France, au Maghreb, en Asie du Sud-Est et au Québec.",
+      "liens_interdisciplinaires": "Mathématiques : mesure de distances, calcul de scores, géométrie des trajectoires. Histoire : origine romaine des jeux de boules. Physique : trajectoire parabolique et rebond."
+    },
+    {
+      "id": "SAE_EXT_006",
+      "titre": "Frisbee ultime : sport de fair-play",
+      "intentions_pedagogiques": "Initier à l'ultimate frisbee comme sport où le fair-play est une règle fondamentale, développer les habiletés de lancer et d'attraper et les principes tactiques de base.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Initiation à l'ultimate frisbee avec apprentissage progressif",
+      "materiel": ["Frisbees (10-15)", "Cônes (zones d'en-but)", "Dossards de deux couleurs"],
+      "espace": "Terrain gazonné extérieur",
+      "situation_depart": "Présentation unique : l'ultimate frisbee est un sport sans arbitre où les joueurs s'arbitrent eux-mêmes (Spirit of the Game). Discussion : est-ce possible ? Quelles valeurs faut-il avoir pour que ça fonctionne ?",
+      "tache_complexe": "Dans un match d'ultimate frisbee 5v5, appliquer les règles de base ET les principes du Spirit of the Game (honnêteté, respect, résolution pacifique des conflits) pendant 20 minutes de jeu.",
+      "deroulement": {
+        "mise_en_train": "Technique de lancer (backhand, forehand de base). Réceptions avec deux mains. Passes en mouvement à 3. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Règles de base (pas de contact, pivot, marque). Jeu 3v3. Période 2 : Jeu 5v5. Moments de discussion sur les situations ambiguës. Période 3 : Match complet avec évaluation du Spirit of the Game. Durée : 28 minutes par période.",
+        "retour_au_calme": "Évaluation collective du Spirit of the Game : quelle équipe a le mieux incarné les valeurs ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Qualité technique des lancers (backhand)", "echelon_A": "Effectue des lancers backhand précis avec une bonne technique de disque plat", "echelon_B": "Lancers généralement contrôlés avec quelques difficultés de distance/précision", "echelon_C": "Difficultés à contrôler le frisbee régulièrement"},
+          {"critere": "Application des règles de base de l'ultimate", "echelon_A": "Applique toutes les règles (pas de marche, marque, pivot, zone d'en-but) correctement", "echelon_B": "Applique les règles principales avec quelques oublis", "echelon_C": "Difficultés fréquentes avec les règles de base"},
+          {"critere": "Spirit of the Game (honnêteté et respect)", "echelon_A": "Reconnaît spontanément ses propres fautes, résout les conflits pacifiquement et encourage les adversaires", "echelon_B": "Généralement honnête et respectueux avec quelques défis", "echelon_C": "Difficultés à reconnaître ses fautes ou conflits récurrents"}
+        ]
+      },
+      "variantes": [
+        "Beach ultimate sur sable si disponible",
+        "Ultimate 4v4 avec zone d'en-but pivotante (any direction)",
+        "Hat game : équipes mélangées aléatoirement pour favoriser le Spirit"
+      ],
+      "adaptations_inclusives": [
+        "Frisbees plus légers ou disques de foam pour faciliter la manipulation",
+        "Règle de passe obligatoire vers l'élève en fauteuil pour l'inclusion active",
+        "Zone d'en-but plus grande pour faciliter la conclusion des attaques"
+      ],
+      "connexion_culturelle": "L'ultimate frisbee est né en 1968 à Columbia High School (New Jersey) en opposition aux sports compétitifs à arbitrage externe. Son principe du Spirit of the Game s'inspire des valeurs des Quakers (paix, honnêteté, communauté).",
+      "contexte_mondial": "L'ultimate est maintenant pratiqué dans 80 pays. Les Colombiens, les Japonais et les Canadiens ont des équipes nationales très compétitives. La World Flying Disc Federation promeut l'égalité de genre avec des divisions mixtes.",
+      "liens_interdisciplinaires": "Éthique : le fairplay et l'auto-arbitrage. Communication : résolution pacifique de conflits. Éducation à la citoyenneté : responsabilité collective et honneur de sa parole."
+    },
+    {
+      "id": "SAE_EXT_007",
+      "titre": "Planche à roulettes : culture et mobilité",
+      "intentions_pedagogiques": "Initier à la planche à roulettes comme mode de locomotion et d'expression culturelle, développer l'équilibre dynamique et la persévérance face au défi.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 4,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Démontrer une compréhension des liens entre ses habitudes de vie et sa santé",
+      "moyen_action": "Apprentissage progressif de la planche à roulettes avec accent sur la culture skate",
+      "materiel": ["Planches à roulettes (class set)", "Casques (obligatoires)", "Genouillères et coudières", "Cônes de slalom", "Asphalte plat"],
+      "espace": "Aire asphaltée de l'école",
+      "situation_depart": "Présentation de la culture skate : née à Santa Monica (Californie) dans les années 1950, influencée par les surfeurs. Aujourd'hui sport olympique (Tokyo 2020). Discussion sur le rapport entre skate, jeunesse et identité culturelle.",
+      "tache_complexe": "Maîtriser les déplacements de base sur planche (propulsion, arrêt, slalom), puis filmer une courte démonstration personnelle de 30 secondes montrant sa progression et son style.",
+      "deroulement": {
+        "mise_en_train": "Équipement de protection. Station debout sur la planche (sans rouler). Équilibre statique. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Propulsion de base (pied avant, poussée arrière). Arrêt pied. Période 2 : Virage par inclinaison. Slalom de cônes. Période 3 : Slalom chronométré. Technique de chute sécuritaire. Période 4 : Démonstration filmée + culture skate. Durée : 38 minutes par période.",
+        "retour_au_calme": "Discussion sur la culture du skatepark : règles non-écrites, respect de l'espace, encouragement mutuel. Durée : 12 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise des déplacements de base (propulsion, direction, arrêt)", "echelon_A": "Se déplace de façon fluide, contrôle sa direction dans le slalom et s'arrête efficacement", "echelon_B": "Déplacements fonctionnels avec quelques difficultés dans les virages serrés", "echelon_C": "Difficultés à se propulser ou à contrôler la direction"},
+          {"critere": "Attitude face à la difficulté (persévérance)", "echelon_A": "Continue d'essayer après chaque chute ou difficulté, cherche des solutions activement", "echelon_B": "Réessaie avec quelques moments de découragement", "echelon_C": "Se décourage rapidement ou évite les défis"},
+          {"critere": "Respect des règles de sécurité", "echelon_A": "Porte l'équipement correctement tout le temps et applique les techniques de chute sécuritaire", "echelon_B": "Équipement porté avec quelques ajustements nécessaires", "echelon_C": "Résistance à porter l'équipement ou techniques de sécurité non appliquées"}
+        ]
+      },
+      "variantes": [
+        "Skateboard artistique : création d'une routine de figures de base (ollie, manual)",
+        "Skate longboard : version plus stable sur longboard pour les moins expérimentés",
+        "Design d'une planche : décoration de planche vierge comme projet artistique"
+      ],
+      "adaptations_inclusives": [
+        "Skateboard assis (dé de départ propulsion à la main) pour les élèves en fauteuil",
+        "Longboard plus stable pour les élèves avec difficultés d'équilibre",
+        "Rôle de filmeur ou de juge pour les élèves qui ne peuvent pas utiliser la planche"
+      ],
+      "connexion_culturelle": "Le skateboard est une fusion de la culture surf californienne et de la contre-culture urbaine des années 1970-80. Il a été adopté mondialement avec des adaptations locales : le 'patin à roulettes' brésilien, le skate de parc en France, et l'explosion du skate streetwear au Japon.",
+      "contexte_mondial": "Le skatepark de Tokyo lors des JO 2020 a révélé des prodiges comme Momiji Nishiya (13 ans, Japon) et Rayssa Leal (13 ans, Brésil). Le skate est un vecteur d'émancipation pour les jeunes des favelas de Rio et des banlieues parisiennes.",
+      "liens_interdisciplinaires": "Arts visuels : histoire du graffiti et de l'art de rue associés à la culture skate. Sociologie : culture jeunesse et identité urbaine. Physique : équilibre, gravité et centre de masse."
+    },
+    {
+      "id": "SAE_EXT_008",
+      "titre": "Badminton de cour : initiation et rallye",
+      "intentions_pedagogiques": "Développer les habiletés de base du badminton dans un contexte extérieur informel, développer la coordination oculo-motrice et la notion d'échange sportif.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Apprentissage progressif du badminton avec objectif de rallye",
+      "materiel": ["Raquettes de badminton", "Volants (plume ou plastique)", "Filet portable ou corde tendue", "Tracé de terrain à la craie"],
+      "espace": "Cour d'école (zone sans vent fort ou sous préau)",
+      "situation_depart": "Présentation du badminton comme sport le plus rapide du monde (smash jusqu'à 493 km/h). Discussion : comment peut-on démarrer dans un sport si rapide ? L'objectif de départ n'est pas de gagner mais de maintenir un rallye.",
+      "tache_complexe": "Maintenir un rallye coopératif de 10 échanges consécutifs avec un partenaire, en utilisant correctement le coup droit et le coup de dégage (lob), puis compétitif en appliquant les règles de base.",
+      "deroulement": {
+        "mise_en_train": "Manipulation du volant sans raquette (doigts). Puis avec raquette : frappe vers le haut. Objectif : faire rester le volant en l'air le plus longtemps possible. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Coup droit de base. Rallye coopératif (les deux jouent pour maintenir l'échange). Objectif croissant : 5, 8, 10 échanges. Période 2 : Introduction du lob. Règles du jeu compétitif. Match court. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion : est-ce que la coopération aide à apprendre plus vite que la compétition à ce stade ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique du coup droit (prise de raquette, frappe, suivi)", "echelon_A": "Exécute le coup droit avec la bonne prise, un impact centré et un suivi complet", "echelon_B": "Coup droit fonctionnel avec 1-2 corrections techniques à apporter", "echelon_C": "Technique très approximative limitant la précision des frappes"},
+          {"critere": "Rallye coopératif (nombre d'échanges consecutifs)", "echelon_A": "Atteint régulièrement 10 échanges consécutifs avec le partenaire", "echelon_B": "Atteint 5-9 échanges dans la plupart des tentatives", "echelon_C": "Difficultés à maintenir 3 échanges consécutifs"},
+          {"critere": "Placement sur le terrain (retour au centre)", "echelon_A": "Revient systématiquement au centre après chaque frappe", "echelon_B": "Revient au centre la plupart du temps", "echelon_C": "Peu de placement conscient, reste là où il frappe"}
+        ]
+      },
+      "variantes": [
+        "Badminton de précision : viser des cibles dessinées au sol adverse",
+        "Version géante en plein air avec ballons de baudruche",
+        "Tournoi en double (2v2) pour plus d'échanges et de communication"
+      ],
+      "adaptations_inclusives": [
+        "Volant plus grand ou plus lent (balle de foam) pour faciliter les échanges",
+        "Raquettes plus courtes pour les élèves avec difficultés de coordination",
+        "Règle de handicap : l'élève moins habile a le droit à 2 rebonds au sol"
+      ],
+      "connexion_culturelle": "Le badminton tire son nom de Badminton House (Angleterre) où les officiers britanniques l'ont popularisé au 19e siècle, mais le jeu lui-même est originaire d'Inde (poona) et de Chine. Aujourd'hui, la Chine, l'Indonésie et la Malaisie dominent le badminton mondial.",
+      "contexte_mondial": "Le badminton est l'un des sports les plus pratiqués en Asie du Sud-Est. En Indonésie, les joueurs de badminton sont des héros nationaux. Lin Dan (Chine) et Lee Chong Wei (Malaisie) ont eu une rivalité légendaire.",
+      "liens_interdisciplinaires": "Sciences : trajectoire du volant, aérodynamique. Mathématiques : angles de frappe et de rebond. Géographie : pays où le badminton est sport national."
+    },
+    {
+      "id": "SAE_EXT_009",
+      "titre": "Jardinage actif : potager de l'école",
+      "intentions_pedagogiques": "Combiner activité physique et éducation environnementale dans le jardinage scolaire, développer la motricité globale et fine dans un contexte de projet collectif durable.",
+      "niveau": "Préscolaire et 1er cycle (4-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "30 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Démontrer une compréhension des liens entre ses habitudes de vie et sa santé",
+      "moyen_action": "Projet de jardin scolaire avec activités physiques intégrées",
+      "materiel": ["Outils de jardinage adaptés (petites pelles, râteaux)", "Graines et plants", "Arrosoirs", "Gants de jardinage", "Bacs ou espace jardin"],
+      "espace": "Cour d'école avec espace jardin",
+      "situation_depart": "D'où vient la nourriture que nous mangeons ? Visite du jardin de l'école ou création d'un nouveau bac. Discussion : qu'est-ce que jardiner a à voir avec l'activité physique ? (creuser, transporter, arroser = exercice !)",
+      "tache_complexe": "Planter 3 plants de légumes différents dans le jardin de l'école en effectuant toutes les étapes physiques (creuser, planter, arroser, pailler), puis tenir un journal de croissance illustré.",
+      "deroulement": {
+        "mise_en_train": "Échauffement : mimer les actions du jardinage (creuser, arroser, cueillir). Durée : 5 minutes.",
+        "partie_principale": "Période 1 : Préparation du sol (bêcher, râteler). Période 2 : Plantation (semer ou transplanter). Période 3 : Arrosage et mise en place du paillage. Période 4 : Entretien et observation de la croissance. Durée : 20 minutes par période.",
+        "retour_au_calme": "Dessin dans le journal de croissance. Discussion : qu'avons-nous planté ? Combien de temps avant de manger ? Durée : 5 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Participation active aux tâches physiques du jardinage", "echelon_A": "Participe activement à toutes les étapes sans invitation répétée", "echelon_B": "Participe à la plupart des étapes avec quelques rappels", "echelon_C": "Participation limitée nécessitant une incitation constante"},
+          {"critere": "Soin des plants (technique de plantation correcte)", "echelon_A": "Plante à la bonne profondeur, tasse la terre, arrose correctement", "echelon_B": "Plante correctement avec quelques ajustements", "echelon_C": "Plantation incorrecte nécessitant reprise"},
+          {"critere": "Journal de croissance (régularité et observations)", "echelon_A": "Journal tenu régulièrement avec dessins et observations précises sur la croissance", "echelon_B": "Journal tenu avec quelques entrées et observations basiques", "echelon_C": "Journal très incomplet ou non tenu"}
+        ]
+      },
+      "variantes": [
+        "Jardin de plantes médicinales : lavande, menthe, camomille",
+        "Compostage : apprendre à composter les déchets alimentaires",
+        "Marché de l'école : vendre les légumes produits lors d'un événement scolaire"
+      ],
+      "adaptations_inclusives": [
+        "Bacs surélevés accessibles en fauteuil roulant",
+        "Outils adaptés (manches prolongés, préhension facilitée)",
+        "Rôle de concepteur de plan de jardin pour les élèves avec mobilité réduite"
+      ],
+      "connexion_culturelle": "Le jardinage collectif est une tradition dans de nombreuses cultures : les 'three sisters' (maïs, courge, haricots) des Premières Nations d'Amérique du Nord, les rizières en terrasses des Ifugao aux Philippines, les jardins suspendus babyloniens.",
+      "contexte_mondial": "Les jardins communautaires urbains sont en expansion mondiale : Berlin a plus de 80 jardins communautaires, Montréal a son réseau de jardins collectifs, et Singapore intègre des jardins verticaux dans ses immeubles.",
+      "liens_interdisciplinaires": "Sciences : cycles de vie des plantes, photosynthèse. Mathématiques : mesure de croissance, calcul de superficie. Santé : alimentation saine et origine des aliments."
+    },
+    {
+      "id": "SAE_EXT_010",
+      "titre": "Raquettes à neige : exploration hivernale",
+      "intentions_pedagogiques": "Découvrir la pratique des raquettes à neige comme activité physique hivernale québécoise, développer les habiletés de déplacement en milieu enneigé.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Agir efficacement dans des contextes d'activités physiques en plein air",
+      "moyen_action": "Randonnée en raquettes avec jeux et exploration naturaliste",
+      "materiel": ["Raquettes à neige (adaptées aux enfants)", "Bâtons de marche", "Vêtements chauds en couches", "Loupe de naturaliste", "Carnet de terrain"],
+      "espace": "Parc boisé adjacent ou terrain enneigé",
+      "situation_depart": "Histoire de la raquette à neige : inventée par les peuples autochtones d'Amérique du Nord il y a plus de 6000 ans pour se déplacer en hiver. Les coureurs des bois et les voyageurs l'ont adoptée. C'est un héritage autochtone fondamental pour la survie québécoise.",
+      "tache_complexe": "Compléter un parcours de randonnée en raquettes de 1 km avec 3 arrêts d'observation naturaliste (traces d'animaux, végétation hivernale, formations de neige), en documentant les observations dans le carnet de terrain.",
+      "deroulement": {
+        "mise_en_train": "Installation des raquettes. Déplacement de base (écarter les pieds). Montée et descente d'une petite pente. Durée : 12 minutes.",
+        "partie_principale": "Randonnée avec 3 arrêts d'observation guidée. Jeux dans la neige intégrés (course en raquettes, slalom entre les arbres). Durée : 38 minutes.",
+        "retour_au_calme": "Retrait des raquettes. Discussion des observations. Thé chaud si possible. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise de la démarche en raquettes", "echelon_A": "Se déplace avec aisance, adapte son pas aux montées/descentes, maintient un bon équilibre", "echelon_B": "Déplacement fonctionnel avec quelques trébuchements sur terrain varié", "echelon_C": "Difficultés fréquentes d'équilibre ou de déplacement"},
+          {"critere": "Qualité des observations naturalistes", "echelon_A": "Identifie et documente avec précision au moins 5 éléments naturels différents dans le carnet", "echelon_B": "Identifie et documente 3-4 éléments", "echelon_C": "Identifie 1-2 éléments avec aide ou peu de documentation"},
+          {"critere": "Gestion de l'équipement et habillement", "echelon_A": "Gère son équipement de façon autonome et reste bien habillé tout au long de la sortie", "echelon_B": "Quelques ajustements d'équipement nécessaires avec aide légère", "echelon_C": "Difficultés importantes avec l'équipement ou inconfort thermique"}
+        ]
+      },
+      "variantes": [
+        "Randonnée nocturne en raquettes avec lampe frontale",
+        "Orienteering en raquettes : trouver des balises cachées dans la neige",
+        "Construction d'un igloo ou abri de neige pendant la randonnée"
+      ],
+      "adaptations_inclusives": [
+        "Raquettes adaptées pour les fauteuils (version ski-pull ou pulka)",
+        "Parcours sur terrain plat uniquement pour les élèves moins mobiles",
+        "Durée réduite et retour au chaud plus rapide pour les élèves sensibles au froid"
+      ],
+      "connexion_culturelle": "La raquette à neige est une invention autochtone de l'Amérique du Nord (Algonquins, Iroquois, Cris). Les Athabascan d'Alaska, les Ojibwés et les Inuit ont développé des styles différents adaptés à leur territoire. Les coureurs des bois québécois du 17e siècle ne pouvaient pas survivre sans elles.",
+      "contexte_mondial": "La raquette à neige est maintenant utilisée sur tous les continents où il neige. Le snowshoeing est une discipline des Jeux mondiaux d'hiver. En Scandinavie, des formes similaires (ski nordique) ont la même fonction de déplacement hivernal.",
+      "liens_interdisciplinaires": "Sciences : animaux et végétation de la forêt québécoise en hiver. Histoire du Québec : peuples autochtones et coureurs des bois. Géographie : biome boréal et forêt nordique."
+    },
+    {
+      "id": "SAE_EXT_011",
+      "titre": "Volleyball de plage : coopération biplage",
+      "intentions_pedagogiques": "Initier au volleyball de plage dans un contexte extérieur estival, développer les habiletés de manchette et de service dans un contexte de jeu à deux.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Volleyball de plage en duo avec progression des habiletés",
+      "materiel": ["Ballon de volleyball (ou beach volleyball)", "Filet portable", "Terrain délimité (sable ou gazon)", "Cônes"],
+      "espace": "Cour d'école avec gazon ou aire sablonneuse",
+      "situation_depart": "Présentation du volleyball de plage comme sport olympique depuis 1996. Particularité : seulement 2 joueurs par équipe, communication intense requise. Comment deux personnes doivent-elles communiquer pour couvrir tout un terrain ?",
+      "tache_complexe": "En duo, maintenir un échange de manchettes de 10 passes consécutives, puis jouer un set complet de beach-volley à 2v2 en appliquant les règles simplifiées.",
+      "deroulement": {
+        "mise_en_train": "Manipulation du ballon : contrôle solo (manchette sur soi-même). Passe haute. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Manchette en duo (technique de base). Objectif de rallye de 10. Période 2 : Service par dessous. Jeu 2v2 avec règle de 3 touches. Période 3 : Match complet avec score. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion en duo : qu'est-ce qui a rendu la communication difficile ? Efficace ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique de manchette (position des bras, contact)", "echelon_A": "Manchette avec bras étendus, contact au-dessus du poignet, direction contrôlée", "echelon_B": "Manchette fonctionnelle avec quelques imprécisions techniques", "echelon_C": "Contact avec le mauvais segment du bras ou direction non contrôlée"},
+          {"critere": "Communication avec le partenaire", "echelon_A": "Appelle le ballon systématiquement, signale sa position au partenaire et coordonne le plan des 3 touches", "echelon_B": "Communication partielle avec quelques appels", "echelon_C": "Peu ou pas de communication verbale avec le partenaire"},
+          {"critere": "Couverture du terrain en duo", "echelon_A": "Se déplace pour couvrir la moitié du terrain, comble les zones laissées par le partenaire", "echelon_B": "Quelques déplacements de couverture mais zones découvertes fréquentes", "echelon_C": "Reste en place sans couvrir activement son espace"}
+        ]
+      },
+      "variantes": [
+        "Volleyball de plage en sable si disponible (parc ou plage)",
+        "Version 3v3 pour moins de pression individuelle",
+        "Tournoi beach-volley de fin d'année avec public"
+      ],
+      "adaptations_inclusives": [
+        "Ballon plus léger ou ballon de baudruche pour réduire la force nécessaire",
+        "Règle : 4 touches autorisées au lieu de 3",
+        "Terrain plus petit pour réduire les déplacements requis"
+      ],
+      "connexion_culturelle": "Le volleyball de plage est né à Santa Monica, Californie en 1920 et est devenu sport officiel à Rio 2016 (ville symbole du beach-volley). Le Brésil domine cette discipline avec des équipes légendaires comme Emanuel/Ricardo et Juliana/Larissa.",
+      "contexte_mondial": "Le beach-volley est pratiqué sur toutes les plages du monde. La Suisse, pays sans mer, est classée parmi les meilleures nations mondiales. La Chine, les États-Unis et le Brésil se partagent la majorité des médailles olympiques.",
+      "liens_interdisciplinaires": "Sciences : trajectoire du ballon, rebond. Communication : coordination verbale sous pression. Géographie : villes olympiques et culture balnéaire."
+    },
+    {
+      "id": "SAE_EXT_012",
+      "titre": "Course à obstacles naturels",
+      "intentions_pedagogiques": "Développer la motricité globale dans un contexte d'obstacles naturels et construits, promouvoir la résilience physique et la confiance en ses capacités.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées dans des contextes de défi",
+      "moyen_action": "Parcours d'obstacles naturels et construits en plein air",
+      "materiel": ["Planches de bois (ponts)", "Troncs d'arbre (ou bancs)", "Cordes", "Cônes", "Pneus de vélo (au sol)"],
+      "espace": "Cour d'école avec espaces variés",
+      "situation_depart": "Les enfants sont des aventuriers qui explorent une forêt mystérieuse. Chaque obstacle représente un défi naturel : traverser un marais (planches), enjamber un tronc, grimper une colline. Inventaire des obstacles disponibles.",
+      "tache_complexe": "Compléter le parcours d'obstacles de 8 stations en moins de 3 minutes (en 2e tentative), en exécutant correctement l'action requise à chaque station.",
+      "deroulement": {
+        "mise_en_train": "Exploration libre du parcours : repérer les obstacles, identifier l'action à faire à chaque station. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Découverte parcours complet (1er passage). Identification des stations difficiles. Pratique ciblée. Période 2 : Chronométrage du 2e passage. Défi d'amélioration personnelle. Durée : 28 minutes par période.",
+        "retour_au_calme": "Réflexion sur les défis : quel obstacle était le plus difficile ? Comment l'a-t-on surmonté ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Complétion du parcours (nombre de stations réussies)", "echelon_A": "Complète les 8 stations en exécutant l'action requise à chacune", "echelon_B": "Complète 6-7 stations correctement", "echelon_C": "Complète moins de 5 stations ou nécessite aide importante"},
+          {"critere": "Qualité d'exécution à chaque obstacle", "echelon_A": "Exécute les actions avec aisance et sans erreur de sécurité", "echelon_B": "Exécute la plupart des actions correctement", "echelon_C": "Plusieurs actions mal exécutées ou nécessitant assistance"},
+          {"critere": "Amélioration entre les deux passages", "echelon_A": "Améliore son temps de plus de 20% ou réussit une station de plus", "echelon_B": "Légère amélioration observable", "echelon_C": "Peu d'amélioration entre les passages"}
+        ]
+      },
+      "variantes": [
+        "Parcours en équipe de 2 : les deux doivent compléter chaque obstacle ensemble",
+        "Parcours inverse : compléter les stations à l'envers",
+        "Construction collective : les élèves proposent et construisent de nouveaux obstacles"
+      ],
+      "adaptations_inclusives": [
+        "Parcours alternatif adapté avec les mêmes actions mais hauteurs différentes",
+        "Aide d'un partenaire pour chaque obstacle si nécessaire",
+        "Éliminer les obstacles dangereux et substituer par des alternatives accessibles"
+      ],
+      "connexion_culturelle": "Les courses d'obstacles ont des racines dans les entraînements militaires des Spartiates grecs, les parcours d'initiation des jeunes guerriers de nombreuses cultures africaines et autochtones, et les épreuves de plein air des mouvements scouts fondés en 1907.",
+      "contexte_mondial": "Les courses d'obstacles modernes (Spartan Race, Tough Mudder, Ninja Warrior) sont en explosion mondiale avec des millions de participants. Cette tendance rappelle l'importance ancestrale de préparer les corps aux défis physiques réels.",
+      "liens_interdisciplinaires": "Sciences : propriétés des matériaux utilisés dans le parcours. Développement moteur : patrons locomoteurs (ramper, grimper, sauter, équilibre). Mathématiques : mesure du temps, comparaison."
+    },
+    {
+      "id": "SAE_EXT_013",
+      "titre": "Cricket simplifié : jeu de batte et lanceur",
+      "intentions_pedagogiques": "Découvrir le cricket comme sport traditionnel britannique et du Commonwealth, développer les habiletés de frappe et de lancé dans un contexte de règles simplifiées.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Cricket indoor ou outdoor simplifié",
+      "materiel": ["Batte de cricket (ou batte de tennis)", "Balles de tennis", "Wickets (ou cônes)", "Gants (optionnel)"],
+      "espace": "Terrain extérieur gazonné",
+      "situation_depart": "Présentation du cricket : le sport le plus regardé au monde après le soccer (2,5 milliards de fans). Popularité en Inde, Pakistan, Australie, Angleterre, Caraïbes. Discussion : pourquoi ce sport, quasi inconnu au Québec, est-il si populaire ailleurs ?",
+      "tache_complexe": "Jouer une version simplifiée de cricket (mini-cricket ou kwik cricket) en équipe de 5, comprenant les rôles de batteur, lanceur, gardien de guichet et fielders, en marquant le maximum de courses en 5 manches.",
+      "deroulement": {
+        "mise_en_train": "Frappe de balle suspendue (batting tee). Lancer de balle rebondissante. Attraper des balles frappées. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Apprentissage des règles simplifiées. Exercices par rôle. Période 2 : Mini-match 4v4 avec tous les rôles. Période 3 : Match complet 5v5 avec scores. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion sur les stratégies : quand frapper fort, quand frapper en douceur ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique de frappe (position, contact)", "echelon_A": "Adopte une position correcte et frappe le ballon de façon contrôlée dans différentes directions", "echelon_B": "Frappe fonctionnelle avec 1-2 éléments techniques à améliorer", "echelon_C": "Difficultés à frapper le ballon de façon cohérente"},
+          {"critere": "Compréhension des règles et des rôles", "echelon_A": "Joue chaque rôle avec une compréhension claire des responsabilités", "echelon_B": "Comprend les règles principales avec quelques rappels pour les rôles", "echelon_C": "Difficultés à comprendre les rôles ou règles de base"},
+          {"critere": "Participation collective et engagement", "echelon_A": "Participe avec enthousiasme à tous les rôles, encourage ses coéquipiers", "echelon_B": "Participe à tous les rôles avec engagement variable", "echelon_C": "Préfère un rôle et peu d'engagement dans les autres"}
+        ]
+      },
+      "variantes": [
+        "Cricket en salle avec balle de foam et batte de foam",
+        "Tournoi multi-manches avec tableau des scores",
+        "Kwik cricket : version officielle de cricket scolaire avec 8 joueurs"
+      ],
+      "adaptations_inclusives": [
+        "Balle stationnaire sur tee pour les batteurs avec difficultés visuelles ou de coordination",
+        "Rôle de fielder sédentaire (attrape des balles dans une zone définie)",
+        "Distance de lancer réduite pour faciliter la participation"
+      ],
+      "connexion_culturelle": "Le cricket est le sport de l'Empire britannique qui s'est répandu dans les colonies. Il est maintenant une passion nationale en Inde (1 milliard de fans), au Pakistan, au Bangladesh, en Australie, et dans toute la Caraïbe. Sachin Tendulkar (Inde) est considéré comme le meilleur joueur de tous les temps.",
+      "contexte_mondial": "L'Inde domine le cricket mondial depuis les années 2000. La Premier League Indienne (IPL) est la ligue sportive la plus regardée après la NFL américaine. Des joueurs comme Virat Kohli sont parmi les athlètes les plus célèbres au monde.",
+      "liens_interdisciplinaires": "Histoire : colonialisme britannique et son héritage sportif. Géographie : pays du Commonwealth. Mathématiques : calcul du taux de frappe (batting average), statistiques du sport."
+    },
+    {
+      "id": "SAE_EXT_014",
+      "titre": "Saut à la corde collectif : sauts synchronisés",
+      "intentions_pedagogiques": "Développer la coordination, le rythme et la synchronisation collective dans des jeux de corde à sauter, cultiver la joie du mouvement partagé.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Saut à la corde solo et collectif avec progressions",
+      "materiel": ["Cordes à sauter individuelles (20)", "Longues cordes à sauter (4-5)", "Cordes double-dutch (4 sets)"],
+      "espace": "Cour d'école asphaltée",
+      "situation_depart": "Présentation du Double Dutch comme art urbain né dans les Caraïbes et popularisé aux États-Unis. Présentation de compétitions de saut à la corde synchronisé (videos de championships). Ces compétitions existent dans plus de 50 pays !",
+      "tache_complexe": "Maîtriser 5 figures de saut individuel (simple, croisé, double saut, un pied, courant), puis intégrer la corde collective en entrant et sortant de la corde longue 10 fois consécutives sans erreur.",
+      "deroulement": {
+        "mise_en_train": "Saut solo à tempo lent. Augmentation progressive de la vitesse. Introduction des figures de base. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : 5 figures individuelles apprises progressivement. Objectif de 20 sauts consécutifs par figure. Période 2 : Corde longue : entrée, saut, sortie. Puis 10 entrées consécutives. Initiation Double Dutch pour les plus avancés. Durée : 28 minutes par période.",
+        "retour_au_calme": "Challenge collectif : toute la classe saute une figure ensemble sur 10 secondes. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise des figures individuelles (5)", "echelon_A": "Exécute les 5 figures de façon fluide et prolongée (20+ sauts)", "echelon_B": "Maîtrise 3-4 figures avec aisance", "echelon_C": "Maîtrise 1-2 figures ou difficultés fréquentes"},
+          {"critere": "Entrée et sortie de la corde longue", "echelon_A": "Entre et sort de la corde longue en rythme de façon autonome et répétée", "echelon_B": "Entre et sort avec quelques hésitations ou erreurs de timing", "echelon_C": "Difficultés à saisir le timing d'entrée dans la corde tournante"},
+          {"critere": "Synchronisation avec les autres (corde collective)", "echelon_A": "Reste synchronisé avec le groupe pendant les sauts collectifs", "echelon_B": "Quelques désynchronisations mineures", "echelon_C": "Difficultés fréquentes de synchronisation"}
+        ]
+      },
+      "variantes": [
+        "Jump rope jam : musique hip-hop et figures libres synchronisées",
+        "Relay jump : chaque équipe compte ses sauts consécutifs en rotation",
+        "Chorégraphie de saut : créer une routine de 32 temps à deux cordes"
+      ],
+      "adaptations_inclusives": [
+        "Corde élastique (macaroni) posée au sol pour commencer",
+        "Sauts à deux pieds uniquement si le saut unipodal est difficile",
+        "Rôle de tourneurde corde pour les élèves qui ne peuvent pas sauter"
+      ],
+      "connexion_culturelle": "Le saut à la corde a des origines en Egypte ancienne (cordes de vigne pour sauter). En Chine, les jeux de corde existent depuis 1000 ans. Le Double Dutch (double corde) est originaire des Caraïbes et a été popularisé dans les quartiers afro-américains de New York.",
+      "contexte_mondial": "Les championnats du monde de saut à la corde (World Jump Rope) rassemblent des équipes de 50 pays. Les équipes asiatiques (Japon, Corée, Chine) et américaines dominent les épreuves de vitesse et de freestyle.",
+      "liens_interdisciplinaires": "Mathématiques : comptage, rythme et mesure du temps. Musique : rythme et tempo. Santé : cardio-vasculaire et coordination neuro-motrice."
+    },
+    {
+      "id": "SAE_EXT_015",
+      "titre": "Tir à l'arc simplifié",
+      "intentions_pedagogiques": "Initier au tir à l'arc comme discipline de précision et de concentration, développer la capacité d'attention soutenue et la maîtrise des émotions sous pression.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 3,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans un contexte d'activité physique individuelle",
+      "moyen_action": "Apprentissage du tir à l'arc avec équipement sécurisé",
+      "materiel": ["Arcs récurves de débutant (2-4 par groupe)", "Flèches à pointes rondes", "Cibles en mousse", "Baguette de sécurité", "Zone de sécurité délimitée"],
+      "espace": "Terrain extérieur avec fond de butte (sécurité obligatoire)",
+      "situation_depart": "Présentation du tir à l'arc dans l'histoire humaine : outil de chasse et de guerre depuis 60 000 ans, discipline olympique depuis 1900. Discussion sur la concentration requise : le tir à l'arc est souvent comparé à la méditation en mouvement.",
+      "tache_complexe": "Maîtriser la séquence complète de tir (position, prise, ancrage, visée, lâcher, suivi) et placer 5 flèches dans la zone de scoring (7-10) lors d'une volée de 10 flèches à 10m.",
+      "deroulement": {
+        "mise_en_train": "Règles de sécurité absolues (aucune exception). Exercices de renforcement des muscles de tir sans arc (élastique). Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Séquence de tir étape par étape (sans flèche d'abord). Période 2 : Tir à courte distance (5m). Ajustements techniques. Période 3 : Distance complète (10m). Volée officielle de 10 flèches avec score. Durée : 38 minutes par période.",
+        "retour_au_calme": "Analyse du score. Discussion sur la concentration et la gestion du stress. Étirements des épaules et des bras. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Exécution correcte de la séquence de tir", "echelon_A": "Exécute les 6 étapes de la séquence de façon cohérente et reproduite à chaque tir", "echelon_B": "Exécute 4-5 étapes correctement avec quelques variantes", "echelon_C": "Séquence incohérente avec des variations importantes entre les tirs"},
+          {"critere": "Précision (score sur 10 flèches)", "echelon_A": "Place 5+ flèches dans la zone 7-10 (cercles intérieurs)", "echelon_B": "Place 3-4 flèches dans la zone de scoring", "echelon_C": "Place moins de 3 flèches dans la zone de scoring"},
+          {"critere": "Respect absolu des protocoles de sécurité", "echelon_A": "Suit toutes les consignes de sécurité sans exception et signale toute situation dangereuse", "echelon_B": "Respecte les consignes principales avec rappels occasionnels", "echelon_C": "Non-respect de consignes de sécurité (activité suspendue pour ce critère)"}
+        ]
+      },
+      "variantes": [
+        "Tir à l'arc sur cibles 3D (silhouettes d'animaux à distances variées)",
+        "Tir de précision : formats réduits et distances variées",
+        "Tournoi par équipes avec score cumulatif"
+      ],
+      "adaptations_inclusives": [
+        "Arc à poulies (compound) plus facile à bander pour les élèves avec moins de force",
+        "Supports d'arc pour les élèves avec un seul bras fonctionnel",
+        "Distance réduite à 5m pour les débutants"
+      ],
+      "connexion_culturelle": "Le tir à l'arc est universel dans l'histoire humaine. Les archers mongols à cheval ont conquis le plus grand empire terrestre de l'histoire. Le Bhutan a l'archerie comme sport national. Les traditions de tir à l'arc japonais (kyudo) sont une discipline spirituelle zen.",
+      "contexte_mondial": "La Corée du Sud domine le tir à l'arc olympique depuis les années 1980 grâce à un programme de formation rigoureux. Les Ottomans ont inventé le tir à l'arc à cheval qui était considéré comme l'art martial suprême.",
+      "liens_interdisciplinaires": "Physique : trajectoire parabolique, vitesse et gravité. Psychologie : concentration, visualisation et gestion du stress. Histoire : rôle de l'arc dans les conquêtes militaires de l'humanité."
+    },
+    {
+      "id": "SAE_EXT_016",
+      "titre": "Tug of war (lutte à la corde) culturelle",
+      "intentions_pedagogiques": "Développer la force musculaire et la coordination d'équipe dans un contexte de compétition traditionnelle universelle, explorer les variantes culturelles de ce jeu.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Variantes de jeux de traction à la corde",
+      "materiel": ["Cordes épaisses de 10m (2-3)", "Marqueurs de centre", "Cônes de délimitation"],
+      "espace": "Terrain gazonné extérieur",
+      "situation_depart": "Présentation du tug of war (tir à la corde) comme sport olympique de 1900 à 1920, maintenant pratiqué dans 70 pays. Discussion : pourquoi ce jeu si simple est-il universel ? Quelle est la stratégie dans ce jeu ?",
+      "tache_complexe": "Participer à 5 manches de tug of war avec des compositions d'équipes variées, en développant une stratégie collective (placement, départ groupé, technique de prise) testée lors d'une finale.",
+      "deroulement": {
+        "mise_en_train": "Exercices de force isométrique (poussée contre mur). Technique de prise de la corde. Exercice de départ groupé. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Manches de découverte. Discussion sur les stratégies observées. Période 2 : Application de la stratégie. Tournoi avec compositions variées. Durée : 28 minutes par période.",
+        "retour_au_calme": "Étirements des muscles de traction (dorsaux, biceps, avant-bras). Discussion : qu'est-ce qui fait la différence entre deux équipes de même force ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique individuelle (prise, position, engagement)", "echelon_A": "Adopte la bonne position (genoux fléchis, dos droit, prise ferme) et tire de façon efficace", "echelon_B": "Position généralement correcte avec quelques ajustements nécessaires", "echelon_C": "Position peu efficace (debout, bras seuls, prise instable)"},
+          {"critere": "Synchronisation du départ avec l'équipe", "echelon_A": "Démarre exactement avec ses coéquipiers et maintient le même rythme de traction", "echelon_B": "Généralement synchronisé avec quelques décalages", "echelon_C": "Départ et rythme très différents de l'équipe"},
+          {"critere": "Contribution à la stratégie d'équipe", "echelon_A": "Propose ou applique activement une stratégie spécifique (placement, signal, technique)", "echelon_B": "Participe à l'application de la stratégie", "echelon_C": "Peu de participation à l'élaboration ou l'application de la stratégie"}
+        ]
+      },
+      "variantes": [
+        "Tug of war à 4 cordes (4 équipes tirent en même temps dans 4 directions)",
+        "Version assis : tir à la corde en position assise",
+        "Tug of war de précision : objectif de faire franchir une ligne précise"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la force des équipes selon les capacités (règle de handicap par poids)",
+        "Version assise pour les élèves qui ne peuvent pas se tenir debout",
+        "Rôle de coach/arbitre pour les élèves qui ne peuvent pas tirer"
+      ],
+      "connexion_culturelle": "Le tir à la corde est l'un des jeux les plus universels de l'humanité. En Corée, le Juldarigi est un rituel de tir à la corde géant célébré lors du Danoje (patrimoine UNESCO). En Inde, le Ratoiligi est pratiqué lors de festivals agricoles. En Suisse, le Hornusser intègre des éléments similaires.",
+      "contexte_mondial": "La Fédération Mondiale de Tug of War (TWIF) organise des championnats mondiaux depuis 1975. L'Asie domine avec la Corée, le Japon, la Thaïlande. En Europe, les Pays-Bas et la Suisse sont très forts.",
+      "liens_interdisciplinaires": "Sciences : force, travail, pression des pieds au sol, centre de gravité. Mathématiques : rapport de forces, calcul d'avantage. Éducation physique : force musculaire, endurance."
+    },
+    {
+      "id": "SAE_EXT_017",
+      "titre": "Escalade de blocs : grimper dans la nature",
+      "intentions_pedagogiques": "Initier à l'escalade de blocs comme activité de plein air, développer la force, la coordination et la résolution de problèmes dans un contexte de mouvement vertical.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 3,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans des contextes d'activités physiques en plein air",
+      "moyen_action": "Escalade de blocs sur structure artificielle ou naturelle",
+      "materiel": ["Mur de blocs de l'école ou structure naturelle", "Tapis de réception", "Chaussons d'escalade si disponibles", "Craie d'escalade"],
+      "espace": "Mur de blocs de l'école ou bloc naturel (parc)",
+      "situation_depart": "Présentation du bouldering comme forme d'escalade sans corde, résolution de problèmes de mouvement. Différents styles culturels : escalade sportive française, alpinisme suisse, highball américain. L'escalade est sport olympique depuis Tokyo 2020.",
+      "tache_complexe": "Compléter 5 problèmes de blocs de niveaux variés (VB à V2), en démontrant une lecture du problème avant de grimper et en utilisant les techniques de base apprises (utilisation des pieds, transfert de poids, plage de repos).",
+      "deroulement": {
+        "mise_en_train": "Échauffement des doigts, poignets, épaules. Exercices de force de préhension. Traversée basse du mur. Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Technique de base sur mur bas (utiliser les pieds d'abord). Problèmes VB. Période 2 : Lecture de blocs (étude avant grimpe). Problèmes V0-V1. Période 3 : Redpoint (répéter un problème difficile jusqu'à réussir). Durée : 38 minutes par période.",
+        "retour_au_calme": "Étirements des avant-bras et doigts. Discussion : qu'est-ce que la lecture de bloc t'a appris ? Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique des pieds (précision et confiance)", "echelon_A": "Utilise ses pieds de façon précise et confiante sur des prises petites, transfère le poids vers le bas", "echelon_B": "Utilise ses pieds sur les grosses prises mais moins précis sur les petites", "echelon_C": "Peu d'utilisation consciente des pieds, dépend surtout des bras"},
+          {"critere": "Lecture et résolution du problème de bloc", "echelon_A": "Observe le bloc avant de grimper, identifie les prises clés et tente de suivre sa séquence prévue", "echelon_B": "Quelques éléments de lecture avant de grimper", "echelon_C": "Peu ou pas de lecture, grimpe de façon entièrement improvisée"},
+          {"critere": "Persévérance sur les projets difficiles", "echelon_A": "Réessaie un problème difficile au moins 3 fois en ajustant son approche à chaque tentative", "echelon_B": "Réessaie 1-2 fois avant de passer à autre chose", "echelon_C": "Abandonne rapidement les problèmes difficiles"}
+        ]
+      },
+      "variantes": [
+        "Escalade en duo : un partenaire propose des prises à utiliser (coaching)",
+        "Speed bouldering : compléter un problème simple le plus rapidement possible",
+        "Création de bloc : les élèves posent leurs propres problèmes sur le mur"
+      ],
+      "adaptations_inclusives": [
+        "Traversée basse (moins d'1m) pour les élèves avec peur des hauteurs",
+        "Escalade de structures naturelles plus basses (rochers de parc)",
+        "Version avec plus de prises (volume en dessous des prises)"
+      ],
+      "connexion_culturelle": "L'escalade existe depuis que les humains grimpent aux arbres et aux rochers pour chasser, observer et se défendre. L'alpinisme moderne est né dans les Alpes suisses au 18e siècle. L'escalade traditionnelle autochtone des mesas américains et des falaises africaines a des millénaires d'histoire.",
+      "contexte_mondial": "Adam Ondra (République Tchèque), Alex Honnold (États-Unis) et Janja Garnbret (Slovénie) sont les meilleurs grimpeurs de l'histoire. Le Yosemite (Californie) et Fontainebleau (France) sont les Mecque mondiales de l'escalade.",
+      "liens_interdisciplinaires": "Sciences : mécanique des forces, statique et dynamique du mouvement. Psychologie : gestion du risque et de la peur, concentration. Géologie : types de roches et formations."
+    },
+    {
+      "id": "SAE_EXT_018",
+      "titre": "Floorball extérieur : hockey sur gazon simplifié",
+      "intentions_pedagogiques": "Développer les habiletés de base du floorball et du hockey dans un contexte extérieur, promouvoir un sport nordique inclusif et accessible.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Floorball ou unihockey avec équipement simplifié",
+      "materiel": ["Bâtons de floorball (légers, en plastique)", "Balles de floorball", "Buts portables", "Cônes", "Dossards"],
+      "espace": "Cour d'école asphaltée ou gazon",
+      "situation_depart": "Présentation du floorball comme invention suédoise des années 1970, aujourd'hui sport mondial avec plus d'un million de joueurs. Lien avec le hockey sur glace : même logique, différent contexte. Un sport pour ceux qui n'ont pas accès à la glace.",
+      "tache_complexe": "Dans un match 4v4 de floorball de 15 minutes, appliquer les techniques de contrôle de balle, passe et tir apprises, en respectant la règle de stick play (pas de lever de bâton au-dessus de la taille).",
+      "deroulement": {
+        "mise_en_train": "Maniement du bâton : dribble en ligne droite, slalom de cônes. Passes latérales et en mouvement. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Contrôle de balle, passe à 3. Exercice de tir. Période 2 : Jeu 3v3. Règles de sécurité. Période 3 : Match complet 4v4. Durée : 28 minutes par période.",
+        "retour_au_calme": "Récupération active. Discussion : en quoi le floorball est-il similaire et différent du hockey ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Contrôle du ballon en mouvement", "echelon_A": "Maintient le contrôle du ballon en dribble tout en levant la tête pour observer le jeu", "echelon_B": "Contrôle fonctionnel en ligne droite, quelques pertes lors de changements de direction", "echelon_C": "Difficultés fréquentes à maintenir le ballon sous contrôle"},
+          {"critere": "Précision des passes et des tirs", "echelon_A": "Passes sur la cible dans plus de 60% des cas, tirs cadrés dans plus de 50% des cas", "echelon_B": "Passes et tirs généralement dans la bonne direction", "echelon_C": "Passes et tirs souvent hors cible"},
+          {"critere": "Respect de la règle du stick play (pas de lever)", "echelon_A": "Respecte toujours la règle du stick play (bâton sous la taille)", "echelon_B": "Respecte la règle la plupart du temps avec quelques oublis", "echelon_C": "Non-respect fréquent de la règle de sécurité"}
+        ]
+      },
+      "variantes": [
+        "Floorball coopératif : 5 passes avant de pouvoir tirer",
+        "Tournoi de floorball avec arbitres élèves",
+        "Unihockey : version indoor sur surface lisse"
+      ],
+      "adaptations_inclusives": [
+        "Bâton plus court et balle plus lente pour les débutants",
+        "Zone de sécurité autour des élèves en fauteuil (règle de bulle)",
+        "Version avec balle plus lourde et plus lente pour faciliter le contrôle"
+      ],
+      "connexion_culturelle": "Le floorball est né en Suède dans les années 1970 et s'est répandu dans les pays nordiques (Finlande, Suisse, République Tchèque) avant de devenir mondial. En Finlande, c'est le troisième sport le plus pratiqué avec 370 000 joueurs. La Suède et la Finlande dominent les championnats du monde.",
+      "contexte_mondial": "La Fédération Internationale de Floorball (IFF) compte 80 pays membres. Le floorball est particulièrement populaire dans les pays où le hockey sur glace est culturellement important. Il cherche le statut olympique.",
+      "liens_interdisciplinaires": "Histoire du sport : développement du hockey et ses variantes. Géographie : pays nordiques et leur culture sportive. Physique : trajectoire de balle, force et friction."
+    },
+    {
+      "id": "SAE_EXT_019",
+      "titre": "Marche nordique : bâtons et nature",
+      "intentions_pedagogiques": "Initier à la marche nordique comme activité physique santé accessible à tous, développer la technique de marche avec bâtons et la conscience de la nature.",
+      "niveau": "Secondaire 3-5 (15-17 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 3,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Planifier une pratique d'activité physique axée sur le développement de soi",
+      "moyen_action": "Programme de marche nordique avec planification personnelle",
+      "materiel": ["Bâtons de marche nordique", "Vêtements de plein air adaptés", "Carte du quartier ou du parc", "Carnet de planification"],
+      "espace": "Parc ou quartier adjacent à l'école",
+      "situation_depart": "Présentation de la marche nordique née en Finlande dans les années 1930 comme entraînement estival des skieurs de fond. Discussion sur la santé à long terme : quels types d'activités peut-on pratiquer toute sa vie ? La marche nordique est recommandée même pour les centenaires.",
+      "tache_complexe": "Apprendre la technique de marche nordique correcte et compléter un parcours de 3 km en utilisant cette technique, puis planifier un programme personnel de 4 semaines de marche nordique à domicile.",
+      "deroulement": {
+        "mise_en_train": "Introduction aux bâtons : longueur correcte, dragonne, prise. Marche sans planter les bâtons d'abord. Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Technique de plantation du bâton (synchronisée avec le pied opposé). Marche de 1 km. Période 2 : Marche de 2 km avec terrain varié. Réglage de la technique. Période 3 : Marche de 3 km chronométrée avec journal de bord. Planification du programme personnel. Durée : 38 minutes par période.",
+        "retour_au_calme": "Étirements complets. Présentation du programme personnel de 4 semaines. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique de marche nordique (coordination bras-jambes)", "echelon_A": "Synchronise parfaitement le bâton avec le pied opposé et pousse vers l'arrière avec efficacité", "echelon_B": "Technique généralement correcte avec quelques désynchronisations", "echelon_C": "Difficultés de synchronisation ou utilisation incorrecte des bâtons"},
+          {"critere": "Endurance sur le parcours de 3 km", "echelon_A": "Complète le parcours de 3 km sans arrêt à une allure régulière", "echelon_B": "Complète le parcours avec 1-2 courtes pauses", "echelon_C": "Parcours partiellement complété ou plusieurs pauses longues"},
+          {"critere": "Qualité du programme personnel planifié", "echelon_A": "Programme complet sur 4 semaines avec progression, objectifs réalistes et justification de santé", "echelon_B": "Programme fonctionnel avec quelques lacunes de planification", "echelon_C": "Programme minimal ou peu adapté à ses capacités réelles"}
+        ]
+      },
+      "variantes": [
+        "Marche nordique avec sac à dos leste progressivement",
+        "Randonnée nordique en terrain montagneux (si accessible)",
+        "Event de marche nordique communautaire pour toute l'école"
+      ],
+      "adaptations_inclusives": [
+        "Bâtons adaptés pour les élèves avec difficultés de préhension",
+        "Distance réduite avec le même apprentissage technique",
+        "Marche avec appui uniquement sur un bâton pour les élèves avec asymétrie"
+      ],
+      "connexion_culturelle": "La marche nordique est dérivée du ski de fond finnois. En Finlande, le ski de fond est une tradition millénaire et le moyen de transport hivernal des peuples sami de l'Arctique. Aujourd'hui, 11 millions de personnes en Europe pratiquent la marche nordique.",
+      "contexte_mondial": "La marche nordique est recommandée par l'OMS comme activité physique idéale pour la santé cardiovasculaire. Elle est particulièrement populaire chez les 50+ ans en Europe centrale et nordique.",
+      "liens_interdisciplinaires": "Biologie : bénéfices cardio-vasculaires de la marche prolongée. Planification personnelle : objectifs SMART. Environnement : sensibilisation aux espaces verts urbains."
+    },
+    {
+      "id": "SAE_EXT_020",
+      "titre": "Jeux olympiques de quartier",
+      "intentions_pedagogiques": "Organiser une journée olympique multi-sports pour l'école, développer les compétences organisationnelles et le sentiment de fierté sportive collective.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Démontrer une compréhension des enjeux liés à l'activité physique dans la société",
+      "moyen_action": "Organisation et participation à une journée olympique scolaire",
+      "materiel": ["Matériel varié de sports (balles, cordes, cerceaux, bâtons)", "Cônes de couleurs par nation", "Drapeaux improvisés", "Tableau de scores", "Médailles artisanales"],
+      "espace": "Toute la cour d'école avec différentes zones de sport",
+      "situation_depart": "Présentation de l'histoire des Jeux olympiques modernes et du mouvement olympique. Projet collectif : organiser des Jeux olympiques de l'école avec 8 épreuves, chaque groupe représentant un pays différent.",
+      "tache_complexe": "En comité d'organisation de 5 élèves, planifier et diriger une épreuve complète (règles, matériel, arbitrage, score), ET participer à 7 autres épreuves représentant son pays, en cumulant des points sur la journée.",
+      "deroulement": {
+        "mise_en_train": "Cérémonie d'ouverture : défilé des nations avec drapeau. Serment olympique. Durée : 10 minutes.",
+        "partie_principale": "Période 1-3 : Épreuves sportives (rotation entre les 8 stations). Période 4 : Finales et cérémonie de clôture avec remise des médailles. Durée : 28 minutes par période.",
+        "retour_au_calme": "Cérémonie de clôture olympique. Réflexion : qu'est-ce qui a rendu ces jeux spéciaux ? Quelles valeurs olympiques avons-nous respectées ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Organisation et animation de l'épreuve attribuée", "echelon_A": "Explique les règles clairement, gère le matériel et arbitre de façon équitable et autonome", "echelon_B": "Anime l'épreuve fonctionnellement avec quelques difficultés d'arbitrage", "echelon_C": "Difficultés importantes à organiser et animer l'épreuve"},
+          {"critere": "Participation sportive dans les 7 autres épreuves", "echelon_A": "Participe activement et avec enthousiasme à toutes les épreuves", "echelon_B": "Participe à toutes les épreuves avec engagement variable", "echelon_C": "Participation minimale à certaines épreuves"},
+          {"critere": "Esprit olympique (valeurs : excellence, respect, amitié)", "echelon_A": "Incarne les valeurs olympiques : félicite les adversaires, accepte les défaites gracieusement, encourage tous", "echelon_B": "Généralement respectueux avec quelques moments difficiles", "echelon_C": "Difficultés à accepter les défaites ou manque de respect envers les adversaires"}
+        ]
+      },
+      "variantes": [
+        "Épreuves artistiques incluses (danse, acrosport) en plus des épreuves sportives",
+        "Version parasport : intégrer des épreuves paralympiques dans les Jeux",
+        "Jeux avec communauté : inviter des parents et des familles comme spectateurs"
+      ],
+      "adaptations_inclusives": [
+        "Épreuves inclusives par design (accessibles à tous les niveaux)",
+        "Rôle d'organisateur valorisé autant que les performances sportives",
+        "Médailles pour tous : participation, fair-play, organisation, sport"
+      ],
+      "connexion_culturelle": "Les Jeux olympiques modernes fondés par Pierre de Coubertin en 1896 s'inspirent des Jeux de la Grèce antique (776 av. J.-C.). Chaque olympiade, des athlètes de 200+ nations partagent la même flamme olympique, symbole universel de paix et d'humanité.",
+      "contexte_mondial": "Les Jeux olympiques sont la plus grande manifestation sportive et culturelle du monde. Depuis Montréal 1976, chaque ville hôte laisse un legs sportif et architectural. Paris 2024 et Los Angeles 2028 ont prévu l'ajout du breakdance et du flag football.",
+      "liens_interdisciplinaires": "Histoire : Jeux olympiques anciens et modernes. Géographie : pays participants et leurs sports culturels. Éducation à la citoyenneté : valeurs olympiques, paix et diplomatie sportive."
+    }
+  ]
+}

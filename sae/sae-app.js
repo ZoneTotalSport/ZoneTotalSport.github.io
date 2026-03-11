@@ -1,6 +1,19 @@
 /* sae-app.js — Zone Total Sport: SAÉ PFEQ */
 
 const SAE_FILES = [
+  // Banque principale 1000+ SAÉ (maternelle → 6e année)
+  '../data/sae/sae_banque_01.json',
+  '../data/sae/sae_banque_02.json',
+  '../data/sae/sae_banque_03.json',
+  '../data/sae/sae_banque_04.json',
+  '../data/sae/sae_banque_05.json',
+  '../data/sae/sae_banque_06.json',
+  '../data/sae/sae_banque_07.json',
+  '../data/sae/sae_banque_08.json',
+  '../data/sae/sae_banque_09.json',
+  '../data/sae/sae_banque_10.json',
+  '../data/sae/sae_banque_11.json',
+  // Fichiers supplémentaires spécialisés
   '../data/sae/sae_manipulation_prescolaire.json',
   '../data/sae/sae_manipulation_primaire.json',
   '../data/sae/sae_manipulation_secondaire.json',
@@ -12,14 +25,6 @@ const SAE_FILES = [
   '../data/sae/sae_mobilite.json',
   '../data/sae/sae_expression_danse.json',
   '../data/sae/sae_poursuite_tous.json',
-  '../data/sae/sae_exterieur.json',
-  '../data/sae/sae_raquettes.json',
-  '../data/sae/sae_natation.json',
-  '../data/sae/sae_plein_air.json',
-  '../data/sae/sae_arts_martiaux.json',
-  '../data/sae/sae_prescolaire_locomotion.json',
-  '../data/sae/sae_secondaire_collectif.json',
-  '../data/sae/sae_condition_physique.json',
 ];
 
 const CYCLE_COLORS = {
