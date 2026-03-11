@@ -1,0 +1,3840 @@
+{
+  "musiques": [
+    {
+      "id": "MUS_001",
+      "titre": "Douce Respiration",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 52,
+      "duree": "4:20",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Calme et apaisante",
+      "description": "Piste ambiante douce pour les exercices de retour au calme et de respiration.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100001",
+      "annee": 2019,
+      "tags": [
+        "calme",
+        "relaxation",
+        "respiration"
+      ]
+    },
+    {
+      "id": "MUS_002",
+      "titre": "Méditation du Matin",
+      "artiste": "Serene Collective",
+      "genre": "Ambient",
+      "bpm": 55,
+      "duree": "5:10",
+      "licence": "CC0",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Zen et reposante",
+      "description": "Musique zen parfaite pour introduire la pleine conscience en classe d'éducation physique.",
+      "source": "https://freemusicarchive.org/music/serene-collective/meditation-du-matin",
+      "annee": 2021,
+      "tags": [
+        "zen",
+        "pleine-conscience",
+        "calme"
+      ]
+    },
+    {
+      "id": "MUS_003",
+      "titre": "Floating Clouds",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 58,
+      "duree": "3:55",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Légère et apaisante",
+      "description": "Piste ambiante légère pour accompagner les étirements en fin de cours.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100203",
+      "annee": 2018,
+      "tags": [
+        "etirements",
+        "calme",
+        "fin-de-cours"
+      ]
+    },
+    {
+      "id": "MUS_004",
+      "titre": "Vagues Douces",
+      "artiste": "NatureSounds Studio",
+      "genre": "Ambient",
+      "bpm": 60,
+      "duree": "6:00",
+      "licence": "Pixabay License",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Naturelle et relaxante",
+      "description": "Sons naturels de vagues pour accompagner les séances de yoga et de relaxation.",
+      "source": "https://pixabay.com/music/ambient-vagues-douces-123456",
+      "annee": 2022,
+      "tags": [
+        "nature",
+        "vagues",
+        "relaxation"
+      ]
+    },
+    {
+      "id": "MUS_005",
+      "titre": "Paix Intérieure",
+      "artiste": "Élise Fontaine",
+      "genre": "Classique",
+      "bpm": 62,
+      "duree": "4:45",
+      "licence": "CC BY-SA",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Classique et sereine",
+      "description": "Composition classique douce pour accompagner les exercices de respiration et la pleine conscience.",
+      "source": "https://freemusicarchive.org/music/elise-fontaine/paix-interieure",
+      "annee": 2020,
+      "tags": [
+        "classique",
+        "serenite",
+        "respiration"
+      ]
+    },
+    {
+      "id": "MUS_006",
+      "titre": "Forêt Enchantée",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 64,
+      "duree": "5:30",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Magique et douce",
+      "description": "Piste magique et douce idéale pour les jeunes enfants en fin d'activité.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100405",
+      "annee": 2017,
+      "tags": [
+        "enfants",
+        "magie",
+        "calme"
+      ]
+    },
+    {
+      "id": "MUS_007",
+      "titre": "Slow Breath",
+      "artiste": "Ambient Workshop",
+      "genre": "Ambient",
+      "bpm": 65,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Apaisante et profonde",
+      "description": "Musique ambiante pour guider les exercices de respiration profonde.",
+      "source": "https://ccmixter.org/files/ambient-workshop/slow-breath",
+      "annee": 2021,
+      "tags": [
+        "respiration",
+        "profondeur",
+        "calme"
+      ]
+    },
+    {
+      "id": "MUS_008",
+      "titre": "Coucher de Soleil",
+      "artiste": "Marc Leblanc",
+      "genre": "Jazz",
+      "bpm": 68,
+      "duree": "4:15",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Douce et mélancolique",
+      "description": "Jazz doux pour accompagner le retour au calme en fin de séance.",
+      "source": "https://freemusicarchive.org/music/marc-leblanc/coucher-de-soleil",
+      "annee": 2019,
+      "tags": [
+        "jazz",
+        "douceur",
+        "fin-seance"
+      ]
+    },
+    {
+      "id": "MUS_009",
+      "titre": "Piano Doux",
+      "artiste": "Sophie Tremblay",
+      "genre": "Classique",
+      "bpm": 60,
+      "duree": "3:40",
+      "licence": "CC BY-SA",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Douce et musicale",
+      "description": "Pièce de piano douce pour les moments de calme et d'étirements.",
+      "source": "https://freemusicarchive.org/music/sophie-tremblay/piano-doux",
+      "annee": 2020,
+      "tags": [
+        "piano",
+        "douceur",
+        "etirements"
+      ]
+    },
+    {
+      "id": "MUS_010",
+      "titre": "Starlight Meditation",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 57,
+      "duree": "5:00",
+      "licence": "CC BY",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Mystérieuse et calme",
+      "description": "Piste ambiante étoilée pour guider la méditation et les étirements finaux.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100509",
+      "annee": 2018,
+      "tags": [
+        "meditation",
+        "etoiles",
+        "etirements"
+      ]
+    },
+    {
+      "id": "MUS_011",
+      "titre": "Nuages Blancs",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 63,
+      "duree": "4:10",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Légère et flottante",
+      "description": "Mélodie ambiante légère pour les activités de relaxation guidée.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100611",
+      "annee": 2020,
+      "tags": [
+        "relaxation",
+        "nuages",
+        "guidee"
+      ]
+    },
+    {
+      "id": "MUS_012",
+      "titre": "Tierra Serena",
+      "artiste": "Carlos Vega",
+      "genre": "Latin",
+      "bpm": 66,
+      "duree": "3:50",
+      "licence": "CC0",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Chaleureuse et apaisante",
+      "description": "Guitare latine douce pour les moments de retour au calme.",
+      "source": "https://freemusicarchive.org/music/carlos-vega/tierra-serena",
+      "annee": 2021,
+      "tags": [
+        "latin",
+        "guitare",
+        "chaleur"
+      ]
+    },
+    {
+      "id": "MUS_013",
+      "titre": "Morning Dew",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 69,
+      "duree": "4:35",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Fraîche et matinale",
+      "description": "Piste ambiante fraîche pour démarrer ou terminer la séance en douceur.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100713",
+      "annee": 2019,
+      "tags": [
+        "matin",
+        "fraicheur",
+        "douceur"
+      ]
+    },
+    {
+      "id": "MUS_014",
+      "titre": "Souffle du Vent",
+      "artiste": "Ambiance Nature",
+      "genre": "Ambient",
+      "bpm": 54,
+      "duree": "5:45",
+      "licence": "Pixabay License",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Naturelle et douce",
+      "description": "Sons de vent et de nature pour accompagner les exercices de pleine conscience.",
+      "source": "https://pixabay.com/music/ambient-souffle-du-vent-234567",
+      "annee": 2022,
+      "tags": [
+        "vent",
+        "nature",
+        "pleine-conscience"
+      ]
+    },
+    {
+      "id": "MUS_015",
+      "titre": "Quiet Waters",
+      "artiste": "Kevin MacLeod",
+      "genre": "Ambient",
+      "bpm": 61,
+      "duree": "4:50",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Aquatique et sereine",
+      "description": "Atmosphère aquatique sereine pour les moments de détente après l'effort.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100815",
+      "annee": 2017,
+      "tags": [
+        "eau",
+        "serenite",
+        "detente"
+      ]
+    },
+    {
+      "id": "MUS_016",
+      "titre": "Promenade Légère",
+      "artiste": "Jean-Pierre Morin",
+      "genre": "Jazz",
+      "bpm": 72,
+      "duree": "3:30",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Légère et enjouée",
+      "description": "Jazz léger parfait pour commencer un échauffement en douceur.",
+      "source": "https://freemusicarchive.org/music/jean-pierre-morin/promenade-legere",
+      "annee": 2020,
+      "tags": [
+        "jazz",
+        "echauffement",
+        "leger"
+      ]
+    },
+    {
+      "id": "MUS_017",
+      "titre": "Gentle Steps",
+      "artiste": "Kevin MacLeod",
+      "genre": "Pop",
+      "bpm": 75,
+      "duree": "3:15",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement",
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Gaie et légère",
+      "description": "Mélodie douce et gaie pour les échauffements des plus petits.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1101017",
+      "annee": 2018,
+      "tags": [
+        "enfants",
+        "gaie",
+        "debut"
+      ]
+    },
+    {
+      "id": "MUS_018",
+      "titre": "Bossa Nova da Manhã",
+      "artiste": "Trio Carioca",
+      "genre": "Latin",
+      "bpm": 80,
+      "duree": "3:50",
+      "licence": "CC0",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Rythmée et décontractée",
+      "description": "Bossa nova légère pour échauffer les corps et mettre la classe en mouvement.",
+      "source": "https://freemusicarchive.org/music/trio-carioca/bossa-nova-da-manha",
+      "annee": 2021,
+      "tags": [
+        "bossa-nova",
+        "rythme",
+        "latin"
+      ]
+    },
+    {
+      "id": "MUS_019",
+      "titre": "Walking on Sunshine",
+      "artiste": "BeatFactory",
+      "genre": "Pop",
+      "bpm": 83,
+      "duree": "3:20",
+      "licence": "CC BY-SA",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Ensoleillée et positive",
+      "description": "Pop joyeuse pour démarrer la séance avec énergie et bonne humeur.",
+      "source": "https://ccmixter.org/files/beatfactory/walking-on-sunshine",
+      "annee": 2020,
+      "tags": [
+        "positif",
+        "soleil",
+        "energie"
+      ]
+    },
+    {
+      "id": "MUS_020",
+      "titre": "Réveil Matinal",
+      "artiste": "Électro Québec",
+      "genre": "Electronic",
+      "bpm": 85,
+      "duree": "3:40",
+      "licence": "CC0",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Énergisante et progressive",
+      "description": "Électro progressive pour réveiller les élèves en début de cours.",
+      "source": "https://freemusicarchive.org/music/electro-quebec/reveil-matinal",
+      "annee": 2022,
+      "tags": [
+        "electro",
+        "progressif",
+        "reveil"
+      ]
+    },
+    {
+      "id": "MUS_021",
+      "titre": "Funky Morning",
+      "artiste": "Groove Machine",
+      "genre": "Funk",
+      "bpm": 88,
+      "duree": "4:05",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Funky et motivante",
+      "description": "Groove funky pour des échauffements dynamiques et amusants.",
+      "source": "https://freemusicarchive.org/music/groove-machine/funky-morning",
+      "annee": 2019,
+      "tags": [
+        "funk",
+        "groove",
+        "amusant"
+      ]
+    },
+    {
+      "id": "MUS_022",
+      "titre": "Samba do Corpo",
+      "artiste": "Rio Beats",
+      "genre": "Latin",
+      "bpm": 131,
+      "duree": "3:55",
+      "licence": "CC0",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Festive et rythmée",
+      "description": "Samba animée pour les échauffements avec des mouvements de danse.",
+      "source": "https://freemusicarchive.org/music/rio-beats/samba-do-corpo",
+      "annee": 2021,
+      "tags": [
+        "samba",
+        "danse",
+        "rythme"
+      ]
+    },
+    {
+      "id": "MUS_023",
+      "titre": "Cool Groove",
+      "artiste": "Kevin MacLeod",
+      "genre": "Funk",
+      "bpm": 133,
+      "duree": "3:25",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Décontractée et rythmée",
+      "description": "Groove cool pour un échauffement sans prise de tête.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1101223",
+      "annee": 2018,
+      "tags": [
+        "groove",
+        "cool",
+        "rythme"
+      ]
+    },
+    {
+      "id": "MUS_024",
+      "titre": "La Vie en Mouvement",
+      "artiste": "MC Solaar Jr.",
+      "genre": "Hip-Hop",
+      "bpm": 85,
+      "duree": "3:45",
+      "licence": "CC BY-SA",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Urbaine et motivante",
+      "description": "Hip-hop français doux pour démarrer l'échauffement avec style.",
+      "source": "https://ccmixter.org/files/mc-solaar-jr/la-vie-en-mouvement",
+      "annee": 2022,
+      "tags": [
+        "hip-hop",
+        "francais",
+        "motivation"
+      ]
+    },
+    {
+      "id": "MUS_025",
+      "titre": "Cumbia Fit",
+      "artiste": "Los Activos",
+      "genre": "Latin",
+      "bpm": 136,
+      "duree": "3:35",
+      "licence": "CC0",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Festive et entraînante",
+      "description": "Cumbia joyeuse et entraînante pour les activités de danse et d'échauffement.",
+      "source": "https://freemusicarchive.org/music/los-activos/cumbia-fit",
+      "annee": 2020,
+      "tags": [
+        "cumbia",
+        "danse",
+        "latin"
+      ]
+    },
+    {
+      "id": "MUS_026",
+      "titre": "Jazz Swing Léger",
+      "artiste": "Quartet Montréal",
+      "genre": "Jazz",
+      "bpm": 78,
+      "duree": "4:00",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Élégante et rythmée",
+      "description": "Jazz swing pour un échauffement élégant et musical.",
+      "source": "https://freemusicarchive.org/music/quartet-montreal/jazz-swing-leger",
+      "annee": 2019,
+      "tags": [
+        "jazz",
+        "swing",
+        "elegant"
+      ]
+    },
+    {
+      "id": "MUS_027",
+      "titre": "Pop Positive",
+      "artiste": "BrightBeats",
+      "genre": "Pop",
+      "bpm": 156,
+      "duree": "3:10",
+      "licence": "Pixabay License",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Positive et joyeuse",
+      "description": "Pop positive pour motiver les élèves dès le début de la séance.",
+      "source": "https://pixabay.com/music/pop-positive-345678",
+      "annee": 2021,
+      "tags": [
+        "pop",
+        "positif",
+        "joie"
+      ]
+    },
+    {
+      "id": "MUS_028",
+      "titre": "Afrobeat Léger",
+      "artiste": "Rhythm Africa",
+      "genre": "World",
+      "bpm": 88,
+      "duree": "3:55",
+      "licence": "CC0",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Chaleureuse et rythmée",
+      "description": "Afrobeat léger pour des échauffements culturellement diversifiés.",
+      "source": "https://freemusicarchive.org/music/rhythm-africa/afrobeat-leger",
+      "annee": 2022,
+      "tags": [
+        "afrobeat",
+        "monde",
+        "diversite"
+      ]
+    },
+    {
+      "id": "MUS_029",
+      "titre": "Reggaeton Suave",
+      "artiste": "Duo Caliente",
+      "genre": "Latin",
+      "bpm": 138,
+      "duree": "3:30",
+      "licence": "CC BY-SA",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Sensuelle et rythmée",
+      "description": "Reggaeton doux pour les activités de danse au secondaire.",
+      "source": "https://ccmixter.org/files/duo-caliente/reggaeton-suave",
+      "annee": 2021,
+      "tags": [
+        "reggaeton",
+        "danse",
+        "secondaire"
+      ]
+    },
+    {
+      "id": "MUS_030",
+      "titre": "Marche en Forêt",
+      "artiste": "Kevin MacLeod",
+      "genre": "Classique",
+      "bpm": 76,
+      "duree": "3:45",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement",
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Aventurière et légère",
+      "description": "Mélodie classique légère pour les activités de marche et d'exploration.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1101430",
+      "annee": 2018,
+      "tags": [
+        "marche",
+        "aventure",
+        "enfants"
+      ]
+    },
+    {
+      "id": "MUS_031",
+      "titre": "Groove Electro",
+      "artiste": "DJ Pixel",
+      "genre": "Electronic",
+      "bpm": 139,
+      "duree": "3:50",
+      "licence": "CC0",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Dynamique et groovy",
+      "description": "Électro groovy pour finir l'échauffement avec de l'énergie.",
+      "source": "https://freemusicarchive.org/music/dj-pixel/groove-electro",
+      "annee": 2022,
+      "tags": [
+        "electro",
+        "groove",
+        "dynamique"
+      ]
+    },
+    {
+      "id": "MUS_032",
+      "titre": "Salsa Fitness",
+      "artiste": "Ritmo Latino",
+      "genre": "Latin",
+      "bpm": 141,
+      "duree": "4:00",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Festive et dynamique",
+      "description": "Salsa modérée pour les activités de fitness latinos.",
+      "source": "https://freemusicarchive.org/music/ritmo-latino/salsa-fitness",
+      "annee": 2020,
+      "tags": [
+        "salsa",
+        "fitness",
+        "latin"
+      ]
+    },
+    {
+      "id": "MUS_033",
+      "titre": "Marimba Fun",
+      "artiste": "World Beats Collective",
+      "genre": "World",
+      "bpm": 82,
+      "duree": "3:20",
+      "licence": "Pixabay License",
+      "activite": [
+        "échauffement",
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Joyeuse et colorée",
+      "description": "Musique de marimba joyeuse pour les activités des jeunes élèves.",
+      "source": "https://pixabay.com/music/world-marimba-fun-456789",
+      "annee": 2021,
+      "tags": [
+        "marimba",
+        "enfants",
+        "joie"
+      ]
+    },
+    {
+      "id": "MUS_034",
+      "titre": "Hip-Hop Scolaire",
+      "artiste": "Éducation Groove",
+      "genre": "Hip-Hop",
+      "bpm": 134,
+      "duree": "3:35",
+      "licence": "CC0",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Urbaine et stimulante",
+      "description": "Hip-hop adapté pour les milieux scolaires et les échauffements dynamiques.",
+      "source": "https://freemusicarchive.org/music/education-groove/hip-hop-scolaire",
+      "annee": 2020,
+      "tags": [
+        "hip-hop",
+        "scolaire",
+        "stimulant"
+      ]
+    },
+    {
+      "id": "MUS_035",
+      "titre": "World Rhythm",
+      "artiste": "Global Percussion",
+      "genre": "World",
+      "bpm": 86,
+      "duree": "4:15",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Multiculturelle et festive",
+      "description": "Percussions du monde pour des échauffements multiculturels.",
+      "source": "https://freemusicarchive.org/music/global-percussion/world-rhythm",
+      "annee": 2019,
+      "tags": [
+        "percussions",
+        "monde",
+        "culture"
+      ]
+    },
+    {
+      "id": "MUS_036",
+      "titre": "Motown Drive",
+      "artiste": "Kevin MacLeod",
+      "genre": "Funk",
+      "bpm": 137,
+      "duree": "3:45",
+      "licence": "CC BY",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Classique et entraînante",
+      "description": "Funk style Motown pour un échauffement musical et amusant.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1101636",
+      "annee": 2017,
+      "tags": [
+        "motown",
+        "funk",
+        "classic"
+      ]
+    },
+    {
+      "id": "MUS_037",
+      "titre": "Celtic Morning",
+      "artiste": "Éire Sounds",
+      "genre": "World",
+      "bpm": 79,
+      "duree": "3:30",
+      "licence": "CC0",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Vivante et folklorique",
+      "description": "Musique celtique vivante pour des échauffements dynamiques.",
+      "source": "https://freemusicarchive.org/music/eire-sounds/celtic-morning",
+      "annee": 2021,
+      "tags": [
+        "celtique",
+        "folk",
+        "vivant"
+      ]
+    },
+    {
+      "id": "MUS_038",
+      "titre": "Indie Pop Motion",
+      "artiste": "Les Étoiles Filantes",
+      "genre": "Pop",
+      "bpm": 132,
+      "duree": "3:55",
+      "licence": "CC BY-SA",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Fraîche et indie",
+      "description": "Pop indie fraîche pour les élèves du secondaire en échauffement.",
+      "source": "https://ccmixter.org/files/les-etoiles-filantes/indie-pop-motion",
+      "annee": 2022,
+      "tags": [
+        "indie",
+        "pop",
+        "echauffement"
+      ]
+    },
+    {
+      "id": "MUS_039",
+      "titre": "Bluegrass Run",
+      "artiste": "Mountain Folk",
+      "genre": "World",
+      "bpm": 88,
+      "duree": "3:10",
+      "licence": "CC0",
+      "activite": [
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Vivante et américaine",
+      "description": "Bluegrass animé pour les échauffements avec des activités rythmiques.",
+      "source": "https://freemusicarchive.org/music/mountain-folk/bluegrass-run",
+      "annee": 2019,
+      "tags": [
+        "bluegrass",
+        "folk",
+        "rythme"
+      ]
+    },
+    {
+      "id": "MUS_040",
+      "titre": "Tropical Pulse",
+      "artiste": "Island Vibes",
+      "genre": "World",
+      "bpm": 135,
+      "duree": "3:40",
+      "licence": "Pixabay License",
+      "activite": [
+        "échauffement",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Tropicale et légère",
+      "description": "Musique tropicale légère pour des échauffements avec du mouvement.",
+      "source": "https://pixabay.com/music/world-tropical-pulse-567890",
+      "annee": 2022,
+      "tags": [
+        "tropical",
+        "iles",
+        "mouvement"
+      ]
+    },
+    {
+      "id": "MUS_041",
+      "titre": "Énergie Positive",
+      "artiste": "DJ Montréal",
+      "genre": "Electronic",
+      "bpm": 128,
+      "duree": "3:50",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Motivante et dynamique",
+      "description": "Électro motivante pour les activités collectives en gymnase.",
+      "source": "https://freemusicarchive.org/music/dj-montreal/energie-positive",
+      "annee": 2021,
+      "tags": [
+        "electro",
+        "collectif",
+        "gymnase"
+      ]
+    },
+    {
+      "id": "MUS_042",
+      "titre": "Team Spirit",
+      "artiste": "Kevin MacLeod",
+      "genre": "Rock",
+      "bpm": 128,
+      "duree": "3:30",
+      "licence": "CC BY",
+      "activite": [
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Puissante et collective",
+      "description": "Rock motivant pour les jeux collectifs et les compétitions scolaires.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1101842",
+      "annee": 2018,
+      "tags": [
+        "rock",
+        "equipe",
+        "competition"
+      ]
+    },
+    {
+      "id": "MUS_043",
+      "titre": "Jeux d'Équipe",
+      "artiste": "Rythme Scolaire",
+      "genre": "Pop",
+      "bpm": 129,
+      "duree": "4:00",
+      "licence": "CC BY-SA",
+      "activite": [
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Joyeuse et collective",
+      "description": "Pop joyeuse pour accompagner les jeux d'équipe en éducation physique.",
+      "source": "https://ccmixter.org/files/rythme-scolaire/jeux-dequipe",
+      "annee": 2020,
+      "tags": [
+        "equipe",
+        "jeux",
+        "collectif"
+      ]
+    },
+    {
+      "id": "MUS_044",
+      "titre": "Hip-Hop Collectif",
+      "artiste": "Le Crew Québécois",
+      "genre": "Hip-Hop",
+      "bpm": 131,
+      "duree": "3:45",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Urbaine et collaborative",
+      "description": "Hip-hop québécois pour les activités de groupe et de collaboration.",
+      "source": "https://freemusicarchive.org/music/le-crew-quebecois/hip-hop-collectif",
+      "annee": 2022,
+      "tags": [
+        "hip-hop",
+        "groupe",
+        "collaboration"
+      ]
+    },
+    {
+      "id": "MUS_045",
+      "titre": "Funk Together",
+      "artiste": "Groove Alliance",
+      "genre": "Funk",
+      "bpm": 112,
+      "duree": "4:10",
+      "licence": "CC BY",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Festive et unificatrice",
+      "description": "Funk entraînant pour des activités collectives festives.",
+      "source": "https://freemusicarchive.org/music/groove-alliance/funk-together",
+      "annee": 2019,
+      "tags": [
+        "funk",
+        "collectif",
+        "fete"
+      ]
+    },
+    {
+      "id": "MUS_046",
+      "titre": "Afro House Beat",
+      "artiste": "Nzinga Sounds",
+      "genre": "World",
+      "bpm": 118,
+      "duree": "3:55",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Africaine et dynamique",
+      "description": "Afro house pour les activités collectives avec des mouvements libres.",
+      "source": "https://freemusicarchive.org/music/nzinga-sounds/afro-house-beat",
+      "annee": 2021,
+      "tags": [
+        "afro",
+        "house",
+        "mouvement"
+      ]
+    },
+    {
+      "id": "MUS_047",
+      "titre": "Danse des Nations",
+      "artiste": "Mondial Rythmes",
+      "genre": "World",
+      "bpm": 127,
+      "duree": "4:20",
+      "licence": "CC BY-SA",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Multiculturelle et festive",
+      "description": "Mélange de rythmes mondiaux pour célébrer la diversité en cours de danse.",
+      "source": "https://ccmixter.org/files/mondial-rythmes/danse-des-nations",
+      "annee": 2020,
+      "tags": [
+        "monde",
+        "diversite",
+        "danse"
+      ]
+    },
+    {
+      "id": "MUS_048",
+      "titre": "Electronic Sport",
+      "artiste": "SportWave",
+      "genre": "Electronic",
+      "bpm": 132,
+      "duree": "3:35",
+      "licence": "Pixabay License",
+      "activite": [
+        "collectif",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Sportive et énergique",
+      "description": "Électro sportive pour les circuits et les activités collectives intenses.",
+      "source": "https://pixabay.com/music/electronic-sport-678901",
+      "annee": 2022,
+      "tags": [
+        "electro",
+        "sport",
+        "circuit"
+      ]
+    },
+    {
+      "id": "MUS_049",
+      "titre": "Coopération",
+      "artiste": "Harmonie Collective",
+      "genre": "Pop",
+      "bpm": 100,
+      "duree": "3:45",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Positive et unificatrice",
+      "description": "Pop positive pour les activités de coopération et d'entraide.",
+      "source": "https://freemusicarchive.org/music/harmonie-collective/cooperation",
+      "annee": 2021,
+      "tags": [
+        "cooperation",
+        "entraide",
+        "positif"
+      ]
+    },
+    {
+      "id": "MUS_050",
+      "titre": "Rock Team",
+      "artiste": "Power Squad",
+      "genre": "Rock",
+      "bpm": 133,
+      "duree": "3:20",
+      "licence": "CC BY",
+      "activite": [
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Puissante et combative",
+      "description": "Rock puissant pour stimuler l'esprit d'équipe lors des jeux collectifs.",
+      "source": "https://freemusicarchive.org/music/power-squad/rock-team",
+      "annee": 2018,
+      "tags": [
+        "rock",
+        "equipe",
+        "puissance"
+      ]
+    },
+    {
+      "id": "MUS_051",
+      "titre": "Merengue Activo",
+      "artiste": "Tropical Beats",
+      "genre": "Latin",
+      "bpm": 133,
+      "duree": "3:40",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Festive et rapide",
+      "description": "Merengue festif pour les jeux collectifs avec des éléments de danse.",
+      "source": "https://freemusicarchive.org/music/tropical-beats/merengue-activo",
+      "annee": 2020,
+      "tags": [
+        "merengue",
+        "danse",
+        "festif"
+      ]
+    },
+    {
+      "id": "MUS_052",
+      "titre": "Electro Fun",
+      "artiste": "Pixel Kids",
+      "genre": "Electronic",
+      "bpm": 110,
+      "duree": "3:15",
+      "licence": "CC BY-SA",
+      "activite": [
+        "collectif",
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Ludique et colorée",
+      "description": "Électro colorée et ludique pour les tout-petits en activité collective.",
+      "source": "https://ccmixter.org/files/pixel-kids/electro-fun",
+      "annee": 2021,
+      "tags": [
+        "enfants",
+        "ludique",
+        "couleurs"
+      ]
+    },
+    {
+      "id": "MUS_053",
+      "titre": "Game On",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 131,
+      "duree": "3:50",
+      "licence": "CC BY",
+      "activite": [
+        "collectif",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Compétitive et excitante",
+      "description": "Électro compétitive pour démarrer les tournois et les jeux collectifs.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1102153",
+      "annee": 2019,
+      "tags": [
+        "competition",
+        "jeux",
+        "excitation"
+      ]
+    },
+    {
+      "id": "MUS_054",
+      "titre": "Baila Juntos",
+      "artiste": "Fusión Latina",
+      "genre": "Latin",
+      "bpm": 131,
+      "duree": "4:05",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Festive et collective",
+      "description": "Fusion latine pour danser ensemble lors des activités collectives.",
+      "source": "https://freemusicarchive.org/music/fusion-latina/baila-juntos",
+      "annee": 2022,
+      "tags": [
+        "latin",
+        "ensemble",
+        "danse"
+      ]
+    },
+    {
+      "id": "MUS_055",
+      "titre": "Pop Collectif",
+      "artiste": "Ensemble Plus",
+      "genre": "Pop",
+      "bpm": 100,
+      "duree": "3:30",
+      "licence": "Pixabay License",
+      "activite": [
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Simple et entraînante",
+      "description": "Pop simple pour les jeux collectifs des élèves du primaire.",
+      "source": "https://pixabay.com/music/pop-collectif-789012",
+      "annee": 2020,
+      "tags": [
+        "pop",
+        "primaire",
+        "ensemble"
+      ]
+    },
+    {
+      "id": "MUS_056",
+      "titre": "Trap Sport",
+      "artiste": "Urban Athlete",
+      "genre": "Hip-Hop",
+      "bpm": 130,
+      "duree": "3:45",
+      "licence": "CC0",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Intense et urbaine",
+      "description": "Trap moderne pour les circuits intensifs et les séances de cardio.",
+      "source": "https://freemusicarchive.org/music/urban-athlete/trap-sport",
+      "annee": 2022,
+      "tags": [
+        "trap",
+        "intensite",
+        "circuit"
+      ]
+    },
+    {
+      "id": "MUS_057",
+      "titre": "Cardio Rush",
+      "artiste": "BeatForge",
+      "genre": "Electronic",
+      "bpm": 135,
+      "duree": "4:00",
+      "licence": "CC BY",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Intense et rapide",
+      "description": "Électro intense pour les séances de cardio-training en gymnase.",
+      "source": "https://freemusicarchive.org/music/beatforge/cardio-rush",
+      "annee": 2021,
+      "tags": [
+        "cardio",
+        "intensite",
+        "gymnase"
+      ]
+    },
+    {
+      "id": "MUS_058",
+      "titre": "Run the Beat",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 140,
+      "duree": "3:55",
+      "licence": "CC BY",
+      "activite": [
+        "cardio",
+        "poursuite"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Rapide et motivante",
+      "description": "Électro rapide pour les jeux de poursuite et les exercices cardio.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1102358",
+      "annee": 2018,
+      "tags": [
+        "course",
+        "poursuite",
+        "rapidite"
+      ]
+    },
+    {
+      "id": "MUS_059",
+      "titre": "Pursuit Mode",
+      "artiste": "FasterSound",
+      "genre": "Electronic",
+      "bpm": 145,
+      "duree": "3:40",
+      "licence": "CC0",
+      "activite": [
+        "poursuite",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Urgente et dynamique",
+      "description": "Électro urgente pour les jeux de poursuite et le chat.",
+      "source": "https://freemusicarchive.org/music/fastersound/pursuit-mode",
+      "annee": 2021,
+      "tags": [
+        "poursuite",
+        "chat",
+        "vitesse"
+      ]
+    },
+    {
+      "id": "MUS_060",
+      "titre": "Énergie Maximum",
+      "artiste": "Turbo Beats",
+      "genre": "Electronic",
+      "bpm": 138,
+      "duree": "4:15",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Maximale et explosive",
+      "description": "Électro explosive pour pousser les élèves à leur maximum en cardio.",
+      "source": "https://ccmixter.org/files/turbo-beats/energie-maximum",
+      "annee": 2022,
+      "tags": [
+        "maximum",
+        "explosif",
+        "cardio"
+      ]
+    },
+    {
+      "id": "MUS_061",
+      "titre": "Chase Track",
+      "artiste": "RunSounds",
+      "genre": "Electronic",
+      "bpm": 142,
+      "duree": "3:30",
+      "licence": "Pixabay License",
+      "activite": [
+        "poursuite"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Excitante et rapide",
+      "description": "Musique de poursuite parfaite pour les jeux de tag et de chat.",
+      "source": "https://pixabay.com/music/electronic-chase-track-890123",
+      "annee": 2021,
+      "tags": [
+        "tag",
+        "poursuite",
+        "excitation"
+      ]
+    },
+    {
+      "id": "MUS_062",
+      "titre": "Power Workout",
+      "artiste": "GymBeats",
+      "genre": "Rock",
+      "bpm": 148,
+      "duree": "3:50",
+      "licence": "CC0",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Puissante et intense",
+      "description": "Rock puissant pour les entraînements physiques intenses.",
+      "source": "https://freemusicarchive.org/music/gymbeats/power-workout",
+      "annee": 2020,
+      "tags": [
+        "rock",
+        "entrainement",
+        "puissance"
+      ]
+    },
+    {
+      "id": "MUS_063",
+      "titre": "Latin Cardio",
+      "artiste": "Maracas Fire",
+      "genre": "Latin",
+      "bpm": 133,
+      "duree": "4:00",
+      "licence": "CC BY",
+      "activite": [
+        "cardio",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Enflammée et rythmée",
+      "description": "Rythmes latins enflammés pour les cardio-danses.",
+      "source": "https://freemusicarchive.org/music/maracas-fire/latin-cardio",
+      "annee": 2021,
+      "tags": [
+        "latin",
+        "cardio-danse",
+        "feu"
+      ]
+    },
+    {
+      "id": "MUS_064",
+      "titre": "Electric Sprint",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 150,
+      "duree": "3:20",
+      "licence": "CC BY",
+      "activite": [
+        "poursuite",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Électrisante et sprint",
+      "description": "Électro électrisante pour les sprints et les jeux de vitesse.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1102564",
+      "annee": 2017,
+      "tags": [
+        "sprint",
+        "vitesse",
+        "electrique"
+      ]
+    },
+    {
+      "id": "MUS_065",
+      "titre": "Hip-Hop Cardio",
+      "artiste": "Street Workout",
+      "genre": "Hip-Hop",
+      "bpm": 136,
+      "duree": "3:55",
+      "licence": "CC0",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Urbaine et intense",
+      "description": "Hip-hop intense pour les circuits d'entraînement en gymnase.",
+      "source": "https://freemusicarchive.org/music/street-workout/hip-hop-cardio",
+      "annee": 2022,
+      "tags": [
+        "hip-hop",
+        "circuit",
+        "urbain"
+      ]
+    },
+    {
+      "id": "MUS_066",
+      "titre": "Drum and Bass Fit",
+      "artiste": "Liquid Tempo",
+      "genre": "Electronic",
+      "bpm": 152,
+      "duree": "4:10",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Intense et rythmique",
+      "description": "Drum and bass pour les séances de cardio intensif.",
+      "source": "https://ccmixter.org/files/liquid-tempo/drum-bass-fit",
+      "annee": 2020,
+      "tags": [
+        "drum-bass",
+        "intensite",
+        "rythme"
+      ]
+    },
+    {
+      "id": "MUS_067",
+      "titre": "Fuga Latina",
+      "artiste": "Corriendo",
+      "genre": "Latin",
+      "bpm": 144,
+      "duree": "3:35",
+      "licence": "CC0",
+      "activite": [
+        "poursuite",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Rapide et latine",
+      "description": "Rythmes latins rapides pour les jeux de poursuite.",
+      "source": "https://freemusicarchive.org/music/corriendo/fuga-latina",
+      "annee": 2021,
+      "tags": [
+        "latin",
+        "poursuite",
+        "course"
+      ]
+    },
+    {
+      "id": "MUS_068",
+      "titre": "Bounce Hard",
+      "artiste": "BounceKing",
+      "genre": "Electronic",
+      "bpm": 132,
+      "duree": "3:45",
+      "licence": "Pixabay License",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Rebondissante et intense",
+      "description": "Électro rebondissante pour les exercices de saut et de cardio.",
+      "source": "https://pixabay.com/music/electronic-bounce-hard-901234",
+      "annee": 2022,
+      "tags": [
+        "saut",
+        "rebond",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_069",
+      "titre": "Tag Zone",
+      "artiste": "PlayField Audio",
+      "genre": "Electronic",
+      "bpm": 146,
+      "duree": "3:20",
+      "licence": "CC BY",
+      "activite": [
+        "poursuite"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Ludique et rapide",
+      "description": "Musique rapide et ludique pour les jeux de tag et de chat.",
+      "source": "https://freemusicarchive.org/music/playfield-audio/tag-zone",
+      "annee": 2019,
+      "tags": [
+        "tag",
+        "ludique",
+        "jeu"
+      ]
+    },
+    {
+      "id": "MUS_070",
+      "titre": "Rock the Gym",
+      "artiste": "Iron Fist",
+      "genre": "Rock",
+      "bpm": 153,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Dure et motivante",
+      "description": "Rock dur pour les séances de cardio intensif au secondaire.",
+      "source": "https://freemusicarchive.org/music/iron-fist/rock-the-gym",
+      "annee": 2021,
+      "tags": [
+        "rock",
+        "dur",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_071",
+      "titre": "Zouk Actif",
+      "artiste": "Antilles Beats",
+      "genre": "Latin",
+      "bpm": 140,
+      "duree": "3:50",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cardio",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Caribéenne et dynamique",
+      "description": "Zouk actif pour les activités cardio-danse.",
+      "source": "https://ccmixter.org/files/antilles-beats/zouk-actif",
+      "annee": 2020,
+      "tags": [
+        "zouk",
+        "caraibes",
+        "danse-cardio"
+      ]
+    },
+    {
+      "id": "MUS_072",
+      "titre": "Sprinter",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 155,
+      "duree": "3:30",
+      "licence": "CC BY",
+      "activite": [
+        "poursuite",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Ultrarapide et électrisante",
+      "description": "Électro ultra-rapide pour les exercices de sprint et de vitesse.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1102772",
+      "annee": 2018,
+      "tags": [
+        "sprint",
+        "ultra-rapide",
+        "vitesse"
+      ]
+    },
+    {
+      "id": "MUS_073",
+      "titre": "Circuit Warrior",
+      "artiste": "GymForce",
+      "genre": "Electronic",
+      "bpm": 143,
+      "duree": "4:20",
+      "licence": "CC0",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Guerrière et intense",
+      "description": "Électro intense pour les circuits d'entraînement physique.",
+      "source": "https://freemusicarchive.org/music/gymforce/circuit-warrior",
+      "annee": 2022,
+      "tags": [
+        "circuit",
+        "guerrier",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_074",
+      "titre": "Dance Cardio Mix",
+      "artiste": "FitDance Studio",
+      "genre": "Pop",
+      "bpm": 131,
+      "duree": "3:55",
+      "licence": "Pixabay License",
+      "activite": [
+        "cardio",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Dansante et cardio",
+      "description": "Pop dansante pour combiner cardio et mouvements de danse.",
+      "source": "https://pixabay.com/music/pop-dance-cardio-mix-012345",
+      "annee": 2021,
+      "tags": [
+        "cardio-danse",
+        "pop",
+        "mouvement"
+      ]
+    },
+    {
+      "id": "MUS_075",
+      "titre": "Interval Thunder",
+      "artiste": "StormBeat",
+      "genre": "Electronic",
+      "bpm": 148,
+      "duree": "4:05",
+      "licence": "CC BY",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Orageuse et intense",
+      "description": "Électro orageuse pour les entraînements par intervalles.",
+      "source": "https://freemusicarchive.org/music/stormbbeat/interval-thunder",
+      "annee": 2020,
+      "tags": [
+        "intervalles",
+        "orage",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_076",
+      "titre": "HIIT Mode ON",
+      "artiste": "PowerPulse",
+      "genre": "Electronic",
+      "bpm": 160,
+      "duree": "3:40",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Explosive et HIIT",
+      "description": "Électro explosive spécialement conçue pour les séances de HIIT.",
+      "source": "https://freemusicarchive.org/music/powerpulse/hiit-mode-on",
+      "annee": 2022,
+      "tags": [
+        "HIIT",
+        "explosif",
+        "secondaire"
+      ]
+    },
+    {
+      "id": "MUS_077",
+      "titre": "Maximum Velocity",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 165,
+      "duree": "3:25",
+      "licence": "CC BY",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Maximale et rapide",
+      "description": "Électro à vitesse maximale pour les entraînements cardio intensifs.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1102977",
+      "annee": 2019,
+      "tags": [
+        "velocite",
+        "maximum",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_078",
+      "titre": "Hard Rock Sprint",
+      "artiste": "Metal Gym",
+      "genre": "Rock",
+      "bpm": 170,
+      "duree": "3:50",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Dure et explosive",
+      "description": "Rock dur et rapide pour les sprints et les exercices de haute intensité.",
+      "source": "https://ccmixter.org/files/metal-gym/hard-rock-sprint",
+      "annee": 2021,
+      "tags": [
+        "rock-dur",
+        "sprint",
+        "haute-intensite"
+      ]
+    },
+    {
+      "id": "MUS_079",
+      "titre": "Pulse Racing",
+      "artiste": "CoreDrive",
+      "genre": "Electronic",
+      "bpm": 158,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Rapide et cardiaque",
+      "description": "Électro qui fait monter le rythme cardiaque pour les séances intensives.",
+      "source": "https://freemusicarchive.org/music/coredrive/pulse-racing",
+      "annee": 2022,
+      "tags": [
+        "pulsations",
+        "coeur",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_080",
+      "titre": "Blast Zone",
+      "artiste": "ExplosiveBeat",
+      "genre": "Electronic",
+      "bpm": 172,
+      "duree": "3:15",
+      "licence": "Pixabay License",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Explosive et intense",
+      "description": "Électro explosive pour les entraînements de haute intensité.",
+      "source": "https://pixabay.com/music/electronic-blast-zone-123456",
+      "annee": 2021,
+      "tags": [
+        "explosion",
+        "haute-intensite",
+        "HIIT"
+      ]
+    },
+    {
+      "id": "MUS_081",
+      "titre": "Full Send",
+      "artiste": "MaxOut Audio",
+      "genre": "Electronic",
+      "bpm": 178,
+      "duree": "3:30",
+      "licence": "CC BY",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Maximale et sans retenue",
+      "description": "Électro sans retenue pour les séances cardio maximales.",
+      "source": "https://freemusicarchive.org/music/maxout-audio/full-send",
+      "annee": 2022,
+      "tags": [
+        "maximum",
+        "sans-limite",
+        "cardio"
+      ]
+    },
+    {
+      "id": "MUS_082",
+      "titre": "Techno Run",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 163,
+      "duree": "4:10",
+      "licence": "CC BY",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Techno et progressive",
+      "description": "Techno progressive pour maintenir le rythme pendant la course.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1103182",
+      "annee": 2018,
+      "tags": [
+        "techno",
+        "course",
+        "progressif"
+      ]
+    },
+    {
+      "id": "MUS_083",
+      "titre": "Thunder Legs",
+      "artiste": "StaminaPro",
+      "genre": "Rock",
+      "bpm": 168,
+      "duree": "3:45",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Puissante et explosive",
+      "description": "Rock explosif pour les exercices de jambes et de cardio.",
+      "source": "https://freemusicarchive.org/music/staminapro/thunder-legs",
+      "annee": 2021,
+      "tags": [
+        "jambes",
+        "puissance",
+        "explosif"
+      ]
+    },
+    {
+      "id": "MUS_084",
+      "titre": "Electro Fury",
+      "artiste": "RaveGym",
+      "genre": "Electronic",
+      "bpm": 175,
+      "duree": "3:55",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Furieuse et intense",
+      "description": "Électro furieuse pour les finales d'entraînements cardio.",
+      "source": "https://ccmixter.org/files/ravegym/electro-fury",
+      "annee": 2020,
+      "tags": [
+        "furie",
+        "finale",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_085",
+      "titre": "Cardio Storm",
+      "artiste": "BeatLab",
+      "genre": "Electronic",
+      "bpm": 157,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Orageuse et rythmée",
+      "description": "Tempête sonore pour accompagner les séances cardio intenses.",
+      "source": "https://freemusicarchive.org/music/beatlab/cardio-storm",
+      "annee": 2022,
+      "tags": [
+        "tempete",
+        "cardio",
+        "rythme"
+      ]
+    },
+    {
+      "id": "MUS_086",
+      "titre": "Techno Fast",
+      "artiste": "PhaseShift",
+      "genre": "Electronic",
+      "bpm": 182,
+      "duree": "3:20",
+      "licence": "Pixabay License",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Ultra-rapide et techno",
+      "description": "Techno ultra-rapide pour les entraînements de très haute intensité.",
+      "source": "https://pixabay.com/music/electronic-techno-fast-234567",
+      "annee": 2021,
+      "tags": [
+        "techno",
+        "ultra-rapide",
+        "HIIT"
+      ]
+    },
+    {
+      "id": "MUS_087",
+      "titre": "Push the Limit",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 159,
+      "duree": "3:50",
+      "licence": "CC BY",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Limite et dépassement",
+      "description": "Électro pour pousser les élèves à dépasser leurs limites en cardio.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1103387",
+      "annee": 2019,
+      "tags": [
+        "depassement",
+        "limite",
+        "cardio"
+      ]
+    },
+    {
+      "id": "MUS_088",
+      "titre": "Adrenaline Rush",
+      "artiste": "HighGear Audio",
+      "genre": "Rock",
+      "bpm": 174,
+      "duree": "3:35",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Adrénalinique et intense",
+      "description": "Rock adrénalinique pour les entraînements à haute intensité.",
+      "source": "https://freemusicarchive.org/music/highgear-audio/adrenaline-rush",
+      "annee": 2022,
+      "tags": [
+        "adrenaline",
+        "rock",
+        "haute-intensite"
+      ]
+    },
+    {
+      "id": "MUS_089",
+      "titre": "Overdrive",
+      "artiste": "MaxRPM",
+      "genre": "Electronic",
+      "bpm": 180,
+      "duree": "4:05",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Explosive et à fond",
+      "description": "Électro poussée à fond pour les ultimes séances cardio.",
+      "source": "https://ccmixter.org/files/maxrpm/overdrive",
+      "annee": 2020,
+      "tags": [
+        "fond",
+        "explosif",
+        "final"
+      ]
+    },
+    {
+      "id": "MUS_090",
+      "titre": "High Voltage",
+      "artiste": "ElectroShock",
+      "genre": "Electronic",
+      "bpm": 185,
+      "duree": "3:40",
+      "licence": "CC0",
+      "activite": [
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Électrique et extrême",
+      "description": "Haute tension électronique pour les entraînements cardio extrêmes.",
+      "source": "https://freemusicarchive.org/music/electroshock/high-voltage",
+      "annee": 2021,
+      "tags": [
+        "haute-tension",
+        "extreme",
+        "HIIT"
+      ]
+    },
+    {
+      "id": "MUS_091",
+      "titre": "Entraide en Mouvement",
+      "artiste": "Coopération Sonore",
+      "genre": "Pop",
+      "bpm": 100,
+      "duree": "3:50",
+      "licence": "CC BY",
+      "activite": [
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Douce et collaborative",
+      "description": "Pop douce pour les activités de coopération et d'entraide.",
+      "source": "https://freemusicarchive.org/music/cooperation-sonore/entraide-en-mouvement",
+      "annee": 2020,
+      "tags": [
+        "cooperation",
+        "entraide",
+        "douceur"
+      ]
+    },
+    {
+      "id": "MUS_092",
+      "titre": "Together We Stand",
+      "artiste": "Kevin MacLeod",
+      "genre": "Pop",
+      "bpm": 100,
+      "duree": "3:30",
+      "licence": "CC BY",
+      "activite": [
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Unificatrice et positive",
+      "description": "Pop unificatrice pour les activités qui favorisent la coopération.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1103592",
+      "annee": 2018,
+      "tags": [
+        "unite",
+        "positif",
+        "cooperation"
+      ]
+    },
+    {
+      "id": "MUS_093",
+      "titre": "Main dans la Main",
+      "artiste": "Solidarité Plus",
+      "genre": "World",
+      "bpm": 100,
+      "duree": "4:15",
+      "licence": "CC0",
+      "activite": [
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Chaleureuse et inclusive",
+      "description": "Musique du monde pour les activités de coopération multiculturelle.",
+      "source": "https://freemusicarchive.org/music/solidarite-plus/main-dans-la-main",
+      "annee": 2021,
+      "tags": [
+        "solidarite",
+        "inclusion",
+        "monde"
+      ]
+    },
+    {
+      "id": "MUS_094",
+      "titre": "Teamwork Beat",
+      "artiste": "WorkTogether",
+      "genre": "Funk",
+      "bpm": 100,
+      "duree": "3:45",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cooperation",
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Motivante et collective",
+      "description": "Funk motivant pour les activités nécessitant travail d'équipe.",
+      "source": "https://ccmixter.org/files/worktogether/teamwork-beat",
+      "annee": 2020,
+      "tags": [
+        "equipe",
+        "travail",
+        "collectif"
+      ]
+    },
+    {
+      "id": "MUS_095",
+      "titre": "Harmony Flow",
+      "artiste": "Balance Sounds",
+      "genre": "Ambient",
+      "bpm": 102,
+      "duree": "4:00",
+      "licence": "Pixabay License",
+      "activite": [
+        "cooperation",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Harmonieuse et fluide",
+      "description": "Musique harmonieuse pour les activités de coopération calme.",
+      "source": "https://pixabay.com/music/ambient-harmony-flow-345678",
+      "annee": 2022,
+      "tags": [
+        "harmonie",
+        "fluide",
+        "equilibre"
+      ]
+    },
+    {
+      "id": "MUS_096",
+      "titre": "Jazz Coopératif",
+      "artiste": "Quartet Ensemble",
+      "genre": "Jazz",
+      "bpm": 106,
+      "duree": "3:55",
+      "licence": "CC BY",
+      "activite": [
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Musicale et collaborative",
+      "description": "Jazz collaboratif pour les activités de coopération au secondaire.",
+      "source": "https://freemusicarchive.org/music/quartet-ensemble/jazz-cooperatif",
+      "annee": 2019,
+      "tags": [
+        "jazz",
+        "collaboration",
+        "musique"
+      ]
+    },
+    {
+      "id": "MUS_097",
+      "titre": "Ponts et Liens",
+      "artiste": "Tisser des Liens",
+      "genre": "World",
+      "bpm": 108,
+      "duree": "4:10",
+      "licence": "CC0",
+      "activite": [
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Créative et collaborative",
+      "description": "Musique du monde pour tisser des liens entre les élèves.",
+      "source": "https://freemusicarchive.org/music/tisser-des-liens/ponts-et-liens",
+      "annee": 2021,
+      "tags": [
+        "liens",
+        "creation",
+        "monde"
+      ]
+    },
+    {
+      "id": "MUS_098",
+      "titre": "Relay Race",
+      "artiste": "BeatRelay",
+      "genre": "Electronic",
+      "bpm": 118,
+      "duree": "3:40",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cooperation",
+        "poursuite"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Dynamique et coopérative",
+      "description": "Électro pour les courses de relais et les activités coopératives.",
+      "source": "https://ccmixter.org/files/beatrelay/relay-race",
+      "annee": 2020,
+      "tags": [
+        "relais",
+        "course",
+        "cooperation"
+      ]
+    },
+    {
+      "id": "MUS_099",
+      "titre": "Pop Coopération",
+      "artiste": "Nous Ensemble",
+      "genre": "Pop",
+      "bpm": 103,
+      "duree": "3:25",
+      "licence": "CC0",
+      "activite": [
+        "cooperation"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Simple et collaborative",
+      "description": "Pop simple pour les jeunes élèves dans les activités coopératives.",
+      "source": "https://freemusicarchive.org/music/nous-ensemble/pop-cooperation",
+      "annee": 2021,
+      "tags": [
+        "simple",
+        "jeunes",
+        "ensemble"
+      ]
+    },
+    {
+      "id": "MUS_100",
+      "titre": "Cercle de Confiance",
+      "artiste": "Confiance Sonore",
+      "genre": "Ambient",
+      "bpm": 100,
+      "duree": "4:30",
+      "licence": "Pixabay License",
+      "activite": [
+        "cooperation",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Apaisante et confiante",
+      "description": "Musique douce pour les activités de confiance mutuelle.",
+      "source": "https://pixabay.com/music/ambient-cercle-confiance-456789",
+      "annee": 2022,
+      "tags": [
+        "confiance",
+        "cercle",
+        "calme"
+      ]
+    },
+    {
+      "id": "MUS_101",
+      "titre": "Petits Danseurs",
+      "artiste": "Monde Enfantin",
+      "genre": "Pop",
+      "bpm": 105,
+      "duree": "2:50",
+      "licence": "CC0",
+      "activite": [
+        "prescolaire",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire"
+      ],
+      "ambiance": "Ludique et magique",
+      "description": "Musique douce et ludique pour les activités de danse des tout-petits.",
+      "source": "https://freemusicarchive.org/music/monde-enfantin/petits-danseurs",
+      "annee": 2021,
+      "tags": [
+        "enfants",
+        "danse",
+        "magie"
+      ]
+    },
+    {
+      "id": "MUS_102",
+      "titre": "Jungle Adventure",
+      "artiste": "Kevin MacLeod",
+      "genre": "World",
+      "bpm": 158,
+      "duree": "3:15",
+      "licence": "CC BY",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Aventurière et jungle",
+      "description": "Aventure musicale dans la jungle pour les jeunes explorateurs.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1103702",
+      "annee": 2017,
+      "tags": [
+        "jungle",
+        "aventure",
+        "exploration"
+      ]
+    },
+    {
+      "id": "MUS_103",
+      "titre": "Les Animaux Bougent",
+      "artiste": "Zoo Musical",
+      "genre": "Pop",
+      "bpm": 157,
+      "duree": "2:45",
+      "licence": "CC BY-SA",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire"
+      ],
+      "ambiance": "Amusante et animale",
+      "description": "Musique amusante avec des sons d'animaux pour stimuler le mouvement.",
+      "source": "https://ccmixter.org/files/zoo-musical/les-animaux-bougent",
+      "annee": 2020,
+      "tags": [
+        "animaux",
+        "sons",
+        "mouvement"
+      ]
+    },
+    {
+      "id": "MUS_104",
+      "titre": "Happy Kids Dance",
+      "artiste": "PlayBeat Kids",
+      "genre": "Pop",
+      "bpm": 108,
+      "duree": "3:00",
+      "licence": "CC0",
+      "activite": [
+        "prescolaire",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Joyeuse et enfantine",
+      "description": "Pop joyeuse pour les danses libres des jeunes élèves.",
+      "source": "https://freemusicarchive.org/music/playbeat-kids/happy-kids-dance",
+      "annee": 2021,
+      "tags": [
+        "joie",
+        "danse-libre",
+        "enfants"
+      ]
+    },
+    {
+      "id": "MUS_105",
+      "titre": "Robot Boogie",
+      "artiste": "TinyBot Audio",
+      "genre": "Electronic",
+      "bpm": 160,
+      "duree": "2:55",
+      "licence": "Pixabay License",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire"
+      ],
+      "ambiance": "Robotique et ludique",
+      "description": "Électro robotique et ludique pour les activités d'imitation.",
+      "source": "https://pixabay.com/music/electronic-robot-boogie-567890",
+      "annee": 2022,
+      "tags": [
+        "robot",
+        "imitation",
+        "ludique"
+      ]
+    },
+    {
+      "id": "MUS_106",
+      "titre": "Magic Carpet Ride",
+      "artiste": "Kevin MacLeod",
+      "genre": "World",
+      "bpm": 88,
+      "duree": "3:20",
+      "licence": "CC BY",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Magique et orientale",
+      "description": "Musique magique et orientale pour les activités d'imagination.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1103806",
+      "annee": 2018,
+      "tags": [
+        "magie",
+        "oriental",
+        "imagination"
+      ]
+    },
+    {
+      "id": "MUS_107",
+      "titre": "Dinosaure Danse",
+      "artiste": "Dino Beats",
+      "genre": "Pop",
+      "bpm": 132,
+      "duree": "2:40",
+      "licence": "CC0",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire"
+      ],
+      "ambiance": "Préhistorique et amusante",
+      "description": "Musique amusante sur le thème des dinosaures pour bouger.",
+      "source": "https://freemusicarchive.org/music/dino-beats/dinosaure-danse",
+      "annee": 2021,
+      "tags": [
+        "dinosaure",
+        "theme",
+        "amusant"
+      ]
+    },
+    {
+      "id": "MUS_108",
+      "titre": "Sous la Mer",
+      "artiste": "Ocean Kids",
+      "genre": "Ambient",
+      "bpm": 75,
+      "duree": "3:10",
+      "licence": "CC BY-SA",
+      "activite": [
+        "prescolaire",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Aquatique et magique",
+      "description": "Musique aquatique pour les activités d'imagination sous-marine.",
+      "source": "https://ccmixter.org/files/ocean-kids/sous-la-mer",
+      "annee": 2020,
+      "tags": [
+        "mer",
+        "sous-marin",
+        "imagination"
+      ]
+    },
+    {
+      "id": "MUS_109",
+      "titre": "Circus Fun",
+      "artiste": "Big Top Sound",
+      "genre": "World",
+      "bpm": 112,
+      "duree": "2:50",
+      "licence": "CC0",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Festive et circassienne",
+      "description": "Musique de cirque pour les activités de jonglage et d'équilibre.",
+      "source": "https://freemusicarchive.org/music/big-top-sound/circus-fun",
+      "annee": 2019,
+      "tags": [
+        "cirque",
+        "jonglage",
+        "equilibre"
+      ]
+    },
+    {
+      "id": "MUS_110",
+      "titre": "Super Héros en Mouvement",
+      "artiste": "Hero Beats",
+      "genre": "Rock",
+      "bpm": 162,
+      "duree": "3:00",
+      "licence": "Pixabay License",
+      "activite": [
+        "prescolaire"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Héroïque et dynamique",
+      "description": "Musique héroïque pour imiter les super-héros en mouvement.",
+      "source": "https://pixabay.com/music/rock-super-heros-678901",
+      "annee": 2021,
+      "tags": [
+        "super-heros",
+        "heroique",
+        "imitation"
+      ]
+    },
+    {
+      "id": "MUS_111",
+      "titre": "Zumba Kids",
+      "artiste": "Fiesta Infantil",
+      "genre": "Latin",
+      "bpm": 110,
+      "duree": "2:55",
+      "licence": "CC BY",
+      "activite": [
+        "prescolaire",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle"
+      ],
+      "ambiance": "Festive et enfantine",
+      "description": "Musique latine adaptée pour les cours de zumba des tout-petits.",
+      "source": "https://freemusicarchive.org/music/fiesta-infantil/zumba-kids",
+      "annee": 2020,
+      "tags": [
+        "zumba",
+        "latin",
+        "enfants"
+      ]
+    },
+    {
+      "id": "MUS_112",
+      "titre": "Danse Contemporaine Douce",
+      "artiste": "Studio Mouvement",
+      "genre": "Ambient",
+      "bpm": 131,
+      "duree": "4:20",
+      "licence": "CC0",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Artistique et fluide",
+      "description": "Musique ambiante pour la danse contemporaine et les expressions libres.",
+      "source": "https://freemusicarchive.org/music/studio-mouvement/danse-contemporaine-douce",
+      "annee": 2021,
+      "tags": [
+        "contemporain",
+        "expression",
+        "art"
+      ]
+    },
+    {
+      "id": "MUS_113",
+      "titre": "Hip-Hop Dance",
+      "artiste": "Urban Crew",
+      "genre": "Hip-Hop",
+      "bpm": 105,
+      "duree": "3:45",
+      "licence": "CC BY-SA",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Urbaine et dansante",
+      "description": "Hip-hop pour les chorégraphies et les cours de danse hip-hop.",
+      "source": "https://ccmixter.org/files/urban-crew/hip-hop-dance",
+      "annee": 2022,
+      "tags": [
+        "hip-hop",
+        "choregraphie",
+        "urbain"
+      ]
+    },
+    {
+      "id": "MUS_114",
+      "titre": "Tango Moderné",
+      "artiste": "Buenos Aires Fusion",
+      "genre": "Latin",
+      "bpm": 96,
+      "duree": "3:55",
+      "licence": "CC0",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Passionnée et argentine",
+      "description": "Tango moderne pour les cours de danse au secondaire.",
+      "source": "https://freemusicarchive.org/music/buenos-aires-fusion/tango-moderne",
+      "annee": 2020,
+      "tags": [
+        "tango",
+        "passion",
+        "argentin"
+      ]
+    },
+    {
+      "id": "MUS_115",
+      "titre": "Ballet Folklorique",
+      "artiste": "Traditions Musicales",
+      "genre": "World",
+      "bpm": 108,
+      "duree": "4:15",
+      "licence": "CC BY",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Traditionnelle et colorée",
+      "description": "Musique folklorique pour explorer les danses traditionnelles du monde.",
+      "source": "https://freemusicarchive.org/music/traditions-musicales/ballet-folklorique",
+      "annee": 2019,
+      "tags": [
+        "folklorique",
+        "tradition",
+        "monde"
+      ]
+    },
+    {
+      "id": "MUS_116",
+      "titre": "Swing Dance",
+      "artiste": "Juke Joint Band",
+      "genre": "Jazz",
+      "bpm": 118,
+      "duree": "3:30",
+      "licence": "CC BY-SA",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Joyeuse et swing",
+      "description": "Jazz swing pour les activités de danse en couple ou en groupe.",
+      "source": "https://ccmixter.org/files/juke-joint-band/swing-dance",
+      "annee": 2021,
+      "tags": [
+        "swing",
+        "couple",
+        "jazz"
+      ]
+    },
+    {
+      "id": "MUS_117",
+      "titre": "Pop Chorégraphie",
+      "artiste": "Dance Studio Pro",
+      "genre": "Pop",
+      "bpm": 132,
+      "duree": "3:40",
+      "licence": "Pixabay License",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Légère et dansante",
+      "description": "Pop légère pour les chorégraphies simples en milieu scolaire.",
+      "source": "https://pixabay.com/music/pop-choregraphie-789012",
+      "annee": 2022,
+      "tags": [
+        "pop",
+        "choregraphie",
+        "simple"
+      ]
+    },
+    {
+      "id": "MUS_118",
+      "titre": "Flamenco Passion",
+      "artiste": "Andalusia Sound",
+      "genre": "World",
+      "bpm": 112,
+      "duree": "3:50",
+      "licence": "CC0",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Passionnée et espagnole",
+      "description": "Flamenco passionné pour explorer la danse espagnole.",
+      "source": "https://freemusicarchive.org/music/andalusia-sound/flamenco-passion",
+      "annee": 2020,
+      "tags": [
+        "flamenco",
+        "espagne",
+        "passion"
+      ]
+    },
+    {
+      "id": "MUS_119",
+      "titre": "Cha-Cha Beat",
+      "artiste": "Kevin MacLeod",
+      "genre": "Latin",
+      "bpm": 114,
+      "duree": "3:20",
+      "licence": "CC BY",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Légère et cubaine",
+      "description": "Cha-cha légère pour les cours de danse latine en groupe.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1104019",
+      "annee": 2017,
+      "tags": [
+        "cha-cha",
+        "cuba",
+        "latin"
+      ]
+    },
+    {
+      "id": "MUS_120",
+      "titre": "Danse des Étoiles",
+      "artiste": "Ballet Québécois",
+      "genre": "Classique",
+      "bpm": 90,
+      "duree": "4:30",
+      "licence": "CC BY-SA",
+      "activite": [
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Classique et gracieuse",
+      "description": "Musique classique pour les activités de danse gracieuse.",
+      "source": "https://ccmixter.org/files/ballet-quebecois/danse-des-etoiles",
+      "annee": 2019,
+      "tags": [
+        "classique",
+        "grace",
+        "ballet"
+      ]
+    },
+    {
+      "id": "MUS_121",
+      "titre": "Électro Circuits",
+      "artiste": "Circuit Wave",
+      "genre": "Electronic",
+      "bpm": 130,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Rythmée et structurée",
+      "description": "Électro rythmée pour organiser les rotations de circuits en gymnase.",
+      "source": "https://freemusicarchive.org/music/circuit-wave/electro-circuits",
+      "annee": 2022,
+      "tags": [
+        "circuit",
+        "rotation",
+        "structure"
+      ]
+    },
+    {
+      "id": "MUS_122",
+      "titre": "Station to Station",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 128,
+      "duree": "3:45",
+      "licence": "CC BY",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Organisée et motivante",
+      "description": "Électro pour gérer les passages entre les stations de circuit.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1104122",
+      "annee": 2018,
+      "tags": [
+        "station",
+        "circuit",
+        "gestion"
+      ]
+    },
+    {
+      "id": "MUS_123",
+      "titre": "Pump It Up",
+      "artiste": "FitBeat Factory",
+      "genre": "Electronic",
+      "bpm": 135,
+      "duree": "3:55",
+      "licence": "CC BY-SA",
+      "activite": [
+        "circuits",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Intense et motivante",
+      "description": "Électro intense pour pomper la motivation lors des circuits.",
+      "source": "https://ccmixter.org/files/fitbeat-factory/pump-it-up",
+      "annee": 2021,
+      "tags": [
+        "motivation",
+        "pompe",
+        "intensite"
+      ]
+    },
+    {
+      "id": "MUS_124",
+      "titre": "Exercice Power",
+      "artiste": "GymFlow",
+      "genre": "Hip-Hop",
+      "bpm": 140,
+      "duree": "3:30",
+      "licence": "CC0",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Puissante et hip-hop",
+      "description": "Hip-hop puissant pour maintenir l'énergie lors des circuits.",
+      "source": "https://freemusicarchive.org/music/gymflow/exercice-power",
+      "annee": 2020,
+      "tags": [
+        "puissance",
+        "hip-hop",
+        "energie"
+      ]
+    },
+    {
+      "id": "MUS_125",
+      "titre": "Circuit Beats",
+      "artiste": "TrainHard Studio",
+      "genre": "Electronic",
+      "bpm": 132,
+      "duree": "4:10",
+      "licence": "Pixabay License",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Structurée et dynamique",
+      "description": "Beats pour accompagner les séances de circuit training.",
+      "source": "https://pixabay.com/music/electronic-circuit-beats-890123",
+      "annee": 2022,
+      "tags": [
+        "circuit-training",
+        "beats",
+        "dynamique"
+      ]
+    },
+    {
+      "id": "MUS_126",
+      "titre": "Fitness Funky",
+      "artiste": "FunkGym",
+      "genre": "Funk",
+      "bpm": 128,
+      "duree": "3:50",
+      "licence": "CC BY",
+      "activite": [
+        "circuits",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Funky et sportive",
+      "description": "Funk sportif pour les circuits avec des éléments de danse.",
+      "source": "https://freemusicarchive.org/music/funkgym/fitness-funky",
+      "annee": 2019,
+      "tags": [
+        "funk",
+        "fitness",
+        "sport"
+      ]
+    },
+    {
+      "id": "MUS_127",
+      "titre": "Interval Beats",
+      "artiste": "HIITSounds",
+      "genre": "Electronic",
+      "bpm": 144,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "circuits",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Intervalles et rythmée",
+      "description": "Beats d'intervalles pour organiser les phases travail-repos.",
+      "source": "https://freemusicarchive.org/music/hiitsounds/interval-beats",
+      "annee": 2021,
+      "tags": [
+        "intervalles",
+        "travail-repos",
+        "organisation"
+      ]
+    },
+    {
+      "id": "MUS_128",
+      "titre": "Rock Circuit",
+      "artiste": "Iron Will",
+      "genre": "Rock",
+      "bpm": 138,
+      "duree": "3:35",
+      "licence": "CC BY-SA",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Dure et déterminée",
+      "description": "Rock déterminé pour passer à travers les circuits difficiles.",
+      "source": "https://ccmixter.org/files/iron-will/rock-circuit",
+      "annee": 2020,
+      "tags": [
+        "rock",
+        "determination",
+        "difficile"
+      ]
+    },
+    {
+      "id": "MUS_129",
+      "titre": "Latin Circuit Mix",
+      "artiste": "Salsa Gym",
+      "genre": "Latin",
+      "bpm": 134,
+      "duree": "3:45",
+      "licence": "CC0",
+      "activite": [
+        "circuits",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Latine et sportive",
+      "description": "Mix latin pour les circuits avec des mouvements de salsa.",
+      "source": "https://freemusicarchive.org/music/salsa-gym/latin-circuit-mix",
+      "annee": 2022,
+      "tags": [
+        "latin",
+        "salsa",
+        "circuit"
+      ]
+    },
+    {
+      "id": "MUS_130",
+      "titre": "Energy Box",
+      "artiste": "BoxBeat",
+      "genre": "Electronic",
+      "bpm": 142,
+      "duree": "3:20",
+      "licence": "Pixabay License",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "Secondaire"
+      ],
+      "ambiance": "Explosive et box",
+      "description": "Électro pour les circuits inspirés de la boxe fitness.",
+      "source": "https://pixabay.com/music/electronic-energy-box-901234",
+      "annee": 2021,
+      "tags": [
+        "boxe",
+        "fitness",
+        "explosif"
+      ]
+    },
+    {
+      "id": "MUS_131",
+      "titre": "La Douceur du Soir",
+      "artiste": "Kevin MacLeod",
+      "genre": "Classique",
+      "bpm": 110,
+      "duree": "4:25",
+      "licence": "CC BY",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Nocturne et apaisante",
+      "description": "Classique nocturne pour terminer la séance en douceur.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1104331",
+      "annee": 2018,
+      "tags": [
+        "soir",
+        "nuit",
+        "douceur"
+      ]
+    },
+    {
+      "id": "MUS_132",
+      "titre": "Équilibre Parfait",
+      "artiste": "Yoga Québec",
+      "genre": "Ambient",
+      "bpm": 112,
+      "duree": "5:15",
+      "licence": "CC0",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Équilibrée et fluide",
+      "description": "Musique ambiante pour les exercices d'équilibre et de yoga.",
+      "source": "https://freemusicarchive.org/music/yoga-quebec/equilibre-parfait",
+      "annee": 2021,
+      "tags": [
+        "equilibre",
+        "yoga",
+        "fluide"
+      ]
+    },
+    {
+      "id": "MUS_133",
+      "titre": "Breathe Easy",
+      "artiste": "MindBody Audio",
+      "genre": "Ambient",
+      "bpm": 108,
+      "duree": "4:50",
+      "licence": "CC BY-SA",
+      "activite": [
+        "yoga",
+        "retour_calme"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Facile et apaisante",
+      "description": "Musique pour les exercices de respiration profonde et de yoga.",
+      "source": "https://ccmixter.org/files/mindbody-audio/breathe-easy",
+      "annee": 2020,
+      "tags": [
+        "respiration",
+        "yoga",
+        "apaisant"
+      ]
+    },
+    {
+      "id": "MUS_134",
+      "titre": "Stretching Harmony",
+      "artiste": "FlexSounds",
+      "genre": "Ambient",
+      "bpm": 115,
+      "duree": "4:00",
+      "licence": "Pixabay License",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Harmonieuse et douce",
+      "description": "Musique harmonieuse pour les étirements finaux de la séance.",
+      "source": "https://pixabay.com/music/ambient-stretching-harmony-012345",
+      "annee": 2022,
+      "tags": [
+        "etirements",
+        "harmonie",
+        "fin-seance"
+      ]
+    },
+    {
+      "id": "MUS_135",
+      "titre": "Inde Spirituelle",
+      "artiste": "Dharma Sounds",
+      "genre": "World",
+      "bpm": 105,
+      "duree": "5:30",
+      "licence": "CC BY",
+      "activite": [
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Spirituelle et orientale",
+      "description": "Musique indienne pour les séances de yoga et de méditation.",
+      "source": "https://freemusicarchive.org/music/dharma-sounds/inde-spirituelle",
+      "annee": 2019,
+      "tags": [
+        "inde",
+        "spirituel",
+        "meditation"
+      ]
+    },
+    {
+      "id": "MUS_136",
+      "titre": "Détente Totale",
+      "artiste": "Bien-Être Sonore",
+      "genre": "Ambient",
+      "bpm": 102,
+      "duree": "6:00",
+      "licence": "CC0",
+      "activite": [
+        "retour_calme",
+        "yoga"
+      ],
+      "niveau_scolaire": [
+        "Prescolaire",
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Totalement relaxante",
+      "description": "Musique pour une détente complète en fin de séance d'éducation physique.",
+      "source": "https://freemusicarchive.org/music/bien-etre-sonore/detente-totale",
+      "annee": 2021,
+      "tags": [
+        "detente",
+        "complete",
+        "fin-cours"
+      ]
+    },
+    {
+      "id": "MUS_137",
+      "titre": "Électro Moderate",
+      "artiste": "MidTempo Lab",
+      "genre": "Electronic",
+      "bpm": 120,
+      "duree": "3:50",
+      "licence": "CC BY",
+      "activite": [
+        "collectif",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Modérée et rythmée",
+      "description": "Électro de tempo modéré pour les activités collectives.",
+      "source": "https://freemusicarchive.org/music/midtempo-lab/electro-moderate",
+      "annee": 2020,
+      "tags": [
+        "modere",
+        "electro",
+        "collectif"
+      ]
+    },
+    {
+      "id": "MUS_138",
+      "titre": "Funk Drive",
+      "artiste": "Kevin MacLeod",
+      "genre": "Funk",
+      "bpm": 116,
+      "duree": "3:40",
+      "licence": "CC BY",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Funky et entraînante",
+      "description": "Funk entraînant pour les activités collectives et de danse.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1104538",
+      "annee": 2017,
+      "tags": [
+        "funk",
+        "entrainant",
+        "collectif"
+      ]
+    },
+    {
+      "id": "MUS_139",
+      "titre": "Reggae Fitness",
+      "artiste": "Island Fitness",
+      "genre": "World",
+      "bpm": 104,
+      "duree": "4:00",
+      "licence": "CC0",
+      "activite": [
+        "échauffement",
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Décontractée et insulaire",
+      "description": "Reggae décontracté pour des activités physiques dans la bonne humeur.",
+      "source": "https://freemusicarchive.org/music/island-fitness/reggae-fitness",
+      "annee": 2021,
+      "tags": [
+        "reggae",
+        "decontracte",
+        "bonne-humeur"
+      ]
+    },
+    {
+      "id": "MUS_140",
+      "titre": "Hip-Hop Coopération",
+      "artiste": "Collective Rhymes",
+      "genre": "Hip-Hop",
+      "bpm": 103,
+      "duree": "3:35",
+      "licence": "CC BY-SA",
+      "activite": [
+        "cooperation",
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Collaborative et urbaine",
+      "description": "Hip-hop pour les activités de coopération au secondaire.",
+      "source": "https://ccmixter.org/files/collective-rhymes/hip-hop-cooperation",
+      "annee": 2022,
+      "tags": [
+        "hip-hop",
+        "cooperation",
+        "urbain"
+      ]
+    },
+    {
+      "id": "MUS_141",
+      "titre": "Afrobeat Collectif",
+      "artiste": "Pan-Africa Beats",
+      "genre": "World",
+      "bpm": 115,
+      "duree": "4:10",
+      "licence": "Pixabay License",
+      "activite": [
+        "collectif",
+        "danse"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Africaine et collective",
+      "description": "Afrobeat pour les activités collectives avec mouvements libres.",
+      "source": "https://pixabay.com/music/world-afrobeat-collectif-123456",
+      "annee": 2021,
+      "tags": [
+        "afrobeat",
+        "afrique",
+        "collectif"
+      ]
+    },
+    {
+      "id": "MUS_142",
+      "titre": "Jazz Funk Session",
+      "artiste": "Brass Attitude",
+      "genre": "Jazz",
+      "bpm": 111,
+      "duree": "3:55",
+      "licence": "CC BY",
+      "activite": [
+        "collectif",
+        "échauffement"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Jazzée et funky",
+      "description": "Jazz funk pour les activités collectives et les échauffements musicaux.",
+      "source": "https://freemusicarchive.org/music/brass-attitude/jazz-funk-session",
+      "annee": 2019,
+      "tags": [
+        "jazz",
+        "funk",
+        "session"
+      ]
+    },
+    {
+      "id": "MUS_143",
+      "titre": "Electro Pop Sport",
+      "artiste": "SportPop Lab",
+      "genre": "Pop",
+      "bpm": 131,
+      "duree": "3:30",
+      "licence": "CC0",
+      "activite": [
+        "collectif",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Sportive et pop",
+      "description": "Électro-pop sportive pour les circuits et les jeux collectifs.",
+      "source": "https://freemusicarchive.org/music/sportpop-lab/electro-pop-sport",
+      "annee": 2022,
+      "tags": [
+        "electro-pop",
+        "sport",
+        "circuit"
+      ]
+    },
+    {
+      "id": "MUS_144",
+      "titre": "Rock Motivant",
+      "artiste": "Kevin MacLeod",
+      "genre": "Rock",
+      "bpm": 131,
+      "duree": "3:45",
+      "licence": "CC BY",
+      "activite": [
+        "collectif",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Motivante et énergique",
+      "description": "Rock motivant pour les activités collectives et le cardio.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1104744",
+      "annee": 2018,
+      "tags": [
+        "rock",
+        "motivation",
+        "energie"
+      ]
+    },
+    {
+      "id": "MUS_145",
+      "titre": "Samba Escuela",
+      "artiste": "Escola de Samba",
+      "genre": "Latin",
+      "bpm": 119,
+      "duree": "3:50",
+      "licence": "CC BY-SA",
+      "activite": [
+        "danse",
+        "collectif"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Brésilienne et festive",
+      "description": "Samba brésilienne pour les activités de danse collective.",
+      "source": "https://ccmixter.org/files/escola-de-samba/samba-escuela",
+      "annee": 2021,
+      "tags": [
+        "samba",
+        "bresil",
+        "festif"
+      ]
+    },
+    {
+      "id": "MUS_146",
+      "titre": "Celtic Run",
+      "artiste": "Highland Runners",
+      "genre": "World",
+      "bpm": 136,
+      "duree": "3:20",
+      "licence": "CC0",
+      "activite": [
+        "cardio",
+        "poursuite"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Folklorique et rapide",
+      "description": "Musique celtique rapide pour les activités de course et de poursuite.",
+      "source": "https://freemusicarchive.org/music/highland-runners/celtic-run",
+      "annee": 2019,
+      "tags": [
+        "celtique",
+        "course",
+        "rapide"
+      ]
+    },
+    {
+      "id": "MUS_147",
+      "titre": "Pop Poursuite",
+      "artiste": "ChaseBeats",
+      "genre": "Pop",
+      "bpm": 141,
+      "duree": "3:35",
+      "licence": "Pixabay License",
+      "activite": [
+        "poursuite"
+      ],
+      "niveau_scolaire": [
+        "1er cycle",
+        "2e cycle"
+      ],
+      "ambiance": "Rapide et ludique",
+      "description": "Pop rapide pour les jeux de poursuite et les activités de vitesse.",
+      "source": "https://pixabay.com/music/pop-poursuite-234567",
+      "annee": 2022,
+      "tags": [
+        "pop",
+        "poursuite",
+        "vitesse"
+      ]
+    },
+    {
+      "id": "MUS_148",
+      "titre": "Global Workout",
+      "artiste": "World Fitness Ensemble",
+      "genre": "World",
+      "bpm": 128,
+      "duree": "4:00",
+      "licence": "CC BY",
+      "activite": [
+        "circuits",
+        "cardio"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Mondiale et diverse",
+      "description": "Fusion musicale mondiale pour les séances de fitness diversifiées.",
+      "source": "https://freemusicarchive.org/music/world-fitness-ensemble/global-workout",
+      "annee": 2021,
+      "tags": [
+        "monde",
+        "diversite",
+        "fitness"
+      ]
+    },
+    {
+      "id": "MUS_149",
+      "titre": "Funk Circuit",
+      "artiste": "FunkStation",
+      "genre": "Funk",
+      "bpm": 126,
+      "duree": "3:45",
+      "licence": "CC0",
+      "activite": [
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "2e cycle",
+        "3e cycle"
+      ],
+      "ambiance": "Funky et structurée",
+      "description": "Funk structuré pour les rotations de circuit training.",
+      "source": "https://freemusicarchive.org/music/funkstation/funk-circuit",
+      "annee": 2020,
+      "tags": [
+        "funk",
+        "rotation",
+        "structure"
+      ]
+    },
+    {
+      "id": "MUS_150",
+      "titre": "Finale Énergique",
+      "artiste": "Kevin MacLeod",
+      "genre": "Electronic",
+      "bpm": 148,
+      "duree": "3:55",
+      "licence": "CC BY",
+      "activite": [
+        "cardio",
+        "circuits"
+      ],
+      "niveau_scolaire": [
+        "3e cycle",
+        "Secondaire"
+      ],
+      "ambiance": "Finale et explosive",
+      "description": "Électro explosive pour clôturer les séances avec une note haute en énergie.",
+      "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1104950",
+      "annee": 2019,
+      "tags": [
+        "finale",
+        "explosif",
+        "cloture"
+      ]
+    }
+  ]
+}

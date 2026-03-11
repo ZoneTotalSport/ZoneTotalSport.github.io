@@ -3,169 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Zone Total Sport — Référence Mondiale ÉPS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>⚡ Zone Total Sport — Portail ÉPS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="comic.css">
+  <style>
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .portal-card {
+      background: var(--white);
+      border: var(--border-fat);
+      box-shadow: var(--shadow-l);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+      animation: cardAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    .portal-card:nth-child(1) { animation-delay: 0.1s; transform: rotate(-1deg); }
+    .portal-card:nth-child(2) { animation-delay: 0.2s; transform: rotate(0.8deg); }
+    .portal-card:nth-child(3) { animation-delay: 0.3s; transform: rotate(-0.6deg); }
+    @keyframes cardAppear {
+      0% { opacity: 0; transform: scale(0.5) rotate(-8deg); }
+    }
+    .portal-card:hover {
+      transform: rotate(0) scale(1.06) translateY(-8px) !important;
+      box-shadow: 12px 12px 0 var(--navy);
+    }
+    .portal-top {
+      padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; flex: 1;
+    }
+    .portal-icon { font-size: 5rem; margin-bottom: 1rem; filter: drop-shadow(3px 3px 0 rgba(0,0,20,0.2)); }
+    .portal-title {
+      font-family: 'Bangers', cursive;
+      font-size: 2.2rem; letter-spacing: 3px; color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .portal-desc { font-size: 0.92rem; color: #334; line-height: 1.5; }
+    .portal-count {
+      font-family: 'Bangers', cursive;
+      font-size: 1.1rem; letter-spacing: 2px;
+      padding: 0.4rem 1rem; border: var(--border);
+      margin-top: 1rem; display: inline-block;
+    }
+    .portal-btn {
+      background: var(--blue); color: var(--yellow);
+      font-family: 'Bangers', cursive;
+      font-size: 1.3rem; letter-spacing: 3px;
+      border: none; border-top: var(--border-fat);
+      padding: 0.9rem; cursor: pointer;
+      width: 100%; transition: all 0.15s;
+    }
+    .portal-card:hover .portal-btn { background: var(--yellow); color: var(--navy); }
+
+    .portal-card-jeux   .portal-count { background: var(--blue);   color: var(--white); }
+    .portal-card-sae    .portal-count { background: #1a7f3c;       color: var(--white); }
+    .portal-card-musique .portal-count { background: #7b1fa2;       color: var(--white); }
+    .portal-card-jeux   .portal-btn   { background: var(--blue); }
+    .portal-card-sae    .portal-btn   { background: #1a7f3c; }
+    .portal-card-musique .portal-btn  { background: #7b1fa2; }
+
+    .site-logo-section {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+    }
+    .main-logo {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(3rem, 10vw, 7rem);
+      color: var(--navy);
+      letter-spacing: 6px;
+      text-shadow: 5px 5px 0 var(--blue), 10px 10px 0 var(--yellow);
+      line-height: 1;
+    }
+    .main-logo-sub {
+      font-family: 'Bangers', cursive;
+      font-size: clamp(1rem, 3vw, 1.8rem);
+      color: var(--blue);
+      letter-spacing: 4px;
+      margin-top: 0.5rem;
+    }
+    .burst-divider {
+      font-family: 'Bangers', cursive;
+      font-size: 1.5rem;
+      letter-spacing: 4px;
+      color: var(--navy);
+      text-align: center;
+      margin: 1rem 0;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- BACKGROUND CANVAS -->
-  <canvas id="bgCanvas"></canvas>
+<canvas id="bgCanvas"></canvas>
 
-  <!-- LOADING SCREEN -->
-  <div id="loading" class="loading-screen">
-    <div class="loading-inner">
-      <div class="loading-logo">⚡</div>
-      <div class="loading-text">ZONE TOTAL SPORT</div>
-      <div class="loading-sub">CHARGEMENT EN COURS...</div>
-      <div class="loading-bar"><div class="loading-progress" id="loadProgress"></div></div>
-    </div>
+<div class="app-wrapper">
+
+  <div class="site-logo-section">
+    <div class="main-logo">⚡ ZONE TOTAL SPORT ⚡</div>
+    <div class="main-logo-sub">RÉFÉRENCE MONDIALE EN ÉPS · QUÉBEC</div>
+    <div class="burst-divider">— — CHOISIR UNE APPLICATION — —</div>
   </div>
 
-  <!-- APP WRAPPER -->
-  <div id="app" class="app hidden">
+  <div class="portal-grid">
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-inner">
-        <div class="header-logo">
-          <span class="zap zap-left">⚡</span>
-          <div class="header-titles">
-            <h1 class="site-title">ZONE TOTAL SPORT</h1>
-            <p class="site-subtitle">RÉFÉRENCE MONDIALE EN ÉPS · QUÉBEC</p>
-          </div>
-          <span class="zap zap-right">⚡</span>
+    <a href="jeux/index.html" class="portal-card portal-card-jeux" style="text-decoration:none">
+      <div class="portal-top">
+        <div class="portal-icon">🎮</div>
+        <div class="portal-title">JEUX SPORTIFS MONDIAUX</div>
+        <div class="portal-desc">
+          La plus grande banque de jeux sportifs au monde.
+          Toutes catégories, tous niveaux, tous les pays.
+          Recherche instantanée + fiches complètes.
         </div>
-        <div class="header-stats">
-          <div class="hstat" id="hstat-jeux">0<span>JEUX</span></div>
-          <div class="hstat" id="hstat-sae">0<span>SAÉ</span></div>
-          <div class="hstat" id="hstat-pays">0<span>PAYS</span></div>
-        </div>
+        <div class="portal-count">1000+ JEUX · 50+ PAYS</div>
       </div>
-    </header>
+      <div class="portal-btn">→ EXPLORER LES JEUX</div>
+    </a>
 
-    <!-- NAV TABS -->
-    <nav class="main-nav">
-      <button class="nav-tab active" data-tab="jeux">🎮 JEUX SPORTIFS</button>
-      <button class="nav-tab" data-tab="sae">📚 SAÉ PFEQ</button>
-      <button class="nav-tab" data-tab="musique">🎵 MUSIQUES LIBRES</button>
-    </nav>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-
-      <!-- ========== SECTION JEUX ========== -->
-      <section class="tab-section active" id="tab-jeux">
-        <div class="section-hero cat-jeux">
-          <div class="hero-icon">🎮</div>
-          <div class="hero-text">
-            <h2>BANQUE DE JEUX SPORTIFS MONDIAUX</h2>
-            <p>Tous les jeux de partout sur la planète · Références mondiales</p>
-          </div>
+    <a href="sae/index.html" class="portal-card portal-card-sae" style="text-decoration:none">
+      <div class="portal-top">
+        <div class="portal-icon">📚</div>
+        <div class="portal-title">SAÉ PFEQ QUÉBEC</div>
+        <div class="portal-desc">
+          Situations d'Apprentissage et d'Évaluation
+          conformes au PFEQ. Grilles d'évaluation,
+          adaptations et origines mondiales incluses.
         </div>
+        <div class="portal-count">1000+ SAÉ · MATERNELLE → SEC. 5</div>
+      </div>
+      <div class="portal-btn">→ EXPLORER LES SAÉ</div>
+    </a>
 
-        <div class="controls-bar">
-          <input type="text" id="jeux-search" class="search-input" placeholder="🔍 Rechercher un jeu...">
-          <select id="jeux-category" class="filter-select">
-            <option value="">Toutes les catégories</option>
-            <option value="ballon_chasseur">🎯 Ballon Chasseur</option>
-            <option value="poursuite">🏃 Poursuite / Chat</option>
-            <option value="cooperation">🤝 Coopération</option>
-            <option value="opposition">⚔️ Opposition / Duel</option>
-            <option value="sports_collectifs">🏅 Sports Collectifs</option>
-            <option value="sans_materiel">🙌 Sans Matériel</option>
-          </select>
-          <select id="jeux-niveau" class="filter-select">
-            <option value="">Tous les niveaux</option>
-            <option value="prescolaire">🌱 Préscolaire</option>
-            <option value="primaire">📖 Primaire</option>
-            <option value="secondaire">🎓 Secondaire</option>
-          </select>
-          <select id="jeux-espace" class="filter-select">
-            <option value="">Tous les espaces</option>
-            <option value="Gymnase">🏟️ Gymnase</option>
-            <option value="Extérieur">🌿 Extérieur</option>
-            <option value="Polyvalente">🏫 Polyvalente</option>
-          </select>
-          <select id="jeux-intensite" class="filter-select">
-            <option value="">Toutes les intensités</option>
-            <option value="Élevé">🔴 Élevé</option>
-            <option value="Modéré">🟡 Modéré</option>
-            <option value="Faible">🟢 Faible</option>
-          </select>
+    <a href="musique/index.html" class="portal-card portal-card-musique" style="text-decoration:none">
+      <div class="portal-top">
+        <div class="portal-icon">🎵</div>
+        <div class="portal-title">MUSIQUES LIBRES ÉPS</div>
+        <div class="portal-desc">
+          La plus grande bibliothèque musicale libre
+          de droits pour l'ÉPS. Classée par BPM,
+          activité et niveau scolaire.
         </div>
+        <div class="portal-count">1000+ PISTES · 100% GRATUITES</div>
+      </div>
+      <div class="portal-btn">→ EXPLORER LES MUSIQUES</div>
+    </a>
 
-        <div class="stats-bar">
-          <span class="stat-pill pill-yellow" id="jeux-count">0 jeux</span>
-          <span class="stat-pill pill-cyan" id="jeux-pays">0 origines</span>
-          <div class="cat-pills" id="cat-pills"></div>
-        </div>
-
-        <div id="jeux-grid" class="cards-grid"></div>
-      </section>
-
-      <!-- ========== SECTION SAÉ ========== -->
-      <section class="tab-section" id="tab-sae">
-        <div class="section-hero cat-sae">
-          <div class="hero-icon">📚</div>
-          <div class="hero-text">
-            <h2>BANQUE DE SAÉ PFEQ</h2>
-            <p>Situations d'Apprentissage et d'Évaluation · Maternelle → Secondaire 5</p>
-          </div>
-        </div>
-
-        <div class="controls-bar">
-          <input type="text" id="sae-search" class="search-input" placeholder="🔍 Rechercher une SAÉ...">
-          <select id="sae-cycle" class="filter-select">
-            <option value="">Tous les cycles</option>
-            <option value="Préscolaire">🌱 Préscolaire (4-5 ans)</option>
-            <option value="1er cycle">📖 1er cycle primaire</option>
-            <option value="2e cycle">📗 2e cycle primaire</option>
-            <option value="3e cycle">📘 3e cycle primaire</option>
-            <option value="Secondaire">🎓 Secondaire 1-5</option>
-          </select>
-          <select id="sae-competence" class="filter-select">
-            <option value="">Toutes les compétences</option>
-            <option value="Manipulation">🎯 Manipulation</option>
-            <option value="Locomotion">🏃 Locomotion</option>
-            <option value="Mobilité">🤸 Mobilité</option>
-            <option value="Coopération">🤝 Coopération</option>
-            <option value="Opposition">⚔️ Opposition</option>
-          </select>
-        </div>
-
-        <div class="stats-bar">
-          <span class="stat-pill pill-cyan" id="sae-count">0 SAÉ</span>
-          <span class="stat-pill pill-yellow" id="sae-pays">0 cultures représentées</span>
-        </div>
-
-        <div id="sae-grid" class="cards-grid"></div>
-      </section>
-
-      <!-- ========== SECTION MUSIQUE ========== -->
-      <section class="tab-section" id="tab-musique">
-        <div class="section-hero cat-musique">
-          <div class="hero-icon">🎵</div>
-          <div class="hero-text">
-            <h2>BIBLIOTHÈQUE MUSICALE LIBRE DE DROITS</h2>
-            <p>Toutes les ressources musicales pour l'ÉPS · Guide pédagogique complet</p>
-          </div>
-        </div>
-
-        <div id="musique-content"></div>
-      </section>
-
-    </main>
   </div>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-box">
-      <div id="modal-body"></div>
-    </div>
+  <div style="text-align:center;padding:2rem;font-family:'Bangers',cursive;color:var(--navy);font-size:1rem;letter-spacing:2px;opacity:0.7">
+    ZONE TOTAL SPORT · QUÉBEC · 2026 · ÉDUCATION PHYSIQUE ET SANTÉ
   </div>
 
-  <script src="app.js"></script>
+</div>
+
+<script src="comic-bg.js"></script>
 </body>
 </html>

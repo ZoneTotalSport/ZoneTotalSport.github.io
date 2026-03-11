@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 Zone Total Sport — SAÉ PFEQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../comic.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div id="loading" class="loading-screen">
+  <div class="loading-burst">📚</div>
+  <div class="loading-title">SAÉ PFEQ</div>
+  <div class="loading-sub">CHARGEMENT EN COURS...</div>
+  <div class="loading-bar-wrap"><div class="loading-bar-fill" id="loadBar"></div></div>
+</div>
+
+<div id="app" class="app-wrapper hidden">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div>
+          <div class="site-title">📚 SAÉ PFEQ</div>
+          <div class="site-sub">SITUATIONS D'APPRENTISSAGE ET D'ÉVALUATION · QUÉBEC</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center">
+        <div class="header-badge" id="badge-total">0<span>SAÉ</span></div>
+        <div class="header-badge" id="badge-cycles">0<span>CYCLES</span></div>
+        <a href="../index.html" style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:var(--yellow);background:var(--blue);border:3px solid var(--yellow);padding:0.4rem 0.9rem;text-decoration:none;box-shadow:3px 3px 0 var(--yellow)">← ACCUEIL</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <div class="section-hero hero-bg-sae">
+      <div class="hero-icon">🏫</div>
+      <div>
+        <div class="hero-title">BANQUE DE SAÉ CONFORMES AU PFEQ</div>
+        <div class="hero-sub">1000+ SAÉ complètes · Maternelle → Secondaire 5 · Grilles d'évaluation incluses · Origines mondiales</div>
+      </div>
+    </div>
+
+    <div class="controls-bar">
+      <input type="text" id="search" class="search-input" placeholder="🔍 Rechercher une SAÉ...">
+      <select id="f-cycle" class="filter-select">
+        <option value="">Tous les cycles</option>
+        <option value="Préscolaire">🌱 Préscolaire (4-5 ans)</option>
+        <option value="1er cycle">📗 1er cycle primaire (6-8 ans)</option>
+        <option value="2e cycle">📘 2e cycle primaire (8-10 ans)</option>
+        <option value="3e cycle">📙 3e cycle primaire (10-12 ans)</option>
+        <option value="Secondaire">🎓 Secondaire (12-18 ans)</option>
+      </select>
+      <select id="f-competence" class="filter-select">
+        <option value="">Toutes les compétences</option>
+        <option value="Manipulation">🎯 Manipulation</option>
+        <option value="Locomotion">🏃 Locomotion</option>
+        <option value="Mobilité">🤸 Mobilité</option>
+        <option value="Coopération">🤝 Coopération</option>
+        <option value="Opposition">⚔️ Opposition</option>
+        <option value="Poursuite">🌀 Poursuite</option>
+        <option value="Collectif">🏅 Sports Collectifs</option>
+        <option value="Expression">💃 Expression</option>
+        <option value="Raquettes">🏸 Raquettes</option>
+        <option value="Extérieur">🌿 Extérieur</option>
+      </select>
+      <select id="f-duree" class="filter-select">
+        <option value="">Toutes les durées</option>
+        <option value="1">1 période</option>
+        <option value="2">2 périodes</option>
+        <option value="3">3+ périodes</option>
+      </select>
+    </div>
+
+    <div class="stats-bar">
+      <span class="stat-pill pill-yellow" id="count-total">0 SAÉ</span>
+      <span class="stat-pill pill-blue"   id="count-cycles">0 cycles couverts</span>
+      <span class="stat-pill pill-navy"   id="count-pays">0 cultures mondiales</span>
+    </div>
+
+    <div id="grid" class="cards-grid"></div>
+
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-box">
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="../comic-bg.js"></script>
+<script src="sae-app.js"></script>
+</body>
+</html>

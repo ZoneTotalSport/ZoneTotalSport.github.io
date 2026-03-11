@@ -1,0 +1,334 @@
+/* musique-app.js — Zone Total Sport: Musiques Libres ÉPS */
+
+const MUSIQUE_FILES = [
+  '../data/musique/musiques_database.json',
+];
+
+const GENRE_COLORS = {
+  'Electronic': '#004EBF', 'Hip-Hop': '#8e44ad', 'Pop': '#e91e63',
+  'Rock': '#c0392b', 'Classique': '#795548', 'Ambient': '#0097a7',
+  'Latin': '#e67e22', 'World': '#1a7f3c', 'Jazz': '#455a64',
+  'Funk': '#ff6f00', 'Reggae': '#2e7d32', 'Country': '#6d4c41',
+  'Folk': '#558b2f', 'R&B': '#6a1b9a', 'Metal': '#37474f',
+};
+
+const BPM_RANGES = [
+  { label:'🧘 40-70', min:40,  max:70,  color:'#0097a7' },
+  { label:'😌 70-100',min:70,  max:100, color:'#1a7f3c' },
+  { label:'🚶 100-130',min:100,max:130, color:'#004EBF' },
+  { label:'🏃 130-155',min:130,max:155, color:'#e67e22' },
+  { label:'⚡ 155-180',min:155,max:200, color:'#c0392b' },
+];
+
+let ALL_MUSIQUES = [];
+let filtered = [];
+let currentTab = 'pistes';
+
+async function loadAll() {
+  const bar = document.getElementById('loadBar');
+  let loaded = 0;
+
+  for (const file of MUSIQUE_FILES) {
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const arr = data.musiques || data.pistes || data.tracks || data.items || [];
+      ALL_MUSIQUES.push(...arr);
+    } catch (e) {
+      console.warn('Skip', file, e);
+    }
+    loaded++;
+    bar.style.width = (loaded / MUSIQUE_FILES.length * 100) + '%';
+    await new Promise(r => setTimeout(r, 50));
+  }
+
+  const genres = new Set(ALL_MUSIQUES.map(m => m.genre || '').filter(Boolean));
+  document.getElementById('badge-total').innerHTML = ALL_MUSIQUES.length + '<span>PISTES</span>';
+  document.getElementById('badge-bpm').innerHTML   = genres.size + '<span>GENRES</span>';
+
+  buildBpmPills();
+  buildGuide();
+  buildSources();
+  applyFilters();
+  updateStats();
+
+  await new Promise(r => setTimeout(r, 300));
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').classList.remove('hidden');
+}
+
+function buildBpmPills() {
+  const bar = document.getElementById('bpm-pills');
+  bar.innerHTML = '';
+
+  const allBtn = document.createElement('button');
+  allBtn.textContent = '⚡ TOUT';
+  allBtn.className = 'bpm-pill';
+  allBtn.style.cssText = 'font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:2px;padding:0.4rem 1rem;border:3px solid var(--navy);background:var(--navy);color:var(--yellow);cursor:pointer;';
+  allBtn.onclick = () => { document.getElementById('f-bpm').value = ''; applyFilters(); setActivePill(allBtn); };
+  bar.appendChild(allBtn);
+
+  BPM_RANGES.forEach(r => {
+    const btn = document.createElement('button');
+    btn.textContent = r.label;
+    btn.className = 'bpm-pill';
+    btn.style.cssText = `font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:1px;padding:0.35rem 0.9rem;border:3px solid ${r.color};background:${r.color};color:#fff;cursor:pointer;`;
+    btn.onclick = () => { document.getElementById('f-bpm').value = `${r.min}-${r.max}`; applyFilters(); setActivePill(btn); };
+    bar.appendChild(btn);
+  });
+}
+
+function setActivePill(active) {
+  document.querySelectorAll('.bpm-pill').forEach(p => p.style.opacity = '0.6');
+  active.style.opacity = '1';
+}
+
+function applyFilters() {
+  const q      = document.getElementById('search').value.toLowerCase();
+  const activ  = document.getElementById('f-activite').value;
+  const bpmVal = document.getElementById('f-bpm').value;
+  const lic    = document.getElementById('f-licence').value;
+  const genre  = document.getElementById('f-genre').value;
+
+  let bpmMin = 0, bpmMax = 9999;
+  if (bpmVal) {
+    const parts = bpmVal.split('-').map(Number);
+    bpmMin = parts[0]; bpmMax = parts[1];
+  }
+
+  filtered = ALL_MUSIQUES.filter(m => {
+    const text = [m.titre, m.artiste, m.genre, m.tags, m.activite, m.description].flat().join(' ').toLowerCase();
+    if (q && !text.includes(q)) return false;
+    if (activ) {
+      const mActiv = (Array.isArray(m.activite) ? m.activite.join(' ') : m.activite || '').toLowerCase();
+      if (!mActiv.includes(activ)) return false;
+    }
+    if (bpmVal) {
+      const bpm = parseInt(m.bpm) || 0;
+      if (bpm < bpmMin || bpm > bpmMax) return false;
+    }
+    if (lic) {
+      const mLic = m.licence || m.license || '';
+      if (!mLic.includes(lic)) return false;
+    }
+    if (genre && (m.genre || '') !== genre) return false;
+    return true;
+  });
+
+  renderGrid();
+  updateStats();
+}
+
+function updateStats() {
+  const cc0   = filtered.filter(m => (m.licence || '').includes('CC0')).length;
+  const genres= new Set(filtered.map(m => m.genre || '').filter(Boolean));
+  document.getElementById('count-total').textContent  = filtered.length + ' pistes';
+  document.getElementById('count-free').textContent   = cc0 + ' gratuites CC0';
+  document.getElementById('count-genres').textContent = genres.size + ' genres';
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="text-align:center;padding:3rem;font-family:Bangers,cursive;font-size:1.5rem;color:var(--navy);letter-spacing:3px">AUCUNE PISTE TROUVÉE 🎵</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.slice(0, 300).map((m, i) => {
+    const genre   = m.genre || 'Autre';
+    const col     = GENRE_COLORS[genre] || '#004EBF';
+    const bpm     = m.bpm || '?';
+    const artiste = m.artiste || m.artist || 'Artiste inconnu';
+    const titre   = m.titre || m.title || 'Sans titre';
+    const duree   = m.duree || m.duration || '';
+    const licence = m.licence || m.license || '';
+    const activs  = Array.isArray(m.activite) ? m.activite.slice(0,3) : [m.activite].filter(Boolean);
+    const src     = m.source || m.url || '';
+    const delay   = (i % 30) * 30;
+
+    // BPM color
+    const bpmNum = parseInt(bpm) || 0;
+    const bpmRange = BPM_RANGES.find(r => bpmNum >= r.min && bpmNum < r.max);
+    const bpmCol = bpmRange ? bpmRange.color : '#888';
+
+    return `
+    <div class="zts-card" style="animation-delay:${delay}ms;cursor:pointer" onclick="openModal(${i})" tabindex="0" role="button">
+      <div style="background:${col};padding:0.6rem 1rem;display:flex;justify-content:space-between;align-items:center">
+        <span style="font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:2px;color:#fff">🎵 ${genre}</span>
+        <span style="background:${bpmCol};color:#fff;font-family:Bangers,cursive;font-size:0.95rem;letter-spacing:2px;padding:0.15rem 0.6rem;border:2px solid rgba(255,255,255,0.4)">${bpm} BPM</span>
+      </div>
+      <div style="padding:1.2rem">
+        <div style="font-family:Bangers,cursive;font-size:1.3rem;letter-spacing:2px;color:var(--navy);margin-bottom:0.2rem">${titre}</div>
+        <div style="font-size:0.85rem;color:#556;margin-bottom:0.6rem">🎤 ${artiste}${duree ? ` · ⏱ ${duree}` : ''}</div>
+        ${activs.length ? `<div style="display:flex;gap:0.3rem;flex-wrap:wrap;margin-bottom:0.5rem">${activs.map(a=>`<span style="font-family:Bangers,cursive;font-size:0.75rem;letter-spacing:1px;padding:0.1rem 0.4rem;background:rgba(0,29,110,0.08);color:var(--navy);border:1px solid rgba(0,29,110,0.2)">${a}</span>`).join('')}</div>` : ''}
+        ${licence ? `<div style="font-size:0.78rem;color:#1a7f3c;font-weight:bold">✅ ${licence}</div>` : ''}
+        ${m.description ? `<div style="font-size:0.8rem;color:#446;line-height:1.4;margin-top:0.4rem">${m.description.substring(0,80)}…</div>` : ''}
+      </div>
+      <div style="background:var(--yellow);border-top:3px solid var(--navy);padding:0.5rem 1rem;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">🎵 DÉTAILS & SOURCE</div>
+    </div>`;
+  }).join('');
+
+  if (filtered.length > 300) {
+    grid.innerHTML += `<div style="text-align:center;padding:2rem;font-family:Bangers,cursive;font-size:1.1rem;color:var(--navy);letter-spacing:2px;grid-column:1/-1">... ET ${filtered.length - 300} AUTRES PISTES — AFFINEZ VOTRE RECHERCHE</div>`;
+  }
+}
+
+function openModal(idx) {
+  const m = filtered[idx];
+  if (!m) return;
+  const genre = m.genre || 'Autre';
+  const col   = GENRE_COLORS[genre] || '#004EBF';
+  const bpm   = m.bpm || '?';
+  const bpmNum= parseInt(bpm) || 0;
+  const bpmRange = BPM_RANGES.find(r => bpmNum >= r.min && bpmNum < r.max);
+  const bpmCol = bpmRange ? bpmRange.color : '#888';
+  const activs = Array.isArray(m.activite) ? m.activite : [m.activite].filter(Boolean);
+  const tags   = Array.isArray(m.tags) ? m.tags : [m.tags].filter(Boolean);
+  const src    = m.source || m.url || '';
+
+  document.getElementById('modal-body').innerHTML = `
+    <div style="background:${col};padding:1.5rem 2rem;border-bottom:4px solid var(--navy);position:relative">
+      <div style="font-family:Bangers,cursive;font-size:2rem;letter-spacing:3px;color:#fff">${m.titre || m.title}</div>
+      <div style="color:rgba(255,255,255,0.9);font-size:1rem;margin-top:0.3rem">🎤 ${m.artiste || m.artist || '—'}</div>
+      <div style="margin-top:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+        <span style="background:${bpmCol};color:#fff;font-family:Bangers,cursive;letter-spacing:2px;padding:0.2rem 0.7rem;font-size:1rem">${bpm} BPM</span>
+        <span style="background:rgba(255,255,255,0.2);color:#fff;font-family:Bangers,cursive;letter-spacing:1px;padding:0.2rem 0.7rem;font-size:0.9rem">🎵 ${genre}</span>
+        ${m.duree ? `<span style="background:rgba(255,255,255,0.2);color:#fff;font-family:Bangers,cursive;letter-spacing:1px;padding:0.2rem 0.7rem;font-size:0.9rem">⏱ ${m.duree}</span>` : ''}
+        ${m.licence ? `<span style="background:var(--yellow);color:var(--navy);font-family:Bangers,cursive;letter-spacing:1px;padding:0.2rem 0.7rem;font-size:0.9rem">✅ ${m.licence}</span>` : ''}
+        ${m.annee ? `<span style="background:rgba(255,255,255,0.2);color:#fff;font-family:Bangers,cursive;letter-spacing:1px;padding:0.2rem 0.7rem;font-size:0.9rem">${m.annee}</span>` : ''}
+      </div>
+      <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;font-family:Bangers,cursive;font-size:1.2rem;background:rgba(255,255,255,0.2);color:#fff;border:2px solid #fff;padding:0.2rem 0.8rem;cursor:pointer">✕ FERMER</button>
+    </div>
+    <div style="padding:1.5rem 2rem;overflow-y:auto;max-height:70vh">
+      ${m.description ? `<div class="modal-section"><div class="modal-section-title">📝 DESCRIPTION</div><p style="margin:0;line-height:1.6;color:#223">${m.description}</p></div>` : ''}
+      ${activs.length ? `<div class="modal-section"><div class="modal-section-title">🏃 ACTIVITÉS ÉPS</div><div style="display:flex;gap:0.4rem;flex-wrap:wrap">${activs.map(a=>`<span style="font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:1px;padding:0.2rem 0.6rem;background:var(--blue);color:#fff">${a}</span>`).join('')}</div></div>` : ''}
+      ${tags.length ? `<div class="modal-section"><div class="modal-section-title">🏷️ TAGS</div><div style="display:flex;gap:0.3rem;flex-wrap:wrap">${tags.map(t=>`<span style="font-size:0.82rem;padding:0.15rem 0.5rem;background:#f0f4ff;border:1px solid #cce;color:#334">${t}</span>`).join('')}</div></div>` : ''}
+      ${m.ambiance ? `<div class="modal-section"><div class="modal-section-title">💫 AMBIANCE</div><p style="margin:0;color:#223">${m.ambiance}</p></div>` : ''}
+      ${m.niveau_scolaire ? `<div class="modal-section"><div class="modal-section-title">🎓 NIVEAU SCOLAIRE</div><p style="margin:0;color:#223">${Array.isArray(m.niveau_scolaire)?m.niveau_scolaire.join(', '):m.niveau_scolaire}</p></div>` : ''}
+      ${src ? `<div class="modal-section"><div class="modal-section-title">🔗 SOURCE / TÉLÉCHARGEMENT</div>
+        <a href="${src}" target="_blank" rel="noopener" style="display:inline-block;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;background:var(--blue);color:var(--yellow);padding:0.5rem 1.2rem;border:3px solid var(--navy);text-decoration:none;box-shadow:4px 4px 0 var(--navy)">→ ACCÉDER À LA PISTE</a>
+        <div style="margin-top:0.5rem;font-size:0.8rem;color:#667;word-break:break-all">${src}</div>
+      </div>` : ''}
+      ${m.notes ? `<div class="modal-section"><div class="modal-section-title">📌 NOTES</div><p style="margin:0;color:#223">${m.notes}</p></div>` : ''}
+    </div>
+  `;
+
+  document.getElementById('modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function buildGuide() {
+  const el = document.getElementById('guide-content');
+  el.innerHTML = `
+    <div style="max-width:800px;margin:0 auto">
+      ${BPM_RANGES.map(r => {
+        const count = ALL_MUSIQUES.filter(m => {
+          const b = parseInt(m.bpm)||0;
+          return b >= r.min && b < r.max;
+        }).length;
+        const activExamples = {
+          'Calme': 'Yoga, méditation, retour au calme, étirements',
+          'Doux':  'Réchauffement léger, mobilité, coopération douce',
+          'Modéré':'Jeux collectifs, exercices techniques, circuits modérés',
+          'Actif': 'Cardio, poursuite, sports collectifs intensifs, échauffement dynamique',
+          'Intense':'HIIT, circuits intenses, haute intensité, sports de combat'
+        };
+        const intensity = r.label.split(' ').pop().replace('(','').replace(')','').replace('BPM','').trim();
+        const zone = r.min < 70 ? 'Zone 1 — Récupération' : r.min < 100 ? 'Zone 2 — Endurance légère' : r.min < 130 ? 'Zone 3 — Endurance modérée' : r.min < 155 ? 'Zone 4 — Seuil anaérobie' : 'Zone 5 — Haute intensité';
+        const examples = Object.values(activExamples)[BPM_RANGES.indexOf(r)];
+        return `
+          <div style="border:4px solid var(--navy);margin-bottom:1.5rem;box-shadow:6px 6px 0 var(--navy)">
+            <div style="background:${r.color};padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-family:Bangers,cursive;font-size:1.8rem;letter-spacing:3px;color:#fff">${r.label}</div>
+                <div style="color:rgba(255,255,255,0.85);font-size:0.9rem">${zone}</div>
+              </div>
+              <div style="font-family:Bangers,cursive;font-size:2rem;color:#fff;text-align:right">${count}<div style="font-size:0.9rem;letter-spacing:2px">PISTES</div></div>
+            </div>
+            <div style="padding:1.2rem 1.5rem;background:#fff">
+              <div style="font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);margin-bottom:0.4rem">ACTIVITÉS RECOMMANDÉES</div>
+              <p style="margin:0;color:#334;line-height:1.6">${examples}</p>
+            </div>
+          </div>`;
+      }).join('')}
+      <div style="border:4px solid var(--navy);padding:1.5rem;background:var(--yellow);box-shadow:6px 6px 0 var(--navy)">
+        <div style="font-family:Bangers,cursive;font-size:1.3rem;letter-spacing:3px;color:var(--navy);margin-bottom:0.8rem">💡 CONSEIL PÉDAGOGIQUE</div>
+        <p style="margin:0;color:#001D6E;line-height:1.7">Commencez toujours par un échauffement à <strong>100-130 BPM</strong>, montez progressivement à <strong>130-155 BPM</strong> pour la partie principale, puis redescendez à <strong>70-100 BPM</strong> pour le retour au calme. Cette progression respecte la physiologie de l'effort et favorise une récupération optimale.</p>
+      </div>
+    </div>
+  `;
+}
+
+function buildSources() {
+  const el = document.getElementById('sources-content');
+  const sources = [
+    { nom:'Free Music Archive (FMA)', url:'https://freemusicarchive.org', desc:'Archive musicale libre américaine. Milliers de pistes CC0 et Creative Commons. Filtrable par genre et licence.', licence:'CC0 / CC', icon:'🎵' },
+    { nom:'ccMixter', url:'https://ccmixter.org', desc:'Communauté de musiciens créant de la musique Creative Commons. Remix et mashup autorisés.', licence:'CC', icon:'🎛️' },
+    { nom:'Incompetech (Kevin MacLeod)', url:'https://incompetech.com', desc:'Plus de 2000 pistes instrumentales CC BY. Classées par genre et mood. Idéal pour l\'ÉPS.', licence:'CC BY', icon:'🎹' },
+    { nom:'YouTube Audio Library', url:'https://www.youtube.com/audiolibrary', desc:'Bibliothèque officielle YouTube. Musiques et effets sonores gratuits pour usage éducatif.', licence:'Gratuit', icon:'▶️' },
+    { nom:'Pixabay Music', url:'https://pixabay.com/music/', desc:'Musiques 100% libres de droits. Pas d\'attribution requise. Idéal pour l\'éducation.', licence:'Pixabay License', icon:'🎶' },
+    { nom:'Bensound', url:'https://www.bensound.com', desc:'Musiques originales royalty-free. Plusieurs catégories incluant sport et énergie.', licence:'CC BY-ND', icon:'🎸' },
+    { nom:'Jamendo', url:'https://www.jamendo.com', desc:'Plateforme de musique indépendante. Nombreuses licences Creative Commons. Grande sélection.', licence:'CC', icon:'🎺' },
+    { nom:'Musopen', url:'https://musopen.org', desc:'Musique classique libre de droits. Parfait pour activités de relaxation et yoga en ÉPS.', licence:'CC0', icon:'🎻' },
+  ];
+
+  el.innerHTML = `
+    <div style="max-width:900px;margin:0 auto">
+      <div style="background:var(--yellow);border:4px solid var(--navy);padding:1rem 1.5rem;margin-bottom:1.5rem;box-shadow:4px 4px 0 var(--navy)">
+        <div style="font-family:Bangers,cursive;font-size:1.2rem;letter-spacing:2px;color:var(--navy)">ℹ️ TOUTES LES PISTES DE CETTE BIBLIOTHÈQUE SONT LIBRES DE DROITS POUR USAGE ÉDUCATIF</div>
+        <div style="font-size:0.85rem;color:#334;margin-top:0.3rem">Conformément à la Loi sur le droit d'auteur du Canada, l'utilisation dans un contexte scolaire est généralement permise. Vérifiez toujours les conditions de la licence spécifique.</div>
+      </div>
+      <div class="cards-grid">
+        ${sources.map(s => `
+          <div style="border:4px solid var(--navy);box-shadow:5px 5px 0 var(--navy);background:#fff">
+            <div style="background:var(--navy);padding:0.8rem 1.2rem">
+              <div style="font-family:Bangers,cursive;font-size:1.3rem;letter-spacing:2px;color:var(--yellow)">${s.icon} ${s.nom}</div>
+              <span style="background:var(--yellow);color:var(--navy);font-family:Bangers,cursive;font-size:0.8rem;letter-spacing:1px;padding:0.1rem 0.5rem">${s.licence}</span>
+            </div>
+            <div style="padding:1rem 1.2rem">
+              <p style="margin:0 0 0.8rem;font-size:0.88rem;color:#334;line-height:1.5">${s.desc}</p>
+              <a href="${s.url}" target="_blank" rel="noopener" style="font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:2px;background:var(--blue);color:var(--yellow);padding:0.4rem 0.9rem;text-decoration:none;border:3px solid var(--navy);display:inline-block">→ VISITER</a>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function switchMusicTab(tab) {
+  currentTab = tab;
+  document.getElementById('tab-pistes').classList.add('hidden');
+  document.getElementById('tab-guide').classList.add('hidden');
+  document.getElementById('tab-sources').classList.add('hidden');
+  document.getElementById(`tab-${tab}`).classList.remove('hidden');
+
+  document.querySelectorAll('.music-tab').forEach(btn => {
+    const isActive = btn.dataset.mtab === tab;
+    btn.style.background = isActive ? 'var(--navy)' : 'var(--yellow)';
+    btn.style.color = isActive ? 'var(--yellow)' : 'var(--navy)';
+  });
+}
+
+document.getElementById('search').addEventListener('input', applyFilters);
+document.getElementById('f-activite').addEventListener('change', applyFilters);
+document.getElementById('f-bpm').addEventListener('change', applyFilters);
+document.getElementById('f-licence').addEventListener('change', applyFilters);
+document.getElementById('f-genre').addEventListener('change', applyFilters);
+document.getElementById('modal-backdrop').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+const style = document.createElement('style');
+style.textContent = `
+  .modal-section { margin-bottom:1.2rem; }
+  .modal-section-title { font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);border-bottom:2px solid var(--yellow);margin-bottom:0.5rem;padding-bottom:0.2rem; }
+`;
+document.head.appendChild(style);
+
+loadAll();

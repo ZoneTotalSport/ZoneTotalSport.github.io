@@ -1,0 +1,824 @@
+{
+  "sae": [
+    {
+      "id": "SAE_EXPR_001",
+      "titre": "Les animaux danseurs",
+      "intentions_pedagogiques": "Amener les élèves à explorer le mouvement expressif en imitant des animaux, développant ainsi la créativité corporelle et la conscience de l'espace.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées en expression corporelle",
+      "moyen_action": "Improvisation guidée et jeux de rôles corporels",
+      "materiel": ["Tambourin", "Musique d'ambiance animale", "Foulards colorés", "Images d'animaux"],
+      "espace": "Gymnase",
+      "situation_depart": "L'enseignant montre des images d'animaux du monde entier (lion africain, ours polaire, kangourou australien, serpent tropical) et demande aux élèves comment ces animaux se déplacent et s'expriment.",
+      "tache_complexe": "Créer une courte séquence de danse de 8 temps en s'inspirant de 2 animaux différents, en variant les niveaux (haut, moyen, bas) et les directions dans l'espace.",
+      "deroulement": {
+        "mise_en_train": "Échauffement en marchant librement dans le gymnase. L'enseignant nomme un animal et les élèves imitent immédiatement son déplacement (serpenter comme un serpent, sauter comme un kangourou, ramper comme un ours). Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Exploration libre de mouvements animaux en solo. Présentation du concept de niveau (haut/moyen/bas) et de directions. Période 2 : Les élèves choisissent 2 animaux et construisent une séquence de 8 temps en alternant les deux inspirations. Partage en petits groupes (3-4 élèves). Durée : 25 minutes chaque période.",
+        "retour_au_calme": "Les élèves se transforment en animal qui dort. Respiration profonde en imitant le souffle d'un grand animal (éléphant, baleine). Discussion sur les ressentis. Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Variété des mouvements expressifs", "echelon_A": "Utilise au moins 5 qualités de mouvement différentes avec fluidité et intention claire", "echelon_B": "Utilise 3-4 qualités de mouvement avec une certaine intention", "echelon_C": "Utilise 1-2 qualités de mouvement de façon répétitive"},
+          {"critere": "Utilisation de l'espace (niveaux et directions)", "echelon_A": "Explore les 3 niveaux et au moins 4 directions avec cohérence", "echelon_B": "Explore 2 niveaux et 2-3 directions", "echelon_C": "Reste principalement à un seul niveau et direction"},
+          {"critere": "Respect de la structure de la séquence (8 temps)", "echelon_A": "Enchaîne la séquence complète de façon mémorisée et fluide", "echelon_B": "Complète la séquence avec quelques hésitations", "echelon_C": "Complète partiellement la séquence ou nécessite beaucoup de soutien"}
+        ]
+      },
+      "variantes": [
+        "Ajouter des accessoires (foulards, cerceaux) pour enrichir l'expression",
+        "Créer une danse narrative racontant une journée dans la vie de l'animal",
+        "Version en duo : deux élèves créent une interaction entre leurs deux animaux"
+      ],
+      "adaptations_inclusives": [
+        "Pour les élèves à mobilité réduite : adaptation des mouvements en position assise ou debout avec appui",
+        "Pour les élèves DYS : fournir des pictogrammes des étapes de la séquence",
+        "Pour les élèves doués : ajouter une contrainte rythmique (rythme imposé par tambourin)"
+      ],
+      "connexion_culturelle": "Exploration des danses animales rituelles des peuples autochtones des Premières Nations du Canada (pow-wow avec mouvements d'aigle) et des danses masquées de l'Afrique de l'Ouest représentant des esprits-animaux.",
+      "contexte_mondial": "Les danses animalières existent dans toutes les cultures du monde : le Lion Dance chinois du Nouvel An, les danses de l'ours chez les peuples sibériens, la danse du serpent chez les Hopi d'Amérique du Nord.",
+      "liens_interdisciplinaires": "Sciences et technologie : étude des caractéristiques locomotrices des animaux. Arts plastiques : dessin de l'animal choisi. Français : écriture d'un court texte descriptif sur l'animal."
+    },
+    {
+      "id": "SAE_EXPR_002",
+      "titre": "Le ballet des saisons",
+      "intentions_pedagogiques": "Développer l'expression corporelle en lien avec les changements saisonniers, encourager la créativité et la coopération dans la création chorégraphique.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Création chorégraphique en groupe et présentation",
+      "materiel": ["Système audio", "Musique des quatre saisons de Vivaldi", "Tissu léger (bleu, vert, jaune, rouge)", "Rubans de couleurs saisonnières"],
+      "espace": "Gymnase",
+      "situation_depart": "Écoute d'extraits musicaux des Quatre Saisons de Vivaldi. Discussion sur les images mentales évoquées et les sensations corporelles associées à chaque saison au Québec.",
+      "tache_complexe": "En groupe de 4-5, créer une courte chorégraphie de 32 temps représentant une saison québécoise, intégrant des formations spatiales variées et au moins deux transitions entre formations.",
+      "deroulement": {
+        "mise_en_train": "Exploration libre au son de la musique de Vivaldi. L'enseignant guide avec des images verbales (flocons qui tombent, feuilles qui tourbillonnent, fleurs qui s'ouvrent, soleil qui brûle). Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Attribution des saisons aux groupes. Brainstorming des mouvements et images associés. Début de la création. Période 2 : Suite de la création, travail sur les formations et transitions. Période 3 : Répétition générale et présentation aux autres groupes. Discussion critique constructive. Durée : 25 minutes par période.",
+        "retour_au_calme": "Étirements inspirés du passage de l'été à l'automne (grands gestes amples qui se réduisent progressivement). Partage verbal des défis rencontrés en groupe. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Cohérence du thème saisonnier dans la chorégraphie", "echelon_A": "La saison est clairement identifiable à travers les mouvements, l'énergie et l'espace utilisés", "echelon_B": "La saison est reconnaissable pour la plupart des séquences", "echelon_C": "Le lien avec la saison est difficile à percevoir"},
+          {"critere": "Qualité de la collaboration en groupe", "echelon_A": "Contribue activement aux décisions, écoute les autres et adapte ses idées pour le bien du groupe", "echelon_B": "Participe à la création avec quelques difficultés à négocier", "echelon_C": "Participation minimale ou difficulté importante à travailler en groupe"},
+          {"critere": "Variété des formations spatiales", "echelon_A": "Utilise au moins 3 formations différentes avec des transitions claires et exécutées simultanément", "echelon_B": "Utilise 2 formations avec transitions partiellement réussies", "echelon_C": "Reste dans une seule formation ou transitions désordonnées"}
+        ]
+      },
+      "variantes": [
+        "Intégrer des accessoires représentant la saison (foulards blancs pour l'hiver)",
+        "Créer une transition chorégraphique entre deux saisons consécutives",
+        "Présentation avec narration par un élève pendant que les autres dansent"
+      ],
+      "adaptations_inclusives": [
+        "Rôles adaptés : un élève peut être le 'metteur en scène' s'il ne peut pas danser",
+        "Partitions visuelles de la chorégraphie sous forme de schémas",
+        "Musique à tempo variable disponible pour adapter la vitesse d'exécution"
+      ],
+      "connexion_culturelle": "Les célébrations des saisons dans différentes cultures : Hanami (fête des fleurs de cerisier) au Japon, célébrations de l'équinoxe de printemps dans les cultures maya et aztèque, fêtes de la moisson en Afrique sub-saharienne.",
+      "contexte_mondial": "Le ballet classique européen s'est inspiré des saisons depuis le XVIIe siècle, mais les danses saisonnières rituelles existent depuis des millénaires dans les cultures amérindiennes, asiatiques et africaines.",
+      "liens_interdisciplinaires": "Géographie : les saisons et le climat québécois. Musique : découverte de Vivaldi et des instruments de l'orchestre. Français : rédaction d'un poème sur une saison."
+    },
+    {
+      "id": "SAE_EXPR_003",
+      "titre": "Hip-hop et identité",
+      "intentions_pedagogiques": "Explorer les fondamentaux du hip-hop comme vecteur d'expression identitaire et sociale, développer le sens du rythme et l'expression corporelle authentique.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Démontrer une compréhension des liens entre ses habitudes de vie et sa santé",
+      "moyen_action": "Apprentissage des fondamentaux du hip-hop et création d'un cipher de groupe",
+      "materiel": ["Système audio avec Bluetooth", "Playlist hip-hop culturellement diversifiée", "Espace marqué au sol (cercle de cipher)"],
+      "espace": "Gymnase",
+      "situation_depart": "Visionnement de courts extraits de b-boys/b-girls de différentes nationalités (Corée, France, Brésil, États-Unis). Discussion sur les origines du hip-hop dans les communautés afro-américaines et latinos du Bronx dans les années 1970.",
+      "tache_complexe": "Composer une séquence de 16 temps combinant au moins 3 éléments hip-hop appris (top-rock, footwork, freeze ou wave), et la présenter en cipher lors d'une session de classe.",
+      "deroulement": {
+        "mise_en_train": "Échauffement rythmique : clapping game progressif, isolation du corps (tête, épaules, poitrine, hanches), walking en rythme. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Histoire et culture hip-hop. Apprentissage du top-rock de base. Période 2 : Footwork de base (6-step simplifié). Freeze basique. Période 3 : Waves et chest pop. Assemblage des éléments. Période 4 : Répétition de la séquence personnelle, cipher de classe. Durée : 25 minutes par période.",
+        "retour_au_calme": "Discussion sur la culture du respect en hip-hop (cipher etiquette). Étirements des articulations. Partage : qu'est-ce que tu veux exprimer à travers ta danse ? Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise technique des éléments hip-hop", "echelon_A": "Exécute au moins 3 éléments avec précision rythmique et qualité de mouvement", "echelon_B": "Exécute 2-3 éléments de façon reconnaissable avec quelques imprécisions", "echelon_C": "Exécute 1-2 éléments partiellement ou avec des difficultés significatives"},
+          {"critere": "Expression personnelle et authenticité", "echelon_A": "La séquence reflète clairement une intention expressive personnelle et un style propre", "echelon_B": "Quelques moments d'expression personnelle dans la séquence", "echelon_C": "Imitation directe sans appropriation personnelle"},
+          {"critere": "Respect de la culture hip-hop (etiquette du cipher)", "echelon_A": "Encourage activement les autres, respecte les tours de parole, réagit positivement", "echelon_B": "Respecte les règles du cipher avec quelques rappels", "echelon_C": "Difficulté à respecter l'etiquette du cipher"}
+        ]
+      },
+      "variantes": [
+        "Ajouter des éléments de beatboxing par certains élèves pendant que d'autres dansent",
+        "Créer une chorégraphie collective en démo à l'école",
+        "Explorer d'autres styles hip-hop : krump, locking, popping"
+      ],
+      "adaptations_inclusives": [
+        "Adapter tous les éléments en version debout ou assise selon les capacités",
+        "Permettre l'utilisation d'un aide-mémoire visuel des séquences",
+        "Proposer des rôles de DJ ou de juge pour les élèves moins à l'aise avec la performance"
+      ],
+      "connexion_culturelle": "Le hip-hop né dans le Bronx en 1973 avec DJ Kool Herc (Jamaïcain-américain) a des racines dans les griots africains, les tambours cubains et le jazz afro-américain. Aujourd'hui le hip-hop est pratiqué dans plus de 100 pays avec des adaptations culturelles locales.",
+      "contexte_mondial": "Le hip-hop est devenu la musique la plus écoutée au monde. En Afrique du Sud, le kwaito mélange hip-hop et musique locale. Au Japon, le hip-hop a une scène majeure depuis les années 1980.",
+      "liens_interdisciplinaires": "Histoire et éducation à la citoyenneté : mouvements sociaux afro-américains et latinos. Musique : structure rythmique, beatboxing. Anglais : textes et paroles de chansons hip-hop."
+    },
+    {
+      "id": "SAE_EXPR_004",
+      "titre": "La danse contemporaine et les émotions",
+      "intentions_pedagogiques": "Utiliser le mouvement contemporain pour explorer et communiquer des états émotionnels, développer l'intelligence émotionnelle par le corps.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 3,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices complexes dans des contextes expressifs",
+      "moyen_action": "Improvisation structurée et composition chorégraphique",
+      "materiel": ["Système audio", "Musique instrumentale variée (ambient, classique contemporain, world music)", "Journaux de bord d'élèves", "Matelas de sol (optionnel)"],
+      "espace": "Gymnase ou studio de danse",
+      "situation_depart": "Présentation de la roue des émotions de Plutchik. Discussion : comment le corps réagit-il différemment à la joie, la tristesse, la peur, la colère ? Les élèves associent des qualités de mouvement à des émotions (rapide/lent, lourd/léger, tendu/fluide).",
+      "tache_complexe": "Créer un solo de danse contemporaine de 45-60 secondes représentant un voyage émotionnel (passage d'une émotion à une autre), en utilisant les principes d'effort de Laban (poids, espace, temps, flux).",
+      "deroulement": {
+        "mise_en_train": "Body scan debout : prise de conscience des tensions corporelles. Exercices d'effort de Laban : contraste entre fort/léger, rapide/lent, direct/indirect, lié/saccadé. Durée : 15 minutes.",
+        "partie_principale": "Période 1 : Improvisation guidée sur différentes émotions. Introduction aux principes de Laban. Période 2 : Construction du voyage émotionnel choisi. Travail en miroir avec un partenaire pour feedback. Période 3 : Répétition et présentation en petits groupes (3 élèves). Rétroaction structurée. Durée : 35 minutes par période.",
+        "retour_au_calme": "Écriture dans le journal de bord : quelle émotion était la plus difficile à incarner ? La plus facile ? Étirements conscients. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Utilisation des qualités de mouvement (effort de Laban)", "echelon_A": "Utilise 3-4 facteurs d'effort de façon consciente et contrastée pour différencier les émotions", "echelon_B": "Utilise 2 facteurs d'effort avec quelques contrastes perceptibles", "echelon_C": "Peu de variation dans les qualités de mouvement"},
+          {"critere": "Clarté du voyage émotionnel", "echelon_A": "Le passage entre les deux émotions est clairement perceptible par les spectateurs", "echelon_B": "Le changement émotionnel est partiellement lisible", "echelon_C": "Difficulté à distinguer les deux états émotionnels"},
+          {"critere": "Engagement expressif (présence scénique)", "echelon_A": "Maintient une présence scénique constante, le regard et le corps sont entièrement engagés", "echelon_B": "Présence scénique intermittente", "echelon_C": "Peu d'engagement expressif ou gêne visible qui nuit à la communication"}
+        ]
+      },
+      "variantes": [
+        "Créer un duo où les deux élèves représentent deux émotions opposées qui interagissent",
+        "Ajouter une contrainte spatiale (ne pas utiliser plus de 2m² au sol)",
+        "Composer une danse-réponse à une oeuvre d'art visuel expressive"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la durée de la performance selon les capacités (minimum 20 secondes accepté)",
+        "Option de présentation en enregistrement vidéo plutôt qu'en direct",
+        "Support émotionnel disponible si certaines émotions sont difficiles à traiter"
+      ],
+      "connexion_culturelle": "Le butoh japonais explore les états émotionnels extrêmes par le corps transformé. Les lamentations corporelles des rituels de deuil dans les cultures méditerranéennes et africaines. L'expressionisme allemand en danse (Mary Wigman) qui a influencé la danse contemporaine.",
+      "contexte_mondial": "La danse contemporaine intègre aujourd'hui des influences du monde entier : kathak indien, capoeira brésilienne, contact improvisation américain, et traditions autochtones.",
+      "liens_interdisciplinaires": "Psychologie et santé mentale : intelligence émotionnelle. Arts plastiques : expressionisme et abstraction. Littérature : personnages et arcs émotionnels dans les œuvres québécoises."
+    },
+    {
+      "id": "SAE_EXPR_005",
+      "titre": "Danse folklorique du monde",
+      "intentions_pedagogiques": "Découvrir et pratiquer des danses folkloriques de différentes cultures du monde, développer le respect de la diversité culturelle et la conscience du patrimoine dansé.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Apprentissage de danses folkloriques en cercle et en ligne",
+      "materiel": ["Système audio", "Musiques folkloriques de différents pays", "Cartes illustrées des pays", "Costumes ou accessoires optionnels"],
+      "espace": "Gymnase",
+      "situation_depart": "Tour du monde musical : écoute de 30 secondes de 5 musiques folkloriques différentes. Les élèves doivent deviner le pays ou la région d'origine et les émotions que la musique évoque.",
+      "tache_complexe": "Apprendre et exécuter les étapes de base de 3 danses folkloriques de continents différents, puis enseigner l'une d'elles à un autre groupe.",
+      "deroulement": {
+        "mise_en_train": "Jeu du chef d'orchestre avec mouvements folkloriques : un élève propose un pas simple inspiré d'une culture, tous imitent. Rotation rapide. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Apprentissage de la danse en ligne israélienne (Hora simplifiée). Période 2 : Apprentissage du Sirtaki grec ou d'une danse africaine en cercle. Période 3 : Apprentissage d'une gigue québécoise simplifiée. Puis enseignement entre groupes. Durée : 27 minutes par période.",
+        "retour_au_calme": "Cercle de partage : quelle danse préfères-tu ? Pourquoi est-ce important de connaître les danses des autres cultures ? Étirements doux. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise des pas de base de chaque danse", "echelon_A": "Exécute les pas de base des 3 danses avec précision et dans le bon rythme", "echelon_B": "Exécute correctement les pas de base de 2 danses", "echelon_C": "Maîtrise partielle d'une seule danse ou erreurs fréquentes"},
+          {"critere": "Synchronisation avec les partenaires", "echelon_A": "Maintient constamment la synchronisation avec le groupe et s'ajuste rapidement si décalé", "echelon_B": "Synchronisation la plupart du temps, quelques décalages", "echelon_C": "Difficultés fréquentes de synchronisation avec le groupe"},
+          {"critere": "Qualité de l'enseignement de la danse à l'autre groupe", "echelon_A": "Explique clairement les pas, démontre et aide les partenaires efficacement", "echelon_B": "Enseigne de façon fonctionnelle avec quelques lacunes dans les explications", "echelon_C": "Difficulté à transmettre la danse à l'autre groupe"}
+        ]
+      },
+      "variantes": [
+        "Créer un spectacle de fin d'année avec toutes les danses apprises",
+        "Inviter des parents ou membres de la communauté pour enseigner une danse de leur culture",
+        "Jumeler avec une classe d'une autre école via vidéoconférence pour partager des danses"
+      ],
+      "adaptations_inclusives": [
+        "Adapter les pas pour les élèves en fauteuil roulant (mouvements des bras et du tronc)",
+        "Fournir des vidéos de démonstration à visionner avant la classe",
+        "Permettre d'être le 'démonstrateur' assis pendant que les autres exécutent"
+      ],
+      "connexion_culturelle": "La danse folklorique est le patrimoine vivant de chaque peuple. La Hora israélienne, le Sirtaki grec, la gigue québécoise, les danses africaines en cercle : chacune raconte l'histoire d'un peuple à travers ses pieds.",
+      "contexte_mondial": "L'UNESCO reconnaît les danses folkloriques comme patrimoine culturel immatériel de l'humanité. Au Québec, la gigue est un exemple de métissage culturel entre traditions amérindiennes, françaises, irlandaises et écossaises.",
+      "liens_interdisciplinaires": "Géographie : localisation des pays sur la carte. Histoire : contexte historique des danses. Musique : instruments traditionnels de chaque culture."
+    },
+    {
+      "id": "SAE_EXPR_006",
+      "titre": "Le mouvement et la musique : créer sa danse",
+      "intentions_pedagogiques": "Développer la capacité à créer des mouvements en réponse à la musique, favoriser l'autonomie créative et la prise de décision artistique.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées en expression corporelle",
+      "moyen_action": "Composition chorégraphique individuelle et collaborative",
+      "materiel": ["Système audio", "Variété musicale (jazz, reggae, musique classique, pop, électronique)", "Fiches de composition chorégraphique", "Crayon"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation de la structure ABA en chorégraphie. Écoute de trois extraits musicaux très différents. Défi : quel mouvement vient naturellement à chaque style ?",
+      "tache_complexe": "Composer une danse solo en structure ABA (introduction-développement-conclusion) de 48 temps sur une musique choisie parmi 5 propositions, en documentant les choix chorégraphiques sur une fiche.",
+      "deroulement": {
+        "mise_en_train": "Jeu du miroir en duo avec différentes qualités de mouvement dictées par la musique. Transition du rôle leader/suiveur toutes les 30 secondes. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Exploration de la structure ABA. Choix de la musique. Improvisation de la partie A (16 temps). Période 2 : Création de la partie B contrastante (16 temps) et de la conclusion modifiée de A. Période 3 : Mémorisation complète. Enregistrement vidéo pour auto-évaluation. Durée : 28 minutes par période.",
+        "retour_au_calme": "Visionnement rapide de 3-4 créations (avec permission). Discussion constructive. Étirements avec musique douce. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Structure chorégraphique ABA", "echelon_A": "La structure ABA est clairement identifiable avec un contraste évident entre A et B", "echelon_B": "La structure est présente mais le contraste A-B est modéré", "echelon_C": "La structure ABA est difficile à percevoir"},
+          {"critere": "Relation entre les mouvements et la musique", "echelon_A": "Les mouvements correspondent régulièrement aux accents, tempos et humeurs musicales", "echelon_B": "Quelques correspondances claires entre mouvement et musique", "echelon_C": "Peu de relation perceptible entre le mouvement choisi et la musique"},
+          {"critere": "Documentation des choix chorégraphiques", "echelon_A": "La fiche est complète, les choix sont justifiés avec des termes techniques appropriés", "echelon_B": "La fiche est partiellement complétée avec quelques justifications", "echelon_C": "Fiche incomplète ou peu de justification des choix"}
+        ]
+      },
+      "variantes": [
+        "Composer en duo sur la même structure ABA avec différents rôles pour A et B",
+        "Contrainte : la danse doit raconter une histoire sans paroles",
+        "Version ABACA (rondo) pour les élèves plus avancés"
+      ],
+      "adaptations_inclusives": [
+        "Réduire la structure à AB (16 temps chacun) pour les élèves qui en ont besoin",
+        "Permettre l'utilisation de logiciel de notation chorégraphique visuelle",
+        "Autoriser une présentation en duo même pour le projet solo"
+      ],
+      "connexion_culturelle": "La structure ABA est universelle en musique : elle se retrouve dans la musique classique européenne, mais aussi dans les chansons traditionnelles afghanes, les blues afro-américains et la musique andine.",
+      "contexte_mondial": "Les chorégraphes contemporains comme Akram Khan (Bangladesh/Royaume-Uni) mélangent le kathak indien avec la danse contemporaine occidentale, créant des structures hybrides innovantes.",
+      "liens_interdisciplinaires": "Musique : structure musicale ABA, identification des instruments. Mathématiques : compter les temps, fractions (mesures). Français : rédaction d'une note d'intention artistique."
+    },
+    {
+      "id": "SAE_EXPR_007",
+      "titre": "Acrosport et pyramides humaines",
+      "intentions_pedagogiques": "Combiner expression corporelle et acrobatie dans des formes sculpturales collectives, développer la confiance, la communication et la sécurité mutuelle.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Construction de pyramides et de séquences acrobatiques expressives",
+      "materiel": ["Tapis de sol épais", "Système audio", "Musique de groupe (world music instrumentale)", "Fiches de figures acrosport"],
+      "espace": "Gymnase avec tapis",
+      "situation_depart": "Présentation d'images d'acrosport de compétition mondiale et de cirque contemporain (Cirque du Soleil québécois, acrobates chinois, capoeira brésilienne). Discussion sur la différence entre prouesse technique et expression artistique.",
+      "tache_complexe": "En groupe de 4-5, créer une séquence de 3 figures acrosport enchaînées avec des transitions mouvementées expressives, sur une thématique choisie (nature, architecture, histoire).",
+      "deroulement": {
+        "mise_en_train": "Jeux de confiance : chutes dans les bras d'un partenaire, transport coopératif léger. Révision des règles de sécurité. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Exploration des rôles (porteur, voltigeur, pareur). Figures de base à 2 et à 3. Période 2 : Construction des figures à 4-5. Sécurité et parage. Période 3 : Création des transitions expressives entre les figures. Période 4 : Mémorisation de la séquence complète. Présentation filmée. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion sur le rôle de la confiance dans l'acrosport et dans la vie. Étirements partagés en duo (étirements passifs guidés). Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Qualité technique des figures (alignement, équilibre, tenue)", "echelon_A": "Les 3 figures sont maintenues avec alignement correct, équilibre stable et positions nettes", "echelon_B": "2-3 figures réussies avec quelques corrections d'alignement nécessaires", "echelon_C": "Une seule figure réussie ou figures tenues moins de 3 secondes"},
+          {"critere": "Expressivité des transitions entre les figures", "echelon_A": "Transitions fluides et expressives avec une intention artistique claire", "echelon_B": "Transitions fonctionnelles avec quelques éléments expressifs", "echelon_C": "Transitions mécaniques sans expression ou très hésitantes"},
+          {"critere": "Respect des protocoles de sécurité", "echelon_A": "Toujours applique les règles de parage, communication verbale constante et positions de sécurité correctes", "echelon_B": "Applique les règles la plupart du temps avec quelques rappels", "echelon_C": "Application insuffisante des règles de sécurité (nécessite supervision étroite)"}
+        ]
+      },
+      "variantes": [
+        "Thème architectural : reproduire des monuments du monde (Tour Eiffel, pyramides d'Égypte)",
+        "Version avec musique : les figures doivent coïncider avec des moments musicaux précis",
+        "Mini-spectacle pour l'école avec décors et costumes"
+      ],
+      "adaptations_inclusives": [
+        "Rôle de pareur ou de chorégraphe au sol pour les élèves qui ne peuvent pas être porteurs ou voltigeurs",
+        "Adapter les figures : toujours au moins un pied au sol si nécessaire",
+        "Permettre l'utilisation de matériel de soutien (barre, mur) pour certaines figures"
+      ],
+      "connexion_culturelle": "L'acrosport a des racines dans les acrobaties égyptiennes antiques (fresques de Beni Hasan, 2000 av. J.-C.), les performances des acteurs-acrobates du théâtre kabuki japonais, et les traditions des troupes acrobatiques chinoises.",
+      "contexte_mondial": "Le Cirque du Soleil, fondé au Québec en 1984, est aujourd'hui le plus grand cirque au monde et mêle acrobatie, danse et théâtre dans une approche typiquement québécoise de créativité.",
+      "liens_interdisciplinaires": "Arts plastiques : sculpture humaine et notions de symétrie. Physique : centre de gravité et équilibre. Éducation à la citoyenneté : confiance, communication et travail d'équipe."
+    },
+    {
+      "id": "SAE_EXPR_008",
+      "titre": "Danse et technologie : créer un clip",
+      "intentions_pedagogiques": "Intégrer les outils numériques à la création en danse, développer le regard critique sur l'image corporelle et les médias.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 4,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Démontrer une compréhension des enjeux liés à l'activité physique dans la société",
+      "moyen_action": "Création chorégraphique filmée avec analyse médiatique",
+      "materiel": ["Tablettes ou téléphones (avec permission)", "Application de montage vidéo", "Système audio", "Éclairage variable si disponible"],
+      "espace": "Gymnase et espaces variés de l'école",
+      "situation_depart": "Analyse critique de 3 clips musicaux populaires : comment le corps est-il représenté ? Quels stéréotypes ? Quelles qualités de mouvement ? Les élèves développent un regard critique avant de créer le leur.",
+      "tache_complexe": "En duo ou trio, créer et filmer un clip de danse de 60-90 secondes qui répond à un message positif choisi (acceptation de soi, solidarité, joie du mouvement), puis le présenter accompagné d'une justification de 3 choix artistiques.",
+      "deroulement": {
+        "mise_en_train": "Échauffement avec mouvements inspirés de leur culture pop favorite. Discussion : comment nous influencent les clips musicaux que nous regardons ? Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Analyse critique de clips, choix du message, exploration du mouvement. Période 2 : Création chorégraphique et planification du tournage (angles, lumière). Période 3 : Tournage dans différents espaces. Période 4 : Montage et présentation des clips. Durée : 38 minutes par période.",
+        "retour_au_calme": "Discussion : comment la création a-t-elle changé notre regard sur les clips ? Qu'avons-nous appris sur notre rapport à notre corps ? Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Cohérence du message et des choix artistiques", "echelon_A": "Le message est clairement exprimé par les choix de mouvement, musique et montage, justifiés avec précision", "echelon_B": "Le message est partiellement communiqué avec quelques justifications", "echelon_C": "Le message est difficile à percevoir ou peu justifié"},
+          {"critere": "Qualité technique de la danse filmée", "echelon_A": "La chorégraphie est bien maîtrisée, les mouvements sont clairs à la caméra et la performance est engagée", "echelon_B": "La danse est fonctionnelle avec quelques hésitations ou portions floues à la caméra", "echelon_C": "Performance hésitante ou très courte"},
+          {"critere": "Regard critique sur la représentation corporelle", "echelon_A": "La justification démontre une réflexion nuancée sur les stéréotypes et les choix conscients faits pour les éviter ou les subvertir", "echelon_B": "Quelques observations critiques sur la représentation corporelle", "echelon_C": "Peu ou pas de réflexion critique sur la représentation"}
+        ]
+      },
+      "variantes": [
+        "Créer un clip parodique d'un clip existant en remplaçant les stéréotypes",
+        "Utiliser des effets spéciaux numériques pour transformer le mouvement",
+        "Diffuser le clip dans l'école (avec consentement) et analyser les réactions"
+      ],
+      "adaptations_inclusives": [
+        "Option de rôle principal derrière la caméra (réalisateur, monteur)",
+        "Permettre de se filmer uniquement en parties du corps (mains, pieds)",
+        "Durée minimale réduite à 30 secondes si nécessaire"
+      ],
+      "connexion_culturelle": "Les clips de k-pop coréens, les Bollywood playback dancing indiens, les lipdub québécois, et les vidéos virales de danse africaine montrent comment chaque culture utilise la vidéo pour diffuser ses danses au monde entier.",
+      "contexte_mondial": "TikTok et Instagram ont créé une démocratisation mondiale de la diffusion de danse. Des danses comme le Jerusalema sud-africain ou le Keke challenge ont traversé les frontières en quelques jours.",
+      "liens_interdisciplinaires": "Éducation aux médias : analyse critique des images. Arts et multimédia : montage vidéo. Éthique : consentement, image et droits numériques."
+    },
+    {
+      "id": "SAE_EXPR_009",
+      "titre": "Le yoga et la conscience corporelle",
+      "intentions_pedagogiques": "Initier les élèves au yoga comme pratique de conscience corporelle et de bien-être, développer la flexibilité, l'équilibre et la concentration.",
+      "niveau": "Préscolaire (4-6 ans)",
+      "cycle": "Préscolaire",
+      "duree_periodes": 2,
+      "duree_par_periode": "30 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans un contexte d'activité physique individuelle",
+      "moyen_action": "Postures de yoga pour enfants basées sur des animaux et la nature",
+      "materiel": ["Tapis de yoga ou tapis de gym individuels", "Musique douce (sons de la nature)", "Cartes illustrées des postures", "Peluches comme partenaires de yoga"],
+      "espace": "Gymnase ou salle de classe dégagée",
+      "situation_depart": "Histoire guidée : Nous partons en voyage dans la forêt. L'enseignant raconte une aventure courte où les enfants rencontrent différents animaux et doivent imiter leurs postures.",
+      "tache_complexe": "Compléter un mini-parcours de 5 postures de yoga-animaux enchaînées de façon autonome sur son tapis, en respirant lentement dans chaque posture.",
+      "deroulement": {
+        "mise_en_train": "Respiration de la fleur : inspirer en ouvrant les bras comme une fleur, expirer en se refermant. Répéter 5 fois. Étirements doux du matin (comme un chat qui se réveille). Durée : 7 minutes.",
+        "partie_principale": "Apprentissage de 5 postures avec histoire narrative : chien tête en bas, arbre, guerrier, cobra, enfant. Pratique avec les cartes illustrées. Création de leur propre séquence de 3 postures favorites. Durée : 18 minutes.",
+        "retour_au_calme": "Posture de la relaxation (shavasana adapté) : les enfants sont de petites graines qui dorment dans la terre. Respiration guidée avec sons de la forêt. Durée : 5 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Exécution des postures de base", "echelon_A": "Exécute 5 postures avec une position corporelle globalement correcte et tient 5 secondes", "echelon_B": "Exécute 3-4 postures de façon reconnaissable", "echelon_C": "Tente 1-2 postures avec aide importante"},
+          {"critere": "Conscience de la respiration", "echelon_A": "Respire visiblement de façon lente et profonde dans les postures", "echelon_B": "Respire normalement (pas de retenue visible)", "echelon_C": "Retient son souffle ou agitation visible"},
+          {"critere": "Concentration et calme sur le tapis", "echelon_A": "Reste sur son tapis et concentré pendant toute la séance avec autonomie", "echelon_B": "Reste sur son tapis la plupart du temps avec quelques rappels", "echelon_C": "Difficulté à rester sur son tapis ou très agité"}
+        ]
+      },
+      "variantes": [
+        "Yoga des comptines : associer des postures à des chansons connues",
+        "Yoga partenaire : postures en miroir ou en appui avec un ami",
+        "Créer son propre livre de yoga-animaux illustré"
+      ],
+      "adaptations_inclusives": [
+        "Toutes les postures debout peuvent être adaptées en position assise ou couchée",
+        "Utiliser des objets de visualisation (peluche sur le ventre pour voir la respiration)",
+        "Permettre de garder les yeux ouverts pendant la relaxation si cela génère de l'anxiété"
+      ],
+      "connexion_culturelle": "Le yoga est né en Inde il y a plus de 5000 ans et fait partie d'une tradition philosophique et corporelle profonde. Les postures d'animaux (chat, chien, cobra, aigle) reflètent l'observation de la nature dans la culture vedique.",
+      "contexte_mondial": "Aujourd'hui pratiqué dans plus de 100 pays par des millions de personnes, le yoga s'est adapté à de nombreuses cultures tout en conservant ses principes fondamentaux de connexion corps-esprit.",
+      "liens_interdisciplinaires": "Sciences : les animaux et leurs caractéristiques. Langue : vocabulaire de la nature et du corps. Développement de l'enfant : autorégulation émotionnelle et concentration."
+    },
+    {
+      "id": "SAE_EXPR_010",
+      "titre": "Cirque et jonglerie expressive",
+      "intentions_pedagogiques": "Initier aux arts du cirque comme forme d'expression corporelle et de défi personnel, développer la persévérance, la coordination et la créativité.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées dans des contextes de défi personnel",
+      "moyen_action": "Ateliers de cirque tournants et création d'un numéro",
+      "materiel": ["Balles de jonglerie (3 par élève)", "Assiettes de jonglerie", "Diabolos", "Foulards de jonglerie", "Cerceaux de hula-hoop", "Système audio"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation d'artistes de cirque du monde entier : jongleurs indiens, acrobates chinois, équilibristes africains, clowns comiques. Discussion : qu'est-ce que le cirque exprime au-delà de la prouesse ?",
+      "tache_complexe": "Maîtriser une technique de cirque choisie parmi 4 propositions et créer un numéro de 30 secondes qui combine technique et expression personnelle (personnage, émotion, thème).",
+      "deroulement": {
+        "mise_en_train": "Jeu d'introduction aux balles : lancer et attraper progressif (1 balle, 2 balles). Exercices de proprioception avec balles sur le dos de la main. Durée : 8 minutes.",
+        "partie_principale": "Périodes 1-2 : Ateliers tournants de 8 minutes sur 4 stations (jonglerie 2 balles, diabolo de base, hula-hoop, assiette tournante). Période 3 : Choix de technique préférée, approfondissement et début de création du numéro. Période 4 : Répétition et présentation des numéros. Durée : 27 minutes par période.",
+        "retour_au_calme": "Réflexion sur la persévérance : quelle technique était la plus difficile ? Comment a-t-on progressé ? Étirements des poignets et épaules. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise de la technique de cirque choisie", "echelon_A": "Exécute la technique de base choisie de façon fluide et contrôlée pendant au moins 20 secondes consécutives", "echelon_B": "Exécute la technique avec quelques interruptions mais démontre une maîtrise générale", "echelon_C": "Technique partielle ou très instable"},
+          {"critere": "Expression dans le numéro (personnage, intention)", "echelon_A": "Le personnage ou l'intention est clair et soutenu tout au long du numéro", "echelon_B": "Quelques moments d'expression dans le numéro", "echelon_C": "Peu ou pas d'expression dans la présentation"},
+          {"critere": "Attitude face au défi et à l'échec (persévérance)", "echelon_A": "Continue d'essayer après chaque échec, cherche des solutions, attitude positive constante", "echelon_B": "Réessaie après l'échec mais peut nécessiter encouragement", "echelon_C": "Se décourage rapidement face aux difficultés"}
+        ]
+      },
+      "variantes": [
+        "Duo de cirque : deux techniques complémentaires dans un même numéro",
+        "Numéro clown : ajouter des chutes volontaires et expressions comiques",
+        "Créer un spectacle de fin d'unité avec programme et annonceur"
+      ],
+      "adaptations_inclusives": [
+        "Foulards de jonglerie pour commencer (plus lents, plus faciles à attraper)",
+        "Jonglerie adaptée en position assise avec balles légères",
+        "Rôle de magicien (tours de prestidigitation simples) comme alternative"
+      ],
+      "connexion_culturelle": "Le cirque est l'une des plus anciennes formes de spectacle humain : acrobates de la Grèce antique, jongleurs de la route de la soie, baladins médiévaux européens, jusqu'au Cirque du Soleil contemporain fondé à Baie-Saint-Paul, Québec.",
+      "contexte_mondial": "La jonglerie est pratiquée sur tous les continents. Les jongleurs de cour des sultans d'Afrique du Nord, les jongleurs bouddhistes tibétains et les performers de rue brésiliens maintiennent tous une tradition vivante.",
+      "liens_interdisciplinaires": "Mathématiques : géométrie des trajectoires, symétrie. Sciences : physique du mouvement circulaire et de la gravité. Éducation à la citoyenneté : défi personnel, persévérance, droit à l'erreur."
+    },
+    {
+      "id": "SAE_EXPR_011",
+      "titre": "Danse africaine rythmique",
+      "intentions_pedagogiques": "Découvrir les fondements de la danse africaine (polyrythmie, connexion au sol, communauté), développer le sens du rythme et l'expression corporelle ancrée.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Apprentissage de pas de danse africaine mandingue et création collective",
+      "materiel": ["Djembés ou percussion corporelle", "Musique de danse africaine", "Espace vaste dégagé"],
+      "espace": "Gymnase",
+      "situation_depart": "Écoute et analyse d'un rythme djembé. Discussion : comment le rythme vit-il dans le corps ? En Afrique de l'Ouest, la danse et le tambour sont indissociables — qui mène : le musicien ou le danseur ?",
+      "tache_complexe": "Apprendre une séquence de 8 pas de danse africaine mandingue simplifiée, puis l'enseigner à un groupe et finalement créer une variation personnelle d'un pas pour enrichir la danse collective.",
+      "deroulement": {
+        "mise_en_train": "Percussion corporelle collective (clapping pattern à 3 couches). Marche en rythme avec fléchissement des genoux caractéristique. Connexion au sol (poids vers le bas). Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Apprentissage des 4 premiers pas (djouba, kuku éléments simples). Travail du poids et de la connexion au sol. Période 2 : 4 pas supplémentaires. Séquence complète. Variante personnelle d'un pas. Période 3 : Enseignement entre groupes, intégration des variantes dans la danse collective. Durée : 28 minutes par période.",
+        "retour_au_calme": "Cercle communautaire : chaque élève partage sa variante, le groupe l'imite collectivement. Discussion sur la dimension communautaire de la danse africaine. Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Qualité rythmique des pas (connexion au temps musical)", "echelon_A": "Les pas sont constamment synchronisés avec la pulsation musicale, avec connexion au sol naturelle", "echelon_B": "Synchronisation la plupart du temps avec quelques décalages", "echelon_C": "Difficultés fréquentes à maintenir la synchronisation rythmique"},
+          {"critere": "Caractère stylistique (connexion au sol, poids, énergie)", "echelon_A": "Démontre clairement les caractéristiques stylistiques (poids vers le bas, genoux fléchis, énergie enracinée)", "echelon_B": "Quelques caractéristiques stylistiques présentes", "echelon_C": "Style très eurocentré (sur les pointes, peu de connexion au sol)"},
+          {"critere": "Créativité de la variante personnelle", "echelon_A": "La variante est clairement différente de l'originale tout en restant cohérente avec le style", "echelon_B": "Variante légèrement modifiée de l'original", "echelon_C": "Variante identique ou quasi-identique à l'originale"}
+        ]
+      },
+      "variantes": [
+        "Ajouter des percussions corporelles pendant que la moitié du groupe danse",
+        "Apprendre les significations culturelles de chaque danse (djouba pour les semailles, etc.)",
+        "Inviter un artiste de la communauté africaine locale pour un atelier"
+      ],
+      "adaptations_inclusives": [
+        "Adapter les sauts en balancement d'un pied à l'autre si l'impact est problématique",
+        "Rôle de percussionniste pour les élèves qui ne peuvent pas danser",
+        "Réduire la séquence à 4 pas pour les élèves qui en ont besoin"
+      ],
+      "connexion_culturelle": "La danse mandingue d'Afrique de l'Ouest (Guinée, Mali, Sénégal) est l'une des traditions les plus riches du continent. Le kuku est une danse de femmes qui célèbre la pêche, le djouba vient des communautés afro-américaines du bayou louisianais.",
+      "contexte_mondial": "Les danses africaines ont influencé le jazz, le blues, le rock, le hip-hop et pratiquement toutes les danses populaires des Amériques. Comprendre ces racines, c'est comprendre une grande partie de la culture musicale mondiale.",
+      "liens_interdisciplinaires": "Géographie : Afrique de l'Ouest, migrations africaines dans les Amériques. Histoire : traite négrière et diaspora africaine. Musique : polyrythmie, instruments de percussion africains."
+    },
+    {
+      "id": "SAE_EXPR_012",
+      "titre": "Théâtre physique et mime",
+      "intentions_pedagogiques": "Développer l'expression corporelle sans paroles à travers le mime et le théâtre physique, affiner la lecture des signaux corporels d'autrui.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées en expression corporelle",
+      "moyen_action": "Jeux de mime et improvisation théâtrale physique",
+      "materiel": ["Musique d'ambiance douce", "Cartes scénario (images)", "Miroirs (optionnel)", "Espace vide"],
+      "espace": "Gymnase ou salle polyvalente",
+      "situation_depart": "Jeu silencieux : l'enseignant mime une action simple (manger une pomme, porter un sac lourd, marcher sous la pluie). Les élèves doivent deviner sans mots. Introduction : avec le corps, on peut tout dire !",
+      "tache_complexe": "Créer et présenter une scénette mimée de 30 secondes sans aucun son, sur un scénario pioché parmi des cartes, de façon à ce que les spectateurs identifient l'action, l'émotion et l'environnement.",
+      "deroulement": {
+        "mise_en_train": "Jeu du miroir en duo : un élève se déplace lentement, l'autre suit comme un reflet. Échange de rôle. Puis face à face pour des expressions faciales. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Exploration du mime d'objets imaginaires (mur invisible, escalier, ballon). Jeu de devinettes en groupe. Période 2 : Tirage des scénarios. Préparation en duo. Présentation et devinettes. Durée : 28 minutes par période.",
+        "retour_au_calme": "Relaxation active : mime d'une plante qui pousse lentement de la graine jusqu'à la fleur. Retour progressif au calme. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Clarté de la communication sans paroles", "echelon_A": "L'action, l'émotion et l'environnement sont tous identifiés correctement par les spectateurs", "echelon_B": "Au moins 2 des 3 éléments sont identifiés clairement", "echelon_C": "Seulement 1 élément est identifiable ou la scénette est incompréhensible"},
+          {"critere": "Précision des gestes et expressions faciales", "echelon_A": "Les gestes sont définis, précis et cohérents avec les expressions du visage", "echelon_B": "Quelques gestes précis mais expressions faciales parfois inconsistantes", "echelon_C": "Gestes imprécis et peu d'expression faciale"},
+          {"critere": "Maintien du silence (discipline du mime)", "echelon_A": "Maintient le silence complet pendant toute la scénette", "echelon_B": "Maintient le silence avec un ou deux faux départs", "echelon_C": "Difficultés significatives à ne pas parler pendant la performance"}
+        ]
+      },
+      "variantes": [
+        "Mime en groupe : histoire collective enchaînée où chaque élève ajoute une action",
+        "Mime d'un métier : les autres doivent deviner le travail présenté",
+        "Version avec contrainte émotionnelle (faire la même action mais avec joie, tristesse, peur)"
+      ],
+      "adaptations_inclusives": [
+        "Permettre des sons non-verbaux (souffles, claquements) comme support",
+        "Simplifier les scénarios pour certains élèves (une seule action)",
+        "Autoriser la présentation assis pour les élèves avec mobilité réduite"
+      ],
+      "connexion_culturelle": "Le mime est une des formes d'expression les plus anciennes de l'humanité. Marcel Marceau (France) a popularisé le mime moderne. Le Kathakali indien raconte des épopées entièrement par les expressions du visage et les gestes des mains (mudras).",
+      "contexte_mondial": "La Commedia dell'arte italienne du XVIe siècle a établi des archétypes de personnages mimés qui influencent encore aujourd'hui le cinéma muet, le clown et le théâtre physique contemporain.",
+      "liens_interdisciplinaires": "Français : vocabulaire des émotions et actions. Arts dramatiques : éléments du jeu théâtral. Développement social : lecture des signaux non-verbaux, empathie."
+    },
+    {
+      "id": "SAE_EXPR_013",
+      "titre": "Danses de bal traditionnelles québécoises",
+      "intentions_pedagogiques": "Transmettre le patrimoine de la danse traditionnelle québécoise, développer la sociabilité et le sens du rythme dans un contexte culturel authentique.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Apprentissage de danses traditionnelles québécoises en groupe",
+      "materiel": ["Musique de gigue et de reels québécois", "Système audio", "Espace libre de 30m²"],
+      "espace": "Gymnase",
+      "situation_depart": "Écoute d'un reel québécois et d'une gigue. Discussion sur les origines : comment ces danses sont-elles arrivées au Québec ? (immigrants irlandais, écossais, français, influences autochtones). Qui en a hérité ? Qui la pratique encore aujourd'hui ?",
+      "tache_complexe": "Apprendre et exécuter trois formations de danse traditionnelle québécoise (cercle, quadrille simplifié, chaîne) en suivant les appels du caller, avec changement de partenaire.",
+      "deroulement": {
+        "mise_en_train": "Marche en rythme de gigue (pas levé-posé caractéristique). Cercle de chauffe : se déplacer en cercle avec différents pas. Introduction du rôle du caller. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Apprentissage du cercle de base et des salutations. Période 2 : Introduction du quadrille simplifié et de la chaîne. Période 3 : Bal complet avec caller, rotation de partenaires. Durée : 28 minutes par période.",
+        "retour_au_calme": "Assis en cercle, partage : était-ce difficile de changer de partenaire ? Quels sentiments la danse en groupe a-t-elle créés ? Étirements des jambes. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise des formations de danse", "echelon_A": "Se positionne correctement et rapidement dans les 3 formations dès l'appel du caller", "echelon_B": "Maîtrise 2 formations correctement, hésite pour la 3e", "echelon_C": "Maîtrise 1 formation ou fréquemment perdu"},
+          {"critere": "Synchronisation rythmique avec la musique", "echelon_A": "Maintient le pas en rythme pendant toute la danse", "echelon_B": "En rythme la plupart du temps avec quelques décalages", "echelon_C": "Difficulté à maintenir le rythme de la gigue"},
+          {"critere": "Interaction positive avec les partenaires (courtoisie et coopération)", "echelon_A": "Salue ses partenaires, guide ou suit selon son rôle, encourage les plus hésitants", "echelon_B": "Interagit correctement mais de façon plus passive", "echelon_C": "Évite certains partenaires ou interactions difficiles observées"}
+        ]
+      },
+      "variantes": [
+        "Organiser un vrai bal avec musique live (inviter des musiciens locaux)",
+        "Comparer avec des country dances américaines ou des ceili danses irlandaises",
+        "Les élèves apprennent à caller eux-mêmes une séquence simple"
+      ],
+      "adaptations_inclusives": [
+        "Rôle de caller pour les élèves qui préfèrent ne pas danser",
+        "Adapter le rythme de la musique (version plus lente en apprentissage)",
+        "Permettre de rester dans une seule formation plutôt que de tourner"
+      ],
+      "connexion_culturelle": "La danse traditionnelle québécoise est un métissage unique : les contredanses françaises, les jigs et reels irlandais et écossais, et les influences des Premières Nations ont créé quelque chose de typiquement québécois.",
+      "contexte_mondial": "Les danses de bal communautaires existent dans toutes les cultures : la Viennoise Polka en Europe centrale, les Ceili dances irlandaises, la Saman d'Aceh indonésienne classée au patrimoine UNESCO, les danses de la place en Amérique latine.",
+      "liens_interdisciplinaires": "Histoire du Québec : immigration et brassage culturel. Musique : instruments traditionnels québécois (violon, ruine-babines, cuillères). Français : vocabulaire des termes de danse et appels du caller."
+    },
+    {
+      "id": "SAE_EXPR_014",
+      "titre": "Mouvements créatifs avec équipement de gym",
+      "intentions_pedagogiques": "Détourner les équipements sportifs comme matière première à l'expression créative, développer l'inventivité motrice et la pensée divergente.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées dans des contextes ludiques",
+      "moyen_action": "Exploration libre et guidée avec équipements divers",
+      "materiel": ["Cerceaux", "Ballons de différentes tailles", "Cordes à sauter", "Rubans", "Foulards", "Cônes colorés"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation d'un foulard. Défi collectif : en 2 minutes, trouvez le plus grand nombre de façons différentes d'utiliser ce foulard en mouvement. Collecte des idées au tableau.",
+      "tache_complexe": "Choisir un équipement et créer une séquence de 5 façons différentes de l'utiliser dans un mouvement expressif, en variant les niveaux, les vitesses et les parties du corps utilisées.",
+      "deroulement": {
+        "mise_en_train": "Exploration libre de 3 minutes avec chaque type d'équipement (station de 3 min). Partage rapide des découvertes les plus originales. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Défi d'inventivité par équipement. Présentation des découvertes en micro-groupe. Période 2 : Choix définitif de l'équipement, création de la séquence de 5 façons, partage en grand groupe. Durée : 28 minutes par période.",
+        "retour_au_calme": "Mise en rangement en mode ralenti extrême (comme si le temps était au ralenti). Respiration guidée. Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Variété des utilisations de l'équipement (pensée divergente)", "echelon_A": "Propose 5 utilisations clairement différentes et originales", "echelon_B": "Propose 3-4 utilisations différentes", "echelon_C": "Propose 1-2 utilisations ou répète la même idée"},
+          {"critere": "Variation des paramètres (niveau, vitesse, parties du corps)", "echelon_A": "Varie de façon évidente au moins 3 paramètres différents dans sa séquence", "echelon_B": "Varie 1-2 paramètres", "echelon_C": "Peu ou pas de variation dans les paramètres"},
+          {"critere": "Fluidité de la séquence", "echelon_A": "Enchaîne les 5 façons sans pause, de façon continue et mémorisée", "echelon_B": "Quelques pauses entre les éléments mais séquence complète", "echelon_C": "Séquence incomplète ou très hésitante"}
+        ]
+      },
+      "variantes": [
+        "Défi : utiliser deux équipements simultanément",
+        "Danse des objets : créer une histoire où l'équipement est le personnage principal",
+        "Version collective : chaque élève apporte sa façon préférée, créer une danse collective"
+      ],
+      "adaptations_inclusives": [
+        "Choisir l'équipement le plus accessible selon les capacités motrices",
+        "Accepter 3 façons différentes plutôt que 5",
+        "Permettre de dessiner les idées avant de les exécuter"
+      ],
+      "connexion_culturelle": "Les artistes de rue du monde entier transforment des objets ordinaires en instruments de danse et d'expression : les manipulateurs de bâtons samoans, les danseurs de poi maori, les jongleurs de chapeau mexicains.",
+      "contexte_mondial": "La danse des objets (object manipulation) est universelle. Les Autochtones de la côte Nord-Ouest utilisent des bâtons et des boucliers dans leurs danses cérémonielles. Les danseurs de rubans de la Chine ancienne utilisaient des rubans de soie.",
+      "liens_interdisciplinaires": "Arts plastiques : sculpture cinétique, installation artistique. Sciences : propriétés physiques des objets. Développement cognitif : pensée créative et résolution de problèmes."
+    },
+    {
+      "id": "SAE_EXPR_015",
+      "titre": "Stretching artistique et flexibilité expressive",
+      "intentions_pedagogiques": "Développer la flexibilité et la mobilité articulaire dans un contexte expressif et conscient, lier la santé physique à l'expression artistique.",
+      "niveau": "Secondaire 3-5 (15-17 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 2,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Adopter un mode de vie sain et actif",
+      "composante": "Planifier une pratique d'activité physique axée sur le développement de soi",
+      "moyen_action": "Programme personnalisé de flexibilité avec journal de progression",
+      "materiel": ["Tapis de sol", "Élastiques/bandes de résistance", "Blocs de yoga", "Système audio", "Journal de bord"],
+      "espace": "Gymnase",
+      "situation_depart": "Test initial de mobilité (rotation interne/externe épaule, flexion tronc, flexibilité ischio-jambiers). Établissement d'objectifs personnels réalistes à 6 semaines. Présentation de la flexibilité comme outil expressif en danse contemporaine et en arts du cirque.",
+      "tache_complexe": "Concevoir et exécuter un programme de 15 minutes de stretching progressif sur 6 semaines, documentant les progrès et créant finalement une courte séquence de poses expressives mettant en valeur sa flexibilité acquise.",
+      "deroulement": {
+        "mise_en_train": "Activation circulatoire légère (5 minutes). Révision des principes scientifiques du stretching (statique vs dynamique, durée optimale). Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Évaluation de départ, établissement du programme personnalisé, première séance guidée. Période 2 (et suivantes) : Exécution du programme personnel + travail sur la séquence expressive. Durée : 38 minutes par période.",
+        "retour_au_calme": "Relaxation consciente : scan corporel progressif. Mise à jour du journal de bord. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Progression mesurable de la flexibilité (pré/post-test)", "echelon_A": "Amélioration documentée d'au moins 20% sur 2 des 3 mesures initiales", "echelon_B": "Amélioration d'au moins 10% sur 1-2 mesures", "echelon_C": "Peu ou pas de progression mesurable"},
+          {"critere": "Qualité et régularité du journal de bord", "echelon_A": "Journal complet et régulier avec observations sur les sensations, difficultés et ajustements", "echelon_B": "Journal partiellement complété avec quelques observations", "echelon_C": "Journal très incomplet ou absent"},
+          {"critere": "Expression dans la séquence de poses finales", "echelon_A": "Les poses sont maintenues avec intention expressive claire et qualité esthétique", "echelon_B": "Quelques poses expressives avec qualité variable", "echelon_C": "Séquence principalement fonctionnelle sans dimension expressive"}
+        ]
+      },
+      "variantes": [
+        "Intégrer des techniques de respiration yogique (pranayama) dans le programme",
+        "Comparer les styles de flexibilité de différentes disciplines (ballet, gymnastes, lutteurs, judokas)",
+        "Créer une vidéo tutoriel de sa routine pour d'autres élèves"
+      ],
+      "adaptations_inclusives": [
+        "Objectifs personnalisés selon les capacités individuelles (hypermobilité ou raideurs)",
+        "Adapter les poses pour les élèves avec blessures ou limitations",
+        "Fournir des guides visuels pour chaque étirement"
+      ],
+      "connexion_culturelle": "La flexibilité rituelle dans les contorsions des danseurs sacrés de Bali, les acrobates équestres mongols, les danseurs classiques du Bharatanatyam indien qui développent une flexibilité extrême sur des années de pratique.",
+      "contexte_mondial": "Les gymnastes artistiques olympiques, les danseurs de ballet classique russe et les pratiquants de wushu chinois poussent la flexibilité humaine à ses limites, chacun dans un contexte culturel différent.",
+      "liens_interdisciplinaires": "Biologie : anatomie musculaire et articulaire, biomécanique. Psychologie : pleine conscience et intéroception. Santé : prévention des blessures sportives."
+    },
+    {
+      "id": "SAE_EXPR_016",
+      "titre": "Bollywood : fusion danse et culture",
+      "intentions_pedagogiques": "Découvrir la danse Bollywood comme fusion de plusieurs traditions indiennes et de danse occidentale, explorer la notion de métissage culturel en mouvement.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Apprentissage d'une chorégraphie Bollywood en groupe",
+      "materiel": ["Système audio", "Musique Bollywood contemporaine", "Vidéos de référence", "Dupatta (foulards colorés en alternative)"],
+      "espace": "Gymnase",
+      "situation_depart": "Visionnement d'un extrait de film Bollywood. Identification des influences : danse classique indienne (kathak, bharatanatyam), danse latine, hip-hop, cabaret. Discussion : qu'est-ce que la fusion culturelle en art ?",
+      "tache_complexe": "Apprendre une chorégraphie Bollywood de 32 temps incluant des mudras de base (gestes des mains) et des mouvements de tête caractéristiques, puis l'adapter avec un élément culturel personnel.",
+      "deroulement": {
+        "mise_en_train": "Initiation aux mudras de base (lotus, oiseau, pluie, soleil). Mouvements de tête latéraux caractéristiques. Ondulations des bras. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Apprentissage des 16 premiers temps (partie A). Période 2 : Apprentissage des 16 temps suivants (partie B). Travail sur les expressions du visage. Période 3 : Chorégraphie complète + adaptation personnelle + présentation. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion sur la notion de métissage : avez-vous dans votre famille ou culture des traditions de danse ? Étirements des poignets et cou. Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise des éléments techniques spécifiques Bollywood", "echelon_A": "Exécute correctement les mudras, mouvements de tête et ondulations caractéristiques", "echelon_B": "Exécute la plupart des éléments avec quelques imprécisions", "echelon_C": "Difficultés avec la plupart des éléments spécifiques"},
+          {"critere": "Expression du visage et engagement expressif", "echelon_A": "Expressions claires et cohérentes avec la musique et le mouvement tout au long de la chorégraphie", "echelon_B": "Quelques moments d'expression faciale", "echelon_C": "Peu ou pas d'expression faciale"},
+          {"critere": "Pertinence et créativité de l'adaptation personnelle", "echelon_A": "L'adaptation intègre clairement un élément culturel personnel de façon cohérente avec le style Bollywood", "echelon_B": "L'adaptation est présente mais peu développée", "echelon_C": "Aucune adaptation personnelle ou adaptation sans lien avec la culture personnelle"}
+        ]
+      },
+      "variantes": [
+        "Créer un mashup Bollywood-gigue québécoise",
+        "Chaque groupe présente sa chorégraphie avec un costume ou accessoire de son choix",
+        "Créer une version flash mob pour une assemblée scolaire"
+      ],
+      "adaptations_inclusives": [
+        "Simplifier les mudras pour les élèves avec difficultés de motricité fine",
+        "Permettre de s'asseoir pour les parties des bras seulement si nécessaire",
+        "Fournir une partition visuelle de chaque mouvement"
+      ],
+      "connexion_culturelle": "Bollywood, né à Mumbai (anciennement Bombay), mélange le classique indien (bharatanatyam, kathak, odissi), la danse folklorique (bhangra, garba), le jazz américain et le hip-hop contemporain. C'est l'industrie cinématographique la plus productive du monde.",
+      "contexte_mondial": "L'Inde produit plus de 2000 films par an. La danse Bollywood est enseignée dans des studios de plus de 80 pays et a été popularisée au niveau mondial par des films comme Lagaan, Devdas et Dilwale Dulhania Le Jayenge.",
+      "liens_interdisciplinaires": "Géographie : l'Inde et sa diversité culturelle. Arts plastiques : costumes et couleurs de la tradition indienne. Histoire : colonisation et influences culturelles croisées entre l'Inde et le monde."
+    },
+    {
+      "id": "SAE_EXPR_017",
+      "titre": "Danse contact improvisation",
+      "intentions_pedagogiques": "Développer la sensibilité au contact physique et à l'échange de poids, explorer la confiance et la communication non-verbale en mouvement.",
+      "niveau": "Secondaire 3-5 (15-17 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 4,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans des contextes de pratique physique",
+      "moyen_action": "Improvisation en contact avec un partenaire, progression graduée",
+      "materiel": ["Tapis de sol", "Musique ambiante douce", "Vêtements confortables recommandés"],
+      "espace": "Studio de danse ou gymnase avec tapis",
+      "situation_depart": "Présentation de la contact improvisation née aux États-Unis en 1972 avec Steve Paxton. Discussion sur le consentement, les limites personnelles et la communication en danse. Établissement des règles de sécurité et de respect.",
+      "tache_complexe": "Après une progression graduelle d'exercices de contact, improviser avec un partenaire pendant 3 minutes en explorant l'échange de poids, les niveaux et les inversions sécuritaires.",
+      "deroulement": {
+        "mise_en_train": "Exercises d'enracinement solo. Puis dos-à-dos avec partenaire : respirer ensemble, ressentir le poids de l'autre. Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Contact main-main, exploration de la direction sans verbal. Période 2 : Échange de poids progressif (de léger à soutenu). Période 3 : Exploration des niveaux (debout, accroupi, au sol). Période 4 : Improvisation libre de 3 minutes avec changement de partenaire à mi-temps. Durée : 38 minutes par période.",
+        "retour_au_calme": "Journal de bord : comment s'est passée la communication non-verbale ? Quelles étaient tes limites aujourd'hui ? Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Sensibilité au contact et à l'échange de poids", "echelon_A": "Répond fluidement aux propositions du partenaire, échange de poids sécuritaire et réciproque", "echelon_B": "Répond à la plupart des propositions avec quelques moments de résistance ou passivité", "echelon_C": "Difficultés à recevoir ou donner du poids de façon sécuritaire"},
+          {"critere": "Exploration des niveaux dans l'espace", "echelon_A": "Explore avec aisance les 3 niveaux (debout, intermédiaire, sol) avec le partenaire", "echelon_B": "Explore 2 niveaux confortablement", "echelon_C": "Reste principalement à un seul niveau"},
+          {"critere": "Respect des limites personnelles et du consentement", "echelon_A": "Communique clairement ses limites, respecte celles de son partenaire, ajuste rapidement si nécessaire", "echelon_B": "Généralement respectueux avec quelques moments de lecture difficile du partenaire", "echelon_C": "Difficultés à communiquer ou respecter les limites"}
+        ]
+      },
+      "variantes": [
+        "Trio de contact : dynamiques à trois partenaires",
+        "Contact improvisation avec musique et contrainte thématique",
+        "Performance de contact improvisation ouverte avec discussion avec le public"
+      ],
+      "adaptations_inclusives": [
+        "Toujours offrir l'option de ne pas être touché et travailler en ombre-miroir",
+        "Adapter les exercices de poids pour les différences de taille et de capacité",
+        "Autoriser le travail uniquement au sol si c'est plus confortable"
+      ],
+      "connexion_culturelle": "L'échange de poids dansé se retrouve dans de nombreuses traditions : les combats-danses des guerriers maori (haka), la lutte-danse brésilienne (capoeira), les danses de couple de l'Argentine (tango) et l'escrime-danse des Philippines (arnis).",
+      "contexte_mondial": "La contact improvisation née à Oberlin College (Ohio) en 1972 s'est répandue dans le monde entier et est aujourd'hui pratiquée dans des jams sur tous les continents.",
+      "liens_interdisciplinaires": "Psychologie sociale : consentement, communication non-verbale, espace personnel. Philosophie : le corps comme sujet d'expérience. Neurosciences : proprioception et systèmes sensoriels."
+    },
+    {
+      "id": "SAE_EXPR_018",
+      "titre": "Danses du monde en cercle : le cercle universel",
+      "intentions_pedagogiques": "Découvrir le cercle comme structure dansée universelle présente dans toutes les cultures, développer le sentiment d'appartenance communautaire par le mouvement partagé.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Danses en cercle de différentes traditions culturelles",
+      "materiel": ["Système audio", "Musiques du monde", "Photos de danses en cercle de cultures diverses"],
+      "espace": "Gymnase",
+      "situation_depart": "Montrer des photos : pow-wow amérindien en cercle, hora israélienne, kolo serbe, saman indonésien, danses en ronde françaises. Qu'est-ce qui est commun à toutes ces images ? Pourquoi les humains dansent-ils souvent en cercle ?",
+      "tache_complexe": "Apprendre et exécuter 3 rondes de cultures différentes, en comprenant la signification culturelle de chacune, et créer collectivement une ronde nouvelle qui mélange des éléments des trois.",
+      "deroulement": {
+        "mise_en_train": "Former un cercle. Exercices de cohésion : se serrer, s'étirer, respirer ensemble. Marcher en cercle en changeant de direction sur un signal. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Apprentissage de la ronde française (Savez-vous planter les choux, adaptée). Apprentissage du kolo slave simplifié. Période 2 : Kolo plus complet, création collective d'une ronde hybride. Présentation et discussion. Durée : 28 minutes par période.",
+        "retour_au_calme": "Terminer en cercle, tous se tenant par la main, oscillation douce. Discussion : comment s'est-on senti dans le cercle ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Mémorisation et exécution des 3 rondes", "echelon_A": "Exécute les pas des 3 rondes correctement avec fluidité", "echelon_B": "Exécute 2 rondes correctement", "echelon_C": "Maîtrise partielle d'une seule ronde"},
+          {"critere": "Contribution à la ronde collective créée", "echelon_A": "Propose une idée claire et aide à l'intégrer dans la ronde collective", "echelon_B": "Participe à la création avec quelques suggestions", "echelon_C": "Peu de participation à la création collective"},
+          {"critere": "Connexion physique et sociale avec le groupe dans le cercle", "echelon_A": "Maintient la connexion (main, épaule) et s'ajuste pour maintenir le cercle égal", "echelon_B": "Maintient le contact la plupart du temps", "echelon_C": "Difficultés à maintenir le contact ou à s'adapter au rythme du groupe"}
+        ]
+      },
+      "variantes": [
+        "Cercles concentriques avec différents rythmes simultanés",
+        "Spirale : le cercle se déroule en spirale et se reforme",
+        "Chaque élève apprend une ronde de son héritage culturel et l'enseigne"
+      ],
+      "adaptations_inclusives": [
+        "Permettre les variantes de prise (poignet, coude) selon les préférences",
+        "Adapter les pas pour les fauteuils roulants en cercle intégré",
+        "Position de choix dans le cercle (début, milieu) selon le niveau de confort"
+      ],
+      "connexion_culturelle": "Le cercle est la forme sociale de danse la plus répandue dans l'humanité. Il représente l'égalité (personne n'est devant, personne n'est derrière), la communauté et le cycle de la vie dans de nombreuses cosmologies.",
+      "contexte_mondial": "Du pow-wow des Premières Nations au saman de l'île de Sumatra (Indonésie), en passant par la hora israélienne et les danses en ronde slaves, le cercle dansé est un langage universel de communauté.",
+      "liens_interdisciplinaires": "Mathématiques : géométrie du cercle. Géographie : localisation des cultures sur la carte mondiale. Éducation à la citoyenneté : vivre ensemble, égalité et appartenance communautaire."
+    },
+    {
+      "id": "SAE_EXPR_019",
+      "titre": "Danse brésilienne : forró et axé",
+      "intentions_pedagogiques": "Explorer les rythmes et danses du nord-est du Brésil, développer la coordination et l'improvisation dans un style festif et accessible.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 3,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices complexes dans des contextes expressifs",
+      "moyen_action": "Apprentissage des fondamentaux du forró en couple et de l'axé en groupe",
+      "materiel": ["Système audio", "Musique forró (trio nordestino, forró universitário) et axé", "Espace dégagé"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation du Carnaval de Salvador de Bahia et du São João du nord-est brésilien. Discussion sur le rôle de la fête et de la danse dans la culture brésilienne. Comment la danse peut-elle être un ciment social ?",
+      "tache_complexe": "Maîtriser le pas de base du forró (le baião) et 3 figures simples, puis enchaîner une improvisation de 32 temps avec un partenaire lors d'une soirée forró simulée en classe.",
+      "deroulement": {
+        "mise_en_train": "Percussion corporelle brésilienne (repique pattern de base). Marche sur le rythme baião. Ondulations des hanches et transferts de poids. Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Pas de base du forró en solo puis en couple. Figure 1 : virada. Période 2 : Figures 2 et 3 (volta et balanço). Coordination des deux partenaires. Période 3 : Improvisation guidée, soirée forró simulée avec changement de partenaires. Durée : 38 minutes par période.",
+        "retour_au_calme": "Discussion : comment communique-t-on avec un partenaire en danse ? Étirements des hanches et des chevilles. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise du pas de base et des 3 figures", "echelon_A": "Exécute le pas de base et les 3 figures dans le bon rythme avec aisance", "echelon_B": "Maîtrise le pas de base et 1-2 figures", "echelon_C": "Pas de base partiellement maîtrisé"},
+          {"critere": "Communication avec le partenaire (guidage/suivre)", "echelon_A": "Guide ou suit clairement selon le rôle, communication fluide et adaptative", "echelon_B": "Communication fonctionnelle avec quelques moments de confusion", "echelon_C": "Difficultés à communiquer avec le partenaire"},
+          {"critere": "Attitude festive et engagement social de la soirée simulée", "echelon_A": "Participe avec enthousiasme, change de partenaire volontiers, encourage les autres", "echelon_B": "Participe correctement avec quelques hésitations à changer de partenaire", "echelon_C": "Participation minimale ou refus de changer de partenaire"}
+        ]
+      },
+      "variantes": [
+        "Intégrer des éléments d'axé (danse de groupe du Carnaval) dans la soirée",
+        "Présentation d'un enchaînement de couple mémorisé",
+        "Soirée forró avec décoration et musique live si disponible"
+      ],
+      "adaptations_inclusives": [
+        "Adapter en trio (deux followers, un leader) pour plus de soutien",
+        "Version debout avec seulement les bras en contact si la proximité est difficile",
+        "Permettre de pratiquer en solo les pas avant de rejoindre un partenaire"
+      ],
+      "connexion_culturelle": "Le forró est né dans le nord-est du Brésil (Sertão) parmi les travailleurs ruraux. Son étymologie contestée inclut 'for all' (anglais des ingénieurs ferroviaires britanniques), mais il représente aujourd'hui la culture nordestine brésilienne par excellence.",
+      "contexte_mondial": "Le Brésil est l'un des pays avec la plus grande diversité de danses régionales : forró (nord-est), samba (Rio), axé (Bahia), funk carioca, frevo, maracatu. Cette diversité reflète le métissage amérindien, africain et européen.",
+      "liens_interdisciplinaires": "Géographie : régions du Brésil, nord-est et ses caractéristiques. Histoire : colonisation du Brésil et esclavage africain. Musique : rythmes brésiliens, accordion et zabumba."
+    },
+    {
+      "id": "SAE_EXPR_020",
+      "titre": "Chorégraphie narrative : raconter une histoire par le corps",
+      "intentions_pedagogiques": "Développer la capacité à créer une narration dansée, intégrer des éléments dramatiques dans la danse pour communiquer une histoire sans paroles.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées en expression corporelle",
+      "moyen_action": "Création chorégraphique narrative en groupe avec scénario",
+      "materiel": ["Système audio", "Musique variée et évocatrice", "Accessoires simples (chapeaux, foulards, bâtons)", "Fiches scénario", "Espace de scène délimité"],
+      "espace": "Gymnase",
+      "situation_depart": "Visionnement d'un extrait de ballet narratif (Casse-Noisette, Cendrillon) ou de comédie musicale. Identification des outils narratifs utilisés : gestes symboliques, dynamique du mouvement, interactions entre personnages.",
+      "tache_complexe": "En groupe de 4-5, créer une danse narrative de 90 secondes racontant un conte ou une légende du monde (à choisir parmi une liste multiculturelle) avec introduction, péripétie et résolution.",
+      "deroulement": {
+        "mise_en_train": "Jeu du tableau vivant : l'enseignant nomme une scène d'une histoire connue, les élèves créent immédiatement une sculpture de groupe représentant cette scène. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Choix de l'histoire, identification des personnages, des actions clés et des émotions. Début de la chorégraphie. Période 2 : Suite de la création, travail sur les transitions et l'expressivité. Période 3 : Mémorisation, ajout des accessoires. Période 4 : Répétition générale et présentation. Analyse critique mutuelle guidée. Durée : 28 minutes par période.",
+        "retour_au_calme": "Réflexion : qu'est-ce que votre histoire dit sur vos valeurs ? Étirements doux en cercle. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Lisibilité de la narration (début, péripétie, résolution)", "echelon_A": "Les 3 parties de la narration sont clairement identifiables par les spectateurs", "echelon_B": "2 parties sur 3 sont identifiables", "echelon_C": "La narration est difficile à suivre"},
+          {"critere": "Qualité expressive des personnages", "echelon_A": "Chaque personnage est distinct et maintenu de façon cohérente avec des gestes symboliques clairs", "echelon_B": "1-2 personnages sont clairement exprimés", "echelon_C": "Peu de différenciation entre les personnages"},
+          {"critere": "Cohérence et originalité du choix de l'histoire et de son traitement", "echelon_A": "Histoire bien choisie pour la danse, traitée avec créativité et respect de la culture d'origine", "echelon_B": "Histoire appropriée avec un traitement standard", "echelon_C": "Difficultés à adapter l'histoire au format danse"}
+        ]
+      },
+      "variantes": [
+        "Version avec narration en voix off pendant que le groupe danse",
+        "Adapter le même conte dans deux styles de danse très différents (hip-hop et contemporain)",
+        "Mélanger deux histoires de cultures différentes dans une même chorégraphie"
+      ],
+      "adaptations_inclusives": [
+        "Rôle de narrateur (voix) ou de metteur en scène pour les élèves qui ne peuvent pas danser",
+        "Simplifier l'histoire à 2 parties (introduction + résolution)",
+        "Permettre d'inclure des tableaux vivants statiques entre les séquences dansées"
+      ],
+      "connexion_culturelle": "Les danses narratives existent dans toutes les cultures : Ramayana en Indonésie (danse kecak), ballets kathakali en Inde, danses masquées noh du Japon, danses des Autochtones de la côte nord-ouest racontant les mythes de la création.",
+      "contexte_mondial": "Le ballet narratif européen (Casse-Noisette, Le Lac des Cygnes) est l'un des formats les plus célèbres, mais les danses narratives non-européennes précèdent largement cette tradition et sont d'une richesse incomparable.",
+      "liens_interdisciplinaires": "Français : structure narrative (schéma actantiel). Arts dramatiques : dramaturgie et mise en scène. Éthique et culture religieuse : valeurs véhiculées par les mythes et contes du monde."
+    }
+  ]
+}

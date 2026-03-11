@@ -1,0 +1,824 @@
+{
+  "sae": [
+    {
+      "id": "SAE_POURS_001",
+      "titre": "Le loup et les moutons",
+      "intentions_pedagogiques": "Développer les habiletés de poursuite et de fuite dans un contexte ludique simple, initier aux stratégies de base (fuir, se cacher, se démarquer).",
+      "niveau": "Préscolaire (4-6 ans)",
+      "cycle": "Préscolaire",
+      "duree_periodes": 2,
+      "duree_par_periode": "30 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans un contexte d'activité physique individuelle",
+      "moyen_action": "Jeu de poursuite thématique en rôles",
+      "materiel": ["Cônes pour délimiter la zone", "Dossards pour le loup (1-2)", "Espace dégagé"],
+      "espace": "Gymnase ou cour d'école",
+      "situation_depart": "L'enseignant raconte l'histoire du petit chaperon rouge. Discussion : que fait-on quand on a peur d'être attrapé ? Présentation du jeu : le loup essaie d'attraper les moutons.",
+      "tache_complexe": "Participer activement au jeu de poursuite pendant 5 minutes en utilisant une stratégie de fuite (changer de direction, s'arrêter brusquement) sans être attrapé plus d'une fois.",
+      "deroulement": {
+        "mise_en_train": "Jeu d'imitation : imiter le mouton (bêler, marcher à quatre pattes). Puis le loup (grogner, courir). Transition progressive vers la station debout. Durée : 6 minutes.",
+        "partie_principale": "Période 1 : Jeu de base (1 loup, 15 moutons, zone délimitée). Rotation du rôle du loup toutes les 2 minutes. Période 2 : Ajout d'une bergerie (zone de sécurité limitée à 3 secondes). Durée : 18 minutes.",
+        "retour_au_calme": "Les moutons rentrent à la bergerie : marche lente, respiration, s'allonger. Discussion : quelle stratégie t'a permis de ne pas te faire attraper ? Durée : 6 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Utilisation de l'espace disponible pour fuir", "echelon_A": "Utilise activement tout l'espace disponible et change de direction fréquemment", "echelon_B": "Utilise une partie de l'espace avec quelques changements de direction", "echelon_C": "Reste dans un petit espace ou se déplace peu"},
+          {"critere": "Conscience spatiale (éviter les autres)", "echelon_A": "Évite systématiquement les collisions avec les autres élèves", "echelon_B": "Quelques collisions légères mais conscience générale des autres", "echelon_C": "Collisions fréquentes ou désintérêt pour la présence des autres"},
+          {"critere": "Engagement et participation active", "echelon_A": "Participe avec enthousiasme et court activement pendant toute la durée", "echelon_B": "Participe activement la plupart du temps", "echelon_C": "Participation minimale ou s'arrête fréquemment"}
+        ]
+      },
+      "variantes": [
+        "Zombies et humains : les zombies marchent lentement pour les plus jeunes",
+        "Ajout d'une tanière : les loups reviennent à un point central entre les poursuites",
+        "Version coopérative : tous les loups contre tous les moutons pour tester les stratégies collectives"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la zone de jeu selon les capacités locomotrices",
+        "Permettre la marche rapide plutôt que la course",
+        "Créer un rôle de berger (arbitre) pour les élèves qui ne peuvent pas courir"
+      ],
+      "connexion_culturelle": "Les jeux de poursuite loup/proie existent dans toutes les cultures. Les Inuit jouent à des versions arctiques où le chasseur et le phoque s'affrontent sur la banquise (symboliquement recréée). En Australie autochtone, les jeux de poursuite mimaient la chasse au kangourou.",
+      "contexte_mondial": "Les jeux de poursuite sont parmi les jeux les plus primitifs et universels de l'humanité. Ils développent des compétences directement liées à la survie dans toutes les cultures de chasseurs-cueilleurs.",
+      "liens_interdisciplinaires": "Sciences : caractéristiques des loups et moutons, chaîne alimentaire. Français : histoire du loup dans les contes québécois et européens. Développement moral : règles du jeu, équité, fairplay."
+    },
+    {
+      "id": "SAE_POURS_002",
+      "titre": "Gendarmes et voleurs",
+      "intentions_pedagogiques": "Développer les stratégies de poursuite et de fuite dans un jeu de rôles opposés, introduire les notions de territoire et de mission en contexte de jeu.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers",
+      "moyen_action": "Jeu de poursuite en équipes opposées avec mission",
+      "materiel": ["Cônes (deux couleurs)", "Dossards (deux couleurs)", "Objet à protéger (ballon, bâton lumineux)", "Chronomètre"],
+      "espace": "Gymnase ou terrain extérieur",
+      "situation_depart": "Discussion sur le concept de mission : les voleurs veulent récupérer le trésor, les gendarmes doivent les en empêcher. Établissement des règles de jeu et des zones.",
+      "tache_complexe": "Jouer alternativement les deux rôles (gendarme et voleur) pendant deux manches de 5 minutes chacune, en proposant une stratégie d'équipe avant chaque manche.",
+      "deroulement": {
+        "mise_en_train": "Exercices de démarrage rapide et de changement de direction. Course d'accélération sur 5m, 10m. Exercice de départ-arrêt sur signal. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Apprentissage des règles. Première manche (rôle 1). Pause stratégique de 3 minutes. Période 2 : Deuxième manche (rôle inversé). Discussion tactique finale. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion : quelle stratégie a fonctionné ? Pourquoi est-ce plus difficile d'être gendarme/voleur ? Retour physiologique progressif. Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Efficacité de la stratégie personnelle en tant que poursuivant", "echelon_A": "Anticipe les déplacements du fuyant et converge avec un coéquipier pour réduire l'espace", "echelon_B": "Poursuite directe efficace mais peu de stratégie d'anticipation", "echelon_C": "Course droite sans ajustement de trajectoire"},
+          {"critere": "Efficacité de la stratégie personnelle en tant que fuyant", "echelon_A": "Utilise les feintes, changements de direction et la vitesse de façon variée et efficace", "echelon_B": "Utilise 1-2 stratégies de fuite de base", "echelon_C": "Course droite sans variation"},
+          {"critere": "Contribution à l'élaboration de la stratégie d'équipe", "echelon_A": "Propose une idée tactique pertinente et aide le groupe à la comprendre", "echelon_B": "Participe à la discussion de stratégie", "echelon_C": "Peu de participation à la planification collective"}
+        ]
+      },
+      "variantes": [
+        "Ajout d'une prison : les voleurs attrapés peuvent être libérés par leurs coéquipiers",
+        "Version inversée : les voleurs attrapent les gendarmes",
+        "Complexification : plusieurs objets à protéger/voler simultanément"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la taille de la zone selon les capacités",
+        "Rôle de coordinateur d'équipe (stratège au sol) pour les élèves avec limitations",
+        "Utiliser des bracelets à arracher plutôt que le contact physique"
+      ],
+      "connexion_culturelle": "Les jeux de poursuite en équipes opposées imitent souvent les réalités sociales. Le kirtan (jeu de poursuite rituel) des cérémonies autochtones de la côte Pacifique, et les jeux de capture de drapeau des peuples amérindiens des Grandes Plaines.",
+      "contexte_mondial": "Le capture de drapeau est un jeu universel pratiqué sous différentes formes. En Corée, le jeu de neolttwigi (bascule-poursuite) intègre des éléments similaires. Les jeux de tag sont documentés dans toutes les cultures.",
+      "liens_interdisciplinaires": "Mathématiques : stratégies et probabilités (angle de poursuite). Français : rédaction d'un rapport stratégique simple. Éducation physique : capacités cardiovasculaires, vitesse et agilité."
+    },
+    {
+      "id": "SAE_POURS_003",
+      "titre": "La queue du dragon",
+      "intentions_pedagogiques": "Développer la coordination en file indienne et les stratégies de protection collective, travailler la coopération dans un contexte de poursuite.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers",
+      "moyen_action": "Jeu de poursuite coopératif en chaîne",
+      "materiel": ["Foulards ou rubans (un par groupe)", "Cônes de délimitation"],
+      "espace": "Gymnase ou cour d'école",
+      "situation_depart": "Présentation du dragon chinois : créature symbole de bonheur et de puissance qui défile en ondulant. Comment un dragon se déplace-t-il ? En Chine, la danse du dragon est célébrée pendant le Nouvel An.",
+      "tache_complexe": "En file de 5-6 élèves accrochés par les épaules, défendre la queue (foulard) contre les autres dragons qui veulent s'en emparer, tout en essayant de capturer celles des autres dragons.",
+      "deroulement": {
+        "mise_en_train": "Déplacement en file indienne, tous les mains sur les épaules du précédent. Exercices de virage et arrêt en groupe. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Formation des dragons, placement des foulards, règles. Jeu avec 3 dragons. Discussion sur la stratégie. Période 2 : Amélioration de la stratégie (coordination tête-queue). Tournoi de dragons. Durée : 28 minutes par période.",
+        "retour_au_calme": "Former un seul grand dragon de toute la classe. Déplacement lent collectif, puis s'enrouler en spirale et se dérouler. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Coordination avec la chaîne (maintien du contact)", "echelon_A": "Maintient le contact avec le dragon sans le briser pendant la majorité du jeu", "echelon_B": "Contact maintenu la plupart du temps avec quelques ruptures de chaîne", "echelon_C": "La chaîne se brise fréquemment"},
+          {"critere": "Communication avec la tête du dragon (suivre les directions)", "echelon_A": "Anticipe et suit les changements de direction de la tête de façon fluide", "echelon_B": "Suit les directions avec quelques retards", "echelon_C": "Difficultés à suivre les changements de direction"},
+          {"critere": "Stratégie de protection de la queue", "echelon_A": "Comprend et applique la stratégie de placement du groupe pour protéger la queue", "echelon_B": "Participe à la stratégie de façon réactive", "echelon_C": "Peu de conscience stratégique de la protection de la queue"}
+        ]
+      },
+      "variantes": [
+        "Deux queues par dragon pour doubler les opportunités",
+        "Dragon aveugle : la tête ferme les yeux et est guidée par les tapotements",
+        "Fusion de dragons : deux dragons capturés fusionnent pour former un mega-dragon"
+      ],
+      "adaptations_inclusives": [
+        "Position de tête du dragon (qui voit et dirige) pour les élèves à mobilité réduite en fauteuil",
+        "Adapter le niveau de contact (tenir une corde plutôt que les épaules)",
+        "Réduire la taille du dragon à 3 élèves pour faciliter la coordination"
+      ],
+      "connexion_culturelle": "La danse du dragon est une tradition millénaire en Chine, associée à la célébration du Nouvel An lunaire. Le dragon (long) est le symbole le plus important de la culture chinoise, représentant la puissance, la chance et l'eau vivifiante.",
+      "contexte_mondial": "Des versions de jeux en chaîne existent dans de nombreuses cultures. Les jeux de serpent sont présents en Inde, en Afrique de l'Est, et les jeux de file en coopération-compétition sont universels dans les cours d'école du monde entier.",
+      "liens_interdisciplinaires": "Géographie : la Chine et ses traditions. Arts plastiques : dessin du dragon selon les canons artistiques chinois. Sciences : locomotion serpentiforme et ondulation."
+    },
+    {
+      "id": "SAE_POURS_004",
+      "titre": "Épervier",
+      "intentions_pedagogiques": "Développer la vitesse de réaction, la prise de décision rapide sous pression, et les stratégies de traversée face à un poursuivant.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices variées dans des contextes de défi",
+      "moyen_action": "Jeu de poursuite traversée avec épervier",
+      "materiel": ["Cônes (lignes de départ et d'arrivée)", "Dossards pour l'épervier"],
+      "espace": "Gymnase ou terrain extérieur (20m × 15m minimum)",
+      "situation_depart": "Analogie avec le comportement du faucon pèlerin (épervier) qui plonge sur sa proie. Discussion : comment les proies (étourneaux en nuée) évitent-elles les prédateurs ? Notion de mouvement collectif et individuel sous pression.",
+      "tache_complexe": "Traverser la zone de l'épervier 5 fois successivement sans être attrapé, en utilisant à chaque fois une stratégie différente de traversée (vitesse pure, feinte, timing différé).",
+      "deroulement": {
+        "mise_en_train": "Sprints de 10m avec départs variés (départ dos, départ accroupi, départ sur signal visuel). Exercices de feintes (changement de direction sur une jambe). Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Jeu de base avec 1 épervier. Discussion sur les stratégies observées. Période 2 : Progression (2-3 éperviers). Analyse des stratégies les plus efficaces. Tournoi final. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion tactique : quelle stratégie a le mieux fonctionné contre 1 épervier vs 3 ? Récupération active (marche). Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Variété des stratégies de traversée utilisées", "echelon_A": "Utilise au moins 3 stratégies différentes de façon intentionnelle et adaptée à la situation", "echelon_B": "Utilise 2 stratégies différentes", "echelon_C": "Utilise toujours la même stratégie (course droite uniquement)"},
+          {"critere": "Efficacité du timing (lecture du jeu avant de partir)", "echelon_A": "Analyse régulièrement la position de l'épervier avant de partir et choisit le bon moment", "echelon_B": "Parfois attend une bonne occasion, parfois part sans analyse", "echelon_C": "Part immédiatement sans lire la situation ou attend trop longtemps"},
+          {"critere": "Vitesse et agilité d'exécution", "echelon_A": "Accélère rapidement, change de direction avec efficacité et maintient sa vitesse", "echelon_B": "Bonne vitesse mais changements de direction limités", "echelon_C": "Vitesse faible ou peu de capacité à changer de direction"}
+        ]
+      },
+      "variantes": [
+        "Épervier équipe : deux élèves se donnent la main pour attraper ensemble",
+        "Épervier progressif : chaque attrapé devient épervier (jeu de contamination)",
+        "Zones de sécurité temporaires : certains endroits sont sûrs pendant 3 secondes"
+      ],
+      "adaptations_inclusives": [
+        "Terrain réduit pour les élèves à mobilité réduite avec règles adaptées",
+        "Rôle de commissaire (arbitre) valorisé pour les élèves qui ne peuvent pas courir",
+        "Version marche rapide sur terrain plus petit"
+      ],
+      "connexion_culturelle": "L'épervier est un jeu traditionnel québécois hérité des cours d'école françaises du 19e siècle. Des jeux similaires existent en Angleterre (British bulldogs), en Scandinavie et dans de nombreuses autres cultures.",
+      "contexte_mondial": "Les jeux de traversée de zone surveillée sont universels. Le jeu japonais 'daruma-san ga koronda' (à la statue), le 'red light green light' américain et le 'uno due tre stella' italien sont tous des variantes du principe de passage gardé.",
+      "liens_interdisciplinaires": "Sciences : comportements de prédation et défense dans le règne animal, réflexes. Mathématiques : calcul du meilleur angle de passage, probabilités. Santé : développement de la vitesse et de l'agilité."
+    },
+    {
+      "id": "SAE_POURS_005",
+      "titre": "Touch rugby et territoire",
+      "intentions_pedagogiques": "Initier aux principes de base du rugby à contact non-percutant, développer les notions d'espace occupé, d'avancée et de défense de territoire.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 4,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Jeu de touch-rugby avec règles simplifiées progressives",
+      "materiel": ["Ballon de rugby (ovale) ou ballon de kinball", "Cônes de délimitation", "Dossards de deux couleurs"],
+      "espace": "Gymnase ou terrain extérieur (30m × 20m)",
+      "situation_depart": "Présentation du rugby à 7 des Jeux olympiques. Discussion sur la particularité du ballon ovale et la règle fondamentale du jeu vers l'avant interdit. Comment crée-t-on des espaces dans ce contexte ?",
+      "tache_complexe": "Dans une équipe de 5, jouer un match de touch-rugby de 10 minutes en appliquant les règles simplifiées et en utilisant au moins une tactique collective décidée lors du temps stratégique.",
+      "deroulement": {
+        "mise_en_train": "Manipulation du ballon ovale (passe à deux mains, réception). Courses avec changements de direction. Exercices de passe latérale en mouvement. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Règles du touch-rugby, jeu de passes progressif. Période 2 : Mini-jeu 3v3. Période 3 : Jeu 5v5 avec temps stratégiques. Période 4 : Tournoi. Durée : 28 minutes par période.",
+        "retour_au_calme": "Analyse tactique d'une situation de jeu (video ou schéma). Discussion : comment créer un déséquilibre dans la défense ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Qualité des passes (précision, timing, orientation)", "echelon_A": "Effectue des passes précises vers l'arrière ou latéralement, en mouvement et adaptées à la situation", "echelon_B": "Passes généralement correctes avec quelques erreurs de direction ou timing", "echelon_C": "Passes souvent imprécises ou vers l'avant (hors règles)"},
+          {"critere": "Lecture du jeu (se positionner pour recevoir ou défendre)", "echelon_A": "Se déplace proactivement pour créer des options de passe ou fermer des espaces en défense", "echelon_B": "Quelques déplacements pertinents mais souvent réactifs", "echelon_C": "Peu de déplacements actifs, reste statique"},
+          {"critere": "Application des règles de base du touch-rugby", "echelon_A": "Applique toujours les règles correctement (pas de passe vers l'avant, reset après touch)", "echelon_B": "Quelques infractions légères mais compréhension générale des règles", "echelon_C": "Difficultés fréquentes avec les règles fondamentales"}
+        ]
+      },
+      "variantes": [
+        "Rugby à points : touches comptent 1 point, essais comptent 3",
+        "Rugby avec wild card : une zone de sécurité de 5 secondes par manche",
+        "Tournoi 3v3 chronométré avec score cumulatif"
+      ],
+      "adaptations_inclusives": [
+        "Version 'flag rugby' avec bracelets à arracher pour les élèves plus fragiles",
+        "Rôle de capitaine-coordinateur pour les élèves avec limitations motrices",
+        "Terrain réduit 15m × 10m pour les groupes avec moins de mobilité"
+      ],
+      "connexion_culturelle": "Le rugby est né en Angleterre en 1823 (legend de William Webb Ellis). Le rugby est aujourd'hui le sport national de la Nouvelle-Zélande (haka avant les matchs), des Fidji, Samoa et Tonga dans le Pacifique, qui comptent parmi les meilleures équipes mondiales.",
+      "contexte_mondial": "Le rugby à 7 est au programme olympique depuis 2016. Le Kenya, le Zimbabwe et l'Ouganda dominent parfois le circuit mondial à 7. Les Maoris de Nouvelle-Zélande ont une relation culturelle profonde avec le rugby.",
+      "liens_interdisciplinaires": "Mathématiques : angles et trajectoires sur le terrain. Géographie : pays où le rugby est sport national ou populaire. Éducation à la citoyenneté : fairplay, règles et arbitrage."
+    },
+    {
+      "id": "SAE_POURS_006",
+      "titre": "Poursuite à l'aveugle : la balle dans le noir",
+      "intentions_pedagogiques": "Développer la communication non-verbale et le guidage verbal dans un contexte de poursuite, renforcer la confiance mutuelle et l'écoute active.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Établir une relation avec l'autre dans la pratique de l'activité",
+      "moyen_action": "Jeu de poursuite avec rôle de guide et fuyant",
+      "materiel": ["Bandeaux (optionnel - ou yeux fermés honorifiquement)", "Clochette ou balle sonore", "Cônes délimitant une zone sécurisée", "Parcours au sol avec ruban adhésif"],
+      "espace": "Gymnase",
+      "situation_depart": "Discussion sur les personnes non-voyantes et leurs stratégies d'orientation. Présentation du goalball (sport paralympique joué à l'aveugle). Comment fait-on confiance à ses sens autres que la vue ?",
+      "tache_complexe": "En duo, guider vocalement son partenaire aux yeux bandés jusqu'à la clochette (objectif) sans le laisser toucher les cônes-obstacles, en moins de 3 minutes.",
+      "deroulement": {
+        "mise_en_train": "Marche les yeux fermés dans l'espace (mains en avant). Jeu : trouver son partenaire par le son de sa voix dans le gymnase. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Parcours guidé simple (3-4 obstacles, zone dégagée). Échange des rôles. Période 2 : Parcours plus complexe, puis version poursuite (le fuyant guidé doit atteindre la zone avant le poursuivant guidé). Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion sur la confiance : comment s'est-on senti ? Qu'est-ce qui aidait à faire confiance au guide ? Étirements et respiration. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Clarté et efficacité des instructions de guidage", "echelon_A": "Donne des instructions précises, calmes et adaptées à la vitesse de son partenaire", "echelon_B": "Instructions généralement claires avec quelques confusions", "echelon_C": "Instructions imprécises, contradictoires ou insuffisantes"},
+          {"critere": "Confiance et exécution en tant que fuyant guidé", "echelon_A": "Suit les instructions avec confiance et fluidité", "echelon_B": "Suit les instructions avec quelques hésitations", "echelon_C": "Résistance importante ou incapacité à faire confiance au guide"},
+          {"critere": "Sécurité et soin du partenaire", "echelon_A": "Surveille constamment les obstacles et adapte les instructions pour garantir la sécurité", "echelon_B": "Généralement attentif avec quelques lacunes", "echelon_C": "Peu d'attention à la sécurité du partenaire"}
+        ]
+      },
+      "variantes": [
+        "Guide à distance (sans contact) utilisant uniquement la voix",
+        "Obstacle en mouvement (troisième élève déplace un cône lentement)",
+        "Poursuite : deux équipes guidées vers le même trésor, la plus rapide gagne"
+      ],
+      "adaptations_inclusives": [
+        "Permettre un contact physique léger (main sur l'épaule) si le bandeau génère trop d'anxiété",
+        "Adapter le parcours selon les capacités motrices",
+        "Utiliser un signal tactile convenu plutôt que verbal si l'élève est malentendant"
+      ],
+      "connexion_culturelle": "Les jeux de confiance aveugle existent dans de nombreuses cultures. En Inde, le jeu d'Andha Dhundhu (attrape-moi si tu peux, yeux bandés). En Europe médiévale, Colin-maillard. En Extrême-Orient, des versions rituelles de jeux dans l'obscurité.",
+      "contexte_mondial": "Le goalball est un sport créé en 1946 pour les vétérans de guerre aveugles, maintenant pratiqué dans plus de 100 pays. Le sport paralympique valorise et développe des compétences souvent ignorées dans l'éducation physique conventionnelle.",
+      "liens_interdisciplinaires": "Sciences : les 5 sens, compensations sensorielles. Éducation inclusive : accessibilité et participation. Communication : instructions verbales claires et précises."
+    },
+    {
+      "id": "SAE_POURS_007",
+      "titre": "Capoeira : la danse-combat",
+      "intentions_pedagogiques": "Introduire la capoeira comme forme de poursuite/opposition ritualisée, développer la coordination et l'équilibre dans un contexte de jeu oppositionnel non-contact.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices complexes dans des contextes d'opposition",
+      "moyen_action": "Apprentissage des mouvements de base de capoeira et jeu de roda",
+      "materiel": ["Musique de capoeira (berimbau)", "Espace vide circulaire", "Système audio"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation de la capoeira : créée par les esclaves africains au Brésil qui déguisaient leur art martial en danse pour éviter l'interdiction des maîtres. Discussion sur la résistance et la ruse. Pourquoi appeler un combat une danse ?",
+      "tache_complexe": "Apprendre 5 mouvements fondamentaux de capoeira (ginga, esquiva, au, gato, meia-lua) et les intégrer dans un jogo (jeu) d'improvisation de 2 minutes avec un partenaire dans la roda.",
+      "deroulement": {
+        "mise_en_train": "La ginga de base (balancement continu). Échauffement articulaire avec mouvements fluides de capoeira. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Ginga, esquiva (esquive), au (roue). Période 2 : Gato (déplacement de chat), meia-lua (coup de pied circulaire très lent, sans contact). Période 3 : Intégration dans la roda. Jogo adapté. Durée : 28 minutes par période.",
+        "retour_au_calme": "Méditation debout. Discussion sur l'aspect philosophique de la capoeira (malícia = ruse intelligente). Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Fluidité de la ginga et des transitions entre mouvements", "echelon_A": "La ginga est continue et naturelle, les transitions entre mouvements sont fluides", "echelon_B": "La ginga est présente avec quelques interruptions, transitions partiellement fluides", "echelon_C": "La ginga est intermittente ou absente"},
+          {"critere": "Conscience de l'espace partenaire (distance sécuritaire)", "echelon_A": "Maintient toujours une distance sécuritaire appropriée tout en créant un dialogue de mouvement", "echelon_B": "Distance généralement sécuritaire avec quelques ajustements nécessaires", "echelon_C": "Distance inappropriate (trop proche ou trop loin pour créer un dialogue)"},
+          {"critere": "Réponse aux mouvements du partenaire (dialogue de jogo)", "echelon_A": "Répond clairement aux propositions du partenaire en adaptant son propre mouvement", "echelon_B": "Quelques réponses au partenaire mais surtout séquences isolées", "echelon_C": "Peu de réponse aux mouvements du partenaire"}
+        ]
+      },
+      "variantes": [
+        "Capoeira à thème : le jogo doit raconter une histoire (vol, poursuite, réconciliation)",
+        "Roda de groupe : tout le groupe forme la roda pendant que deux élèves jouent",
+        "Créer une séquence mémorisée de 16 mouvements en duo"
+      ],
+      "adaptations_inclusives": [
+        "Adapter tous les mouvements au sol en version debout",
+        "Éliminer les mouvements acrobatiques (au) pour les élèves qui en ont besoin",
+        "Rôle de musicien de roda (percussions corporelles) pour les élèves qui ne peuvent pas danser"
+      ],
+      "connexion_culturelle": "La capoeira est née au Brésil aux 16e-17e siècles parmi les esclaves africains (principalement d'Angola et du Congo). Elle est reconnue au Patrimoine culturel immatériel de l'UNESCO depuis 2014. Elle représente la résistance créative face à l'oppression.",
+      "contexte_mondial": "La capoeira est aujourd'hui pratiquée dans plus de 150 pays. Elle a influencé le breakdance, les arts martiaux de cinéma (kung-fu de Jackie Chan) et les jeux vidéo (Eddy Gordo de Tekken).",
+      "liens_interdisciplinaires": "Histoire : esclavage au Brésil et résistance africaine. Musique : berimbau, atabaque et pandeiro. Éducation à la citoyenneté : résistance non-violente, créativité face à l'oppression."
+    },
+    {
+      "id": "SAE_POURS_008",
+      "titre": "Balle au camp",
+      "intentions_pedagogiques": "Développer les stratégies d'invasion de territoire et de protection de zone, travailler la communication et la prise de décision collective en temps réel.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Jeu de balle collectif avec stratégie de territoire",
+      "materiel": ["Balles de mousse (4-6)", "Cônes (délimitation des camps)", "Dossards de deux couleurs"],
+      "espace": "Gymnase (terrain divisé en deux camps égaux)",
+      "situation_depart": "Présentation du concept de territoire et de défense. Discussion : comment les équipes sportives (hockey, soccer) défendent-elles leur territoire ? Introduction du jeu de balle au camp.",
+      "tache_complexe": "Jouer trois manches de balle au camp en 10 minutes chacune, en adaptant la stratégie de l'équipe entre chaque manche selon une discussion collective de 2 minutes.",
+      "deroulement": {
+        "mise_en_train": "Lancers de précision sur cibles à distance progressive. Esquives de balles molles. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Apprentissage des règles. Première manche libre. Période 2 : Temps stratégique guidé par l'enseignant. Deuxième manche. Période 3 : Stratégie autonome. Troisième manche. Tournoi final. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion : quelle stratégie a été la plus efficace ? Pourquoi la communication est-elle importante ? Retour au calme progressif. Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Précision des lancers dans le camp adverse", "echelon_A": "Lance avec précision en choisissant des zones vides ou des adversaires isolés", "echelon_B": "Lancers généralement dans le camp adverse avec précision variable", "echelon_C": "Difficulté à envoyer la balle dans le camp adverse"},
+          {"critere": "Placement défensif (protection de son camp)", "echelon_A": "Se place stratégiquement pour intercepter les balles et protège les zones vulnérables", "echelon_B": "Réagit aux balles entrantes de façon efficace", "echelon_C": "Peu de conscience défensive"},
+          {"critere": "Participation à l'élaboration de la stratégie d'équipe", "echelon_A": "Propose des ajustements tactiques pertinents lors des temps stratégiques", "echelon_B": "Participe aux discussions de stratégie", "echelon_C": "Peu de participation à la discussion stratégique"}
+        ]
+      },
+      "variantes": [
+        "Balle au camp à 3 équipes avec 3 zones",
+        "Élimination progressive : chaque personne touchée rejoint le camp adverse",
+        "Version coopérative : les deux équipes s'allient pour maintenir le maximum de balles en l'air"
+      ],
+      "adaptations_inclusives": [
+        "Zone de sécurité pour les élèves avec difficultés d'évitement",
+        "Balles plus légères ou plus lentes pour les élèves qui en ont besoin",
+        "Rôle de stratège hors du jeu qui conseille son équipe sans participer physiquement"
+      ],
+      "connexion_culturelle": "Les jeux de balle au camp sont cousins des jeux de kriegsspiel (jeu de guerre) européens et des jeux de balle rituels des peuples mésoaméricains (jeu de balle maya) où les équipes représentaient des forces cosmiques opposées.",
+      "contexte_mondial": "Des variantes existent dans le monde entier : le dodgeball américain, le ballon chasseur français, le dosenwerfen allemand et le tchoukball suisse (inventé dans les années 1960 pour réduire les blessures sportives).",
+      "liens_interdisciplinaires": "Mathématiques : trajectoires, angles de lancer. Stratégie militaire et historique : stratégies de défense de territoire. Communication : prise de décision rapide en groupe."
+    },
+    {
+      "id": "SAE_POURS_009",
+      "titre": "Le jeu de billes et la poursuite des formes",
+      "intentions_pedagogiques": "Développer les habiletés de poursuite dans un contexte de jeu traditionnel miniature, développer la précision et la stratégie dans un contexte culturellement riche.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices de précision",
+      "moyen_action": "Jeux de billes traditionnels et variations de poursuite",
+      "materiel": ["Billes (10 par élève)", "Ruban adhésif ou craie pour les cercles", "Espace plat"],
+      "espace": "Gymnase ou cour d'école",
+      "situation_depart": "Présentation de la longue histoire des billes : trouvées dans des tombeaux égyptiens de 3000 av. J.-C., jouées par les Romains, populaires en Amérique du Nord jusqu'aux années 1980. Qui a des billes à la maison ?",
+      "tache_complexe": "Maîtriser la technique de frappe (poussée du pouce) et gagner une partie de billes-chasseur en éliminant 3 des billes adverses dans la zone de jeu.",
+      "deroulement": {
+        "mise_en_train": "Technique de base de lancer de bille. Différents styles de prise. Lancers de précision sur une cible. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Jeu libre d'exploration avec les billes. Apprentissage du jeu de billes-chasseur. Période 2 : Tournoi de billes-chasseur. Discussion sur les règles traditionnelles vs les règles créées. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion sur les jeux traditionnels : pourquoi jouait-on aux billes ? Quels jeux traditionnels connaissez-vous ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique de frappe (précision du pouce)", "echelon_A": "Maîtrise la technique de frappe et atteint régulièrement les cibles visées", "echelon_B": "Technique partiellement maîtrisée avec une précision variable", "echelon_C": "Difficultés à maîtriser la technique de base"},
+          {"critere": "Stratégie de choix de cible", "echelon_A": "Choisit stratégiquement ses cibles (les plus faciles à atteindre, les mieux placées)", "echelon_B": "Quelques choix stratégiques de cibles", "echelon_C": "Choix de cibles sans stratégie apparente"},
+          {"critere": "Respect des règles et de l'adversaire", "echelon_A": "Applique toujours les règles correctement et félicite l'adversaire", "echelon_B": "Respecte généralement les règles avec quelques rappels", "echelon_C": "Difficultés à respecter les règles ou adversaire"}
+        ]
+      },
+      "variantes": [
+        "Billes-poursuite : une bille doit poursuivre et toucher une autre sur un parcours",
+        "Golf de billes : parcours de 9 trous avec obstacles",
+        "Version géante : avec balles de tennis sur un terrain plus grand"
+      ],
+      "adaptations_inclusives": [
+        "Utiliser des balles de plus grand format pour la motricité fine réduite",
+        "Permettre l'utilisation d'un lanceur rampe pour les élèves avec difficultés de préhension",
+        "Adapter la distance de frappe selon les capacités"
+      ],
+      "connexion_culturelle": "Les billes sont un jeu universel. En Afrique du Nord, des jeux de billes en terre cuite sont joués depuis des siècles. Au Japon, le jeu de tama-iri (billes dans des coupes) est traditionnel. En Amérique du Sud, les billes s'appellent canicas (Mexique) ou bolitas (Argentine).",
+      "contexte_mondial": "Les billes sont sur la liste UNESCO des traditions culturelles immatérielles dans plusieurs pays. Des tournois de billes internationaux se tiennent encore aujourd'hui en Europe et en Amérique du Nord.",
+      "liens_interdisciplinaires": "Histoire : jeux d'enfants à travers les âges. Sciences : physique du mouvement (impulsion, friction, trajectoire). Arts plastiques : fabrication de billes artisanales en terre."
+    },
+    {
+      "id": "SAE_POURS_010",
+      "titre": "Flag football : stratégies d'invasion",
+      "intentions_pedagogiques": "Développer les fondamentaux du football américain sans contact, comprendre les principes de progression de territoire et de défense par zone.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 4,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Jeu de flag football avec progression tactique",
+      "materiel": ["Ballons de football américain (5)", "Ceintures à drapeaux (30)", "Cônes de délimitation du terrain", "Tableau pour les stratégies"],
+      "espace": "Terrain extérieur ou gymnase large",
+      "situation_depart": "Présentation du flag football comme version non-contact du football américain. Visionnement d'une pièce offensive (play) illustrée. Discussion : comment le football illustre-t-il les principes de l'espace, du timing et de la coopération ?",
+      "tache_complexe": "En équipe de 6, exécuter avec succès 3 des 5 plays (jeux) offensifs appris pendant un match de 20 minutes, en lisant la défense et en s'ajustant en temps réel.",
+      "deroulement": {
+        "mise_en_train": "Passes courtes en triangle. Runs en lignes avec changement de direction. Réceptions en course. Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Règles et positions. Plays de base (course, passe courte). Période 2 : Défense en zone vs défense à l'homme. Période 3 : Jeu complet avec pause stratégique. Période 4 : Tournoi. Durée : 38 minutes par période.",
+        "retour_au_calme": "Analyse d'un play réussi. Discussion : qu'est-ce qui a fonctionné ? Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Exécution des plays offensifs appris", "echelon_A": "Exécute correctement son rôle dans au moins 3 plays différents de façon coordonnée", "echelon_B": "Exécute son rôle dans 1-2 plays de façon adéquate", "echelon_C": "Difficultés à exécuter les plays mémorisés"},
+          {"critere": "Lecture de la défense et ajustement", "echelon_A": "Lit régulièrement le positionnement défensif adverse et ajuste sa trajectoire", "echelon_B": "Quelques ajustements de trajectoire face à la défense", "echelon_C": "Exécution mécanique sans lecture de la défense"},
+          {"critere": "Communication dans l'huddle et sur le terrain", "echelon_A": "Communique clairement ses observations et son rôle pendant et après les jeux", "echelon_B": "Communication basique dans les huddles", "echelon_C": "Peu de communication d'équipe"}
+        ]
+      },
+      "variantes": [
+        "Football à 4 (2v2) pour simplifier la coordination",
+        "Version iron-man : pas de substitution, adaptation physique requise",
+        "Tournoi avec fiche de scouting de l'adversaire"
+      ],
+      "adaptations_inclusives": [
+        "Rôle de quart-arrière statique (depuis la ligne de départ) pour les élèves avec limitations",
+        "Terrain réduit avec zone d'arrivée plus grande",
+        "Rôle d'entraîneur ou analyste vidéo pour les élèves qui ne peuvent pas courir"
+      ],
+      "connexion_culturelle": "Le football américain est issu du rugby britannique adapté aux États-Unis dans les années 1880. Le Super Bowl est devenu l'un des événements médiatiques les plus regardés au monde. La NFL compte des joueurs de plus de 60 nationalités.",
+      "contexte_mondial": "Le flag football grandit rapidement à l'échelle mondiale et était sport de démonstration aux JO de Paris 2024. Le Mexique, l'Allemagne et le Japon ont des ligues nationales bien développées.",
+      "liens_interdisciplinaires": "Mathématiques : probabilités et statistiques dans le sport, angles de passe. Communication : terminologie technique en anglais. Éducation à la citoyenneté : travail d'équipe, rôles et responsabilités."
+    },
+    {
+      "id": "SAE_POURS_011",
+      "titre": "Jeu de poursuite en forêt (orienteering léger)",
+      "intentions_pedagogiques": "Combiner poursuite et orientation dans l'espace, développer la lecture de cartes simplifiées dans un contexte de course active.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans des contextes d'activités physiques en plein air",
+      "moyen_action": "Course d'orientation avec éléments de poursuite",
+      "materiel": ["Cartes simplifiées de l'école", "Balises numérotées", "Poinçons de pointage ou coches", "Chronomètre", "Dossards"],
+      "espace": "Cour d'école et bâtiment (intérieur/extérieur)",
+      "situation_depart": "Présentation de la course d'orientation comme sport olympique. Discussion : comment lit-on une carte ? Points cardinaux, légende, échelle simplifiée. Défi : pouvez-vous nous guider depuis la classe jusqu'au gymnase en utilisant seulement la carte ?",
+      "tache_complexe": "Compléter un parcours d'orientation de 8 balises en moins de 15 minutes en solo ou en duo, puis refaire le parcours en mode 'poursuite' où le binôme essaie de rattraper le duo parti 2 minutes avant.",
+      "deroulement": {
+        "mise_en_train": "Lecture de carte en classe. Identification de 5 points repères sur la carte et leur localisation réelle. Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Parcours de découverte avec carte (3 balises faciles, 5 difficiles). Période 2 : Mode poursuite : duo A part, duo B part 2 minutes après et essaie de le rattraper avant la fin. Durée : 38 minutes.",
+        "retour_au_calme": "Discussion sur les stratégies de navigation utilisées. Comparaison des temps et routes. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Lecture et utilisation de la carte", "echelon_A": "Utilise la carte de façon autonome et correcte pour localiser toutes les balises", "echelon_B": "Utilise la carte pour la plupart des balises avec quelques erreurs corrigées", "echelon_C": "Difficultés significatives à utiliser la carte"},
+          {"critere": "Efficacité du parcours (choix des routes)", "echelon_A": "Choisit des routes directes et efficaces en utilisant les repères cartographiques", "echelon_B": "Routes généralement efficaces avec quelques détours", "echelon_C": "Routes peu efficaces ou fréquentes relectures de carte"},
+          {"critere": "Gestion de l'effort dans la poursuite", "echelon_A": "Adapte son allure pour équilibrer la vitesse et la précision de lecture de carte", "echelon_B": "Gestion de l'effort adéquate avec quelques pertes de temps", "echelon_C": "Course trop rapide au détriment de la navigation ou trop lente"}
+        ]
+      },
+      "variantes": [
+        "Score-o : en 15 minutes, marquer le maximum de balises (valeurs différentes selon la difficulté)",
+        "Orienteering en équipe : un navigateur et un coureur qui doivent se séparer",
+        "Version nocturne (intérieur en lumière réduite) avec lampe de poche"
+      ],
+      "adaptations_inclusives": [
+        "Réduire le parcours à 5 balises très visibles",
+        "Permettre l'utilisation de la tablette avec application GPS simplifiée",
+        "Parcours à mobilité réduite uniquement en intérieur avec passages accessibles"
+      ],
+      "connexion_culturelle": "La course d'orientation est née en Scandinavie (Suède, Norvège) au 19e siècle comme entraînement militaire. Elle est maintenant sportive mondiale avec des championnats sur 5 continents. Les Autochtones canadiens avaient leur propre système de navigation par la nature.",
+      "contexte_mondial": "Les Inuit du Grand Nord canadien ont développé des systèmes d'orientation extraordinairement précis basés sur le vent, les étoiles, les formations neigeuses et les constellations, sans aucune carte papier.",
+      "liens_interdisciplinaires": "Géographie : cartographie, points cardinaux, orientation. Mathématiques : échelle, distance réelle et carte. Sciences : navigation naturelle et magnétisme."
+    },
+    {
+      "id": "SAE_POURS_012",
+      "titre": "Poursuite coopérative : missions en équipe",
+      "intentions_pedagogiques": "Développer les habiletés de poursuite dans un contexte entièrement coopératif, renforcer la communication et la planification stratégique collective.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers",
+      "moyen_action": "Jeux de missions coopératives avec déplacements",
+      "materiel": ["Cartes-missions", "Matériel varié selon missions (balles, cerceaux, cordes)", "Cônes", "Chronomètre"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation du concept d'équipe de mission spéciale : comme dans les films d'aventure, l'équipe doit compléter une série de missions en temps limité. Chaque membre a un rôle. L'échec d'un membre = échec de la mission.",
+      "tache_complexe": "En équipe de 4, compléter 5 missions en 20 minutes, où chaque mission requiert un mouvement de déplacement spécifique (courir, sauter, ramper, ramper en équipe) et une action collective.",
+      "deroulement": {
+        "mise_en_train": "Exercice de communication rapide : une séquence de 3 actions transmise de bouche à oreille, puis exécutée simultanément. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Découverte des missions, planification de l'ordre et des rôles. Première tentative. Période 2 : Ajustements stratégiques, deuxième tentative chronométrée. Tournoi entre équipes. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion : qu'est-ce qui a le plus aidé votre équipe à réussir ? Communication, rôles, décisions, encouragement ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Exécution des déplacements spécifiques de chaque mission", "echelon_A": "Exécute correctement tous les types de déplacements requis par les missions", "echelon_B": "Exécute correctement la plupart des déplacements avec quelques ajustements", "echelon_C": "Difficultés avec plusieurs types de déplacements"},
+          {"critere": "Communication et coordination avec l'équipe", "echelon_A": "Communique proactivement et coordonne ses actions avec les membres de l'équipe de façon fluide", "echelon_B": "Communication fonctionnelle avec quelques incompréhensions", "echelon_C": "Communication limitée ou difficultés de coordination"},
+          {"critere": "Adaptation stratégique entre les tentatives", "echelon_A": "Propose et applique des ajustements spécifiques et efficaces suite aux tentatives précédentes", "echelon_B": "Quelques ajustements entre les tentatives", "echelon_C": "Répète les mêmes erreurs sans ajustement"}
+        ]
+      },
+      "variantes": [
+        "Missions secrètes : chaque membre connaît seulement sa partie de la mission",
+        "Contrainte physique : un membre doit fermer les yeux, un autre se tenir sur un pied pendant la coordination",
+        "Missions impossibles : délai très court pour forcer la créativité"
+      ],
+      "adaptations_inclusives": [
+        "Adapter les mouvements de déplacement selon les capacités de chaque membre",
+        "Attribuer les rôles selon les forces (coordinateur, exécutant rapide, communicateur)",
+        "Missions alternatives permettant la participation en fauteuil roulant"
+      ],
+      "connexion_culturelle": "Les jeux de missions coopératives s'inspirent des épreuves rituelles d'initiation dans les cultures autochtones, où des jeunes devaient coopérer pour accomplir une tâche symbolique importante pour leur passage à l'âge adulte.",
+      "contexte_mondial": "Les escape rooms et les jeux de coopération sont devenus un phénomène mondial qui transpose les principes de la résolution de problèmes coopérative dans un contexte ludique moderne.",
+      "liens_interdisciplinaires": "Résolution de problèmes : stratégies et planification. Communication : transmettre des instructions précises. Leadership : rôles dans le groupe et prise de décision."
+    },
+    {
+      "id": "SAE_POURS_013",
+      "titre": "Quidditch adapté : poursuite fantastique",
+      "intentions_pedagogiques": "Développer les habiletés de poursuite dans un contexte de jeu imaginaire multi-rôles, promouvoir l'inclusion et la mixité dans un sport fictif sans tradition discriminatoire.",
+      "niveau": "3e cycle primaire (10-12 ans)",
+      "cycle": "3e cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Jeu de quidditch terrestre adapté avec rôles multiples",
+      "materiel": ["Bâtons de hockey en mousse (balais)", "Ballons de kinball (vif d'or jaune)", "Ballons de dodgeball (cognards)", "Ballons de basket (souaffle)", "Buts en U (cerceaux sur perches)"],
+      "espace": "Gymnase ou terrain extérieur",
+      "situation_depart": "Présentation du quadball (anciennement quidditch) comme vrai sport universitaire mondial. Discussion sur la création d'un nouveau sport et l'inclusion dès sa création (règle du genre : maximum 4 joueurs du même genre sur le terrain).",
+      "tache_complexe": "Jouer un match complet de quadball de 15 minutes en assumant son rôle (chasseur, batteur, gardien ou chercheur) et en appliquant les règles adaptées.",
+      "deroulement": {
+        "mise_en_train": "Exercices spécifiques à chaque rôle : passes pour chasseurs, esquives pour batteurs, blocages pour gardiens. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Règles par rôle, exercices spécifiques. Période 2 : Mini-match 5v5 (sans chercheurs). Période 3 : Match complet avec chercheurs (attraper le vif d'or vivant). Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion sur la règle d'inclusivité du genre dans ce sport. Comment cette règle change-t-elle la dynamique ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise du rôle attribué (rôle spécifique)", "echelon_A": "Exécute les actions spécifiques de son rôle avec efficacité et dans le respect des règles", "echelon_B": "Exécute la plupart des actions de son rôle correctement", "echelon_C": "Difficultés à exécuter les actions spécifiques de son rôle"},
+          {"critere": "Communication et coordination interrôles", "echelon_A": "Communique avec les joueurs des autres rôles et coordonne ses actions avec eux", "echelon_B": "Quelques communications entre rôles", "echelon_C": "Peu de coordination entre les différents rôles de l'équipe"},
+          {"critere": "Respect des règles d'inclusivité et de fairplay", "echelon_A": "Respecte toujours les règles d'inclusivité, encourage tous les membres de son équipe", "echelon_B": "Respecte généralement les règles d'inclusivité", "echelon_C": "Difficultés à respecter les règles d'inclusivité"}
+        ]
+      },
+      "variantes": [
+        "Tournoi entre classes avec règles évolutives (les équipes peuvent proposer des modifications)",
+        "Version intérieure avec règles adaptées au gymnase",
+        "Créer un nouveau sport inspiré d'une autre œuvre de fiction"
+      ],
+      "adaptations_inclusives": [
+        "Adapter le rôle de chercheur pour permettre la participation en fauteuil roulant",
+        "Balai optionnel pour les élèves qui ont des difficultés de coordination",
+        "Règles de contact adaptées selon les capacités des élèves"
+      ],
+      "connexion_culturelle": "Harry Potter est une création culturelle britannique qui a eu un impact mondial. Le quadball réel, né à Middlebury College (Vermont) en 2005, est maintenant pratiqué dans 40 pays avec des championnats mondiaux.",
+      "contexte_mondial": "Le quadball est l'un des rares sports où l'égalité de genre est une règle fondamentale inscrite dans les statuts. Il est pratiqué dans des universités sur tous les continents.",
+      "liens_interdisciplinaires": "Littérature : univers fictifs et création de mondes. Éducation à la citoyenneté : équité de genre et inclusion dans le sport. Arts : conception de règles sportives."
+    },
+    {
+      "id": "SAE_POURS_014",
+      "titre": "Course de relais et transmission",
+      "intentions_pedagogiques": "Développer la technique du relais (passage de témoin), la coordination dans la poursuite collective et la gestion de l'effort selon le rôle.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers",
+      "moyen_action": "Courses de relais variées avec différents modes de transmission",
+      "materiel": ["Témoins de course (4 sets)", "Cônes", "Chronomètre", "Zones de transmission marquées"],
+      "espace": "Gymnase ou piste d'athlétisme",
+      "situation_depart": "Présentation du relais 4x100m olympique. Analyse d'une mauvaise transmission vs une bonne. Discussion : pourquoi est-ce que le relais est un sport d'équipe même si chaque coureur court seul ? Notion de confiance et de timing.",
+      "tache_complexe": "En équipe de 4, réaliser 3 relais de formats différents (classique, zig-zag, avec obstacle) en réduisant le temps total à chaque tentative grâce aux ajustements de technique.",
+      "deroulement": {
+        "mise_en_train": "Transmission du témoin debout, puis en mouvement. Exercice de zone de passage (recevoir le témoin dans un couloir de 20m). Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Relais classique simple (ligne droite 25m). Travail sur la technique de transmission. Période 2 : Relais zig-zag et relais avec saut de corde inclus. Amélioration du temps. Durée : 28 minutes par période.",
+        "retour_au_calme": "Chronométrage final et célébration des améliorations. Discussion : quel bénéfice la communication avant la course a-t-elle apporté ? Durée : 7 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Technique de transmission du témoin", "echelon_A": "Transmet et reçoit le témoin dans la zone désignée, en mouvement, sans s'arrêter", "echelon_B": "Transmission en zone avec quelques ralentissements", "echelon_C": "Sorties de zone fréquentes ou transmissions avec arrêt"},
+          {"critere": "Gestion de son effort (départ, vitesse de croisière, arrivée)", "echelon_A": "Distribue son effort de façon optimale (accélération au départ, maintien, sprint final)", "echelon_B": "Gestion de l'effort adéquate avec quelques irrégularités", "echelon_C": "Départ trop rapide suivi d'essoufflement ou effort insuffisant"},
+          {"critere": "Synchronisation du timing avec les coéquipiers", "echelon_A": "Démarre sa course au bon moment (ni trop tôt ni trop tard) de façon constante", "echelon_B": "Timing généralement correct avec quelques erreurs", "echelon_C": "Difficultés fréquentes de timing dans la transmission"}
+        ]
+      },
+      "variantes": [
+        "Relais suédois : distances différentes pour chaque coureur selon ses capacités",
+        "Relais avec mission : chaque coureur doit compléter une tâche (jonglerie, équilibre) avant de passer",
+        "Relais papillon : transmission au centre, les coureurs partent des deux extrémités"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la distance pour chaque élève selon ses capacités (relais suédois)",
+        "Permettre la poussée de fauteuil roulant comme segment de relais valorisé",
+        "Rôle de starter (donne le signal de départ) pour les élèves qui ne peuvent pas courir"
+      ],
+      "connexion_culturelle": "La course de relais a des origines dans les systèmes de messagerie des grandes civilisations : les chasquis inca qui relayaient les messages à pied sur les chemins andins, les coureurs à cheval mongols de la yamʺ (poste), les estafettes romaines.",
+      "contexte_mondial": "Le relais 4x100m est l'une des épreuves les plus spectaculaires des Jeux olympiques. La Jamaïque, avec Usain Bolt, et les États-Unis dominent cette épreuve depuis des décennies, mais la Chine et le Japon progressent rapidement.",
+      "liens_interdisciplinaires": "Sciences : biomécanique de la course, énergie et fatigue musculaire. Histoire : systèmes de communication dans les civilisations anciennes. Mathématiques : chronométrage, fractions de seconde."
+    },
+    {
+      "id": "SAE_POURS_015",
+      "titre": "Jeu de balle-assise : démarquage et tir",
+      "intentions_pedagogiques": "Développer les principes tactiques fondamentaux (démarquage, appui, tir) dans un contexte de jeu collectif avec ballon.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Jeux de balle collectifs avec cibles simplifiées",
+      "materiel": ["Balles de mousse (4-6)", "Cerceaux (cibles au sol)", "Dossards colorés", "Cônes"],
+      "espace": "Gymnase",
+      "situation_depart": "Introduction ludique : jouer au chat et à la souris, mais la souris a un fromage (balle) à déposer dans un trou (cerceau). Comment aider la souris ? Comment empêcher l'adversaire de marquer ?",
+      "tache_complexe": "Dans un jeu 4v4, marquer 3 points en déposant une balle dans un cerceau adverse en moins de 5 minutes, en utilisant au moins une passe avant de marquer.",
+      "deroulement": {
+        "mise_en_train": "Jeu de passes en triangle sans défenseur. Introduction du démarquage : être visible pour recevoir une passe. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Jeu 3v3 avec règle de la passe obligatoire. Durée : 28 minutes. Période 2 : 4v4 complet avec cerceaux. Variation : 2 cerceaux à défendre chacun. Durée : 28 minutes.",
+        "retour_au_calme": "Discussion : comment fait-on pour se démarquer ? Pourquoi la passe est-elle souvent meilleure que de courir avec la balle ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Démarquage actif (se placer pour recevoir)", "echelon_A": "Se déplace proactivement pour se démarquer de son défenseur et offrir une option de passe", "echelon_B": "Quelques déplacements de démarquage efficaces", "echelon_C": "Reste statique ou suit les autres sans initiative de démarquage"},
+          {"critere": "Qualité des passes (précision, timing)", "echelon_A": "Passes précises vers la bonne cible au bon moment", "echelon_B": "Passes généralement correctes avec quelques imprécisions", "echelon_C": "Passes souvent imprécises ou à des partenaires non libres"},
+          {"critere": "Respect des règles (passe obligatoire avant marquer)", "echelon_A": "Applique toujours la règle de passe obligatoire avant de marquer", "echelon_B": "Applique la règle la plupart du temps", "echelon_C": "Tentatives fréquentes de marquer directement sans passe"}
+        ]
+      },
+      "variantes": [
+        "Version avec plusieurs cerceaux valant des points différents",
+        "Version défense inactive : d'abord sans, puis avec défense pour progresser",
+        "Version multi-balles : 2 balles simultanément"
+      ],
+      "adaptations_inclusives": [
+        "Cibles plus grandes (cerceau de plus grand diamètre) pour faciliter le tir",
+        "Zone de tir protégée pour les élèves qui en ont besoin",
+        "Balles de tailles différentes selon les capacités de préhension"
+      ],
+      "connexion_culturelle": "Les jeux collectifs avec ballon et cible existent dans toutes les cultures. Le jeu de balle maya (pok-a-tok) sur grands terrains de pierre, le lacrosse des Premières Nations (le plus vieux sport nord-américain), le kambal indien sont tous des ancêtres de nos sports collectifs modernes.",
+      "contexte_mondial": "Le lacrosse, inventé par les peuples des Premières Nations d'Amérique du Nord il y a plus de 1000 ans, est maintenant sport mondial avec des équipes dans 60 pays et programme olympique depuis Paris 2024.",
+      "liens_interdisciplinaires": "Mathématiques : calcul de score, statistiques de passes. Histoire du sport : évolution des sports collectifs. Communication : signaux codés pour les stratégies sur le terrain."
+    },
+    {
+      "id": "SAE_POURS_016",
+      "titre": "Jeu du Mölkky (poursuite de quilles)",
+      "intentions_pedagogiques": "Développer la précision motrice et la stratégie dans un jeu de lancer finlandais, développer le calcul mental en contexte ludique.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Exécuter des actions motrices de précision dans des contextes de compétition saine",
+      "moyen_action": "Tournoi de Mölkky avec stratégie numérique",
+      "materiel": ["Jeu de Mölkky (ou quilles numérotées artisanales)", "Espace plat extérieur ou intérieur"],
+      "espace": "Cour d'école ou gymnase",
+      "situation_depart": "Présentation du Mölkky comme jeu traditionnel finlandais devenu sport international avec des championnats mondiaux. Comment un simple jeu de lancer peut-il devenir une sport stratégique ?",
+      "tache_complexe": "Atteindre exactement 50 points lors d'une partie de Mölkky en choisissant stratégiquement ses cibles pour optimiser son score, sans jamais dépasser 50 (sinon retour à 25).",
+      "deroulement": {
+        "mise_en_train": "Exercices de précision de lancer : lancer à distance de 3m, 4m, 5m sur des cibles au sol. Durée : 8 minutes.",
+        "partie_principale": "Période 1 : Apprentissage du jeu. Partie tutoriel. Stratégie des points. Période 2 : Tournoi par groupes de 3-4 joueurs. Finale. Durée : 28 minutes par période.",
+        "retour_au_calme": "Discussion : comment la stratégie numérique (choisir ses cibles selon le score) a-t-elle influencé le jeu ? Durée : 9 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Précision et technique de lancer", "echelon_A": "Atteint sa cible choisie dans plus de 50% des tentatives avec une technique de lancer cohérente", "echelon_B": "Atteint la zone cible dans 30-50% des tentatives", "echelon_C": "Précision inférieure à 30% ou technique de lancer très variable"},
+          {"critere": "Stratégie numérique (calcul et choix de cibles)", "echelon_A": "Calcule correctement son score et choisit des cibles adaptées à sa situation numérique", "echelon_B": "Calcule son score avec quelques erreurs et fait des choix partiellement stratégiques", "echelon_C": "Difficultés de calcul ou choix de cibles sans considération stratégique"},
+          {"critere": "Fairplay et respect des règles", "echelon_A": "Respecte toutes les règles, annonce son score honnêtement et félicite les bons tirs", "echelon_B": "Respecte généralement les règles avec quelques oublis", "echelon_C": "Difficultés à respecter les règles ou tensions avec les adversaires"}
+        ]
+      },
+      "variantes": [
+        "Mölkky en équipes de 2 : les deux partenaires alternent les lancers",
+        "Mölkky-défi : créer une variante avec une règle spéciale inventée par les élèves",
+        "Version points précis requis : atteindre exactement les nombres 1, 2, 3... dans l'ordre"
+      ],
+      "adaptations_inclusives": [
+        "Réduire la distance de lancer selon les capacités",
+        "Permettre le lancer à deux mains si nécessaire",
+        "Utiliser une calculatrice pour le calcul des scores si besoin"
+      ],
+      "connexion_culturelle": "Le Mölkky est un jeu finlandais inventé en 1996 par la compagnie Tuoterengas. En Finlande, les jeux de plein air font partie de la culture du 'friluftsliv' (vie en plein air). Des championnats mondiaux de Mölkky ont lieu depuis 2012.",
+      "contexte_mondial": "Des jeux de quilles existent dans toutes les cultures : le pétanque français, les quilles françaises, le bocce italien, le skittles anglais, le kubb suédois (jeu de lancer sur quilles en bois).",
+      "liens_interdisciplinaires": "Mathématiques : calcul mental, addition, stratégie numérique. Géographie : la Finlande et sa culture outdoor. Sciences : physique du lancer (parabole simplifiée)."
+    },
+    {
+      "id": "SAE_POURS_017",
+      "titre": "Poursuite intercycliste (vélos ou trottinettes)",
+      "intentions_pedagogiques": "Développer les habiletés de déplacement sur deux roues dans un contexte de poursuite sécuritaire, explorer les règles de sécurité routière de base.",
+      "niveau": "1er cycle primaire (6-8 ans)",
+      "cycle": "1er cycle",
+      "duree_periodes": 3,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans des contextes d'activités physiques en plein air",
+      "moyen_action": "Parcours de vélo/trottinette avec jeux de poursuite adaptés",
+      "materiel": ["Vélos d'équilibre ou trottinettes", "Casques (obligatoires)", "Genouillères", "Cônes", "Parcours balisé"],
+      "espace": "Cour d'école asphalte ou gymnase avec sol dur",
+      "situation_depart": "Discussion sur la sécurité à vélo : casque, genouillères, règles de sécurité. Pourquoi le casque est-il obligatoire ? Présentation du parcours. Introduction de la notion de poursuite adaptée au deux-roues.",
+      "tache_complexe": "Compléter un parcours de slalom en moins de 60 secondes, puis participer à une course de poursuite encadrée (3 secondes d'avance sur le suivant) sans contact ni dépassement dangereux.",
+      "deroulement": {
+        "mise_en_train": "Vérification de l'équipement. Déplacement libre sur le parcours pour prise en main. Freinage d'urgence. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Slalom de base et contournement de cônes. Courbes et virages. Période 2 : Parcours chronométré. Période 3 : Poursuite encadrée (1 contre 1 avec écart). Durée : 25 minutes par période.",
+        "retour_au_calme": "Discussion sur les règles de sécurité vécues. Retrait de l'équipement. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Maîtrise du deux-roues (équilibre, direction, freinage)", "echelon_A": "Maintient son équilibre, dirige avec précision dans les slaloms et freine efficacement", "echelon_B": "Maîtrise générale avec quelques déséquilibres dans les virages serrés", "echelon_C": "Difficultés d'équilibre ou de direction nécessitant un soutien fréquent"},
+          {"critere": "Respect des règles de sécurité", "echelon_A": "Porte l'équipement correctement, respecte les distances sécuritaires et signale ses intentions", "echelon_B": "Respecte les règles principales avec quelques rappels", "echelon_C": "Non-respect fréquent des règles de sécurité"},
+          {"critere": "Gestion de la poursuite (distance, anticipation)", "echelon_A": "Maintient une distance sécuritaire constante et ajuste sa vitesse en anticipant les actions du précédent", "echelon_B": "Distance généralement sécuritaire", "echelon_C": "Distance insuffisante créant des situations dangereuses"}
+        ]
+      },
+      "variantes": [
+        "Course de relais à vélo : passage du témoin (objet) entre coéquipiers",
+        "Parcours d'obstacles progressifs : ajout d'obstacles selon la progression",
+        "Vélo d'équilibre pour les plus jeunes ou moins expérimentés"
+      ],
+      "adaptations_inclusives": [
+        "Vélos adaptés (avec stabilisateurs amovibles, tricycles)",
+        "Parcours plus court et plus simple pour les débutants",
+        "Rôle de commissaire de course pour les élèves qui ne peuvent pas utiliser un deux-roues"
+      ],
+      "connexion_culturelle": "Le vélo a été inventé en Europe au 19e siècle et est aujourd'hui le moyen de transport le plus utilisé au monde. Aux Pays-Bas, 99% des enfants savent faire du vélo. En Chine, le vélo a été pendant des décennies le transport principal de masse.",
+      "contexte_mondial": "Le Tour de France (cyclisme) est l'un des événements sportifs les plus suivis au monde. Le BMX et le vélo de montagne olympiques utilisent exactement les mêmes principes de base que nous développons ici.",
+      "liens_interdisciplinaires": "Éducation à la sécurité routière : règles de circulation, panneaux. Sciences : mécanique du vélo (engrenages, levier). Santé : bénéfices du transport actif."
+    },
+    {
+      "id": "SAE_POURS_018",
+      "titre": "Poursuite en tag rugby",
+      "intentions_pedagogiques": "Développer les habiletés spécifiques de démarquage, de poursuite et d'évitement dans le contexte du tag rugby, introduire les notions de jeu de territoire.",
+      "niveau": "Secondaire 1-2 (12-14 ans)",
+      "cycle": "Secondaire",
+      "duree_periodes": 4,
+      "duree_par_periode": "60 minutes",
+      "competence_pfeq": "Interagir dans divers contextes de pratique d'activités physiques",
+      "composante": "Coopérer avec ses coéquipiers et s'opposer à ses adversaires",
+      "moyen_action": "Tag rugby avec progression tactique et analyse vidéo",
+      "materiel": ["Ballon de rugby", "Ceintures de tag (2 bracelets par joueur)", "Cônes", "Tablette pour capture vidéo (optionnel)"],
+      "espace": "Terrain extérieur ou gymnase large",
+      "situation_depart": "Analyse d'une séquence de jeu du rugby à 7. Identification des principes : avance en possession, défense en ligne, exploitation des espaces. Comment ces principes s'appliquent-ils au tag ?",
+      "tache_complexe": "En équipe de 6, exécuter une attaque structurée (une phase de jeu prédéfinie) et une défense en ligne lors d'un match de 20 minutes, en analysant après-coup 2 situations de jeu sur tablette ou en discussion guidée.",
+      "deroulement": {
+        "mise_en_train": "Exercices de changement de direction avec ceintures. Passes sous pression. Défense en ligne (mouvement latéral synchronisé). Durée : 12 minutes.",
+        "partie_principale": "Période 1 : Principes de base du tag. Jeu 3v2 (avantage numérique offensif). Période 2 : Défense en ligne. Jeu 4v4. Période 3 : Attaque structurée. Match. Période 4 : Match complet avec analyse. Durée : 38 minutes par période.",
+        "retour_au_calme": "Analyse guidée de 2 situations de jeu. Discussion sur les principes d'attaque/défense. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Efficacité du porteur de balle (démarquage, exploitation des espaces)", "echelon_A": "Identifie et exploite régulièrement les espaces libres dans la défense", "echelon_B": "Quelques exploitations d'espace avec décisions généralement bonnes", "echelon_C": "Course principalement droite sans lecture des espaces"},
+          {"critere": "Qualité de soutien au porteur (position, timing)", "echelon_A": "Se positionne constamment pour offrir une option de passe pertinente au bon moment", "echelon_B": "Soutien présent avec quelques problèmes de timing ou positionnement", "echelon_C": "Peu de soutien actif au porteur"},
+          {"critere": "Organisation défensive (ligne, communication)", "echelon_A": "Maintient la ligne défensive avec ses coéquipiers et communique les positions", "echelon_B": "Participe à la défense en ligne avec quelques ruptures", "echelon_C": "Défense individuelle sans organisation collective"}
+        ]
+      },
+      "variantes": [
+        "Tag rugby à 3 (accélère le jeu, plus d'espace individuel)",
+        "Règle bonus : essai en coin vaut 2 points pour encourager le jeu en largeur",
+        "Version avec limite de touches avant passe obligatoire (3 touches max)"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la zone de jeu pour les différences de mobilité",
+        "Rôle de coordinateur tactique à l'extérieur du terrain",
+        "Version avec brassard uniquement sur un bras pour les élèves avec asymétrie"
+      ],
+      "connexion_culturelle": "Le rugby est profondément culturel en Polynésie (Samoa, Tonga, Fidji). Le Haka maori de Nouvelle-Zélande (All Blacks) est l'une des cérémonies sportives les plus emblématiques au monde, représentant la connexion entre sport, culture et identité.",
+      "contexte_mondial": "Le tag rugby est maintenant pratiqué dans plus de 50 pays. Il est particulièrement populaire en Australie, au Royaume-Uni et en Nouvelle-Zélande comme introduction sécuritaire aux principes du rugby.",
+      "liens_interdisciplinaires": "Anatomie : muscles des jambes et du tronc, blessures fréquentes et prévention. Analyse du mouvement : vidéo et notation gestuelle. Géographie : expansion du rugby dans le monde."
+    },
+    {
+      "id": "SAE_POURS_019",
+      "titre": "Jeu du chat perché amélioré",
+      "intentions_pedagogiques": "Développer la réactivité, l'équilibre et la prise de décision rapide dans un contexte de poursuite avec refuge, introduire des variantes culturelles.",
+      "niveau": "Préscolaire (4-6 ans)",
+      "cycle": "Préscolaire",
+      "duree_periodes": 2,
+      "duree_par_periode": "30 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans un contexte d'activité physique individuelle",
+      "moyen_action": "Jeux de poursuite avec refuges variés",
+      "materiel": ["Bancs suédois", "Tapis surélevés", "Cerceaux au sol (refuges)", "Cônes de délimitation"],
+      "espace": "Gymnase",
+      "situation_depart": "Présentation du chat perché. Discussion : où se met-on pour être en sécurité ? Exploration des refuges disponibles dans le gymnase. Le refuge protège, mais pour combien de temps ?",
+      "tache_complexe": "Participer au jeu de chat perché avec 3 types de refuges différents (debout sur un banc, dans un cerceau, à genou sur un tapis), en se rappelant qu'on ne peut rester perché que 5 secondes.",
+      "deroulement": {
+        "mise_en_train": "Exploration libre des refuges (monter/descendre des bancs, entrer/sortir des cerceaux). Exercices d'équilibre basiques. Durée : 6 minutes.",
+        "partie_principale": "Période 1 : Chat perché classique (bancs seulement). Période 2 : Introduction de tous les refuges. Limite de temps sur chaque refuge. Rotation des chats. Durée : 18 minutes.",
+        "retour_au_calme": "Tous perchés : relaxation sur les bancs, souffle profond. Discussion sur les émotions du jeu. Durée : 6 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Utilisation stratégique des refuges disponibles", "echelon_A": "Utilise les 3 types de refuges et choisit celui le plus proche ou le plus stratégique", "echelon_B": "Utilise 2 types de refuges", "echelon_C": "Utilise seulement 1 type de refuge ou évite certains refuges"},
+          {"critere": "Équilibre sur les refuges (bancs, tapis)", "echelon_A": "Monte et descend des refuges de façon sécuritaire et équilibrée", "echelon_B": "Équilibre général avec quelques ajustements", "echelon_C": "Difficultés d'équilibre sur certains refuges"},
+          {"critere": "Respect de la règle des 5 secondes", "echelon_A": "Respecte toujours la limite de 5 secondes et quitte le refuge spontanément", "echelon_B": "Respecte la règle la plupart du temps avec quelques rappels", "echelon_C": "Tend à rester perché au-delà de la limite"}
+        ]
+      },
+      "variantes": [
+        "Chat perché en duo : deux élèves doivent être sur le même refuge",
+        "Refuges mobiles : des partenaires portant un cerceau offrent un refuge ambulant",
+        "Chat musical : les refuges changent à chaque musique"
+      ],
+      "adaptations_inclusives": [
+        "Refuges au sol uniquement pour les élèves avec difficultés d'équilibre",
+        "Réduire la zone de jeu pour les élèves moins mobiles",
+        "Règle spéciale : un élève particulier peut rester au refuge 10 secondes si besoin"
+      ],
+      "connexion_culturelle": "Des variantes du chat perché existent partout dans le monde. En Italie, ce jeu s'appelle 'prendere e non prendere' (prendre et ne pas prendre). Au Japon, une version s'appelle 'onigokkko' et en Inde 'dabba ispice'. Les refuges symbolisent universellement la sécurité.",
+      "contexte_mondial": "Les jeux de poursuite avec refuge sont parmi les plus anciens et universels des jeux d'enfants. Ils semblent avoir une fonction développementale liée à la gestion de la peur et à la confiance en sa propre motricité.",
+      "liens_interdisciplinaires": "Développement moteur : équilibre et coordination. Développement émotionnel : gestion de la peur et de l'excitation. Langage : nommer les refuges et les émotions vécues."
+    },
+    {
+      "id": "SAE_POURS_020",
+      "titre": "Poursuite aquatique (si piscine disponible)",
+      "intentions_pedagogiques": "Transposer les principes de poursuite dans le milieu aquatique, développer les déplacements en eau peu profonde et les stratégies d'esquive dans un milieu inhabituellement résistant.",
+      "niveau": "2e cycle primaire (8-10 ans)",
+      "cycle": "2e cycle",
+      "duree_periodes": 2,
+      "duree_par_periode": "45 minutes",
+      "competence_pfeq": "Agir dans divers contextes de pratique d'activités physiques",
+      "composante": "Agir efficacement dans des contextes d'activités physiques variés",
+      "moyen_action": "Jeux de poursuite en milieu aquatique",
+      "materiel": ["Piscine (profondeur à la poitrine)", "Balles flottantes", "Cerceaux flottants", "Filets flottants (optionnel)"],
+      "espace": "Piscine scolaire ou municipal",
+      "situation_depart": "Discussion sur les différences de déplacement dans l'eau vs sur terre. Pourquoi est-ce plus difficile de fuir dans l'eau ? Exploration du milieu aquatique et de ses propriétés physiques (résistance, flottabilité).",
+      "tache_complexe": "Participer à 3 jeux de poursuite aquatique différents (requin, ballon-poursuivant, cerceau-refuge) en adaptant ses stratégies au milieu aquatique (résistance de l'eau, pas de course rapide).",
+      "deroulement": {
+        "mise_en_train": "Entrée progressive dans l'eau. Déplacements variés : marcher, courir dans l'eau, sauter, s'immerger. Exploration de la résistance aquatique. Durée : 10 minutes.",
+        "partie_principale": "Période 1 : Jeu du requin (variante du loup). Jeu de ballon-poursuivant (passer le ballon pour toucher). Période 2 : Jeu du cerceau-refuge aquatique. Jeu de poursuite par équipes. Durée : 25 minutes par période.",
+        "retour_au_calme": "Flottaison dorsale collective avec musique douce. Sortie progressive de l'eau. Durée : 10 minutes."
+      },
+      "grille_evaluation": {
+        "criteres": [
+          {"critere": "Adaptation des déplacements au milieu aquatique", "echelon_A": "Utilise des stratégies de déplacement adaptées à l'eau (poussées, trajectoires courbes, changements d'immersion)", "echelon_B": "Quelques adaptations au milieu aquatique avec déplacements généralement efficaces", "echelon_C": "Tente de reproduire les mêmes stratégies que sur terre sans adaptation"},
+          {"critere": "Aisance dans le milieu aquatique", "echelon_A": "Se déplace avec aisance, sans crainte visible, utilise l'eau comme allié", "echelon_B": "Aisance générale avec quelques moments d'hésitation", "echelon_C": "Crainte visible ou réticence à certains déplacements aquatiques"},
+          {"critere": "Participation aux trois jeux de poursuite aquatique", "echelon_A": "Participe pleinement aux 3 jeux avec enthousiasme et stratégie adaptée", "echelon_B": "Participe aux 3 jeux avec engagement variable", "echelon_C": "Refuse un ou plusieurs jeux ou participation très limitée"}
+        ]
+      },
+      "variantes": [
+        "Version plus profonde : déplacements en nage (pour les nageurs confirmés)",
+        "Poursuite avec matériel flottant (planche à se déplacer)",
+        "Version équipes : relais de poursuite aquatique"
+      ],
+      "adaptations_inclusives": [
+        "Adapter la profondeur selon les capacités de chaque élève",
+        "Équipement de flottaison pour les élèves qui en ont besoin",
+        "Rôle d'arbitre au bord de la piscine pour les élèves qui ne peuvent pas être dans l'eau"
+      ],
+      "connexion_culturelle": "Les jeux aquatiques ont une tradition millénaire dans les cultures du Pacifique (Polynésie, Mélanésie), où l'eau est un environnement de vie quotidien. En Polynésie, les enfants apprennent à nager avant de marcher selon la tradition.",
+      "contexte_mondial": "Le water polo, le polo aquatique et le jeu d'eau des Polynésiens montrent que la poursuite aquatique est un domaine sportif développé sur tous les continents. Le synchronized swimming (natation artistique) ajoute une dimension expressive à ces principes.",
+      "liens_interdisciplinaires": "Sciences : propriétés physiques de l'eau (résistance, flottabilité, densité). Sécurité : prévention des noyades et règles de sécurité aquatique. Géographie : cultures du Pacifique et leur rapport à l'eau."
+    }
+  ]
+}
