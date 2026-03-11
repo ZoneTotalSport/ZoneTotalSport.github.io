@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Zone Total Sport — Référence Mondiale ÉPS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BACKGROUND CANVAS -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading" class="loading-screen">
+    <div class="loading-inner">
+      <div class="loading-logo">⚡</div>
+      <div class="loading-text">ZONE TOTAL SPORT</div>
+      <div class="loading-sub">CHARGEMENT EN COURS...</div>
+      <div class="loading-bar"><div class="loading-progress" id="loadProgress"></div></div>
+    </div>
+  </div>
+
+  <!-- APP WRAPPER -->
+  <div id="app" class="app hidden">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-logo">
+          <span class="zap zap-left">⚡</span>
+          <div class="header-titles">
+            <h1 class="site-title">ZONE TOTAL SPORT</h1>
+            <p class="site-subtitle">RÉFÉRENCE MONDIALE EN ÉPS · QUÉBEC</p>
+          </div>
+          <span class="zap zap-right">⚡</span>
+        </div>
+        <div class="header-stats">
+          <div class="hstat" id="hstat-jeux">0<span>JEUX</span></div>
+          <div class="hstat" id="hstat-sae">0<span>SAÉ</span></div>
+          <div class="hstat" id="hstat-pays">0<span>PAYS</span></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAV TABS -->
+    <nav class="main-nav">
+      <button class="nav-tab active" data-tab="jeux">🎮 JEUX SPORTIFS</button>
+      <button class="nav-tab" data-tab="sae">📚 SAÉ PFEQ</button>
+      <button class="nav-tab" data-tab="musique">🎵 MUSIQUES LIBRES</button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- ========== SECTION JEUX ========== -->
+      <section class="tab-section active" id="tab-jeux">
+        <div class="section-hero cat-jeux">
+          <div class="hero-icon">🎮</div>
+          <div class="hero-text">
+            <h2>BANQUE DE JEUX SPORTIFS MONDIAUX</h2>
+            <p>Tous les jeux de partout sur la planète · Références mondiales</p>
+          </div>
+        </div>
+
+        <div class="controls-bar">
+          <input type="text" id="jeux-search" class="search-input" placeholder="🔍 Rechercher un jeu...">
+          <select id="jeux-category" class="filter-select">
+            <option value="">Toutes les catégories</option>
+            <option value="ballon_chasseur">🎯 Ballon Chasseur</option>
+            <option value="poursuite">🏃 Poursuite / Chat</option>
+            <option value="cooperation">🤝 Coopération</option>
+            <option value="opposition">⚔️ Opposition / Duel</option>
+            <option value="sports_collectifs">🏅 Sports Collectifs</option>
+            <option value="sans_materiel">🙌 Sans Matériel</option>
+          </select>
+          <select id="jeux-niveau" class="filter-select">
+            <option value="">Tous les niveaux</option>
+            <option value="prescolaire">🌱 Préscolaire</option>
+            <option value="primaire">📖 Primaire</option>
+            <option value="secondaire">🎓 Secondaire</option>
+          </select>
+          <select id="jeux-espace" class="filter-select">
+            <option value="">Tous les espaces</option>
+            <option value="Gymnase">🏟️ Gymnase</option>
+            <option value="Extérieur">🌿 Extérieur</option>
+            <option value="Polyvalente">🏫 Polyvalente</option>
+          </select>
+          <select id="jeux-intensite" class="filter-select">
+            <option value="">Toutes les intensités</option>
+            <option value="Élevé">🔴 Élevé</option>
+            <option value="Modéré">🟡 Modéré</option>
+            <option value="Faible">🟢 Faible</option>
+          </select>
+        </div>
+
+        <div class="stats-bar">
+          <span class="stat-pill pill-yellow" id="jeux-count">0 jeux</span>
+          <span class="stat-pill pill-cyan" id="jeux-pays">0 origines</span>
+          <div class="cat-pills" id="cat-pills"></div>
+        </div>
+
+        <div id="jeux-grid" class="cards-grid"></div>
+      </section>
+
+      <!-- ========== SECTION SAÉ ========== -->
+      <section class="tab-section" id="tab-sae">
+        <div class="section-hero cat-sae">
+          <div class="hero-icon">📚</div>
+          <div class="hero-text">
+            <h2>BANQUE DE SAÉ PFEQ</h2>
+            <p>Situations d'Apprentissage et d'Évaluation · Maternelle → Secondaire 5</p>
+          </div>
+        </div>
+
+        <div class="controls-bar">
+          <input type="text" id="sae-search" class="search-input" placeholder="🔍 Rechercher une SAÉ...">
+          <select id="sae-cycle" class="filter-select">
+            <option value="">Tous les cycles</option>
+            <option value="Préscolaire">🌱 Préscolaire (4-5 ans)</option>
+            <option value="1er cycle">📖 1er cycle primaire</option>
+            <option value="2e cycle">📗 2e cycle primaire</option>
+            <option value="3e cycle">📘 3e cycle primaire</option>
+            <option value="Secondaire">🎓 Secondaire 1-5</option>
+          </select>
+          <select id="sae-competence" class="filter-select">
+            <option value="">Toutes les compétences</option>
+            <option value="Manipulation">🎯 Manipulation</option>
+            <option value="Locomotion">🏃 Locomotion</option>
+            <option value="Mobilité">🤸 Mobilité</option>
+            <option value="Coopération">🤝 Coopération</option>
+            <option value="Opposition">⚔️ Opposition</option>
+          </select>
+        </div>
+
+        <div class="stats-bar">
+          <span class="stat-pill pill-cyan" id="sae-count">0 SAÉ</span>
+          <span class="stat-pill pill-yellow" id="sae-pays">0 cultures représentées</span>
+        </div>
+
+        <div id="sae-grid" class="cards-grid"></div>
+      </section>
+
+      <!-- ========== SECTION MUSIQUE ========== -->
+      <section class="tab-section" id="tab-musique">
+        <div class="section-hero cat-musique">
+          <div class="hero-icon">🎵</div>
+          <div class="hero-text">
+            <h2>BIBLIOTHÈQUE MUSICALE LIBRE DE DROITS</h2>
+            <p>Toutes les ressources musicales pour l'ÉPS · Guide pédagogique complet</p>
+          </div>
+        </div>
+
+        <div id="musique-content"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box">
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
