@@ -61,35 +61,76 @@ const COMP_COLORS = {
 let ALL_SAE = [];
 let filtered = [];
 
+function showApp() {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').classList.remove('hidden');
+}
+
 async function loadAll() {
   const bar = document.getElementById('loadBar');
   let loaded = 0;
 
-  for (const file of SAE_FILES) {
-    try {
-      const res = await fetch(file);
-      if (!res.ok) throw new Error(res.status);
-      const data = await res.json();
-      const arr = data.sae || data.saes || data.jeux || data.items || [];
-      ALL_SAE.push(...arr);
-    } catch (e) {
-      console.warn('Skip', file, e);
+  // Safety timeout: if loading takes more than 8 seconds, show whatever is loaded
+  const timeoutId = setTimeout(() => {
+    console.warn('SAÉ: timeout de chargement atteint — affichage des', ALL_SAE.length, 'SAÉ déjà chargées');
+    const cycles = new Set(ALL_SAE.map(s => s.cycle || '').filter(Boolean));
+    document.getElementById('badge-total').innerHTML  = ALL_SAE.length + '<span>SAÉ</span>';
+    document.getElementById('badge-cycles').innerHTML = cycles.size + '<span>CYCLES</span>';
+    applyFilters();
+    updateStats();
+    showApp();
+  }, 8000);
+
+  try {
+    for (const file of SAE_FILES) {
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('HTTP ' + res.status + ' pour ' + file);
+        const data = await res.json();
+        const arr = Array.isArray(data)
+          ? data
+          : (data.sae || data.saes || data.jeux || data.items || []);
+        if (!Array.isArray(arr)) {
+          console.error('SAÉ: format inattendu dans', file, '— clés disponibles:', Object.keys(data));
+        } else {
+          ALL_SAE.push(...arr);
+        }
+      } catch (e) {
+        console.error('SAÉ: impossible de charger', file, e);
+      }
+      loaded++;
+      bar.style.width = (loaded / SAE_FILES.length * 100) + '%';
+      await new Promise(r => setTimeout(r, 20));
     }
-    loaded++;
-    bar.style.width = (loaded / SAE_FILES.length * 100) + '%';
-    await new Promise(r => setTimeout(r, 30));
+
+    clearTimeout(timeoutId);
+
+    const cycles = new Set(ALL_SAE.map(s => s.cycle || '').filter(Boolean));
+    document.getElementById('badge-total').innerHTML  = ALL_SAE.length + '<span>SAÉ</span>';
+    document.getElementById('badge-cycles').innerHTML = cycles.size + '<span>CYCLES</span>';
+
+    console.log('SAÉ: chargement terminé —', ALL_SAE.length, 'SAÉ sur', SAE_FILES.length, 'fichiers');
+
+    applyFilters();
+    updateStats();
+
+    await new Promise(r => setTimeout(r, 300));
+    showApp();
+  } catch (fatalErr) {
+    clearTimeout(timeoutId);
+    console.error('SAÉ: erreur fatale dans loadAll()', fatalErr);
+    // Show whatever loaded so far so the user sees something
+    try {
+      const cycles = new Set(ALL_SAE.map(s => s.cycle || '').filter(Boolean));
+      document.getElementById('badge-total').innerHTML  = ALL_SAE.length + '<span>SAÉ</span>';
+      document.getElementById('badge-cycles').innerHTML = cycles.size + '<span>CYCLES</span>';
+      applyFilters();
+      updateStats();
+    } catch (e2) {
+      console.error('SAÉ: erreur dans la récupération de secours', e2);
+    }
+    showApp();
   }
-
-  const cycles = new Set(ALL_SAE.map(s => s.cycle || '').filter(Boolean));
-  document.getElementById('badge-total').innerHTML  = ALL_SAE.length + '<span>SAÉ</span>';
-  document.getElementById('badge-cycles').innerHTML = cycles.size + '<span>CYCLES</span>';
-
-  applyFilters();
-  updateStats();
-
-  await new Promise(r => setTimeout(r, 300));
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('app').classList.remove('hidden');
 }
 
 function applyFilters() {
@@ -99,7 +140,8 @@ function applyFilters() {
   const dur  = document.getElementById('f-duree').value;
 
   filtered = ALL_SAE.filter(s => {
-    const text = [s.titre, s.intentions_pedagogiques, s.tache_complexe, s.competence_pfeq, s.moyen_action, s.contexte_mondial].flat().join(' ').toLowerCase();
+    if (!s || typeof s !== 'object') return false;
+    const text = [s.titre, s.intentions_pedagogiques, s.tache_complexe, s.competence_pfeq, s.moyen_action, s.contexte_mondial].filter(Boolean).join(' ').toLowerCase();
     if (q && !text.includes(q)) return false;
     if (cyc) {
       const sCyc = s.cycle || '';
@@ -133,7 +175,11 @@ function updateStats() {
 function renderGrid() {
   const grid = document.getElementById('grid');
   if (filtered.length === 0) {
-    grid.innerHTML = '<div style="text-align:center;padding:3rem;font-family:Bangers,cursive;font-size:1.5rem;color:var(--navy);letter-spacing:3px">AUCUNE SAÉ TROUVÉE 😅</div>';
+    if (ALL_SAE.length === 0) {
+      grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;font-family:Bangers,cursive;font-size:1.3rem;color:var(--navy);letter-spacing:2px;background:#fff;border:5px solid var(--navy);box-shadow:4px 4px 0 var(--navy)">⚠️ AUCUNE SAÉ CHARGÉE<br><span style="font-size:0.9rem;letter-spacing:1px">Vérifiez votre connexion ou rechargez la page.</span></div>';
+    } else {
+      grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;font-family:Bangers,cursive;font-size:1.5rem;color:var(--navy);letter-spacing:3px">AUCUNE SAÉ TROUVÉE 😅</div>';
+    }
     return;
   }
 

@@ -34,22 +34,275 @@ const CAT_LABELS = {
   expression:       '💃 Danse/Expression',
 };
 
-// Illustrations visuelles par catégorie (grand emoji scène + schéma SVG)
-const CAT_SCENE = {
-  ballon_chasseur:  ['🏃‍♂️','💨','🎯','💥','🏃‍♀️'],
-  poursuite:        ['🏃‍♂️','➡️','🏃‍♀️','🔴','⚡'],
-  cooperation:      ['🤝','⭕','🔄','👥','💚'],
-  opposition:       ['⚔️','🥊','🏆','💪','🎯'],
-  sports_collectifs:['⚽','🏀','🤾','👥','🥅'],
-  individuels:      ['🏆','🎯','💪','🌟','🏅'],
-  traditionnels:    ['🌍','🎪','🏺','🌐','🎭'],
-  sans_materiel:    ['🙌','💨','🏃','⭕','✨'],
-  exterieur:        ['🌿','🌳','☀️','🏃','🌱'],
-  avec_materiel:    ['🎒','🎯','⚽','🪃','🎽'],
-  prescolaire:      ['🌱','🐣','😄','⭐','🎈'],
-  raquettes:        ['🏸','🎾','🏓','🪶','🥏'],
-  expression:       ['💃','🎶','🌊','🎭','✨'],
-};
+// ─── Matériel → emojis ───────────────────────────────────────────────────────
+const MAT_EMOJI = [
+  [/balle|ball/i,'⚽'],[/ballon/i,'🏐'],[/mousse/i,'🟡'],[/cerceaux?/i,'⭕'],
+  [/cône|cone/i,'🔺'],[/corde/i,'🪢'],[/foulard|dossard/i,'🎽'],
+  [/raquette/i,'🏸'],[/hockey|bâton/i,'🏒'],[/frisbee/i,'🥏'],
+  [/tapis/i,'🛋️'],[/banc/i,'🪑'],[/marqueur/i,'✏️'],[/sifflet/i,'📯'],
+  [/volant/i,'🪶'],[/hula/i,'⭕'],[/parachute/i,'🌈'],[/anneau/i,'⭕'],
+  [/sac|poche/i,'🎒'],[/musique|son/i,'🎵'],
+];
+
+function getMaterialEmojis(materielArr) {
+  if (!materielArr || !materielArr.length) return ['🎮','⚡','🏆'];
+  const emojis = [];
+  for (const m of materielArr) {
+    for (const [re, emoji] of MAT_EMOJI) {
+      if (re.test(m) && !emojis.includes(emoji)) { emojis.push(emoji); break; }
+    }
+    if (emojis.length >= 3) break;
+  }
+  while (emojis.length < 3) emojis.push(['⭐','💪','🌟','⚡'][emojis.length % 4]);
+  return emojis;
+}
+
+function hash(s) { let h=5381; for(let c of (s||'')) h=((h<<5)+h)+c.charCodeAt(0)|0; return Math.abs(h); }
+
+function svgPlayers(positions, color, label) {
+  return positions.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="14" fill="${color}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="10" fill="white" font-family="Arial">${label}</text>`).join('');
+}
+
+function getTerrainSVG(j) {
+  const cat  = j._cat || j.categorie || '';
+  const col  = CAT_COLORS[cat] || '#004EBF';
+  const nbJ  = Math.min(j.nb_joueurs_min || 8, 20);
+  const esp  = (j.espace || 'Gymnase').toUpperCase();
+  const but  = (j.but_du_jeu || j.titre || '').substring(0, 48);
+  const mat  = getMaterialEmojis(j.materiel || []);
+  const h    = hash(j.id || j.titre || cat);
+  const bg   = esp === 'EXTÉRIEUR' || esp === 'EXTERIEUR' ? '#f0fff0' : esp === 'CLASSE' ? '#fff9e6' : '#eef2ff';
+  const secCols = ['#c0392b','#8e44ad','#e67e22','#1a7f3c','#2980b9','#d35400','#16a085','#ad1457'];
+  const col2 = secCols[h % secCols.length];
+
+  function playerPositions(n, zone, seed) {
+    const positions = [];
+    for (let i = 0; i < n; i++) {
+      const angle = (i / n) * 2 * Math.PI + seed * 0.1;
+      const r = zone.r * (0.5 + (hash(seed + '' + i) % 50) / 100);
+      positions.push([Math.round(zone.cx + r * Math.cos(angle)), Math.round(zone.cy + r * Math.sin(angle))]);
+    }
+    return positions;
+  }
+
+  const caption = but || esp + ' · ' + nbJ + '+ JOUEURS';
+
+  if (cat === 'ballon_chasseur') {
+    const half = Math.ceil(nbJ / 2);
+    const posA = playerPositions(half,    {cx:90,  cy:85, r:60}, h);
+    const posB = playerPositions(nbJ-half,{cx:310, cy:85, r:60}, h+1);
+    const nbBalls = 1 + (h % 4);
+    const ballPos = Array.from({length: nbBalls}, (_,i) => [160+i*20, 60+(h%30)]);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:${bg}">
+      <rect width="400" height="175" fill="${bg}"/>
+      <line x1="200" y1="0" x2="200" y2="155" stroke="${col}" stroke-width="4" stroke-dasharray="8,4"/>
+      <text x="200" y="12" text-anchor="middle" font-size="9" fill="${col}" font-family="Bangers,cursive">LIGNE CENTRALE</text>
+      ${svgPlayers(posA, col, 'A')}
+      ${svgPlayers(posB, col2, 'B')}
+      ${ballPos.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="10" fill="#FFE000" stroke="var(--navy)" stroke-width="2"/>`).join('')}
+      <text x="30" y="165" text-anchor="start" font-size="16">${mat[0]}</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'poursuite') {
+    const nbFuyards = Math.min(nbJ - 1, 8);
+    const chasseurs = playerPositions(1 + (h%2), {cx:80, cy:85, r:20}, h);
+    const fuyards   = playerPositions(nbFuyards,  {cx:240, cy:85, r:110}, h+3);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:${bg}">
+      <rect width="400" height="175" fill="${bg}"/>
+      <ellipse cx="220" cy="85" rx="155" ry="70" fill="none" stroke="#ddd" stroke-width="3" stroke-dasharray="8,4"/>
+      ${svgPlayers(chasseurs, col, '🚨')}
+      ${svgPlayers(fuyards, col2, '🏃')}
+      <path d="M ${chasseurs[0][0]+18} ${chasseurs[0][1]} Q ${(chasseurs[0][0]+fuyards[0][0])/2} ${Math.min(chasseurs[0][1],fuyards[0][1])-20} ${fuyards[0][0]-16} ${fuyards[0][1]}" stroke="${col}" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+      <text x="30" y="165" text-anchor="start" font-size="16">${mat[0]}</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'cooperation') {
+    const n = Math.min(nbJ, 10);
+    const positions = Array.from({length:n}, (_,i) => {
+      const a = (i/n)*2*Math.PI;
+      return [Math.round(200+110*Math.cos(a)), Math.round(85+65*Math.sin(a))];
+    });
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:${bg}">
+      <rect width="400" height="175" fill="${bg}"/>
+      ${positions.map(([x,y])=>`<line x1="200" y1="85" x2="${x}" y2="${y}" stroke="${col}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>`).join('')}
+      ${positions.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="16" fill="${i%2===0?col:col2}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="11" fill="white">${mat[i%mat.length]}</text>`).join('')}
+      <circle cx="200" cy="85" r="22" fill="${col}" stroke="white" stroke-width="3"/>
+      <text x="200" y="92" text-anchor="middle" font-size="18" fill="white">🤝</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'opposition') {
+    const pos1 = playerPositions(Math.min(Math.ceil(nbJ/2),5),  {cx:90, cy:80, r:50}, h);
+    const pos2 = playerPositions(Math.min(Math.floor(nbJ/2),5), {cx:310,cy:80, r:50}, h+2);
+    const vsY  = 80 + (h%20) - 10;
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:${bg}">
+      <rect width="400" height="175" fill="${bg}"/>
+      <line x1="200" y1="10" x2="200" y2="155" stroke="#ccc" stroke-width="3" stroke-dasharray="6,4"/>
+      ${svgPlayers(pos1, col, '1')}
+      ${svgPlayers(pos2, col2, '2')}
+      <circle cx="200" cy="${vsY}" r="20" fill="var(--navy)" stroke="#FFE000" stroke-width="3"/>
+      <text x="200" y="${vsY+6}" text-anchor="middle" font-size="13" fill="#FFE000" font-family="Bangers,cursive">VS</text>
+      <text x="30"  y="165" text-anchor="start"  font-size="16">${mat[0]}</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'sports_collectifs') {
+    const half = Math.ceil(nbJ/2);
+    const posA = playerPositions(Math.min(half,6),    {cx:100, cy:80, r:70}, h);
+    const posB = playerPositions(Math.min(nbJ-half,6),{cx:300, cy:80, r:70}, h+5);
+    const butH = 30 + (h%30);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:${bg}">
+      <rect width="400" height="175" fill="${bg}"/>
+      <rect x="15" y="20" width="370" height="130" fill="none" stroke="#bbb" stroke-width="2"/>
+      <line x1="200" y1="20" x2="200" y2="150" stroke="#bbb" stroke-width="2" stroke-dasharray="6,4"/>
+      <circle cx="200" cy="85" r="28" fill="none" stroke="#bbb" stroke-width="1.5"/>
+      <rect x="15"  y="${85-butH/2}" width="14" height="${butH}" fill="${col}" opacity="0.8"/>
+      <rect x="371" y="${85-butH/2}" width="14" height="${butH}" fill="${col2}" opacity="0.8"/>
+      ${svgPlayers(posA, col, 'A')}
+      ${svgPlayers(posB, col2, 'B')}
+      <circle cx="200" cy="85" r="9" fill="#FFE000" stroke="var(--navy)" stroke-width="2"/>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'prescolaire') {
+    const n = Math.min(nbJ, 8);
+    const colors = ['#f39c12','#e67e22','#2ecc71','#3498db','#e74c3c','#9b59b6','#1abc9c','#f1c40f'];
+    const emojis = ['🐣','🐥','🌟','🎈','⭐','🌈','🦋','🎀'];
+    const xs = [50,110,170,230,290,350,200,140];
+    const baseYs = [70,95,70,95,70,95,55,55];
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#fffde7">
+      <rect width="400" height="175" fill="#fffde7"/>
+      <ellipse cx="200" cy="90" rx="170" ry="65" fill="none" stroke="#f1c40f" stroke-width="3" stroke-dasharray="8,4"/>
+      ${Array.from({length:n},(_,i)=>`<circle cx="${xs[i]}" cy="${baseYs[i]+(h%(20))-10}" r="24" fill="${colors[i%colors.length]}" stroke="white" stroke-width="3"/><text x="${xs[i]}" y="${baseYs[i]+(h%(20))-5}" text-anchor="middle" font-size="16">${emojis[(i+h)%emojis.length]}</text>`).join('')}
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'raquettes') {
+    const posG = playerPositions(Math.min(Math.ceil(nbJ/2),3),  {cx:70,  cy:85, r:40}, h);
+    const posD = playerPositions(Math.min(Math.floor(nbJ/2),3), {cx:330, cy:85, r:40}, h+4);
+    const arcY = 20 + (h%30);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#e0f7fa">
+      <rect width="400" height="175" fill="#e0f7fa"/>
+      <rect x="197" y="15" width="6" height="140" fill="${col}" rx="2"/>
+      <text x="200" y="12" text-anchor="middle" font-size="9" fill="${col}" font-family="Bangers,cursive">FILET</text>
+      ${svgPlayers(posG, col, '🏸')}
+      ${svgPlayers(posD, col2, '🏸')}
+      <path d="M ${posG[0][0]+20} ${posG[0][1]-10} Q 200 ${arcY} ${posD[0][0]-20} ${posD[0][1]-10}" stroke="${col}" stroke-width="2.5" fill="none" stroke-dasharray="5,3"/>
+      <circle cx="200" cy="${arcY+8}" r="7" fill="#FFE000" stroke="var(--navy)" stroke-width="2"/>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'expression') {
+    const n = Math.min(nbJ, 9);
+    const noteEmojis = ['🎵','🎶','🎼','♪','♫','🎤','🎭','💃','🕺'];
+    const waves = Array.from({length:6},(_,i)=>`<path d="M ${30+i*60} 85 Q ${60+i*60} ${50+(h+i*17)%50} ${90+i*60} 85" stroke="${i%2===0?col:col2}" stroke-width="3" fill="none"/>`).join('');
+    const players = playerPositions(n, {cx:200,cy:90,r:100}, h);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#fce4ec">
+      <rect width="400" height="175" fill="#fce4ec"/>
+      ${waves}
+      ${players.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="15" fill="${i%2===0?col:col2}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="12">${noteEmojis[(i+h)%noteEmojis.length]}</text>`).join('')}
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'traditionnels') {
+    const natColors = ['#c0392b','#2980b9','#27ae60','#f39c12','#8e44ad','#d35400','#16a085','#2c3e50'];
+    const posRing = Array.from({length:Math.min(nbJ,8)},(_,i)=>{
+      const a=(i/Math.min(nbJ,8))*2*Math.PI+(h%10)*0.1;
+      return [Math.round(200+100*Math.cos(a)), Math.round(85+60*Math.sin(a))];
+    });
+    const continents = ['🌍','🌎','🌏','🗺️'];
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#fff9f0">
+      <rect width="400" height="175" fill="#fff9f0"/>
+      <circle cx="200" cy="85" r="70" fill="none" stroke="${col}" stroke-width="2" stroke-dasharray="6,4" opacity="0.4"/>
+      ${posRing.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="16" fill="${natColors[(i+h)%natColors.length]}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="11" fill="white">👤</text>`).join('')}
+      <text x="200" y="92" text-anchor="middle" font-size="28">${continents[h%continents.length]}</text>
+      <text x="30"  y="165" text-anchor="start"  font-size="16">${mat[0]}</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'sans_materiel') {
+    const positions = playerPositions(Math.min(nbJ,10), {cx:200,cy:85,r:120}, h);
+    const handEmojis=['🤸','🏃','💃','🕺','🙌','👏','🤜','🤛'];
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#f0f4ff">
+      <rect width="400" height="175" fill="#f0f4ff"/>
+      <text x="200" y="110" text-anchor="middle" font-size="50" opacity="0.08">🙌</text>
+      ${positions.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="16" fill="${i%2===0?col:col2}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="12">${handEmojis[(i+h)%handEmojis.length]}</text>`).join('')}
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'exterieur') {
+    const treeEmojis = ['🌳','🌲','🌴','🌿','🍃'];
+    const playerPos = playerPositions(Math.min(nbJ,8), {cx:200,cy:90,r:100}, h);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#e8f5e9">
+      <rect width="400" height="175" fill="#e8f5e9"/>
+      <rect x="0" y="140" width="400" height="35" fill="#a5d6a7" opacity="0.5"/>
+      ${[20,60,340,370].map((x,i)=>`<text x="${x}" y="138" font-size="26" opacity="0.5">${treeEmojis[(i+h)%treeEmojis.length]}</text>`).join('')}
+      <text x="200" y="16" text-anchor="middle" font-size="18" opacity="0.25">☀️</text>
+      ${playerPos.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="15" fill="${i%2===0?col:col2}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="10" fill="white">🏃</text>`).join('')}
+      <text x="30"  y="165" text-anchor="start"  font-size="16">${mat[0]}</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'avec_materiel') {
+    const playerPos = playerPositions(Math.min(nbJ,8), {cx:200,cy:85,r:110}, h);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#f5f5f5">
+      <rect width="400" height="175" fill="#f5f5f5"/>
+      <text x="70"  y="90" text-anchor="middle" font-size="28" opacity="0.12">${mat[0]||'🎒'}</text>
+      <text x="200" y="90" text-anchor="middle" font-size="28" opacity="0.12">${mat[1]||'⚽'}</text>
+      <text x="330" y="90" text-anchor="middle" font-size="28" opacity="0.12">${mat[2]||'🎯'}</text>
+      ${playerPos.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="16" fill="${i%2===0?col:col2}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="12">${mat[i%mat.length]}</text>`).join('')}
+      <text x="30"  y="165" text-anchor="start"  font-size="16">${mat[0]}</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  if (cat === 'individuels') {
+    const trophyEmoji = ['🥇','🥈','🥉','🏆','🌟'];
+    const positions = playerPositions(Math.min(nbJ,6), {cx:200,cy:85,r:120}, h);
+    return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:#fffbf0">
+      <rect width="400" height="175" fill="#fffbf0"/>
+      ${positions.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="16" fill="${col}" stroke="#FFE000" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="12">${trophyEmoji[(i+h)%trophyEmoji.length]}</text>`).join('')}
+      <circle cx="200" cy="85" r="28" fill="var(--navy)" stroke="#FFE000" stroke-width="3"/>
+      <text x="200" y="94" text-anchor="middle" font-size="22">🏆</text>
+      <text x="200" y="168" text-anchor="middle" font-size="10" fill="var(--navy)" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+    </svg>`;
+  }
+
+  // Fallback générique unique par jeu
+  const playerPosFb = playerPositions(Math.min(nbJ,10), {cx:200,cy:85,r:120}, h);
+  return `<svg viewBox="0 0 400 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:175px;border:3px solid var(--navy);background:${bg}">
+    <rect width="400" height="175" fill="${bg}"/>
+    ${playerPosFb.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="15" fill="${i%2===0?col:col2}" stroke="white" stroke-width="2"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="11" fill="white">${mat[i%mat.length]}</text>`).join('')}
+    <text x="30"  y="165" text-anchor="start"  font-size="16">${mat[0]}</text>
+    <text x="200" y="168" text-anchor="middle" font-size="10" fill="${col}" font-family="Bangers,cursive" letter-spacing="1">${caption.substring(0,45)}</text>
+  </svg>`;
+}
+
+function getCatEmojis(j) {
+  const cat = (typeof j === 'string') ? j : (j._cat || j.categorie || '');
+  const matArr = (typeof j === 'object') ? (j.materiel || []) : [];
+  const mat = getMaterialEmojis(matArr);
+  const catBase = {
+    ballon_chasseur:'🎯', poursuite:'🏃', cooperation:'🤝',
+    opposition:'⚔️', sports_collectifs:'🏅', individuels:'🏆',
+    traditionnels:'🌍', sans_materiel:'🙌', exterieur:'🌿',
+    avec_materiel:'🎒', prescolaire:'🌱', raquettes:'🏸', expression:'💃',
+  };
+  return [catBase[cat]||'🎮', mat[0], mat[1]].join(' ');
+}
 
 const CAT_SVG = {
   ballon_chasseur: (col) => `

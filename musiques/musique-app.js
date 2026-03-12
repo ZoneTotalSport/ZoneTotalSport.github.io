@@ -153,7 +153,7 @@ function renderGrid() {
     const bpmCol = bpmRange ? bpmRange.color : '#888';
 
     return `
-    <div class="zts-card" style="animation-delay:${delay}ms;cursor:pointer" onclick="openModal(${i})" tabindex="0" role="button">
+    <div id="card-${i}" class="zts-card" style="animation-delay:${delay}ms">
       <div style="background:${col};padding:0.6rem 1rem;display:flex;justify-content:space-between;align-items:center">
         <span style="font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:2px;color:#fff">🎵 ${genre}</span>
         <span style="background:${bpmCol};color:#fff;font-family:Bangers,cursive;font-size:0.95rem;letter-spacing:2px;padding:0.15rem 0.6rem;border:2px solid rgba(255,255,255,0.4)">${bpm} BPM</span>
@@ -165,9 +165,9 @@ function renderGrid() {
         ${licence ? `<div style="font-size:0.78rem;color:#1a7f3c;font-weight:bold">✅ ${licence}</div>` : ''}
         ${m.description ? `<div style="font-size:0.8rem;color:#446;line-height:1.4;margin-top:0.4rem">${m.description.substring(0,80)}…</div>` : ''}
       </div>
-      <div style="display:flex;border-top:3px solid var(--navy)">
-        <div style="flex:1;background:#1a7f3c;padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:#fff;text-align:center">▶ JOUER</div>
-        <div style="flex:1;background:var(--yellow);padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);text-align:center;border-left:3px solid var(--navy)">🎵 DÉTAILS</div>
+      <div id="card-footer-${i}" style="display:flex;border-top:3px solid var(--navy)">
+        <div style="flex:1;background:#1a7f3c;padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:#fff;text-align:center;cursor:pointer" onclick="event.stopPropagation();playDirect(${i})">▶ JOUER</div>
+        <div style="flex:1;background:var(--yellow);padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);text-align:center;border-left:3px solid var(--navy);cursor:pointer" onclick="event.stopPropagation();openModal(${i})">🎵 DÉTAILS</div>
       </div>
     </div>`;
   }).join('');
@@ -242,7 +242,7 @@ async function searchAndPlay(genre, bpm, containerId, btnEl) {
           🎵 ${track.name} — <span style="color:#1a7f3c">${track.artist_name}</span>
           <span style="font-size:0.75rem;background:#e8f5e9;color:#1a7f3c;padding:0.1rem 0.4rem;margin-left:0.3rem;border:1px solid #1a7f3c">CC BY-NC-SA · Jamendo</span>
         </div>
-        <audio id="audio-el-${containerId}" controls style="width:100%;display:block" autoplay>
+        <audio id="audio-el-${containerId}" controls style="width:100%;display:block">
           <source src="${track.audio}" type="audio/mpeg">
         </audio>
         <a href="${track.shareurl}" target="_blank" rel="noopener"
@@ -252,12 +252,96 @@ async function searchAndPlay(genre, bpm, containerId, btnEl) {
       </div>
     `;
     currentAudio = document.getElementById(`audio-el-${containerId}`);
+    if (currentAudio) currentAudio.play().catch(() => {});
   } catch(e) {
     btnEl.disabled = false;
     btnEl.innerHTML = '▶ RÉESSAYER';
     const container = document.getElementById(containerId);
     container.innerHTML = `<div style="color:#c0392b;font-size:0.85rem;margin-top:0.5rem">⚠️ Connexion impossible. <a href="https://www.jamendo.com/search?q=${encodeURIComponent(genre)}" target="_blank" rel="noopener" style="color:var(--blue)">Rechercher sur Jamendo</a></div>`;
   }
+}
+
+async function playDirect(idx) {
+  const m = filtered[idx];
+  if (!m) return;
+
+  // Stop any currently playing audio
+  stopCurrentAudio();
+
+  const footer = document.getElementById('card-footer-' + idx);
+  if (!footer) return;
+
+  const src = m.source || m.url || '';
+  const audioUrl = m.audio_url || (src.match(/\.(mp3|ogg|wav)(\?|$)/i) ? src : null);
+
+  if (audioUrl) {
+    // Tracks with a direct audio URL: inject player immediately
+    footer.innerHTML = `
+      <div style="width:100%;padding:0.5rem 0.7rem;background:#e8f5e9;display:flex;flex-direction:column;gap:0.4rem">
+        <audio id="card-audio-${idx}" controls style="width:100%;display:block"></audio>
+        <div style="display:flex;justify-content:flex-end">
+          <span onclick="resetCardFooter(${idx})" style="font-family:Bangers,cursive;font-size:0.85rem;letter-spacing:1px;color:#c0392b;cursor:pointer;padding:0.1rem 0.4rem;border:1px solid #c0392b">✕ FERMER</span>
+        </div>
+      </div>`;
+    const audioEl = document.getElementById('card-audio-' + idx);
+    audioEl.src = audioUrl;
+    currentAudio = audioEl;
+    audioEl.play().catch(() => {});
+  } else {
+    // Tracks without audio_url: search Jamendo, show loading spinner first
+    const genre  = m.genre || 'Autre';
+    const bpmNum = parseInt(m.bpm) || 0;
+
+    footer.innerHTML = `
+      <div style="width:100%;padding:0.6rem 1rem;background:#f0f4ff;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">
+        ⏳ RECHERCHE EN COURS...
+      </div>`;
+
+    const tags = GENRE_TO_JAMENDO[genre] || 'instrumental';
+    const url  = `https://api.jamendo.com/v3.0/tracks/?client_id=${JAMENDO_CLIENT}&format=json&limit=10&tags=${tags}&audioformat=mp32&order=popularity_total`;
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('API unavailable');
+      const data = await res.json();
+      const results = (data.results || []).filter(t => t.audio);
+      if (results.length === 0) throw new Error('No results');
+
+      const track = results[Math.floor(Math.random() * results.length)];
+
+      footer.innerHTML = `
+        <div style="width:100%;padding:0.5rem 0.7rem;background:#e8f5e9;display:flex;flex-direction:column;gap:0.4rem">
+          <div style="font-family:Bangers,cursive;font-size:0.8rem;letter-spacing:1px;color:var(--navy)">
+            ${track.name} — <span style="color:#1a7f3c">${track.artist_name}</span>
+            <span style="font-size:0.7rem;background:#fff;color:#1a7f3c;padding:0.05rem 0.3rem;margin-left:0.2rem;border:1px solid #1a7f3c">Jamendo CC</span>
+          </div>
+          <audio id="card-audio-${idx}" controls style="width:100%;display:block"></audio>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <a href="${track.shareurl}" target="_blank" rel="noopener" style="font-size:0.75rem;color:var(--blue)">↗ Jamendo</a>
+            <span onclick="resetCardFooter(${idx})" style="font-family:Bangers,cursive;font-size:0.85rem;letter-spacing:1px;color:#c0392b;cursor:pointer;padding:0.1rem 0.4rem;border:1px solid #c0392b">✕ FERMER</span>
+          </div>
+        </div>`;
+      const audioEl = document.getElementById('card-audio-' + idx);
+      audioEl.src = track.audio;
+      currentAudio = audioEl;
+      audioEl.play().catch(() => {});
+    } catch(e) {
+      footer.innerHTML = `
+        <div style="width:100%;padding:0.5rem 0.8rem;background:#fff3f3;display:flex;justify-content:space-between;align-items:center;gap:0.5rem">
+          <span style="font-size:0.8rem;color:#c0392b">⚠️ Indisponible. <a href="https://www.jamendo.com/search?q=${encodeURIComponent(genre)}" target="_blank" rel="noopener" style="color:var(--blue)">Jamendo →</a></span>
+          <span onclick="resetCardFooter(${idx})" style="font-family:Bangers,cursive;font-size:0.85rem;letter-spacing:1px;color:#c0392b;cursor:pointer;padding:0.1rem 0.4rem;border:1px solid #c0392b">✕</span>
+        </div>`;
+    }
+  }
+}
+
+function resetCardFooter(idx) {
+  stopCurrentAudio();
+  const footer = document.getElementById('card-footer-' + idx);
+  if (!footer) return;
+  footer.innerHTML = `
+    <div style="flex:1;background:#1a7f3c;padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:#fff;text-align:center;cursor:pointer" onclick="event.stopPropagation();playDirect(${idx})">▶ JOUER</div>
+    <div style="flex:1;background:var(--yellow);padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);text-align:center;border-left:3px solid var(--navy);cursor:pointer" onclick="event.stopPropagation();openModal(${idx})">🎵 DÉTAILS</div>`;
 }
 
 function openModal(idx) {
@@ -279,7 +363,7 @@ function openModal(idx) {
   const audioSection = audioUrl
     ? `<div class="modal-section">
         <div class="modal-section-title">▶️ ÉCOUTER DIRECTEMENT</div>
-        <audio id="audio-el-direct" controls style="width:100%;margin-top:0.5rem" autoplay>
+        <audio id="audio-el-direct" controls style="width:100%;margin-top:0.5rem">
           <source src="${audioUrl}" type="audio/mpeg">
         </audio>
        </div>`
@@ -322,7 +406,7 @@ function openModal(idx) {
 
   if (audioUrl) {
     const el = document.getElementById('audio-el-direct');
-    if (el) currentAudio = el;
+    if (el) { currentAudio = el; el.play().catch(() => {}); }
   }
 
   document.getElementById('modal').classList.remove('hidden');

@@ -270,9 +270,9 @@ function buildMaGrid() {
   document.getElementById('ma-grid').innerHTML =
     Object.entries(MOYENS_ACTION).map(([key,ma]) => `
       <div class="ma-card" id="ma-${key}" onclick="selectMA('${key}')">
-        <span class="ma-icon">${ma.icon}</span>
-        <div class="ma-label" style="color:${ma.color}">${ma.label}</div>
-        <div class="ma-sub">${ma.subtitle}</div>
+        <span class="ma-icon">${ma.emoji || ma.icon || '🎯'}</span>
+        <div class="ma-label" style="color:${ma.couleur || ma.color || 'var(--navy)'}">${ma.nom || ma.label || key}</div>
+        <div class="ma-sub">${ma.description || ma.subtitle || ''}</div>
       </div>`).join('');
 }
 
@@ -419,10 +419,12 @@ function renderPlan() {
 
 function updatePlanHeader() {
   const ma = MOYENS_ACTION[state.moyen]||{};
+  const maLabel = ma.nom || ma.label || state.moyen;
+  const maIcon  = ma.emoji || ma.icon || '🎯';
   document.getElementById('plan-title-text').textContent =
-    state.titre || `SAÉ ÉPS — ${ma.label} · ${state.cycle}`;
+    state.titre || `SAÉ ÉPS — ${maLabel} · ${state.cycle}`;
   document.getElementById('plan-meta-badges').innerHTML = `
-    <span class="plan-badge">${ma.icon||''} ${ma.label||''}</span>
+    <span class="plan-badge">${maIcon} ${maLabel}</span>
     <span class="plan-badge">🎓 ${state.cycle}</span>
     <span class="plan-badge">⏱ ${state.duree} min / séance</span>
     <span class="plan-badge">📅 ${state.nbSeances} séances</span>
@@ -533,6 +535,7 @@ function swapActivity(si,pi,ai) {
 function buildEvalSection() {
   const el=document.getElementById('eval-section');
   const ma=MOYENS_ACTION[state.moyen]||{};
+  const maLabel = ma.nom || ma.label || state.moyen;
   const objs=(OBJECTIFS_PFEQ[state.moyen]||{})[state.cycle]||[];
   el.innerHTML=`
     <div style="border:4px solid var(--navy);box-shadow:var(--shadow)">
@@ -549,18 +552,18 @@ function buildEvalSection() {
             <th>⭐ DÉPASSÉ</th>
           </tr></thead>
           <tbody>
-            ${objs.map(obj=>`<tr>
+            ${objs.length ? objs.map(obj=>`<tr>
               <td><strong>${obj}</strong></td>
               <td>Tente avec aide et guidage</td>
               <td>Tente de façon autonome, parfois réussite</td>
               <td>Réalise avec constance et autonomie</td>
               <td>Réalise et peut guider les autres</td>
-            </tr>`).join('')}
+            </tr>`).join('') : `<tr><td colspan="5" style="text-align:center;padding:1rem;font-style:italic">Aucun objectif défini pour ce cycle.</td></tr>`}
           </tbody>
         </table>
         <div style="margin-top:0.8rem;padding:0.7rem;background:#fffde7;border:3px solid var(--yellow);font-size:0.83rem;color:#334;line-height:1.6">
           <strong>Compétence PFEQ :</strong> Agir dans divers contextes de pratique d'activités physiques<br>
-          <strong>Domaine :</strong> ${ma.label||''} · ${state.cycle}<br>
+          <strong>Domaine :</strong> ${maLabel} · ${state.cycle}<br>
           <strong>Composantes :</strong> Réalisation de l'action · Interaction avec les autres · Conditions favorables à la pratique
         </div>
       </div>
