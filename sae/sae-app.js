@@ -205,7 +205,10 @@ function renderGrid() {
         <div style="font-size:0.85rem;color:#334;line-height:1.4">${(s.intentions_pedagogiques||s.tache_complexe||'').substring(0,120)}${(s.intentions_pedagogiques||'').length>120?'…':''}</div>
         ${pays ? `<div style="margin-top:0.6rem;font-size:0.78rem;color:#556">🌍 ${pays}</div>` : ''}
       </div>
-      <div style="background:var(--yellow);border-top:3px solid var(--navy);padding:0.5rem 1rem;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">→ VOIR LA SAÉ COMPLÈTE</div>
+      <div style="display:flex;border-top:3px solid var(--navy)">
+        <div style="flex:1;background:var(--yellow);padding:0.5rem 1rem;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">→ VOIR LA SAÉ COMPLÈTE</div>
+        <button onclick="event.stopPropagation();openSaeTBI(${i})" style="background:#001D6E;color:#FFE000;border:none;border-left:3px solid var(--navy);padding:0.5rem 0.8rem;font-family:Bangers,cursive;font-size:0.95rem;letter-spacing:1px;cursor:pointer;flex-shrink:0">📺 TBI</button>
+      </div>
     </div>`;
   }).join('');
 
@@ -321,3 +324,200 @@ style.textContent = `
 document.head.appendChild(style);
 
 loadAll();
+
+// ═══════════════════════════════════════
+// TBI MODE — TABLEAU BLANC INTERACTIF
+// ═══════════════════════════════════════
+let saeTbiActive = false;
+let saeTbiIndex = 0;
+let saeTbiGames = [];
+let saeTbiTimerVal = 0;
+let saeTbiTimerInterval = null;
+let saeTbiTouchStartX = 0;
+
+function openSaeTBI(idx) {
+  saeTbiGames = filtered.length > 0 ? filtered : ALL_SAE;
+  saeTbiIndex = idx !== undefined ? idx : 0;
+  saeTbiActive = true;
+  renderSaeTBI();
+  document.addEventListener('keydown', saeTbiKeyHandler);
+}
+
+function closeSaeTBI() {
+  saeTbiActive = false;
+  stopSaeTBITimer();
+  const el = document.getElementById('sae-tbi-overlay');
+  if (el) el.remove();
+  document.removeEventListener('keydown', saeTbiKeyHandler);
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+}
+
+function saeTbiKeyHandler(e) {
+  if (!saeTbiActive) return;
+  if (e.key === 'Escape') { closeSaeTBI(); return; }
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); saeTbiNext(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); saeTbiPrev(); }
+}
+
+function saeTbiNext() {
+  if (saeTbiIndex < saeTbiGames.length - 1) { saeTbiIndex++; renderSaeTBI(); }
+}
+function saeTbiPrev() {
+  if (saeTbiIndex > 0) { saeTbiIndex--; renderSaeTBI(); }
+}
+
+function startSaeTBITimer(seconds) {
+  stopSaeTBITimer();
+  saeTbiTimerVal = seconds;
+  const disp = document.getElementById('sae-tbi-timer-disp');
+  if (disp) { disp.classList.add('running'); disp.textContent = formatSaeTBITime(saeTbiTimerVal); }
+  saeTbiTimerInterval = setInterval(() => {
+    saeTbiTimerVal--;
+    const d = document.getElementById('sae-tbi-timer-disp');
+    if (d) d.textContent = formatSaeTBITime(saeTbiTimerVal);
+    if (saeTbiTimerVal <= 0) {
+      stopSaeTBITimer();
+      const d2 = document.getElementById('sae-tbi-timer-disp');
+      if (d2) { d2.textContent = '⏰ 0:00'; d2.classList.remove('running'); }
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        for (let i = 0; i < 3; i++) {
+          const osc = ctx.createOscillator(); const gain = ctx.createGain();
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.frequency.value = 880;
+          gain.gain.setValueAtTime(0.3, ctx.currentTime + i * 0.4);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.4 + 0.3);
+          osc.start(ctx.currentTime + i * 0.4); osc.stop(ctx.currentTime + i * 0.4 + 0.3);
+        }
+      } catch(e) {}
+    }
+  }, 1000);
+}
+
+function stopSaeTBITimer() {
+  if (saeTbiTimerInterval) { clearInterval(saeTbiTimerInterval); saeTbiTimerInterval = null; }
+  const d = document.getElementById('sae-tbi-timer-disp');
+  if (d) d.classList.remove('running');
+}
+
+function formatSaeTBITime(s) {
+  return Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
+}
+
+function renderSaeTBI() {
+  const existing = document.getElementById('sae-tbi-overlay');
+  if (existing) existing.remove();
+
+  const s = saeTbiGames[saeTbiIndex];
+  if (!s) return;
+
+  const total = saeTbiGames.length;
+  const cycleColors = {
+    'Préscolaire':'#e74c3c','1er cycle':'#27ae60','2e cycle':'#2980b9',
+    '3e cycle':'#8e44ad','Secondaire':'#d35400'
+  };
+  const cycleColor = cycleColors[s.cycle] || '#004EBF';
+
+  // Build objectifs
+  const objList = Array.isArray(s.objectifs)
+    ? s.objectifs.map(o => `<li>${o}</li>`).join('')
+    : (s.objectifs ? `<li>${s.objectifs}</li>` : '');
+
+  // Build phases
+  let phasesHTML = '';
+  if (s.phases && Array.isArray(s.phases)) {
+    phasesHTML = s.phases.map(p => `
+      <div style="background:rgba(255,255,255,0.08);border-left:5px solid #FFE000;padding:0.8rem 1rem;margin-bottom:0.6rem">
+        <div style="font-family:Bangers,cursive;font-size:1.2rem;letter-spacing:2px;color:#FFE000">${p.nom || p.titre || ''} ${p.duree ? '— ' + p.duree + ' min' : ''}</div>
+        <div style="font-family:Nunito,sans-serif;font-size:1rem;color:#fff;margin-top:0.3rem;line-height:1.4">${p.description || p.activite || ''}</div>
+      </div>`).join('');
+  }
+
+  // Materiel
+  const mat = s.materiel || [];
+  const matHTML = Array.isArray(mat) && mat.length
+    ? mat.map(m => `<span class="tbi-mat-chip">${m}</span>`).join('')
+    : '<span class="tbi-mat-chip">Sans matériel spécifique</span>';
+
+  const overlay = document.createElement('div');
+  overlay.id = 'sae-tbi-overlay';
+  overlay.className = 'tbi-overlay';
+  overlay.innerHTML = `
+    <div class="tbi-header">
+      <div class="tbi-logo">📚 ZONE TOTAL SPORT — SAÉ PFEQ — MODE TBI</div>
+      <div class="tbi-nav-info" style="background:${cycleColor};color:#fff;padding:0.2rem 1rem;font-size:1rem">${s.cycle || ''} · ${s.competence || ''}</div>
+      <button class="tbi-btn-exit" onclick="closeSaeTBI()">✕ QUITTER TBI (ESC)</button>
+    </div>
+
+    <div class="tbi-content"
+         ontouchstart="saeTbiTouchStartX=event.changedTouches[0].clientX"
+         ontouchend="(event.changedTouches[0].clientX-saeTbiTouchStartX>50)?saeTbiPrev():(saeTbiTouchStartX-event.changedTouches[0].clientX>50)?saeTbiNext():null">
+
+      <div class="tbi-left">
+        <div class="tbi-title">${s.titre || s.nom || 'SAÉ'}</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center">
+          <div class="tbi-cat-badge" style="background:${cycleColor};border-color:${cycleColor}">🎓 ${s.cycle || ''}</div>
+          <div class="tbi-cat-badge">⏱️ ${s.duree || s.duree_periodes || '?'} période${(s.duree||s.duree_periodes||1)>1?'s':''}</div>
+        </div>
+        ${s.contexte ? `<div style="font-family:Nunito,sans-serif;font-size:1rem;color:#ffe;text-align:center;line-height:1.4;max-width:280px">${s.contexte}</div>` : ''}
+        <div>
+          <div class="tbi-section-title">🧰 MATÉRIEL</div>
+          <div class="tbi-materiel" style="margin-top:0.5rem;justify-content:center">${matHTML}</div>
+        </div>
+        <div style="width:100%">
+          <div class="tbi-section-title" style="font-size:1.1rem">⏱️ MINUTERIE</div>
+          <div class="tbi-timer" style="margin-top:0.4rem;justify-content:center">
+            <button class="tbi-timer-btn" onclick="startSaeTBITimer(30)">30s</button>
+            <button class="tbi-timer-btn" onclick="startSaeTBITimer(60)">1min</button>
+            <button class="tbi-timer-btn" onclick="startSaeTBITimer(120)">2min</button>
+            <button class="tbi-timer-btn" onclick="startSaeTBITimer(300)">5min</button>
+            <button class="tbi-timer-btn" style="background:#c00" onclick="stopSaeTBITimer();document.getElementById('sae-tbi-timer-disp').textContent='—'">■</button>
+            <div class="tbi-timer-display" id="sae-tbi-timer-disp">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tbi-right">
+        ${objList ? `
+        <div>
+          <div class="tbi-section-title">🎯 OBJECTIFS PFEQ</div>
+          <ul class="tbi-rules" style="margin-top:0.5rem">${objList}</ul>
+        </div>` : (s.intentions_pedagogiques ? `
+        <div>
+          <div class="tbi-section-title">🎯 INTENTIONS PÉDAGOGIQUES</div>
+          <ul class="tbi-rules" style="margin-top:0.5rem"><li>${s.intentions_pedagogiques}</li></ul>
+        </div>` : '')}
+
+        ${phasesHTML ? `
+        <div>
+          <div class="tbi-section-title">📋 DÉROULEMENT</div>
+          <div style="margin-top:0.5rem">${phasesHTML}</div>
+        </div>` : (s.description ? `
+        <div>
+          <div class="tbi-section-title">📋 DESCRIPTION</div>
+          <div style="font-family:Nunito,sans-serif;font-size:1.1rem;color:#fff;line-height:1.5;margin-top:0.5rem">${s.description}</div>
+        </div>` : (s.tache_complexe ? `
+        <div>
+          <div class="tbi-section-title">💪 TÂCHE COMPLEXE</div>
+          <div style="font-family:Nunito,sans-serif;font-size:1.1rem;color:#fff;line-height:1.5;margin-top:0.5rem">${s.tache_complexe}</div>
+        </div>` : ''))}
+
+        ${s.evaluation ? `
+        <div>
+          <div class="tbi-section-title">📊 ÉVALUATION</div>
+          <div style="font-family:Nunito,sans-serif;font-size:1rem;color:#ffe;background:rgba(255,224,0,0.1);padding:0.8rem;border-left:4px solid #FFE000;line-height:1.4;margin-top:0.5rem">${Array.isArray(s.evaluation)?s.evaluation.join(' · '):s.evaluation}</div>
+        </div>` : ''}
+      </div>
+
+      <div class="tbi-nav-arrows">
+        <button class="tbi-arrow" onclick="saeTbiPrev()" ${saeTbiIndex===0?'disabled style="opacity:0.4"':''}>← PRÉCÉDENTE</button>
+        <div class="tbi-counter">${saeTbiIndex+1} / ${total}</div>
+        <button class="tbi-arrow" onclick="saeTbiNext()" ${saeTbiIndex===total-1?'disabled style="opacity:0.4"':''}>SUIVANTE →</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  if (overlay.requestFullscreen) overlay.requestFullscreen().catch(() => {});
+  else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
+}

@@ -633,7 +633,10 @@ function renderGrid() {
         </div>
         ${materiel.length ? `<div style="margin-top:0.6rem;font-size:0.8rem;color:#556;background:#fffde7;padding:0.3rem 0.5rem;border:1px solid #ffe082">📦 ${materiel.join(' · ')}</div>` : ''}
       </div>
-      <div style="background:var(--yellow);border-top:3px solid var(--navy);padding:0.5rem 1rem;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">→ VOIR LA FICHE COMPLÈTE</div>
+      <div style="display:flex;border-top:3px solid var(--navy)">
+        <div style="flex:1;background:var(--yellow);padding:0.5rem 1rem;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">→ VOIR LA FICHE COMPLÈTE</div>
+        <button class="tbi-present-btn" style="width:auto;border:none;border-left:3px solid var(--navy);padding:0.5rem 0.9rem;flex-shrink:0" onclick="event.stopPropagation();openTBI(${i})">📺 TBI</button>
+      </div>
     </div>`;
   }).join('');
 
@@ -757,3 +760,199 @@ document.head.appendChild(style);
 
 // Start
 loadAll();
+
+// ═══════════════════════════════════════
+// TBI MODE — TABLEAU BLANC INTERACTIF
+// ═══════════════════════════════════════
+let tbiActive = false;
+let tbiIndex = 0;
+let tbiGames = [];
+let tbiTimerVal = 0;
+let tbiTimerInterval = null;
+let tbiTouchStartX = 0;
+
+function openTBI(idx) {
+  tbiGames = filtered.length > 0 ? filtered : ALL_JEUX;
+  tbiIndex = idx !== undefined ? idx : 0;
+  tbiActive = true;
+  renderTBI();
+  document.addEventListener('keydown', tbiKeyHandler);
+}
+
+function closeTBI() {
+  tbiActive = false;
+  stopTBITimer();
+  const el = document.getElementById('tbi-overlay');
+  if (el) el.remove();
+  document.removeEventListener('keydown', tbiKeyHandler);
+}
+
+function tbiKeyHandler(e) {
+  if (!tbiActive) return;
+  if (e.key === 'Escape') { closeTBI(); return; }
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); tbiNext(); }
+  if (e.key === 'ArrowLeft')  { e.preventDefault(); tbiPrev(); }
+}
+
+function tbiNext() {
+  if (tbiIndex < tbiGames.length - 1) { tbiIndex++; renderTBI(); }
+}
+function tbiPrev() {
+  if (tbiIndex > 0) { tbiIndex--; renderTBI(); }
+}
+
+function startTBITimer(seconds) {
+  stopTBITimer();
+  tbiTimerVal = seconds;
+  const disp = document.getElementById('tbi-timer-disp');
+  if (disp) { disp.classList.add('running'); disp.textContent = formatTBITime(tbiTimerVal); }
+  tbiTimerInterval = setInterval(() => {
+    tbiTimerVal--;
+    const d = document.getElementById('tbi-timer-disp');
+    if (d) d.textContent = formatTBITime(tbiTimerVal);
+    if (tbiTimerVal <= 0) {
+      stopTBITimer();
+      const d2 = document.getElementById('tbi-timer-disp');
+      if (d2) { d2.textContent = '⏰ 0:00'; d2.classList.remove('running'); }
+      // Beep notification
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        for (let i = 0; i < 3; i++) {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.frequency.value = 880;
+          gain.gain.setValueAtTime(0.3, ctx.currentTime + i * 0.4);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.4 + 0.3);
+          osc.start(ctx.currentTime + i * 0.4);
+          osc.stop(ctx.currentTime + i * 0.4 + 0.3);
+        }
+      } catch(e) {}
+    }
+  }, 1000);
+}
+
+function stopTBITimer() {
+  if (tbiTimerInterval) { clearInterval(tbiTimerInterval); tbiTimerInterval = null; }
+  const d = document.getElementById('tbi-timer-disp');
+  if (d) d.classList.remove('running');
+}
+
+function formatTBITime(s) {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return m + ':' + String(sec).padStart(2, '0');
+}
+
+function renderTBI() {
+  // Remove existing overlay
+  const existing = document.getElementById('tbi-overlay');
+  if (existing) existing.remove();
+
+  const j = tbiGames[tbiIndex];
+  if (!j) return;
+
+  const cat = j._cat || j.categorie || '';
+  const svgContent = getTerrainSVG(j);
+  const emojis = getCatEmojis(j);
+  const total = tbiGames.length;
+
+  // Build rules list
+  const regles = j.regles || j.description || j.but_du_jeu || '';
+  let reglesList = '';
+  if (Array.isArray(regles)) {
+    reglesList = regles.map(r => `<li>${r}</li>`).join('');
+  } else if (typeof regles === 'string') {
+    reglesList = regles.split(/[.!?]+/).filter(s => s.trim().length > 5)
+      .slice(0, 6).map(s => `<li>${s.trim()}</li>`).join('');
+  }
+  if (!reglesList && j.but_du_jeu) {
+    reglesList = `<li>${j.but_du_jeu}</li>`;
+  }
+
+  // Build materiel list
+  const mat = j.materiel || [];
+  const matHTML = Array.isArray(mat) && mat.length > 0
+    ? mat.map(m => `<span class="tbi-mat-chip">${m}</span>`).join('')
+    : '<span class="tbi-mat-chip">Sans matériel</span>';
+
+  // Variante
+  const varianteHTML = j.variante ? `
+    <div>
+      <div class="tbi-section-title">💡 VARIANTE</div>
+      <div style="font-family:Nunito,sans-serif;font-size:1.1rem;color:#ffe;background:rgba(255,224,0,0.1);padding:0.8rem;border-left:4px solid #FFE000;line-height:1.5">${j.variante}</div>
+    </div>` : '';
+
+  const overlay = document.createElement('div');
+  overlay.id = 'tbi-overlay';
+  overlay.className = 'tbi-overlay';
+  overlay.innerHTML = `
+    <div class="tbi-header">
+      <div class="tbi-logo">🎮 ZONE TOTAL SPORT — MODE TBI</div>
+      <div class="tbi-nav-info">${emojis} ${cat.toUpperCase().replace(/_/g,' ')}</div>
+      <button class="tbi-btn-exit" onclick="closeTBI()">✕ QUITTER TBI (ESC)</button>
+    </div>
+
+    <div class="tbi-content" id="tbi-content"
+         ontouchstart="tbiTouchStartX=event.changedTouches[0].clientX"
+         ontouchend="(event.changedTouches[0].clientX - tbiTouchStartX > 50) ? tbiPrev() : (tbiTouchStartX - event.changedTouches[0].clientX > 50) ? tbiNext() : null">
+
+      <div class="tbi-left">
+        <div class="tbi-title">${j.titre || j.nom || 'SANS NOM'}</div>
+        <div class="tbi-cat-badge">${emojis} ${cat.replace(/_/g,' ').toUpperCase()}</div>
+        <div class="tbi-svg-wrap">${svgContent}</div>
+        <div class="tbi-meta">
+          <div class="tbi-meta-chip">👥 ${j.nb_joueurs_min || '?'}${j.nb_joueurs_max ? '–' + j.nb_joueurs_max : '+'} joueurs</div>
+          <div class="tbi-meta-chip">⏱️ ${j.duree || '10'} min</div>
+          ${j.age_min ? `<div class="tbi-meta-chip">🎂 ${j.age_min}+ ans</div>` : ''}
+          ${j.origine ? `<div class="tbi-meta-chip">🌍 ${j.origine}</div>` : ''}
+        </div>
+
+        <!-- Timer -->
+        <div>
+          <div class="tbi-section-title" style="font-size:1.2rem">⏱️ MINUTERIE</div>
+          <div class="tbi-timer" style="margin-top:0.5rem">
+            <button class="tbi-timer-btn" onclick="startTBITimer(30)">30s</button>
+            <button class="tbi-timer-btn" onclick="startTBITimer(60)">1min</button>
+            <button class="tbi-timer-btn" onclick="startTBITimer(120)">2min</button>
+            <button class="tbi-timer-btn" onclick="startTBITimer(300)">5min</button>
+            <button class="tbi-timer-btn" style="background:#c00" onclick="stopTBITimer();document.getElementById('tbi-timer-disp').textContent='—'">■</button>
+            <div class="tbi-timer-display" id="tbi-timer-disp">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tbi-right">
+        ${j.but_du_jeu ? `
+        <div>
+          <div class="tbi-section-title">🎯 BUT DU JEU</div>
+          <div style="font-family:Nunito,sans-serif;font-size:1.2rem;font-weight:700;color:#FFE000;line-height:1.4;margin-top:0.5rem">${j.but_du_jeu}</div>
+        </div>` : ''}
+
+        <div>
+          <div class="tbi-section-title">📋 RÈGLES</div>
+          <ul class="tbi-rules" style="margin-top:0.5rem">${reglesList || '<li>Voir les règles détaillées dans la fiche.</li>'}</ul>
+        </div>
+
+        <div>
+          <div class="tbi-section-title">🧰 MATÉRIEL</div>
+          <div class="tbi-materiel" style="margin-top:0.5rem">${matHTML}</div>
+        </div>
+
+        ${varianteHTML}
+      </div>
+
+      <div class="tbi-nav-arrows">
+        <button class="tbi-arrow" onclick="tbiPrev()" ${tbiIndex === 0 ? 'disabled style="opacity:0.4"' : ''}>← PRÉCÉDENT</button>
+        <div class="tbi-counter">${tbiIndex + 1} / ${total}</div>
+        <button class="tbi-arrow" onclick="tbiNext()" ${tbiIndex === total - 1 ? 'disabled style="opacity:0.4"' : ''}>SUIVANT →</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  // Try fullscreen
+  if (overlay.requestFullscreen) overlay.requestFullscreen().catch(() => {});
+  else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
+}

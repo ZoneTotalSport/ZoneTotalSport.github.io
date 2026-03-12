@@ -725,3 +725,136 @@ body::after {
 .hidden { display: none !important; }
 .tab-section { display: none; }
 .tab-section.active { display: block; }
+
+/* ═══ TBI MODE ═══ */
+.tbi-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #001D6E; color: #FFE000;
+  display: flex; flex-direction: column;
+  font-family: 'Bangers', cursive;
+  overflow: hidden;
+}
+.tbi-header {
+  background: #FFE000; color: #001D6E;
+  padding: 0.6rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 5px solid #004EBF;
+  flex-shrink: 0;
+}
+.tbi-logo { font-size: 1.4rem; letter-spacing: 3px; }
+.tbi-nav-info { font-size: 1.1rem; letter-spacing: 2px; }
+.tbi-btn-exit {
+  background: #004EBF; color: #FFE000;
+  border: 3px solid #FFE000; padding: 0.4rem 1.2rem;
+  font-family: 'Bangers', cursive; font-size: 1.2rem; letter-spacing: 2px;
+  cursor: pointer; box-shadow: 3px 3px 0 rgba(255,255,255,0.3);
+}
+.tbi-content {
+  flex: 1; display: flex; align-items: stretch;
+  overflow: hidden; position: relative;
+}
+.tbi-left {
+  width: 45%; background: #002080;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 2rem; border-right: 5px solid #FFE000;
+  gap: 1.2rem;
+}
+.tbi-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  letter-spacing: 3px; text-align: center; line-height: 1.1;
+  color: #FFE000; text-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+}
+.tbi-cat-badge {
+  background: #FFE000; color: #001D6E;
+  font-size: 1.3rem; letter-spacing: 2px;
+  padding: 0.3rem 1.5rem; border: 3px solid #001D6E;
+}
+.tbi-svg-wrap {
+  width: 280px; height: 200px; border: 4px solid #FFE000;
+  background: rgba(0,0,0,0.3); overflow: hidden;
+}
+.tbi-svg-wrap svg { width: 100%; height: 100%; }
+.tbi-meta {
+  display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;
+}
+.tbi-meta-chip {
+  background: #004EBF; color: #FFE000;
+  font-size: 1.4rem; letter-spacing: 2px;
+  padding: 0.3rem 1rem; border: 3px solid #FFE000;
+}
+.tbi-right {
+  flex: 1; padding: 2rem 2.5rem;
+  overflow-y: auto; display: flex; flex-direction: column; gap: 1.5rem;
+}
+.tbi-section-title {
+  font-size: 1.5rem; letter-spacing: 3px; color: #FFE000;
+  border-bottom: 3px solid #FFE000; padding-bottom: 0.3rem;
+}
+.tbi-rules {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 0.7rem;
+}
+.tbi-rules li {
+  font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 700;
+  color: #fff; background: rgba(255,255,255,0.08);
+  padding: 0.6rem 1rem; border-left: 5px solid #FFE000;
+  line-height: 1.4;
+}
+.tbi-materiel {
+  display: flex; flex-wrap: wrap; gap: 0.7rem;
+}
+.tbi-mat-chip {
+  background: rgba(255,224,0,0.15); color: #FFE000;
+  border: 2px solid #FFE000; padding: 0.4rem 0.9rem;
+  font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 700;
+}
+.tbi-timer {
+  display: flex; gap: 0.7rem; flex-wrap: wrap; align-items: center;
+}
+.tbi-timer-btn {
+  background: #1a7f3c; color: #fff;
+  border: 3px solid #FFE000; padding: 0.5rem 1.1rem;
+  font-family: 'Bangers', cursive; font-size: 1.3rem; letter-spacing: 2px;
+  cursor: pointer; transition: transform 0.1s;
+}
+.tbi-timer-btn:active { transform: scale(0.95); }
+.tbi-timer-display {
+  font-size: 2.5rem; letter-spacing: 3px; color: #FFE000;
+  min-width: 90px; text-align: center;
+}
+.tbi-timer-display.running { color: #ff6b35; animation: tbi-pulse 1s infinite; }
+@keyframes tbi-pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+.tbi-nav-arrows {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; background: rgba(0,0,30,0.6);
+  border-top: 3px solid #FFE000; z-index: 10;
+}
+.tbi-arrow {
+  background: #FFE000; color: #001D6E;
+  border: 4px solid #001D6E; padding: 0.7rem 2rem;
+  font-family: 'Bangers', cursive; font-size: 1.8rem; letter-spacing: 2px;
+  cursor: pointer; box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+  user-select: none; transition: transform 0.1s;
+}
+.tbi-arrow:active { transform: scale(0.95); }
+.tbi-counter {
+  font-size: 1.5rem; letter-spacing: 3px; color: #FFE000;
+}
+.tbi-present-btn {
+  background: #004EBF; color: #FFE000;
+  border: 3px solid #FFE000; padding: 0.4rem 0.9rem;
+  font-family: 'Bangers', cursive; font-size: 1rem; letter-spacing: 2px;
+  cursor: pointer; width: 100%; text-align: center;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+.tbi-present-btn:hover { background: #FFE000; color: #004EBF; }
+
+/* TBI toolbar button in header */
+.tbi-toggle-btn {
+  background: #004EBF; color: #FFE000;
+  border: 3px solid #FFE000; padding: 0.4rem 0.9rem;
+  font-family: 'Bangers', cursive; font-size: 1rem; letter-spacing: 2px;
+  cursor: pointer; box-shadow: 3px 3px 0 var(--yellow);
+  text-decoration: none; display: inline-block;
+}

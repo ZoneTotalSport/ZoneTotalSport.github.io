@@ -168,6 +168,7 @@ function renderGrid() {
       <div id="card-footer-${i}" style="display:flex;border-top:3px solid var(--navy)">
         <div style="flex:1;background:#1a7f3c;padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:#fff;text-align:center;cursor:pointer" onclick="event.stopPropagation();playDirect(${i})">▶ JOUER</div>
         <div style="flex:1;background:var(--yellow);padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);text-align:center;border-left:3px solid var(--navy);cursor:pointer" onclick="event.stopPropagation();openModal(${i})">🎵 DÉTAILS</div>
+        <div style="flex:0 0 auto;background:#8e44ad;padding:0.5rem 0.8rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:#fff;text-align:center;border-left:3px solid var(--navy);cursor:pointer" onclick="event.stopPropagation();openMusTBI(${i})">📺 TBI</div>
       </div>
     </div>`;
   }).join('');
@@ -528,3 +529,209 @@ style.textContent = `
 document.head.appendChild(style);
 
 loadAll();
+
+// ═══════════════════════════════════════
+// TBI MODE MUSIQUE — LECTEUR DJ GÉANT
+// ═══════════════════════════════════════
+let musTbiActive = false;
+let musTbiIdx = 0;
+let musTbiList = [];
+let musTbiAudio = null;
+let musTbiPlaying = false;
+let musTbiTouchStartX = 0;
+let musTbiAnimFrame = null;
+
+function openMusTBI(idx) {
+  musTbiList = (typeof filtered !== 'undefined' && filtered.length > 0) ? filtered : (window.ALL_MUSIQUES || []);
+  musTbiIdx = idx !== undefined ? idx : 0;
+  musTbiActive = true;
+  renderMusTBI();
+  document.addEventListener('keydown', musTbiKeyHandler);
+}
+
+function closeMusTBI() {
+  musTbiActive = false;
+  if (musTbiAudio) { musTbiAudio.pause(); musTbiAudio = null; }
+  musTbiPlaying = false;
+  if (musTbiAnimFrame) { cancelAnimationFrame(musTbiAnimFrame); musTbiAnimFrame = null; }
+  const el = document.getElementById('mus-tbi-overlay');
+  if (el) el.remove();
+  document.removeEventListener('keydown', musTbiKeyHandler);
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+}
+
+function musTbiKeyHandler(e) {
+  if (!musTbiActive) return;
+  if (e.key === 'Escape') { closeMusTBI(); return; }
+  if (e.key === 'ArrowRight') { e.preventDefault(); musTbiNextTrack(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); musTbiPrevTrack(); }
+  if (e.key === ' ') { e.preventDefault(); musTbiTogglePlay(); }
+}
+
+function musTbiNextTrack() {
+  if (musTbiIdx < musTbiList.length - 1) { musTbiIdx++; renderMusTBI(); }
+}
+function musTbiPrevTrack() {
+  if (musTbiIdx > 0) { musTbiIdx--; renderMusTBI(); }
+}
+
+function musTbiTogglePlay() {
+  if (!musTbiAudio) { musTbiPlayCurrent(); return; }
+  if (musTbiPlaying) {
+    musTbiAudio.pause(); musTbiPlaying = false;
+    const btn = document.getElementById('mus-tbi-playbtn');
+    if (btn) btn.textContent = '▶ JOUER';
+    updateMusTBIState(false);
+  } else {
+    musTbiAudio.play().catch(() => {}); musTbiPlaying = true;
+    const btn = document.getElementById('mus-tbi-playbtn');
+    if (btn) btn.textContent = '⏸ PAUSE';
+    updateMusTBIState(true);
+  }
+}
+
+function musTbiPlayCurrent() {
+  const m = musTbiList[musTbiIdx];
+  if (!m) return;
+  const src = m.audio_url || m.url || '';
+  if (!src) return;
+  if (musTbiAudio) { musTbiAudio.pause(); musTbiAudio = null; }
+  musTbiAudio = new Audio(src);
+  musTbiAudio.volume = 1;
+  musTbiAudio.play().catch(() => {});
+  musTbiPlaying = true;
+  musTbiAudio.onended = () => { musTbiPlaying = false; updateMusTBIState(false); if (musTbiIdx < musTbiList.length-1) setTimeout(musTbiNextTrack, 500); };
+  const btn = document.getElementById('mus-tbi-playbtn');
+  if (btn) btn.textContent = '⏸ PAUSE';
+  updateMusTBIState(true);
+  animateMusTBIBars();
+}
+
+function updateMusTBIState(playing) {
+  const bars = document.querySelectorAll('.mus-tbi-bar');
+  bars.forEach(b => { b.style.animationPlayState = playing ? 'running' : 'paused'; });
+}
+
+function animateMusTBIBars() {
+  // bars are CSS animated
+}
+
+function renderMusTBI() {
+  if (musTbiAudio) { musTbiAudio.pause(); musTbiAudio = null; musTbiPlaying = false; }
+  const existing = document.getElementById('mus-tbi-overlay');
+  if (existing) existing.remove();
+
+  const m = musTbiList[musTbiIdx];
+  if (!m) return;
+
+  const total = musTbiList.length;
+  const bpm = m.bpm || '—';
+  const bpmNum = parseInt(bpm) || 0;
+  let bpmColor = '#1a7f3c';
+  if (bpmNum >= 155) bpmColor = '#e74c3c';
+  else if (bpmNum >= 130) bpmColor = '#e67e22';
+  else if (bpmNum >= 100) bpmColor = '#f39c12';
+  else if (bpmNum >= 70) bpmColor = '#27ae60';
+  else bpmColor = '#2980b9';
+
+  // Build beat visualizer bars (CSS animated)
+  const bars = Array.from({length:12}, (_,i) => {
+    const h = 20 + Math.random()*60;
+    const dur = (0.4 + Math.random()*0.6).toFixed(2);
+    const delay = (Math.random()*0.3).toFixed(2);
+    return `<div class="mus-tbi-bar" style="height:${h}px;animation-duration:${dur}s;animation-delay:${delay}s;background:${bpmColor}"></div>`;
+  }).join('');
+
+  const hasAudio = !!(m.audio_url || m.url || '').match(/\.(mp3|ogg|wav)(\?|$)/i);
+
+  const overlay = document.createElement('div');
+  overlay.id = 'mus-tbi-overlay';
+  overlay.className = 'tbi-overlay';
+  overlay.style.cssText = 'background:linear-gradient(135deg,#001030 0%,#001D6E 60%,#003090 100%)';
+  overlay.innerHTML = `
+    <style>
+      .mus-tbi-bar {
+        width: 18px; border-radius: 4px 4px 0 0;
+        animation: mus-tbi-bounce 0.5s ease-in-out infinite alternate;
+        transform-origin: bottom;
+      }
+      @keyframes mus-tbi-bounce {
+        from { transform: scaleY(0.2); opacity:0.6; }
+        to   { transform: scaleY(1);   opacity:1;   }
+      }
+    </style>
+
+    <div class="tbi-header">
+      <div class="tbi-logo">🎵 ZONE TOTAL SPORT — MUSIQUES LIBRES — MODE TBI</div>
+      <div style="background:${bpmColor};color:#fff;padding:0.2rem 1.2rem;font-family:Bangers,cursive;font-size:1.3rem;letter-spacing:3px">${bpm} BPM</div>
+      <button class="tbi-btn-exit" onclick="closeMusTBI()">✕ QUITTER TBI (ESC)</button>
+    </div>
+
+    <div class="tbi-content"
+         ontouchstart="musTbiTouchStartX=event.changedTouches[0].clientX"
+         ontouchend="(event.changedTouches[0].clientX-musTbiTouchStartX>50)?musTbiPrevTrack():(musTbiTouchStartX-event.changedTouches[0].clientX>50)?musTbiNextTrack():null">
+
+      <!-- Left panel: player controls -->
+      <div class="tbi-left" style="gap:1.5rem">
+        <!-- Big music emoji -->
+        <div style="font-size:5rem;line-height:1;filter:drop-shadow(0 0 20px ${bpmColor})">${m.genre==='Electronic'?'⚡':m.genre==='Hip-Hop'?'🎤':m.genre==='Rock'?'🎸':m.genre==='Classique'?'🎻':m.genre==='Latin'?'💃':m.genre==='Ambient'?'🌊':'🎵'}</div>
+
+        <!-- Title -->
+        <div class="tbi-title" style="font-size:clamp(1.5rem,4vw,2.8rem)">${m.titre || 'SANS TITRE'}</div>
+
+        <!-- Artist -->
+        ${m.artiste ? `<div style="font-family:Nunito,sans-serif;font-size:1.3rem;font-weight:700;color:#adf;letter-spacing:1px">${m.artiste}</div>` : ''}
+
+        <!-- BPM + genre badges -->
+        <div class="tbi-meta">
+          <div class="tbi-meta-chip" style="background:${bpmColor};border-color:${bpmColor}">⏱ ${bpm} BPM</div>
+          ${m.genre ? `<div class="tbi-meta-chip">🎶 ${m.genre}</div>` : ''}
+          ${m.licence ? `<div class="tbi-meta-chip" style="background:#1a7f3c;border-color:#1a7f3c">✅ ${m.licence}</div>` : ''}
+        </div>
+
+        <!-- Beat visualizer -->
+        <div style="display:flex;align-items:flex-end;gap:4px;height:80px;padding:0.5rem;background:rgba(0,0,0,0.3);border:3px solid ${bpmColor};width:100%;box-sizing:border-box;justify-content:center">
+          ${bars}
+        </div>
+
+        <!-- Play controls -->
+        <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;justify-content:center">
+          <button class="tbi-arrow" style="font-size:2rem;padding:0.8rem 1.5rem" onclick="musTbiPrevTrack()" ${musTbiIdx===0?'disabled style="opacity:0.4"':''}>⏮</button>
+          ${hasAudio ? `
+          <button id="mus-tbi-playbtn" style="background:#1a7f3c;color:#fff;border:4px solid #FFE000;padding:1rem 2.5rem;font-family:Bangers,cursive;font-size:2rem;letter-spacing:2px;cursor:pointer;box-shadow:4px 4px 0 rgba(0,0,0,0.3)" onclick="musTbiTogglePlay()">▶ JOUER</button>
+          ` : `<div style="font-family:Nunito,sans-serif;color:#ff9;font-size:0.9rem;text-align:center">Aperçu non disponible<br>pour cette piste</div>`}
+          <button class="tbi-arrow" style="font-size:2rem;padding:0.8rem 1.5rem" onclick="musTbiNextTrack()" ${musTbiIdx===total-1?'disabled style="opacity:0.4"':''}>⏭</button>
+        </div>
+      </div>
+
+      <!-- Right panel: track list -->
+      <div class="tbi-right" style="overflow-y:auto">
+        <div class="tbi-section-title">📋 LISTE DES PISTES</div>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.5rem">
+          ${musTbiList.slice(Math.max(0,musTbiIdx-3), musTbiIdx+10).map((t,relIdx) => {
+            const absIdx = Math.max(0,musTbiIdx-3) + relIdx;
+            const isActive = absIdx === musTbiIdx;
+            return `<div onclick="musTbiIdx=${absIdx};renderMusTBI()"
+              style="padding:0.7rem 1rem;border-left:5px solid ${isActive?'#FFE000':'rgba(255,224,0,0.2)'};background:${isActive?'rgba(255,224,0,0.15)':'rgba(255,255,255,0.04)'};cursor:pointer;display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:${isActive?'#FFE000':'#fff'}">${t.titre||'—'}</div>
+                ${t.artiste?`<div style="font-family:Nunito,sans-serif;font-size:0.85rem;color:#adf">${t.artiste}</div>`:''}
+              </div>
+              <div style="font-family:Bangers,cursive;font-size:0.95rem;color:${bpmColor}">${t.bpm||'?'} BPM</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <div class="tbi-nav-arrows">
+        <button class="tbi-arrow" onclick="musTbiPrevTrack()" ${musTbiIdx===0?'disabled style="opacity:0.4"':''}>← PRÉCÉDENTE</button>
+        <div class="tbi-counter">${musTbiIdx+1} / ${total}</div>
+        <button class="tbi-arrow" onclick="musTbiNextTrack()" ${musTbiIdx===total-1?'disabled style="opacity:0.4"':''}>SUIVANTE →</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+  if (overlay.requestFullscreen) overlay.requestFullscreen().catch(() => {});
+  else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
+}
