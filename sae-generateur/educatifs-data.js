@@ -1,727 +1,246 @@
-/* educatifs-data.js — Banque complète d'éducatifs par moyen d'action PFEQ */
+// educatifs-data.js — Banque d'activités pour le générateur de SAÉ
+// Zone Total Sport — ÉPS Québec
 
 const MOYENS_ACTION = {
-  manipulation_balles: {
-    label: "Manipulation — Objets portés",
-    icon: "🏀", color: "#004EBF",
-    subtitle: "Balles, ballons, poches de fèves, objets à lancer/attraper",
-    cycles: ["Préscolaire","1er cycle","2e cycle","3e cycle"],
-  },
-  manipulation_engins: {
-    label: "Manipulation — Objets propulsés",
-    icon: "🏸", color: "#8e44ad",
-    subtitle: "Raquettes, bâtons de hockey, crosses, bâtons de ringuette",
-    cycles: ["1er cycle","2e cycle","3e cycle"],
-  },
-  locomotion: {
-    label: "Locomotion",
-    icon: "🏃", color: "#c0392b",
-    subtitle: "Course, saut, galop, saut à la corde, glissade",
-    cycles: ["Préscolaire","1er cycle","2e cycle","3e cycle"],
-  },
-  stabilisation: {
-    label: "Stabilisation / Mobilité",
-    icon: "🤸", color: "#1a7f3c",
-    subtitle: "Équilibre, rotation, renversement, acrobatie douce",
-    cycles: ["Préscolaire","1er cycle","2e cycle","3e cycle"],
-  },
-  cooperation: {
-    label: "Coopération",
-    icon: "🤝", color: "#e67e22",
-    subtitle: "Jeux collectifs, travail en équipe, défis communs",
-    cycles: ["Préscolaire","1er cycle","2e cycle","3e cycle"],
-  },
-  opposition: {
-    label: "Opposition",
-    icon: "⚔️", color: "#7b1fa2",
-    subtitle: "Ballon chasseur, duels, jeux d'opposition",
-    cycles: ["1er cycle","2e cycle","3e cycle"],
-  },
-  expression: {
-    label: "Expression / Danse",
-    icon: "💃", color: "#ad1457",
-    subtitle: "Danse créative, expression dramatique, rythme corporel",
-    cycles: ["Préscolaire","1er cycle","2e cycle","3e cycle"],
-  },
-  plein_air: {
-    label: "Plein air / Nature",
-    icon: "🌿", color: "#00796b",
-    subtitle: "Activités en nature, orientation, patin, ski adapté",
-    cycles: ["1er cycle","2e cycle","3e cycle"],
-  },
+  manipulation_balles: { id:'manipulation_balles', nom:'Manipulation de balles et ballons', emoji:'⚽', couleur:'#E63946', description:'Lancer, attraper, frapper, botter, dribbler des balles et ballons de toutes tailles.', cycles:['Préscolaire','1er cycle','2e cycle','3e cycle','Secondaire'], materiel_base:['Balles de mousse','Ballons de volleyball','Ballons de basketball','Cônes'] },
+  manipulation_engins: { id:'manipulation_engins', nom:'Manipulation d\'engins (raquettes, bâtons)', emoji:'🏸', couleur:'#2A9D8F', description:'Manier des raquettes, bâtons de hockey, bâtons de ringuette et autres outils sportifs.', cycles:['2e cycle','3e cycle','Secondaire'], materiel_base:['Raquettes de badminton','Volants','Bâtons de hockey','Balles de ballon-balai'] },
+  locomotion: { id:'locomotion', nom:'Locomotion et déplacements', emoji:'🏃', couleur:'#F4A261', description:'Courir, sauter, galoper, ramper, rouler — explorer toutes les façons de se déplacer.', cycles:['Préscolaire','1er cycle','2e cycle','3e cycle','Secondaire'], materiel_base:['Cônes','Cerceaux','Cordes à sauter','Marqueurs au sol'] },
+  stabilisation: { id:'stabilisation', nom:'Stabilisation et équilibre', emoji:'🤸', couleur:'#8338EC', description:'Développer l\'équilibre, le contrôle postural et la conscience corporelle.', cycles:['Préscolaire','1er cycle','2e cycle','3e cycle'], materiel_base:['Tapis de gym','Poutres d\'équilibre','Ballons d\'équilibre','Cônes'] },
+  cooperation: { id:'cooperation', nom:'Coopération et sports collectifs', emoji:'🤝', couleur:'#06D6A0', description:'Travailler en équipe, communiquer, s\'entraider pour atteindre un objectif commun.', cycles:['Préscolaire','1er cycle','2e cycle','3e cycle','Secondaire'], materiel_base:['Ballons','Filets','Cônes','Dossards'] },
+  opposition: { id:'opposition', nom:'Opposition et duels', emoji:'🥊', couleur:'#FF6B35', description:'Faire face à un adversaire, défendre, attaquer, créer et exploiter des déséquilibres.', cycles:['2e cycle','3e cycle','Secondaire'], materiel_base:['Dossards','Cônes','Cerceaux','Ballons'] },
+  expression_corporelle: { id:'expression_corporelle', nom:'Expression corporelle et danse', emoji:'💃', couleur:'#FF006E', description:'Communiquer des émotions et des idées par le mouvement, le rythme et la danse.', cycles:['Préscolaire','1er cycle','2e cycle','3e cycle','Secondaire'], materiel_base:['Système de son','Foulards','Cerceaux','Ruban adhésif coloré'] },
+  plein_air: { id:'plein_air', nom:'Plein air et nature', emoji:'🌲', couleur:'#588157', description:'S\'orienter, explorer, coopérer et relever des défis dans des environnements extérieurs.', cycles:['Préscolaire','1er cycle','2e cycle','3e cycle','Secondaire'], materiel_base:['Cônes','Cordes','Boussoles','Cartes d\'orientation'] }
 };
 
 const OBJECTIFS_PFEQ = {
-  manipulation_balles: {
-    "Préscolaire": [
-      "Explorer différentes façons de lancer et d'attraper une balle",
-      "Découvrir des balles de formes, tailles et textures variées",
-      "Développer la coordination œil-main de base",
-      "Participer avec plaisir à des activités de manipulation",
-    ],
-    "1er cycle": [
-      "Lancer une balle avec précision sur une cible à courte distance",
-      "Attraper une balle lancée à deux mains avec contrôle",
-      "Rouler une balle avec précision vers une cible",
-      "Botter une balle en direction d'une cible",
-      "Démontrer une progression dans la maîtrise des habiletés de manipulation",
-    ],
-    "2e cycle": [
-      "Lancer une balle avec précision à moyenne et longue distance",
-      "Attraper une balle à une main et en déplacement",
-      "Effectuer des passes à un partenaire avec contrôle",
-      "Combiner des habiletés de manipulation dans des situations de jeu",
-      "Adapter son niveau de force selon la situation",
-    ],
-    "3e cycle": [
-      "Maîtriser plusieurs types de lancers (par-dessus, par-dessous, en rotation)",
-      "Effectuer des habiletés de manipulation sous pression défensive",
-      "Utiliser des stratégies offensives et défensives en jeu",
-      "Évaluer ses propres performances et proposer des ajustements",
-      "Démontrer une maîtrise technique dans des situations complexes",
-    ],
-  },
-  locomotion: {
-    "Préscolaire": [
-      "Explorer différents modes de déplacement (marche, course, saut, ramper)",
-      "Sauter sur deux pieds et atterrir de façon contrôlée",
-      "Galoper, sautiller et faire des pas chassés",
-      "Se déplacer en suivant un tracé simple",
-    ],
-    "1er cycle": [
-      "Courir à différentes vitesses avec contrôle",
-      "Sauter en longueur et en hauteur avec élan",
-      "Sauter à la corde individuel (5+ sauts consécutifs)",
-      "Effectuer un relais simple avec transmission de témoin",
-      "Adapte sa vitesse selon la situation (sprint/endurance)",
-    ],
-    "2e cycle": [
-      "Courir avec efficacité sur des distances variées",
-      "Sauter à la corde individuel avec variantes",
-      "Effectuer des sauts combinés (course + saut en longueur)",
-      "Démontrer une bonne technique de course (bras, posture)",
-      "Participer à des relais avec stratégie d'équipe",
-    ],
-    "3e cycle": [
-      "Démontrer une technique de course efficace en sprints et en endurance",
-      "Réaliser des sauts avec précision et puissance",
-      "Sauter à la corde avec variantes avancées",
-      "Appliquer des stratégies lors de relais en équipe",
-      "Évaluer ses performances en locomotion et se fixer des défis",
-    ],
-  },
-  stabilisation: {
-    "Préscolaire": [
-      "Maintenir l'équilibre sur un pied quelques secondes",
-      "Effectuer des roulades avant simples sur tapis",
-      "Se déplacer sur des surfaces instables (poutres basses)",
-      "Explorer des positions inversées (pieds en l'air avec aide)",
-    ],
-    "1er cycle": [
-      "Maintenir l'équilibre sur un pied 5+ secondes",
-      "Effectuer une roulade avant et arrière contrôlée",
-      "Marcher sur une poutre d'équilibre basse",
-      "Réaliser des postures de yoga simples",
-      "Combiner deux éléments de stabilisation",
-    ],
-    "2e cycle": [
-      "Maîtriser des postures d'équilibre variées sur surfaces stables et instables",
-      "Effectuer des roulades combinées (avant + arrière)",
-      "Réaliser des pyramides humaines simples à 2-3 personnes",
-      "Démontrer un renversement contrôlé (appui facial)",
-      "Enchaîner 3+ éléments de stabilisation",
-    ],
-    "3e cycle": [
-      "Réaliser des enchaînements acrobatiques à 3+ éléments",
-      "Construire et présenter des pyramides humaines à 3+ personnes",
-      "Démontrer des appuis renversés avec qualité technique",
-      "Chorégraphier une séquence acrobatique en groupe",
-      "Évaluer et améliorer la qualité de ses enchaînements",
-    ],
-  },
-  cooperation: {
-    "Préscolaire": [
-      "Participer à des jeux en équipe avec plaisir",
-      "Aider un camarade dans une tâche physique",
-      "Respecter les règles simples d'un jeu coopératif",
-      "Communiquer avec ses coéquipiers de façon positive",
-    ],
-    "1er cycle": [
-      "Contribuer activement au succès de son équipe",
-      "Communiquer efficacement pour accomplir une tâche collective",
-      "Respecter les règles et les rôles dans un jeu coopératif",
-      "Résoudre un défi physique en équipe",
-      "Encourager ses coéquipiers",
-    ],
-    "2e cycle": [
-      "Assumer différents rôles dans une équipe (leader, suiveur, observateur)",
-      "Proposer des stratégies pour améliorer la performance collective",
-      "Gérer positivement les conflits lors d'activités d'équipe",
-      "Adapter son comportement selon les besoins de l'équipe",
-      "Démontrer de la solidarité envers tous les membres de l'équipe",
-    ],
-    "3e cycle": [
-      "Exercer un leadership positif au sein de l'équipe",
-      "Élaborer et appliquer des stratégies collectives efficaces",
-      "Évaluer la dynamique de son équipe et proposer des améliorations",
-      "Intégrer des joueurs de tous les niveaux dans la stratégie",
-      "Faire preuve de fairplay en toutes circonstances",
-    ],
-  },
-  opposition: {
-    "1er cycle": [
-      "Participer à des jeux d'opposition simples avec fair-play",
-      "Comprendre les règles de base du ballon chasseur",
-      "Développer des stratégies défensives élémentaires (esquiver)",
-      "Respecter les décisions de l'arbitre",
-    ],
-    "2e cycle": [
-      "Utiliser des stratégies offensives variées (lancer, feinte)",
-      "Développer des stratégies défensives (esquive, blocage, capture)",
-      "Coordonner ses actions avec celles des coéquipiers",
-      "Appliquer les règles du jeu de façon autonome",
-      "Évaluer les stratégies utilisées et proposer des ajustements",
-    ],
-    "3e cycle": [
-      "Maîtriser un répertoire varié de stratégies offensives et défensives",
-      "Analyser les stratégies adverses et s'y adapter",
-      "Organiser la défense et l'attaque de son équipe",
-      "Arbitrer un jeu d'opposition avec justesse",
-      "Évaluer ses performances tactiques et techniques",
-    ],
-  },
-  expression: {
-    "Préscolaire": [
-      "Explorer le mouvement expressif librement",
-      "Bouger en suivant un rythme simple",
-      "Imiter des personnages, animaux ou éléments de la nature",
-      "Participer avec plaisir à des activités de danse",
-    ],
-    "1er cycle": [
-      "Reproduire des séquences de mouvements simples",
-      "S'exprimer corporellement sur différents types de musique",
-      "Créer un mini-enchaînement de 4+ mouvements",
-      "Découvrir des danses de cultures du monde",
-      "Bouger en synchronie avec un partenaire",
-    ],
-    "2e cycle": [
-      "Créer et présenter une chorégraphie en groupe (8+ mouvements)",
-      "Utiliser différentes qualités de mouvement (lent/vif, fort/doux)",
-      "Interpréter une danse culturelle avec aisance",
-      "Utiliser l'espace de façon créative dans ses créations",
-      "Apprécier les productions des autres de façon constructive",
-    ],
-    "3e cycle": [
-      "Créer une chorégraphie originale intégrant des éléments culturels",
-      "Maîtriser les éléments fondamentaux du mouvement dansé",
-      "Présenter une performance avec qualité artistique",
-      "Utiliser la notation chorégraphique simple",
-      "Diriger la création chorégraphique d'un groupe",
-    ],
-  },
-  manipulation_engins: {
-    "1er cycle": [
-      "Tenir correctement une raquette / un bâton",
-      "Frapper un objet statique avec un engin",
-      "Contrôler un ballon/rondelle avec un bâton à courte distance",
-      "Participer à des échanges simples avec raquette",
-    ],
-    "2e cycle": [
-      "Frapper un objet en mouvement avec précision",
-      "Effectuer des passes à un partenaire avec engin",
-      "Contrôler la force et la direction des frappes",
-      "Participer à des jeux simples avec engin (mini-hockey, badminton)",
-    ],
-    "3e cycle": [
-      "Maîtriser plusieurs types de frappes (coup droit, revers, smash)",
-      "Appliquer des stratégies de jeu avec engin",
-      "Combiner déplacement et manipulation avec engin",
-      "Évaluer sa technique et s'auto-corriger",
-      "Arbitrer un jeu avec engin",
-    ],
-  },
-  plein_air: {
-    "1er cycle": [
-      "Se déplacer en toute sécurité dans un environnement extérieur",
-      "Identifier les règles de sécurité en plein air",
-      "Participer à des jeux et activités en nature",
-      "Respecter l'environnement naturel",
-    ],
-    "2e cycle": [
-      "Utiliser une boussole et une carte simples",
-      "Planifier un itinéraire simple en plein air",
-      "Démontrer des habiletés motrices adaptées au plein air",
-      "Appliquer les règles de sécurité de façon autonome",
-      "Coopérer avec son équipe lors d'activités en plein air",
-    ],
-    "3e cycle": [
-      "Maîtriser les habiletés de déplacement propres à l'activité de plein air choisie",
-      "Planifier et réaliser une sortie en plein air en autonomie",
-      "Appliquer des stratégies de survie/orientation de base",
-      "Respecter et valoriser l'environnement naturel",
-      "Évaluer les risques et adapter son comportement",
-    ],
-  },
+  manipulation_balles: { 'Préscolaire':['Lancer une balle avec les deux mains','Attraper une balle roulante','Botter un ballon immobile'], '1er cycle':['Lancer et attraper avec précision','Dribbler sur place','Frapper un ballon suspendu'], '2e cycle':['Passer à un partenaire en mouvement','Dribbler en se déplaçant','Lancer en visant une cible'], '3e cycle':['Enchaîner des habiletés (dribble-passe-tir)','Adapter ses lancers selon la situation','Utiliser les deux mains'], 'Secondaire':['Maîtriser les techniques spécifiques d\'un sport','Lire le jeu et décider rapidement','Adapter sa technique sous pression'] },
+  manipulation_engins: { '2e cycle':['Tenir correctement la raquette','Frapper un volant avec contrôle','Manier un bâton en sécurité'], '3e cycle':['Diriger le volant vers une zone','Passer avec un bâton de hockey','Enchaîner des frappes variées'], 'Secondaire':['Maîtriser les coups de base (smash, amorti)','Jouer en situations réelles de match','Utiliser des stratégies simples'] },
+  locomotion: { 'Préscolaire':['Courir en changeant de direction','Sauter à deux pieds par-dessus un obstacle','Ramper sous un obstacle'], '1er cycle':['Courir en évitant les obstacles','Sauter à cloche-pied','Galoper et trotter'], '2e cycle':['Sprinter sur courte distance','Sauter en longueur avec élan','Enchaîner des déplacements variés'], '3e cycle':['Maintenir une allure régulière','Réagir à un signal sonore','Adapter son déplacement à la situation'], 'Secondaire':['Développer endurance et vitesse','Analyser sa performance','Utiliser des stratégies de course'] },
+  stabilisation: { 'Préscolaire':['Se tenir en équilibre sur un pied','Marcher sur une ligne droite','Rouler sur un tapis'], '1er cycle':['Tenir l\'équilibre 5 secondes sur un pied','Marcher sur une poutre','Faire une roulade avant'], '2e cycle':['Enchaîner 3 éléments acrobatiques','Tenir l\'équilibre avec un partenaire','Renversement sur les mains'], '3e cycle':['Créer une séquence gymnique','Spots d\'équilibre dynamique','Construire une pyramide à 3'] },
+  cooperation: { 'Préscolaire':['Travailler avec un partenaire','Passer un objet à un ami','Attendre son tour'], '1er cycle':['Jouer en équipe de 3-4','Communiquer verbalement','Respecter les règles du jeu'], '2e cycle':['Occuper l\'espace collectivement','Créer des occasions de marquer','Se soutenir mutuellement'], '3e cycle':['Élaborer des stratégies d\'équipe','Assumer différents rôles','Résoudre des conflits'], 'Secondaire':['Analyser le jeu collectif','Ajuster les stratégies','Assumer un rôle de leader'] },
+  opposition: { '2e cycle':['Démarquer un adversaire','Défendre son espace','Créer un déséquilibre simple'], '3e cycle':['Lire les intentions de l\'adversaire','Créer et exploiter les déséquilibres','Combiner attaque et défense'], 'Secondaire':['Maîtriser les techniques de duel','Analyser les forces et faiblesses','Adapter ses stratégies en temps réel'] },
+  expression_corporelle: { 'Préscolaire':['Bouger selon le tempo d\'une musique','Imiter un animal','Exprimer une émotion par le mouvement'], '1er cycle':['Créer une courte séquence dansée','Synchroniser ses mouvements avec un partenaire','Utiliser différentes parties du corps'], '2e cycle':['Créer une chorégraphie de groupe','Explorer les niveaux (haut/moyen/bas)','Utiliser des accessoires'], '3e cycle':['Interpréter un thème','Combiner mouvements et musique','Évaluer la créativité d\'un groupe'], 'Secondaire':['Créer une performance artistique','Analyser et critiquer une prestation','Intégrer des éléments culturels'] },
+  plein_air: { 'Préscolaire':['Explorer l\'environnement immédiat','Identifier des éléments de la nature','Coopérer pour un défi simple'], '1er cycle':['S\'orienter avec des repères visuels','Compléter un parcours en nature','Respecter l\'environnement'], '2e cycle':['Utiliser une boussole simple','Lire une carte illustrée','Résoudre des défis en équipe'], '3e cycle':['Planifier un parcours d\'orientation','Estimer des distances','Adapter ses stratégies au terrain'], 'Secondaire':['Maîtriser l\'orientation avec carte et boussole','Planifier une sortie en plein air','Évaluer les risques et les mesures de sécurité'] }
 };
 
 const EDUCATIFS = {
-  manipulation_balles: [
-    {
-      id:"MB_E1", categorie:"echauffement", nom:"🔥 La Balle Chaude",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:["1 balle par groupe de 6-8 élèves"],
-      description:"Les élèves en cercle se passent la balle le plus rapidement possible. Si la balle tombe, tout le groupe fait 3 sauts sur place.",
-      etapes:["Former des cercles de 6-8 élèves","Passer la balle dans un sens puis l'autre","Accélérer progressivement","Variante: 2 balles simultanément"],
-      variantes:["Passer en diagonale","Passe au-dessus de la tête","Passe au sol (rouler)"],
-    },
-    {
-      id:"MB_E2", categorie:"echauffement", nom:"🔥 Exploration Libre",
-      durees:[5,8,10], cycles:["Préscolaire","1er cycle"],
-      materiel:["1 balle par élève (variées: mousse, tennis, caoutchouc)"],
-      description:"Chaque élève explore librement ce qu'il peut faire avec sa balle dans l'espace du gymnase. L'enseignant pose des défis: 'Peux-tu faire rebondir la balle 5 fois?'",
-      etapes:["Distribuer une balle à chaque élève","Laisser explorer 2 min librement","Poser des défis progressifs","Partager les découvertes"],
-      variantes:["Avec les deux mains","Avec la main non-dominante","En se déplaçant"],
-    },
-    {
-      id:"MB_E3", categorie:"echauffement", nom:"🔥 Jongle 1 Balle",
-      durees:[5,7], cycles:["1er cycle","2e cycle"],
-      materiel:["1 balle par élève"],
-      description:"Initiation au jonglage avec une balle: lancer légèrement en l'air et rattraper. Progresser vers des lancers plus hauts.",
-      etapes:["Lancer et rattraper à deux mains","Lancer d'une main, attraper de l'autre","Lancer et applaudir avant d'attraper","Lancer et faire un tour sur soi"],
-      variantes:["Yeux fermés","Assis par terre","En marchant"],
-    },
-    {
-      id:"MB_P1", categorie:"principal", nom:"⭐ Lancer-Attraper Duo",
-      durees:[8,10,12,15], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:["1 balle pour 2 élèves","Cônes pour délimiter les distances"],
-      description:"En paires, les élèves s'exercent à lancer et attraper. L'enseignant guide la progression des distances et des types de lancers.",
-      etapes:["Placer les paires face à face (3m)","Lancer-attraper à 2 mains (10 échanges)","Reculer de 2m et recommencer","Introduire lancer à 1 main","Introduire des pas avant le lancer"],
-      variantes:["Lancer par-dessous","Lancer par-dessus","Lancer en rotation","Attraper à 1 main"],
-    },
-    {
-      id:"MB_P2", categorie:"principal", nom:"⭐ La Cible",
-      durees:[10,12,15], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["3-4 balles par station","Cerceaux ou cibles au mur","Cônes"],
-      description:"Stations de lancer vers des cibles variées (cerceaux au mur, quilles à renverser, paniers). Points selon la difficulté.",
-      etapes:["Installer 4-6 stations de lancer","2-3 élèves par station (3 min)","Rotation après le signal","Comptabiliser les points","Défi final: meilleure station"],
-      variantes:["Cibles mobiles (balançoires de cônes)","Distance augmentée","Lancer non-dominant"],
-    },
-    {
-      id:"MB_P3", categorie:"principal", nom:"⭐ Balle au Mur",
-      durees:[8,10,12], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["1 balle par élève ou par paire","Mur dégagé"],
-      description:"Les élèves lancent la balle contre le mur et la rattrapent au rebond. Défis progressifs de distance et de complexité.",
-      etapes:["Lancer à 1m du mur, attraper","Reculer à 2m, 3m progressivement","Lancer + rebond au sol avant d'attraper","Lancer + tour complet + attraper","En paire: lancer en alternance"],
-      variantes:["Lancer au-dessus d'une ligne","Attraper sur rebond multiple","Ajouter une squatdown avant d'attraper"],
-    },
-    {
-      id:"MB_P4", categorie:"principal", nom:"⭐ Circuit de Stations",
-      durees:[15,18,20], cycles:["2e cycle","3e cycle"],
-      materiel:["Balles variées","4-6 stations équipées","Chronomètre","Fiches de station"],
-      description:"Circuit de 4-6 stations travaillant différentes habiletés de manipulation. 3 minutes par station, rotation au signal.",
-      etapes:["Présenter les 4-6 stations (2 min)","Répartir les élèves aux stations","Travailler 3 min par station","Rotation au signal sonore","Bilan après le circuit"],
-      variantes:["Station 1: lancer précision","Station 2: jonglage","Station 3: attraper en mouvement","Station 4: balle au mur","Station 5: passes en groupe","Station 6: défi créatif"],
-    },
-    {
-      id:"MB_P5", categorie:"principal", nom:"⭐ La Passe Enchaînée",
-      durees:[8,10,12], cycles:["2e cycle","3e cycle"],
-      materiel:["1 balle pour 5-6 élèves"],
-      description:"En groupes, les élèves font circuler la balle selon un schéma de passes (numérotés ou avec schéma). Défis de vitesse.",
-      etapes:["Former des groupes de 5-6","Attribuer un numéro à chacun","Passer toujours au même numéro (1→3→5→2→4→1)","Chronométrer 10 allers-retours","Défi: battre leur record"],
-      variantes:["Deux balles simultanées","Passer en sens inverse","Passer + se déplacer vers la position du receveur"],
-    },
-    {
-      id:"MB_J1", categorie:"jeu", nom:"🎮 Ballon Chasseur",
-      durees:[10,12,15,18], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["4-6 ballons de mousse","Cônes pour délimiter"],
-      description:"Jeu classique d'opposition: deux équipes s'affrontent en cherchant à toucher les adversaires avec le ballon.",
-      etapes:["Diviser en 2 équipes","Explication des règles (5 min)","Jeu (8-10 min)","Débriefing stratégique"],
-      variantes:["Version prison","Version médicale (médecin secret)","Version 3 équipes","Sans ligne centrale (terrain libre)"],
-    },
-    {
-      id:"MB_J2", categorie:"jeu", nom:"🎮 Zone de Tir",
-      durees:[12,15,18], cycles:["2e cycle","3e cycle"],
-      materiel:["Ballons","Cerceaux-cibles","Dossards 2 couleurs"],
-      description:"Deux équipes s'affrontent: marquer des points en lançant des balles dans les cerceaux de l'adversaire tout en défendant les siens.",
-      etapes:["Placer 4 cerceaux de chaque côté","Expliquer le système de points","Jeu 2×5 min","Pause stratégique","2e période"],
-      variantes:["Cerceaux suspendus","Gardien de but possible","Zones de tir obligatoires"],
-    },
-    {
-      id:"MB_J3", categorie:"jeu", nom:"🎮 10 Passes",
-      durees:[10,12,15], cycles:["2e cycle","3e cycle"],
-      materiel:["1 ballon par groupe de 8-10","Dossards 2 couleurs"],
-      description:"Faire circuler le ballon dans son équipe pour atteindre 10 passes consécutives sans interception.",
-      etapes:["2 équipes mélangées dans l'espace","Passes uniquement, pas de course avec le ballon","10 passes = 1 point","L'adversaire essaie d'intercepter"],
-      variantes:["Maximum 3 secondes avec le ballon","Obligation de passer à un joueur non adjacent","2 touches minimum avant de passer"],
-    },
-    {
-      id:"MB_R1", categorie:"retour", nom:"🧘 Étirements des Bras",
-      durees:[3,5], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:[],
-      description:"Étirements doux des muscles des bras, épaules et poignets utilisés lors de la séance.",
-      etapes:["Étirer les bras en croix (15s)","Ramener le coude devant soi (15s chaque bras)","Tourner les poignets en cercles","Doigts entrelacés, pousser vers l'extérieur","Respiration profonde × 3"],
-      variantes:["Avec musique douce","En position assise ou debout","Guidé par un élève volontaire"],
-    },
-    {
-      id:"MB_R2", categorie:"retour", nom:"🧘 Cercle de Discussion",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:[],
-      description:"Rassemblement en cercle pour réfléchir sur la séance: ce qui a bien fonctionné, les défis rencontrés, les apprentissages.",
-      etapes:["S'asseoir en cercle","Partager: 'Qu'est-ce que j'ai appris aujourd'hui?'","Partager: 'Qu'est-ce qui était difficile?'","Fixer un défi pour la prochaine fois","Clôturer avec un applaudissement collectif"],
-      variantes:["Tour de parole avec objet parlant","Écrire dans un journal sportif","Pouce en l'air/pouce en bas pour auto-évaluation"],
-    },
-  ],
+  manipulation_balles: {
+    mise_en_train: [
+      { id:'mb_mt_01', nom:'La balle chaude', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Les élèves se déplacent librement avec une balle de mousse. Au signal, ils la lancent en l\'air et la rattrapent avant qu\'elle touche le sol. Progression vers des lancers plus hauts.', materiel:['1 balle de mousse par élève'], consignes:['Déplacez-vous dans le gymnase en tenant votre balle.','Au signal sonore, lancez la balle vers le haut et rattrapez-la.','Essayez de battre votre record de lancers consécutifs réussis.'], variante:'Lancer et attraper avec une seule main, changer de main à chaque lancer.' },
+      { id:'mb_mt_02', nom:'Dribble navette', duree:5, cycles:['2e cycle','3e cycle','Secondaire'], description:'Les élèves dribblent leur ballon jusqu\'à un cône, reviennent et passent à leur partenaire. Accent sur le contrôle du dribble et la posture basse.', materiel:['1 ballon par duo','2 cônes par duo'], consignes:['Dribble jusqu\'au cône en gardant les genoux fléchis.','Reviens en dribblant et passe le ballon à ton partenaire.','Maintiens le ballon à hauteur de taille, pas plus haut.'], variante:'Dribbler avec la main non-dominante uniquement.' },
+      { id:'mb_mt_03', nom:'Cercle de passes express', duree:6, cycles:['1er cycle','2e cycle','3e cycle'], description:'Groupes de 6 en cercle. Un ballon circule rapidement par passes poitrine. Objectif: faire 10 passes sans faire tomber le ballon le plus vite possible.', materiel:['1 ballon par groupe de 6'], consignes:['Formez un cercle et numérotez-vous de 1 à 6.','Passez toujours au même numéro suivant.','Comptez vos passes réussies à voix haute.'], variante:'Ajouter un deuxième ballon circulant dans le sens inverse.' },
+      { id:'mb_mt_04', nom:'Le roi du dribble', duree:6, cycles:['2e cycle','3e cycle','Secondaire'], description:'Tous les élèves dribblent dans une zone délimitée. Ils tentent de faire tomber le ballon des autres tout en conservant le leur.', materiel:['1 ballon par élève','Cônes pour délimiter la zone'], consignes:['Dribble en continu dans la zone.','Tu peux toucher le ballon des autres pour les éliminer.','Si ton ballon sort de la zone ou s\'arrête, tu es éliminé.'], variante:'Jouer en équipes de 2 (se protéger mutuellement).' },
+      { id:'mb_mt_05', nom:'Jonglerie à deux', duree:5, cycles:['3e cycle','Secondaire'], description:'En duo face à face à 3 mètres, les deux partenaires lancent simultanément leur balle et attrapent celle de l\'autre. Synchronisation et concentration.', materiel:['2 balles par duo'], consignes:['Tenez-vous à environ 3 mètres face à face.','Au signal, lancez votre balle vers votre partenaire simultanément.','Essayez de maintenir un rythme régulier.'], variante:'Utiliser 3 balles (niveau jonglerie avancée).' },
+      { id:'mb_mt_06', nom:'Ballon voyageur', duree:5, cycles:['Préscolaire','1er cycle'], description:'Les élèves forment une ligne et font passer un ballon par différents moyens: par-dessus la tête, entre les jambes, en alternance.', materiel:['1 ballon par équipe de 8'], consignes:['Formez une ligne droite serrée.','Passez le ballon par-dessus la tête jusqu\'au dernier.','Le dernier court en tête de ligne et recommence.'], variante:'Alterner: par-dessus la tête, entre les jambes.' },
+      { id:'mb_mt_07', nom:'Balles musicales', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Comme les chaises musicales. Quand la musique joue, les élèves dribblent. Quand elle s\'arrête, ils trouvent une balle libre.', materiel:['Balles (une de moins que le nombre d\'élèves)','Système de son'], consignes:['Dribble dans le gymnase quand la musique joue.','Quand la musique s\'arrête, attrape une balle et reste immobile.','L\'élève sans balle propose un défi physique à tous.'], variante:'Personne n\'est éliminé: l\'élève sans balle donne un défi à la classe.' },
+      { id:'mb_mt_08', nom:'Passe et déplace', duree:6, cycles:['2e cycle','3e cycle','Secondaire'], description:'En trio: A passe à B, A court vers une position libre, B passe à C. Simulation du jeu en mouvement, base de tous les sports collectifs.', materiel:['1 ballon par trio','Cônes pour définir une zone'], consignes:['A passe à B et se déplace immédiatement vers un espace libre.','B passe à C dès que A est repositionné.','Essayez de maintenir un rythme fluide sans arrêter le ballon.'], variante:'Introduire un défenseur passif qui se déplace sans toucher le ballon.' }
+    ],
+    partie_principale: [
+      { id:'mb_pp_01', nom:'La cible mouvante', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'Un lanceur tente de toucher des cônes dispersés. Ses partenaires défendent les cônes en les déplaçant. Points pour chaque cône touché ou sauvé.', materiel:['Balles de mousse','10-15 cônes','Lignes de délimitation'], consignes:['Le lanceur vise les cônes depuis derrière la ligne de lancer.','Les défenseurs peuvent bouger les cônes mais pas les tenir en permanence.','Rotez les rôles toutes les 2 minutes.'], variante:'Augmenter la zone de lancer pour plus de défi.' },
+      { id:'mb_pp_02', nom:'Basketball 3 contre 3', duree:20, cycles:['3e cycle','Secondaire'], description:'Basketball avec règles simplifiées (3 passes avant de marquer). Accent sur le jeu en équipe, les écrans et la communication.', materiel:['1 ballon de basketball','Panier ou cible','Dossards 2 couleurs'], consignes:['3 contre 3 sur demi-terrain. Minimum 3 passes avant de tirer.','Défense homme à homme. On ne peut pas arracher le ballon.','Point = 1 pour tir réussi, 2 si vient d\'une passe en mouvement.'], variante:'Règle bonus: si toute l\'équipe est en zone offensive lors du tir = 3 points.' },
+      { id:'mb_pp_03', nom:'Quilles vivantes', duree:15, cycles:['1er cycle','2e cycle'], description:'Une équipe est disposée comme des quilles. L\'autre lance des ballons pour les faire bouger. Les quilles essaient de rester stables.', materiel:['Balles de mousse (4-6)','Cônes pour délimiter'], consignes:['L\'équipe quilles se positionne en triangle.','L\'équipe lanceuse envoie des balles depuis la ligne de lancer.','Une quille est éliminée si elle lève un pied ou se déplace.'], variante:'Les quilles peuvent se déplacer latéralement de 30 cm pour éviter les balles.' },
+      { id:'mb_pp_04', nom:'Volleyball assis', duree:20, cycles:['2e cycle','3e cycle','Secondaire'], description:'Volleyball assis sur le sol, 4 contre 4. Ballon de plage. Le ballon doit être frappé et ne pas être retenu.', materiel:['1 ballon de plage ou volleyball léger','Filet bas ou corde entre deux cônes'], consignes:['Restez assis ou à genoux pendant tout le jeu.','Le ballon doit être frappé (pas retenu) et passer par-dessus le filet.','3 touches maximum par équipe avant de renvoyer.'], variante:'Autoriser une position à genoux pour le joueur qui reçoit un ballon difficile.' },
+      { id:'mb_pp_05', nom:'Football de précision', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'Parcours de botte de précision: franchir des portes de cônes de tailles variables depuis des positions marquées.', materiel:['1 ballon de soccer par élève','Paires de cônes','Marqueurs au sol'], consignes:['Botte depuis la marque au sol vers la porte que tu vises.','Large = 1 point, moyen = 2 points, étroite = 3 points.','10 bottes par round. Compare ton score avec ton meilleur.'], variante:'Compétition en duo: même nombre de bottes, plus grand score total gagne.' },
+      { id:'mb_pp_06', nom:'Balle au capitaine', duree:20, cycles:['2e cycle','3e cycle'], description:'Chaque équipe a un capitaine en zone neutre adverse. L\'équipe tente de passer le ballon à son capitaine pour marquer.', materiel:['1 ballon','Dossards 2 couleurs','Cônes'], consignes:['Le capitaine est dans la zone de but adverse. Il ne peut pas être touché.','Passez le ballon à votre capitaine pour marquer.','On ne peut pas arracher le ballon, mais on peut intercepter les passes.'], variante:'Deux capitaines par équipe dans deux zones différentes.' },
+      { id:'mb_pp_07', nom:'Dodgeball stratégique', duree:20, cycles:['2e cycle','3e cycle','Secondaire'], description:'Ballon chasseur avec règle de retour: les élèves éliminés peuvent revenir si un coéquipier attrape une balle. Développe les stratégies collectives.', materiel:['4-6 balles de mousse','Ligne centrale'], consignes:['Lancez les balles pour toucher les adversaires sous les épaules.','Un élève touché est éliminé mais attend sur le côté.','Si tu attrapes une balle, un coéquipier éliminé peut revenir.'], variante:'Zone de protection centrale: les balles qui rebondissent dedans sont mortes.' },
+      { id:'mb_pp_08', nom:'Handball simplifié', duree:20, cycles:['3e cycle','Secondaire'], description:'Handball 5 contre 5 avec règles adaptées: 3 pas maximum, gardien en zone, tir depuis l\'extérieur de la zone.', materiel:['1 ballon de handball ou volleyball','2 buts ou cônes','Dossards'], consignes:['Maximum 3 pas avec le ballon avant de passer ou tirer.','Le gardien est le seul à entrer dans sa zone.','Défense active mais pas de contact physique.'], variante:'Obliger 5 passes avant tout tir pour favoriser la circulation du ballon.' }
+    ],
+    jeu: [
+      { id:'mb_j_01', nom:'La zone interdite', duree:12, cycles:['2e cycle','3e cycle','Secondaire'], description:'Deux équipes tentent d\'amener le ballon dans la zone interdite adverse sans le faire tomber ni être touchées.', materiel:['1 ballon','Cônes','Dossards'], consignes:['Portez ou passez le ballon vers la zone interdite adverse.','Si tu es touché avec le ballon, tu dois passer immédiatement.','Le ballon dans la zone = 1 point pour ton équipe.'], variante:'Jouer sans dribble: le ballon ne peut se déplacer que par passes.' },
+      { id:'mb_j_02', nom:'Spikeball modifié', duree:15, cycles:['3e cycle','Secondaire'], description:'Version simplifiée du spikeball avec un cerceau au sol. Équipes de 2 contre 2. Le ballon doit rebondir sur le cerceau.', materiel:['Cerceaux ou filet Spikeball','Ballon de plage'], consignes:['2 contre 2 autour du cerceau central.','Frappez le ballon vers le cerceau pour que l\'équipe adverse doive le renvoyer.','3 touches max par équipe. Si le ballon touche le sol = point adverse.'], variante:'Version coopérative: combien de rebonds peut-on faire à 4?' },
+      { id:'mb_j_03', nom:'Tour du monde des passes', duree:10, cycles:['2e cycle','3e cycle'], description:'Concours de passes en équipe. Chaque équipe traverse un parcours en faisant des passes entre les cônes sans faire tomber le ballon.', materiel:['1 ballon par équipe','Cônes'], consignes:['Formez une équipe de 4 en ligne.','Passez le ballon en avançant entre les cônes sans le faire tomber.','Si le ballon tombe, recommencez depuis le début du parcours.'], variante:'Passage arrière uniquement.' },
+      { id:'mb_j_04', nom:'Ballon brûlant', duree:10, cycles:['1er cycle','2e cycle'], description:'Comme la patate chaude: les élèves en cercle se passent rapidement le ballon. Quand le signal retentit, celui qui tient le ballon reçoit un défi physique amusant.', materiel:['1 ballon','Système de son','Cartes défis'], consignes:['Formez un grand cercle et passez le ballon rapidement.','Quand la musique s\'arrête, celui qui a le ballon fait le défi.','Le défi est pigé dans la pile de cartes défis.'], variante:'Version stratégique: les élèves choisissent à qui ils passent.' },
+      { id:'mb_j_05', nom:'Flag-football simplifié', duree:15, cycles:['3e cycle','Secondaire'], description:'Football avec drapeaux (lanières) plutôt que contact. Équipes de 5. 4 tentatives pour progresser vers la zone de but.', materiel:['1 ballon ovale ou de mousse','Lanières flag','Cônes','Dossards'], consignes:['L\'attaque a 4 essais pour faire avancer le ballon vers la zone de but.','Le porteur est arrêté quand on lui prend sa lanière.','Touchdown = 6 points, point de transformation = 1.'], variante:'Autoriser les passes en tout temps pour les débutants.' },
+      { id:'mb_j_06', nom:'Kin-ball découverte', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'3 équipes de 3. Une équipe frappe le grand ballon en criant la couleur d\'une équipe adverse qui doit le rattraper avant qu\'il touche le sol.', materiel:['Grand ballon de plage','Couleurs distinctives (dossards)'], consignes:['3 équipes de 3 dispersées dans le gymnase.','L\'équipe qui frappe crie une couleur: cette équipe doit attraper le ballon.','Si le ballon touche le sol, l\'équipe désignée perd un point.'], variante:'L\'équipe qui attrape est celle qui frappe ensuite.' },
+      { id:'mb_j_07', nom:'Frisbee-golf', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'Parcours de golf avec des frisbees. Les trous sont des cerceaux au sol ou des paniers. Moins de lancers = meilleur score.', materiel:['1 frisbee par élève','Cerceaux ou paniers (6-9 cibles)','Carton de score'], consignes:['Lance le frisbee depuis l\'endroit où il a atterri.','Compte chaque lancer jusqu\'à la cible.','Moins de lancers = meilleur score, comme au golf.'], variante:'Jouer en duo: partager un frisbee, chacun lance en alternance.' },
+      { id:'mb_j_08', nom:'Balle de mur collective', duree:10, cycles:['2e cycle','3e cycle'], description:'Toute la classe collabore pour frapper une balle contre le mur en alternance. Chaque élève frappe une fois dans l\'ordre, but: maintenir le rallye.', materiel:['1 balle de tennis ou de caoutchouc','Mur plat'], consignes:['Formez une file. Le premier frappe la balle contre le mur et passe en fin de file.','Le suivant frappe dès que la balle revient.','Comptez combien de frappes consécutives l\'équipe peut enchaîner.'], variante:'Deux files en même temps avec deux balles simultanées.' }
+    ],
+    retour_au_calme: [
+      { id:'mb_rc_01', nom:'Massage dos en cercle', duree:4, cycles:['1er cycle','2e cycle','3e cycle','Secondaire'], description:'En cercle, chaque élève masse les épaules de la personne devant. Rotation après 1 minute. Récupération physique et calme.', materiel:[], consignes:['Formez un cercle et faites un quart de tour vers la droite.','Massez doucement les épaules de la personne devant vous.','Après 1 minute, faites demi-tour et recommencez.'], variante:'Ajouter un fond musical calme pour créer une atmosphère de détente.' },
+      { id:'mb_rc_02', nom:'Bilan des apprentissages', duree:5, cycles:['2e cycle','3e cycle','Secondaire'], description:'Réflexion collective assis en cercle. Chaque élève identifie une chose apprise et une chose à améliorer.', materiel:[], consignes:['Asseyez-vous en cercle sur le plancher.','Pensez à ce que vous avez appris aujourd\'hui.','Chacun partage: "J\'ai appris..." ou "Je veux améliorer..."'], variante:'Écrire sur un post-it et coller au tableau de bilan de la classe.' },
+      { id:'mb_rc_03', nom:'Étirements avec ballon', duree:5, cycles:['1er cycle','2e cycle','3e cycle','Secondaire'], description:'Étirements guidés en utilisant un ballon comme support. Chaque étirement tenu 15 à 20 secondes.', materiel:['1 ballon par élève'], consignes:['Asseyez-vous avec votre ballon entre les mains.','Suivez les étirements proposés: bras, jambes, dos, cou.','Chaque étirement tenu 15 à 20 secondes en respirant lentement.'], variante:'Les élèves proposent eux-mêmes des étirements impliquant le ballon.' },
+      { id:'mb_rc_04', nom:'La balle de cohésion', duree:4, cycles:['Préscolaire','1er cycle','2e cycle'], description:'En cercle, une balle est lancée à un élève qui dit le prénom d\'un camarade avant de lui lancer. Renforce les liens sociaux.', materiel:['1 balle légère'], consignes:['Asseyez-vous en cercle sur le plancher.','Je lance la balle à quelqu\'un en disant son prénom.','Cette personne dit le prénom d\'un autre et lui lance la balle.'], variante:'Dire un compliment à la personne à qui on lance la balle.' }
+    ]
+  },
 
-  locomotion: [
-    {
-      id:"LOC_E1", categorie:"echauffement", nom:"🔥 Tour du Gymnase Progressif",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:["Cônes pour délimiter"],
-      description:"Les élèves font le tour du gymnase en augmentant progressivement l'intensité: marche → jogging → course → sprint (droites).",
-      etapes:["Marche normale (1 tour)","Jogging léger (1 tour)","Course modérée (1 tour)","Sprint sur les droites, récup sur les courbes (2 tours)","Retour au jogging (1 tour)"],
-      variantes:["Avec changements de direction au signal","Variantes de déplacement (saut, galop, chassé)","En file indienne par groupes"],
-    },
-    {
-      id:"LOC_E2", categorie:"echauffement", nom:"🔥 Simon Dit Bouge!",
-      durees:[5,7], cycles:["Préscolaire","1er cycle"],
-      materiel:[],
-      description:"Version sportive de Simon dit: les commandes sont des mouvements locomoteurs. Élève qui se trompe fait 3 sauts sur place.",
-      etapes:["Expliquer les règles","Commencer lentement (marche, stop, sauter)","Accélérer le rythme","Ajouter des combinaisons (galop + tourner)","Élimination douce possible"],
-      variantes:["Élève animateur","Commandes en anglais (immersion)","Thème: animaux (courir comme un cheval, sauter comme un kangourou)"],
-    },
-    {
-      id:"LOC_E3", categorie:"echauffement", nom:"🔥 Échauffement Articulaire + Course",
-      durees:[5,8], cycles:["2e cycle","3e cycle"],
-      materiel:[],
-      description:"Mobilisation articulaire complète suivie d'une activation cardiovasculaire progressive.",
-      etapes:["Tourner les chevilles (10× chaque pied)","Rotations des genoux","Rotations des hanches","Tourner les épaules","Tourner le cou doucement","Jogging + accélérations progressives (5 min)"],
-      variantes:["Guidé par un élève","Avec musique","Inclure des exercices spécifiques (talons-fesses, genoux-poitrine)"],
-    },
-    {
-      id:"LOC_P1", categorie:"principal", nom:"⭐ Parcours de Sauts",
-      durees:[10,12,15], cycles:["Préscolaire","1er cycle","2e cycle"],
-      materiel:["Cerceaux","Cônes","Cordes","Bancs suédois (si disponibles)"],
-      description:"Parcours avec différents types de sauts: sauter dans des cerceaux, par-dessus des cordes, sur un pied, en longueur.",
-      etapes:["Installer le parcours (démo)","Passer en file indienne","3-4 passages par élève","Chronométrer pour se dépasser","Modifier le parcours"],
-      variantes:["Sauts à cloche-pied","Sauts à deux pieds joints","Course + saut en longueur","Sauts en hauteur (cordes)"],
-    },
-    {
-      id:"LOC_P2", categorie:"principal", nom:"⭐ Relais Junior",
-      durees:[10,12,15], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Témoin (bâton/foulard) par équipe","Cônes de délimitation"],
-      description:"Course de relais par équipes de 4-5. Plusieurs formules: aller-retour, en étoile, avec obstacles.",
-      etapes:["Former des équipes de 4-5","Expliquer la transmission du témoin","Course aller-retour (3 manches)","Formule tournoi (chaque équipe contre chaque équipe)","Calcul des points"],
-      variantes:["Relais à cloche-pied","Relais en marche arrière","Relais avec obstacles (slalom de cônes)","Transmission: balle au lieu de témoin"],
-    },
-    {
-      id:"LOC_P3", categorie:"principal", nom:"⭐ Saut à la Corde",
-      durees:[10,12,15], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["1 corde par élève","2-3 longues cordes"],
-      description:"Apprentissage progressif du saut à la corde: individuel, en entrée de corde tournée par 2 élèves.",
-      etapes:["Saut individuel: 10 sauts consécutifs","Défis: sur 1 pied, double-sauts","Corde tournée: entrée + 5 sauts","Corde tournée: comptage collectif","Record de classe"],
-      variantes:["Sauter en duo (même corde)","Double corde (deux cordes croisées)","Saut chorégraphié avec rythme musical"],
-    },
-    {
-      id:"LOC_P4", categorie:"principal", nom:"⭐ Haies Adaptées",
-      durees:[10,12,15], cycles:["2e cycle","3e cycle"],
-      materiel:["Haies mousse ou cordes tendues entre cônes","Chronomètre"],
-      description:"Course avec franchissement de haies adaptées. Apprentissage de la technique de passage.",
-      etapes:["Marcher en enjambant les haies","Courir en enjambant","Technique: jambe d'attaque et jambe de traîne","Chronométrer 40m haies","Compétition par équipes"],
-      variantes:["Haies à différentes hauteurs","Slalom entre les haies","Haies + sprint final"],
-    },
-    {
-      id:"LOC_J1", categorie:"jeu", nom:"🎮 La Grande Chasse (Tag)",
-      durees:[8,10,12], cycles:["Préscolaire","1er cycle","2e cycle"],
-      materiel:["Foulards (1 par taggueur)","Cônes de délimitation"],
-      description:"Jeux de poursuite variés. 2-3 taggueurs avec un foulard essaient de toucher tous les autres.",
-      etapes:["Définir le terrain","Choisir 2-3 taggueurs","Jeu 3 min","Rotation des taggueurs","Variante pour finir"],
-      variantes:["Freeze tag (figés jusqu'à être libérés)","Tag coloré (touche le t-shirt de la même couleur)","Tag chaîne (tagués rejoignent la chaîne)","Tag balles de neige (lancer un foulard)"],
-    },
-    {
-      id:"LOC_J2", categorie:"jeu", nom:"🎮 Le Territoire",
-      durees:[12,15,18], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Cônes (40+)","Dossards 2-4 couleurs"],
-      description:"Chaque équipe essaie de ramasser le plus de cônes dans le camp adverse et de les rapporter dans son camp.",
-      etapes:["Répartir les cônes également (20 chaque côté)","2 équipes de chaque côté","Ramasser et rapporter un cône à la fois","Si touché en zone adverse: retour à son camp","Équipe avec le plus de cônes gagne"],
-      variantes:["3-4 équipes (chacun pour soi)","Zones de protection","Limite de temps (3 min)"],
-    },
-    {
-      id:"LOC_R1", categorie:"retour", nom:"🧘 Étirements des Jambes",
-      durees:[4,5,6], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:[],
-      description:"Étirements doux des principaux groupes musculaires des membres inférieurs utilisés lors de la course et des sauts.",
-      etapes:["Quadriceps: tirer le pied derrière (20s chaque jambe)","Ischio-jambiers: jambe tendue, pencher (20s)","Mollets: appui contre le mur (20s chaque)","Adducteurs: papillon assis (20s)","Respirations profondes finales"],
-      variantes:["Guidé par un élève","En musique douce","En position assise si sol propre"],
-    },
-    {
-      id:"LOC_R2", categorie:"retour", nom:"🧘 Journal de Bord Moteur",
-      durees:[5,7], cycles:["2e cycle","3e cycle"],
-      materiel:["Cahier ou fiche par élève","Crayon"],
-      description:"Les élèves notent dans leur journal: performance du jour, ressenti, défi pour la prochaine fois.",
-      etapes:["Distribuer les journaux","Temps d'écriture (3 min)","Partage volontaire (2 min)","Fixer un objectif personnel pour la prochaine séance"],
-      variantes:["Dessin de la séance (préscolaire/1er cycle)","Dictée à l'adulte","Formulaire pré-rempli"],
-    },
-  ],
+  manipulation_engins: {
+    mise_en_train: [
+      { id:'me_mt_01', nom:'Jonglerie raquette-volant', duree:5, cycles:['2e cycle','3e cycle','Secondaire'], description:'Chaque élève fait rebondir un volant sur sa raquette en comptant ses coups consécutifs. Concentration sur la prise et le suivi du volant.', materiel:['1 raquette par élève','1 volant par élève'], consignes:['Tenez la raquette avec une prise poignée de main détendue.','Faites rebondir le volant sur la raquette sans le laisser tomber.','Essayez de dépasser votre meilleur score.'], variante:'Alterner: 1 coup côté plat, 1 coup côté cadre.' },
+      { id:'me_mt_02', nom:'Slalom avec bâton', duree:5, cycles:['2e cycle','3e cycle'], description:'Les élèves conduisent une balle avec leur bâton à travers un slalom de cônes. Accent sur la manipulation des deux côtés du bâton.', materiel:['1 bâton de hockey par élève','1 balle par élève','Cônes'], consignes:['Conduisez la balle à travers les cônes avec votre bâton.','Utilisez les deux côtés du bâton (revers et coup droit).','Ralentissez avant chaque cône pour garder le contrôle.'], variante:'Ajouter une limite de temps et comparer les performances.' },
+      { id:'me_mt_03', nom:'Échanges lents en duo', duree:6, cycles:['2e cycle','3e cycle','Secondaire'], description:'Deux élèves face à face s\'échangent un volant avec leur raquette. L\'objectif est de maintenir l\'échange le plus longtemps possible.', materiel:['1 raquette par élève','1 volant par duo'], consignes:['Placez-vous à 3-4 mètres face à votre partenaire.','Frappez le volant lentement et haut pour laisser le temps à l\'autre.','Comptez vos échanges consécutifs réussis.'], variante:'Augmenter progressivement la distance jusqu\'à la largeur du terrain.' },
+      { id:'me_mt_04', nom:'Cibles au mur', duree:5, cycles:['2e cycle','3e cycle','Secondaire'], description:'Des cibles colorées sont collées au mur. Les élèves frappent le volant en visant les cibles. Points selon la précision.', materiel:['Raquettes','Volants','Cibles adhésives au mur'], consignes:['Frappez depuis la ligne à 4 mètres du mur.','Visez les cibles: jaune = 1 pt, rouge = 3 pts, bullseye = 5 pts.','5 frappes par round, addition de vos points.'], variante:'Frappe de coup droit uniquement, puis revers uniquement.' },
+      { id:'me_mt_05', nom:'Hockey passe en mouvement', duree:6, cycles:['3e cycle','Secondaire'], description:'En trio, un distributeur passe la balle à un receveur en mouvement qui la reçoit et la retourne. Accent sur la réception et la passe précise.', materiel:['1 bâton par élève','1 balle par trio','Cônes'], consignes:['A passe à B qui court vers un cône.','B reçoit, contrôle et reporte la balle vers C.','Faites 5 répétitions puis changez les rôles.'], variante:'Introduire un défenseur passif à 50% d\'intensité.' }
+    ],
+    partie_principale: [
+      { id:'me_pp_01', nom:'Badminton singulier technique', duree:20, cycles:['3e cycle','Secondaire'], description:'Jeu de badminton en demi-terrain avec accent sur les coups techniques: dégagement, filet, smash. Un coup à travailler par période de 5 minutes.', materiel:['1 raquette par élève','Volants','Filet de badminton'], consignes:['Échauffez-vous avec 10 échanges libres.','Période 1: dégagements uniquement (coup haut et profond).','Période 2: coups au filet uniquement.'], variante:'Jeu avec zone interdite (zone centrale du terrain = faute).' },
+      { id:'me_pp_02', nom:'Hockey modifié 5 contre 5', duree:20, cycles:['3e cycle','Secondaire'], description:'Hockey à 5 contre 5. Buts de cônes. Accent sur le jeu en équipe et les passes précises. 3 passes minimum avant de tirer.', materiel:['Bâtons de hockey','Balles','Cônes pour les buts','Dossards'], consignes:['5 contre 5. Marquez en faisant passer la balle entre les cônes du but.','Obligatoire: 3 passes minimum avant de tirer.','Contact physique interdit: n\'utilisez que votre bâton sur la balle.'], variante:'Version coopérative: combien de passes consécutives l\'équipe peut-elle faire?' },
+      { id:'me_pp_03', nom:'Circuit raquette multi-stations', duree:20, cycles:['2e cycle','3e cycle'], description:'Circuit de 5 stations: jonglerie, cible, échanges mur, frappe en mouvement, jeu demi-terrain. Chaque station dure 3-4 minutes.', materiel:['Raquettes','Volants','Cibles','Filet'], consignes:['Vous avez 3 minutes par station au signal.','Lisez l\'affiche à chaque station pour connaître le défi.','Gardez vos scores sur votre feuille de suivi.'], variante:'Ajouter une station défi créatif où les élèves inventent leur propre challenge.' },
+      { id:'me_pp_04', nom:'Ringuette initiation', duree:20, cycles:['2e cycle','3e cycle','Secondaire'], description:'Ringuette 4 contre 4 avec les règles de base. Accent sur les passes et la position sur le terrain. Le bâton est utilisé pour pousser l\'anneau.', materiel:['Bâtons de ringuette','Anneaux de ringuette','Buts ou cônes','Dossards'], consignes:['4 contre 4. L\'anneau doit être poussé, pas frappé.','On ne peut porter l\'anneau que 3 secondes avant de passer.','Marquez en faisant entrer l\'anneau dans le but adverse.'], variante:'Jouer sans gardien mais avec une zone de but définie.' }
+    ],
+    jeu: [
+      { id:'me_j_01', nom:'Tournoi de badminton double', duree:15, cycles:['3e cycle','Secondaire'], description:'Mini-tournoi de badminton double (2 contre 2). Matchs de 5 minutes. Rotation des équipes toutes les 2 matchs.', materiel:['Raquettes','Volants','Filet','Tableau de scores'], consignes:['Matchs de 5 minutes ou jusqu\'à 7 points.','Servez depuis derrière la ligne de service.','Perdants = rotent sur une position, gagnants = restent.'], variante:'Zones bonus: certaines zones du terrain valent 2 ou 3 points.' },
+      { id:'me_j_02', nom:'Hockey de précision', duree:12, cycles:['2e cycle','3e cycle'], description:'Parcours de précision avec bâton: frapper la balle à travers des portes de cônes de différentes tailles depuis des distances variées.', materiel:['Bâtons','Balles','Cônes'], consignes:['Parcourez les 5 stations dans l\'ordre.','Chaque porte réussie = points (selon difficulté).','Votre score personnel et le score d\'équipe comptent.'], variante:'Version équipe: les points individuels s\'additionnent pour le score d\'équipe.' }
+    ],
+    retour_au_calme: [
+      { id:'me_rc_01', nom:'Rangement coopératif', duree:3, cycles:['2e cycle','3e cycle','Secondaire'], description:'Les élèves rangent le matériel ensemble en se chronométrant. Objectif: battre leur record de la séance précédente.', materiel:['Tout le matériel utilisé'], consignes:['Chaque équipe est responsable d\'un type de matériel.','On chronomètre le rangement complet.','Objectif: battre le record de la classe.'], variante:'Inclure une vérification finale: chaque équipe valide le rangement d\'une autre.' },
+      { id:'me_rc_02', nom:'Discussion tactique', duree:5, cycles:['3e cycle','Secondaire'], description:'Assis en cercle, retour sur les situations de jeu. L\'enseignant présente 2-3 situations et demande quelle aurait été la meilleure décision.', materiel:[], consignes:['Asseyez-vous confortablement en cercle.','Je décris une situation de jeu de la séance.','Quelle était la meilleure décision dans cette situation?'], variante:'Les élèves proposent eux-mêmes des situations qui les ont mis en difficulté.' }
+    ]
+  },
 
-  stabilisation: [
-    {
-      id:"STA_E1", categorie:"echauffement", nom:"🔥 Yoga des Animaux",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle"],
-      materiel:["Tapis optionnels"],
-      description:"Échauffement en postures d'animaux: chien, chat, cobra, grenouille, arbre. L'enseignant nomme l'animal et les élèves imitent.",
-      etapes:["Le chat (dos rond/creux)","Le chien tête en bas (triangle)","Le cobra (sur le ventre, dos cambré)","La grenouille (accroupi, genoux écartés)","L'arbre (équilibre sur un pied)","Le crocodile (planche)"],
-      variantes:["Laisser les élèves inventer leurs propres animaux","Transition fluide entre les poses","Avec musique de nature"],
-    },
-    {
-      id:"STA_P1", categorie:"principal", nom:"⭐ Parcours d'Équilibre",
-      durees:[10,12,15], cycles:["Préscolaire","1er cycle","2e cycle"],
-      materiel:["Poutres basses","Cerceaux","Lignes au sol","Coussins d'équilibre (si disponibles)"],
-      description:"Parcours avec différents défis d'équilibre: marcher sur une ligne, sur poutre, sur un pied, sur surface instable.",
-      etapes:["Marcher sur une ligne collée au sol","Marcher sur une poutre basse (bras en croix)","Équilibre sur un pied 5s","Sautiller de cerceaux en cerceaux","Combinaison finale"],
-      variantes:["Yeux fermés sur ligne","Porter un objet sur la tête","Passage en tandem (main dans la main)"],
-    },
-    {
-      id:"STA_P2", categorie:"principal", nom:"⭐ Roulades et Rotations",
-      durees:[12,15,18], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Tapis de gym (1 par élève)","Repères visuels"],
-      description:"Apprentissage progressif des roulades avant et arrière sur tapis. L'enseignant supervise individuellement.",
-      etapes:["Position de départ (accroupi, menton poitrine)","Roulade avant guidée par l'enseignant","Roulade avant autonome (5 répétitions)","Roulade arrière (progression)","Enchaîner avant + arrière"],
-      variantes:["Roulade de côté","Roulade avec objet dans les mains","Roulade + position finale imposée"],
-    },
-    {
-      id:"STA_P3", categorie:"principal", nom:"⭐ Pyramides Humaines",
-      durees:[15,18,20], cycles:["2e cycle","3e cycle"],
-      materiel:["Tapis de gym","Fiches de pyramides illustrées"],
-      description:"Construction de pyramides à 2, 3, puis 4 personnes. Travail de confiance, de force et de communication.",
-      etapes:["Pyramides à 2 (10 min): 5 modèles illustrés","Pyramides à 3 (8 min): 3 modèles","Présentation des pyramides créées","Sécurité: un observateur par groupe"],
-      variantes:["Pyramides thématiques (animaux, lettres)","Créer sa propre pyramide","Passage fluide entre 2 pyramides"],
-    },
-    {
-      id:"STA_J1", categorie:"jeu", nom:"🎮 La Statue",
-      durees:[8,10], cycles:["Préscolaire","1er cycle"],
-      materiel:["Musique"],
-      description:"Quand la musique joue, les élèves dansent. Quand elle s'arrête, ils restent figés dans leur position (statue). Dernier à bouger gagne.",
-      etapes:["Musique joue: bouger librement","Musique s'arrête: statue immédiatement","L'enseignant observe qui bouge","Élimination douce","Varier les positions imposées (statue d'athlète, animal, etc.)"],
-      variantes:["Statue d'équilibre imposée","Statue en paire (se tenir)","Le gagnant choisit la prochaine statue"],
-    },
-    {
-      id:"STA_R1", categorie:"retour", nom:"🧘 Séquence de Yoga",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:["Tapis (optionnel)","Musique douce"],
-      description:"Séquence de postures de yoga adaptée pour revenir au calme: respiration, poses douces, relaxation finale.",
-      etapes:["Respiration abdominale (3 cycles)","Enfant (child's pose, 20s)","Chien tête en bas (20s)","Guerrier 1 (20s chaque côté)","Savasana (allongé, 1 min)"],
-      variantes:["Guidé par un élève","Avec visualisation guidée","Postures nommées en anglais ou dans une autre langue"],
-    },
-  ],
+  locomotion: {
+    mise_en_train: [
+      { id:'lo_mt_01', nom:'Loups et moutons', duree:5, cycles:['Préscolaire','1er cycle'], description:'Un ou deux loups chassent les moutons. Les moutons touchés s\'accroupissent et attendent qu\'un mouton libre les libère en leur tapant dans la main.', materiel:['Dossards (pour les loups)'], consignes:['Les loups portent un dossard. Ils essaient de toucher les moutons.','Si tu es touché, accroupis-toi et lève la main.','Un mouton libre peut te toucher pour te libérer.'], variante:'Les moutons libérés font 3 sauts avant de pouvoir être de nouveau chassés.' },
+      { id:'lo_mt_02', nom:'Parcours déplacements variés', duree:6, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Parcours avec 5 stations de déplacements: courir, sauter à cloche-pied, galoper, ramper, rouler. Les élèves complètent le circuit en boucle.', materiel:['Cônes de couleur','Tapis pour roulade','Cerceaux'], consignes:['Chaque zone de couleur correspond à un mode de déplacement.','Rouge = course rapide, bleu = saut cloche-pied, vert = galopade.','Complète le circuit 3 fois de suite.'], variante:'Les élèves créent eux-mêmes les règles de déplacement pour chaque zone.' },
+      { id:'lo_mt_03', nom:'Courses de réaction', duree:5, cycles:['1er cycle','2e cycle','3e cycle'], description:'En duo face à face. Signal de l\'enseignant indique l\'action. Travaille la réaction et les déplacements latéraux.', materiel:['Cônes','Marqueurs au sol'], consignes:['Debout face à face, 2 mètres entre vous.','Réagissez au signal de l\'enseignant le plus vite possible.','Qui réagit le premier et atteint le cône marque un point.'], variante:'L\'enseignant nomme la direction plutôt qu\'un signe.' },
+      { id:'lo_mt_04', nom:'Les noeuds humains', duree:6, cycles:['1er cycle','2e cycle','3e cycle'], description:'Les élèves se déplacent librement. Quand ils croisent quelqu\'un, ils se serrent la main et ne la lâchent plus. Quand 4 personnes sont liées, elles se démêlent.', materiel:[], consignes:['Marchez dans le gymnase et serrez la main des gens que vous croisez.','Ne lâchez jamais les mains que vous tenez.','Quand vous êtes 4 ensemble, essayez de vous démêler.'], variante:'Version course: créer un groupe de 8 et se démêler le plus vite possible.' },
+      { id:'lo_mt_05', nom:'Courir selon les couleurs', duree:5, cycles:['Préscolaire','1er cycle'], description:'L\'enseignant lève des cartons de couleur. Chaque couleur correspond à une action. Les élèves réagissent au signal visuel.', materiel:['Cartons de couleur'], consignes:['Regardez la couleur que je montre et faites l\'action correspondante.','Rouge = courez vite, bleu = marchez lentement, jaune = sautez.','Changez d\'action dès que la couleur change.'], variante:'Ajouter des couleurs: vert = galopade, violet = marche arrière.' },
+      { id:'lo_mt_06', nom:'Tail tag', duree:6, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Chaque élève a un foulard dans son short. Les élèves essaient de voler les queues des autres tout en protégeant la leur.', materiel:['1 foulard ou lanière par élève'], consignes:['Coincez votre foulard dans votre short, à l\'arrière.','Essayez de prendre le foulard des autres tout en gardant le vôtre.','Si vous perdez votre queue, continuez et essayez d\'en attraper une nouvelle.'], variante:'Version équipe: 2 couleurs de foulards, l\'équipe avec le plus de queues à la fin gagne.' },
+      { id:'lo_mt_07', nom:'Sprint et récupération', duree:6, cycles:['3e cycle','Secondaire'], description:'Intervalles sprint/marche. 10 secondes de sprint + 20 secondes de marche. Répéter 8 fois. Introduction à l\'entraînement par intervalles.', materiel:['Cônes','Chronomètre'], consignes:['Partez en sprint sur le signal.','Après 10 secondes, marchez doucement.','On répète 8 fois: 8 sprints, 8 récupérations.'], variante:'Version amusante: le sprint se fait dans des couloirs différents choisis au hasard.' },
+      { id:'lo_mt_08', nom:'Freeze tag coopératif', duree:5, cycles:['Préscolaire','1er cycle'], description:'Deux chasseurs tentent de geler les coureurs. Un coureur gelé s\'immobilise dans une statue drôle. Un coureur libre peut le dégeler en passant sous ses bras.', materiel:['Dossards pour les chasseurs'], consignes:['Les chasseurs essaient de vous toucher pour vous geler.','Quand tu es gelé, reste immobile dans une pose drôle.','Un ami libre peut passer sous tes bras pour te dégeler.'], variante:'Les coureurs gelés font une pose d\'animal, les libérateurs imitent l\'animal 1 seconde.' }
+    ],
+    partie_principale: [
+      { id:'lo_pp_01', nom:'Cross-training stations', duree:20, cycles:['3e cycle','Secondaire'], description:'6 stations de 3 minutes: sprint navette, saut à la corde, course de haies basses, slalom agilité, montées de genoux, course à reculons.', materiel:['Cordes à sauter','Haies basses','Cônes','Chronomètre'], consignes:['3 minutes par station, 30 secondes de transition.','Travaillez à intensité soutenue, pas maximum.','Comptez vos répétitions ou votre distance à chaque station.'], variante:'Compétition d\'équipe: somme des répétitions de toute l\'équipe à chaque station.' },
+      { id:'lo_pp_02', nom:'Parcours moteur complet', duree:20, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Grand parcours avec 8 obstacles variés: tunnel de tapis, haies, cerceaux de saut, zone d\'équilibre, slalom, etc. Les élèves complètent le parcours en boucle.', materiel:['Tapis','Cerceaux','Cônes','Haies','Bancs'], consignes:['Traversez le parcours dans l\'ordre des stations.','Chaque obstacle a une consigne affichée.','Respectez le sens du parcours pour éviter les collisions.'], variante:'Parcours en duo: les partenaires doivent rester ensemble tout au long du parcours.' },
+      { id:'lo_pp_03', nom:'Relais thématiques', duree:20, cycles:['1er cycle','2e cycle','3e cycle'], description:'Séries de relais avec différents modes de déplacement: course, saut, reculons, transportant un objet. Les équipes accumulent des points.', materiel:['Cônes','Dossards','Objets à transporter'], consignes:['4 équipes de 6. Chaque relais vaut des points (1 à 3 selon difficulté).','Attendez votre tour derrière la ligne de départ.','Passez le relais (touche l\'épaule) au suivant.'], variante:'Le relais final = double points. Les équipes choisissent leur meilleur coureur.' },
+      { id:'lo_pp_04', nom:'Course d\'orientation simplifiée', duree:20, cycles:['2e cycle','3e cycle'], description:'Mini-course d\'orientation dans le gymnase. Les élèves ont une carte simplifiée et trouvent 10 postes dans l\'ordre. Travail en duo.', materiel:['Cartes simplifiées','Postes numérotés','Pinces à papier'], consignes:['En duo, trouvez tous les postes dans l\'ordre indiqué sur votre carte.','À chaque poste, poinçonnez votre carte.','L\'équipe qui revient en premier avec tous les poinçons gagne.'], variante:'Ordre libre: trouver les postes dans l\'ordre le plus efficace selon votre stratégie.' }
+    ],
+    jeu: [
+      { id:'lo_j_01', nom:'Jeu des territoires', duree:12, cycles:['1er cycle','2e cycle','3e cycle'], description:'Le gymnase est divisé en 4 territoires. Chaque équipe défend son territoire et tente de conquérir les autres en y restant 5 secondes sans être touchée.', materiel:['Cônes de 4 couleurs','Dossards 4 couleurs'], consignes:['Chaque équipe défend son territoire (coin du gymnase).','Tu conquiers un territoire si tu y restes 5 secondes sans être touché.','L\'équipe avec le plus de territoires à la fin gagne.'], variante:'Les conquêtes sont permanentes (impossible de reperdre un territoire conquis).' },
+      { id:'lo_j_02', nom:'Poursuite en chaîne', duree:12, cycles:['1er cycle','2e cycle'], description:'Un chasseur attrape un fuyard. Ils se tiennent par la main et chassent ensemble. Chaque personne capturée rejoint la chaîne.', materiel:[], consignes:['Un chasseur au départ. Il attrape les autres en les touchant.','Dès qu\'il attrape quelqu\'un, ils se tiennent par la main.','La chaîne grandit. Seules les extrémités peuvent attraper.'], variante:'Quand la chaîne atteint 6 personnes, elle se divise en 2 chaînes indépendantes.' },
+      { id:'lo_j_03', nom:'Capture de drapeaux', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'Deux équipes protègent leur drapeau tout en essayant de capturer celui des adversaires. Les joueurs sont gelés en territoire adverse s\'ils sont touchés.', materiel:['2 foulards ou cônes de couleur','Dossards','Cônes pour délimiter'], consignes:['Protégez votre drapeau et essayez de capturer celui des adversaires.','En territoire adverse, si tu es touché, tu es gelé jusqu\'à être libéré.','Rapporter le drapeau adverse en zone = victoire.'], variante:'Version rapide: 5 minutes par manche, plusieurs manches avec changement de territoire.' }
+    ],
+    retour_au_calme: [
+      { id:'lo_rc_01', nom:'Yoga animal', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'L\'enseignant guide les élèves dans des postures de yoga inspirées des animaux: le chat, le chien, le cobra, l\'aigle. Retour au calme progressif.', materiel:[], consignes:['Trouvez un espace libre sur le plancher.','Suivez mes positions d\'animaux en respirant lentement.','Maintenez chaque pose 5 respirations profondes.'], variante:'Les élèves proposent un animal et toute la classe imite sa forme.' },
+      { id:'lo_rc_02', nom:'Course en mémoire', duree:4, cycles:['2e cycle','3e cycle','Secondaire'], description:'Assis en cercle, les élèves récitent ensemble les habiletés de locomotion utilisées. Chacun ajoute une habileté à la liste.', materiel:[], consignes:['En cercle, récapitulons tous les modes de déplacement utilisés aujourd\'hui.','Chacun ajoute un mode à la liste sans en répéter un déjà dit.','Essayons de faire le tour du cercle complet.'], variante:'Version physique: chaque élève démontre brièvement l\'habileté qu\'il nomme.' }
+    ]
+  },
 
-  cooperation: [
-    {
-      id:"COOP_E1", categorie:"echauffement", nom:"🔥 Le Nœud Humain",
-      durees:[5,7], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:[],
-      description:"Groupe de 8-10 élèves en cercle, mains entrelacées au centre, doivent se démêler sans lâcher les mains.",
-      etapes:["Former un cercle de 8-10","Tendre la main droite vers quelqu'un non-adjacent","Tendre la main gauche vers quelqu'un d'autre","Se démêler sans lâcher","Objectif: former un cercle (ou 2 cercles liés)"],
-      variantes:["Avec un défi de silence","Temps limite","Deux groupes en compétition"],
-    },
-    {
-      id:"COOP_P1", categorie:"principal", nom:"⭐ La Rivière Coopérative",
-      durees:[12,15,18], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Cerceaux (1 de moins que d'élèves)","Délimitation de la rivière"],
-      description:"Toute la classe doit traverser la rivière en utilisant des cerceaux comme îlots. Si un pied touche l'eau, tout le groupe recommence.",
-      etapes:["Définir la rivière (6-8m)","Distribuer N-1 cerceaux","L'équipe doit traverser en utilisant les cerceaux","Personne ne peut rester seul sur un îlot","Stratégie collective obligatoire"],
-      variantes:["Retirer des cerceaux (plus difficile)","Ajouter un objet à transporter","Traversée les yeux fermés pour 1 membre"],
-    },
-    {
-      id:"COOP_P2", categorie:"principal", nom:"⭐ Construction d'Équipe",
-      durees:[15,18,20], cycles:["2e cycle","3e cycle"],
-      materiel:["Défis écrits sur fiches","Matériaux variés selon le défi"],
-      description:"Les équipes reçoivent un défi physique coopératif à résoudre: transporter un objet sur une toile, traverser un espace en équipe, etc.",
-      etapes:["Former des équipes de 4-6","Distribuer le défi (lire et comprendre)","Temps de planification (3 min)","Réalisation (10 min)","Débriefing: comment avez-vous réussi?"],
-      variantes:["Défi 1: ballon transporté sur toile sans les mains","Défi 2: toute l'équipe sur une feuille (rétrécissant)","Défi 3: traverser sans toucher le sol (cerceaux)"],
-    },
-    {
-      id:"COOP_J1", categorie:"jeu", nom:"🎮 Ballon Coopératif",
-      durees:[10,12,15], cycles:["Préscolaire","1er cycle","2e cycle"],
-      materiel:["1 ballon gonflable léger","Délimitation du terrain"],
-      description:"Toute la classe coopère pour empêcher le ballon de tomber au sol. Défi collectif: battre le record de passes.",
-      etapes:["Former un grand cercle","Frapper le ballon vers le haut (une touche à la fois)","Compter les touches consécutives","Objectif: atteindre 20, 30, 50 touches","Défi: chaque élève doit toucher avant de répéter"],
-      variantes:["Deux ballons simultanément","Zone interdite (pas 2× de suite)","Ballon de plage vs ballon mousse (vitesse différente)"],
-    },
-    {
-      id:"COOP_R1", categorie:"retour", nom:"🧘 Massage en Chaîne",
-      durees:[4,5], cycles:["2e cycle","3e cycle"],
-      materiel:[],
-      description:"En file indienne, chaque élève masse doucement les épaules de la personne devant lui. Puis tout le monde se retourne.",
-      etapes:["Former une longue file","Mains sur les épaules de la personne devant","Massage doux des épaules (1 min)","Tout le monde se retourne","Massage dans l'autre sens"],
-      variantes:["Massage du dos (poings légers)","Ajouter de la musique douce","Consentement explicite avant de commencer"],
-    },
-  ],
+  stabilisation: {
+    mise_en_train: [
+      { id:'st_mt_01', nom:'Statues de glace', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Les élèves se déplacent librement. Au signal, ils s\'immobilisent dans une pose d\'équilibre et maintiennent la position 5 secondes.', materiel:[], consignes:['Déplacez-vous librement dans le gymnase.','Au signal, gelée! Restez immobiles dans une belle pose d\'équilibre.','Essayez des poses de plus en plus difficiles à chaque signal.'], variante:'Par duo: un partenaire choisit la pose, l\'autre doit la copier exactement.' },
+      { id:'st_mt_02', nom:'Marche de funambule', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Des lignes de ruban adhésif au sol servent de câbles. Les élèves marchent dessus les bras écartés.', materiel:['Ruban adhésif coloré'], consignes:['Marchez sur la ligne comme un funambule, les bras bien écartés.','Essayez de ne pas lever les pieds de la ligne.','Tournez au bout et revenez sur la même ligne.'], variante:'Marcher à reculons, yeux fermés (avec partenaire guide), ou sur la pointe des pieds.' },
+      { id:'st_mt_03', nom:'Équilibre partenaire', duree:6, cycles:['2e cycle','3e cycle'], description:'En duo, les élèves se tiennent par les mains face à face. Ils s\'éloignent progressivement en gardant l\'équilibre, puis essaient de s\'accroupir ensemble.', materiel:[], consignes:['Tenez-vous par les mains face à face.','Éloignez-vous progressivement en pliant les genoux.','Essayez de vous asseoir et de vous relever ensemble.'], variante:'Trio: 3 personnes en triangle se tiennent et tentent de s\'accroupir ensemble.' },
+      { id:'st_mt_04', nom:'Déplacements équilibre', duree:5, cycles:['1er cycle','2e cycle'], description:'Les élèves traversent le gymnase en marchant sur la pointe des pieds, puis les talons, puis en équilibre sur un pied avec 2 sauts entre chaque appui.', materiel:['Cônes pour délimiter'], consignes:['Traversez le gymnase sur la pointe des pieds.','Revenez sur les talons, en gardant les orteils en l\'air.','Troisième traversée: saut-équilibre (saut, atterrissage un pied, équilibre 2 sec).'], variante:'Parcours sur des surfaces variées: ligne, cerceau, tapis, banc.' }
+    ],
+    partie_principale: [
+      { id:'st_pp_01', nom:'Séquence gymnique', duree:20, cycles:['2e cycle','3e cycle'], description:'Les élèves créent une séquence gymnique de 5 éléments incluant: 1 roulade, 1 équilibre, 1 saut, 1 déplacement original, 1 élément libre.', materiel:['Tapis de gym'], consignes:['Créez une séquence de 5 éléments avec les éléments obligatoires.','Pratiquez individuellement pendant 10 minutes.','Présentez votre séquence à un groupe de 3 camarades.'], variante:'Créer la séquence en duo et la présenter synchronisés.' },
+      { id:'st_pp_02', nom:'Pyramides humaines', duree:20, cycles:['2e cycle','3e cycle'], description:'Par groupes de 4-6, les élèves créent des pyramides humaines simples et sûres. Accent sur la communication, la confiance et la sécurité.', materiel:['Tapis de gym'], consignes:['La sécurité avant tout: pas de pyramides dépassant 3 niveaux.','Communiquez avant de monter: "prêt?" "oui, vas-y!".','Maintenez la pose 5 secondes puis descendez doucement.'], variante:'Les groupes se photographient (enseignant) et votent pour la plus esthétique.' },
+      { id:'st_pp_03', nom:'Parcours équilibre avancé', duree:20, cycles:['1er cycle','2e cycle'], description:'Circuit de 6 stations: marcher sur un banc, sauter sur une jambe, équilibre sur demi-sphère, marche sur ligne les yeux fermés, etc.', materiel:['Bancs','Cerceaux','Demi-sphères d\'équilibre','Ruban adhésif'], consignes:['3 minutes par station au signal.','Essayez de dépasser vos limites sans prendre de risques.','Aidez-vous mutuellement pour les stations difficiles.'], variante:'Chronométrer chaque élève sur un parcours de 3 stations enchaînées.' }
+    ],
+    jeu: [
+      { id:'st_j_01', nom:'Le sculpteur et l\'argile', duree:10, cycles:['Préscolaire','1er cycle','2e cycle'], description:'En duo, le sculpteur place l\'argile dans une pose d\'équilibre. L\'argile maintient la pose pendant que le sculpteur tente de la faire tomber doucement.', materiel:[], consignes:['Le sculpteur place doucement l\'argile dans une pose.','L\'argile doit maintenir la pose et résister aux légères poussées.','Après 30 secondes, échangez les rôles.'], variante:'Le sculpteur nomme un animal et l\'argile crée la pose de cet animal.' },
+      { id:'st_j_02', nom:'Sumo des genoux', duree:10, cycles:['2e cycle','3e cycle','Secondaire'], description:'En duo, les deux élèves ont les mains dans le dos. Ils essaient de toucher les genoux de l\'autre avec leurs genoux. Développe l\'équilibre dynamique.', materiel:[], consignes:['Mains dans le dos. Essayez de toucher les genoux de votre adversaire.','Vous ne pouvez utiliser que vos jambes.','3 touches = gagné. Nouvelle manche, partenaire différent.'], variante:'Variante: toucher les pieds de l\'adversaire (plus complexe).' }
+    ],
+    retour_au_calme: [
+      { id:'st_rc_01', nom:'Respiration carrée', duree:4, cycles:['2e cycle','3e cycle','Secondaire'], description:'Technique de respiration: inspirer 4 secondes, retenir 4 secondes, expirer 4 secondes, retenir 4 secondes. Répéter 4 fois. Calme le système nerveux.', materiel:[], consignes:['Asseyez-vous confortablement, dos droit.','Inspirez pendant 4 temps: 1-2-3-4.','Retenez 4 temps, expirez 4 temps, retenez 4 temps. Répéter 4 fois.'], variante:'Visualiser un carré tracé dans sa tête à chaque côté de la respiration.' },
+      { id:'st_rc_02', nom:'Relaxation guidée', duree:5, cycles:['1er cycle','2e cycle','3e cycle'], description:'Allongés sur le dos, les élèves suivent une relaxation guidée. Contraction et relâchement progressif de chaque groupe musculaire.', materiel:['Musique douce'], consignes:['Allongez-vous sur le dos, bras le long du corps.','Suivez mes instructions: contractez puis relâchez chaque muscle.','Finissez par 2 minutes de silence total en respirant lentement.'], variante:'Avec musique de nature (forêt, mer) pour amplifier la relaxation.' }
+    ]
+  },
 
-  opposition: [
-    {
-      id:"OPP_E1", categorie:"echauffement", nom:"🔥 Défis de Réaction",
-      durees:[5,7,8], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Cônes de couleurs","Foulards"],
-      description:"En paires, un signal déclenche une réaction: attraper le foulard posé entre les deux avant l'adversaire.",
-      etapes:["En paires face à face (1m)","Foulard au sol entre les deux","Signal (clap, son): attraper le foulard","Tally des points","Varier les signaux (couleur, geste)"],
-      variantes:["Toucher un cône désigné","Réaction à un mot dans une liste","À 3 (1 contre 2)"],
-    },
-    {
-      id:"OPP_P1", categorie:"principal", nom:"⭐ Ballon Chasseur Pédagogique",
-      durees:[15,18,20], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["4-6 ballons de mousse","Cônes","Dossards 2 couleurs"],
-      description:"Apprentissage progressif du ballon chasseur avec accent sur les stratégies offensives et défensives.",
-      etapes:["Règles de base (5 min)","Jeu libre (5 min)","Pause stratégique: que faisons-nous bien/mal?","Jeu avec stratégie (5 min)","Évaluation collective"],
-      variantes:["Version prison","Version médicale","Version 3 équipes en triangle","Version avec zones de tir obligatoires"],
-    },
-    {
-      id:"OPP_P2", categorie:"principal", nom:"⭐ Mini-Tournoi d'Opposition",
-      durees:[15,18,20], cycles:["2e cycle","3e cycle"],
-      materiel:["Terrain délimité","Dossards","Feuille de résultats"],
-      description:"Tournoi d'opposition rapide (jeux à 5 points). Chaque équipe joue contre chaque équipe. Tableau des résultats affiché.",
-      etapes:["Former 4 équipes de 4-5","5 min par partie (jusqu'à 5 points)","Rotation: chaque équipe joue vs toutes les autres","Calculer les points totaux","Cérémonie simple (applaudissements)"],
-      variantes:["Ballon chasseur","Tag-foulard","Défi de précision","Jeu de leur choix (vote)"],
-    },
-    {
-      id:"OPP_J1", categorie:"jeu", nom:"🎮 Tag Stratégique",
-      durees:[10,12,15], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Foulards de couleurs (1 par élève)","Cônes"],
-      description:"Chaque élève a un foulard dans son dos. Objectif: attraper les foulards des autres sans perdre le sien.",
-      etapes:["Distribuer 1 foulard par élève (dans le dos du pantalon)","Attraper les foulards des autres","Celui qui perd son foulard continue (compter ses captures)","Fin: compter les foulards capturés","Discussion: quelle stratégie a fonctionné?"],
-      variantes:["En équipes (protéger les coéquipiers)","Zone de sécurité (30 secondes max)","Foulard dans le dos + une main attachée (défi)"],
-    },
-    {
-      id:"OPP_R1", categorie:"retour", nom:"🧘 Analyse Tactique",
-      durees:[5,7], cycles:["2e cycle","3e cycle"],
-      materiel:["Tableau ou papier grand format","Marqueur"],
-      description:"Retour sur les stratégies utilisées: dessiner le terrain, montrer les stratégies efficaces et celles à améliorer.",
-      etapes:["Dessiner le terrain au tableau","Demander: quelle stratégie avez-vous utilisée?","Identifier ce qui a fonctionné","Identifier ce à améliorer","Proposer une nouvelle stratégie pour la prochaine fois"],
-      variantes:["Les élèves dessinent eux-mêmes","Discussion en équipes avant partage général","Écrire 1 chose apprise"],
-    },
-  ],
+  cooperation: {
+    mise_en_train: [
+      { id:'co_mt_01', nom:'La toile d\'araignée', duree:6, cycles:['1er cycle','2e cycle','3e cycle'], description:'Une pelote de laine est lancée d\'élève en élève en tenant le fil. Chaque élève dit son prénom et son animal préféré avant de lancer. Résultat: une toile reliant toute la classe.', materiel:['1 pelote de laine'], consignes:['Tenez le fil et lancez la pelote à quelqu\'un.','Avant de lancer, dites votre prénom et votre animal préféré.','Gardez le fil tendu pour former une belle toile.'], variante:'Thème différent selon la semaine: sport préféré, couleur, super-pouvoir.' },
+      { id:'co_mt_02', nom:'Noeud humain', duree:5, cycles:['2e cycle','3e cycle'], description:'Groupe de 8. Chacun tends les deux mains et attrape les mains de deux personnes différentes. L\'équipe doit se démêler sans lâcher les mains.', materiel:[], consignes:['Formez un cercle et fermez les yeux.','Tendez les mains et attrapez 2 mains de personnes différentes.','Ouvrez les yeux et essayez de vous démêler sans lâcher.'], variante:'Chronométrer combien de temps prend le démêlage. Battre le record!' },
+      { id:'co_mt_03', nom:'Miroir en duo', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Face à face, un élève fait des mouvements lents et l\'autre les imite comme un miroir. Accent sur la synchronisation et la communication non-verbale.', materiel:[], consignes:['Face à face avec votre partenaire, à un bras de distance.','L\'élève A fait des mouvements très lents.','L\'élève B imite exactement comme un miroir. Puis échangez.'], variante:'Deviner qui mène et qui suit (les deux bougent si lentement qu\'on ne sait plus).' },
+      { id:'co_mt_04', nom:'Machine humaine', duree:6, cycles:['2e cycle','3e cycle'], description:'Groupes de 5. Chaque élève fait un mouvement répétitif. Le premier commence, puis chaque élève s\'ajoute avec un mouvement qui s\'articule avec le précédent.', materiel:[], consignes:['Le premier élève fait un mouvement en boucle (ex: bras en pendule).','Le deuxième s\'approche et ajoute un mouvement qui se connecte.','Continuez jusqu\'à ce que toute la machine fonctionne.'], variante:'La machine fait un son! Chaque élève ajoute un son à son mouvement.' },
+      { id:'co_mt_05', nom:'Compter ensemble', duree:4, cycles:['1er cycle','2e cycle','3e cycle'], description:'En cercle les yeux fermés, l\'équipe tente de compter jusqu\'à 20. Si deux personnes parlent en même temps, on repart de 1. Développe l\'écoute et la coordination.', materiel:[], consignes:['En cercle, yeux fermés.','Quelqu\'un dit "un", une autre dit "deux", etc.','Si deux voix parlent en même temps, on repart de zéro.'], variante:'Version avancée: sans parler, juste avec des sons ou tapotements.' }
+    ],
+    partie_principale: [
+      { id:'co_pp_01', nom:'Volleyball coopératif', duree:20, cycles:['2e cycle','3e cycle','Secondaire'], description:'Volleyball sans filet, tout le monde du même côté. L\'objectif est collectif: maintenir le ballon en l\'air le plus longtemps possible. Record de classe à battre.', materiel:['1 ballon de volleyball léger'], consignes:['Tout le monde ensemble dans la moitié du gymnase.','Maintenez le ballon en l\'air en vous passant la balle.','Comptez les touches consécutives. Record à battre!'], variante:'Règle: chaque élève doit toucher le ballon une fois avant qu\'il retouche le sol.' },
+      { id:'co_pp_02', nom:'Basketball coopératif', duree:20, cycles:['3e cycle','Secondaire'], description:'Basketball avec règle de coopération forcée: avant de marquer, chaque membre de l\'équipe doit avoir touché le ballon. Favorise l\'inclusion de tous.', materiel:['Ballon de basketball','Paniers ou cibles','Dossards'], consignes:['Avant de tirer, tous les membres de ton équipe doivent avoir touché le ballon.','5 passes minimum incluant tous les membres.','Si quelqu\'un n\'a pas touché, la séquence recommence.'], variante:'La règle change toutes les 5 minutes (ex: tir à main gauche uniquement).' },
+      { id:'co_pp_03', nom:'Ultimate frisbee', duree:20, cycles:['3e cycle','Secondaire'], description:'Ultimate frisbee simplifié. Pas de contact, pas de marche avec le frisbee. L\'équipe marque en attrapant dans la zone de but adverse.', materiel:['1 frisbee','Dossards','Cônes pour délimiter'], consignes:['Tu ne peux pas marcher avec le frisbee, tu as 10 secondes pour passer.','Pas de contact. Interception = changement de possession.','Touché dans la zone de but = 1 point.'], variante:'Version débutants: le lanceur peut faire 3 pas avant de passer.' },
+      { id:'co_pp_04', nom:'Tour de cerceau record', duree:15, cycles:['1er cycle','2e cycle'], description:'En cercle, les élèves se tiennent par la main. Un cerceau doit faire le tour du cercle sans que personne ne lâche les mains. Record de vitesse à battre.', materiel:['1 ou 2 cerceaux par groupe'], consignes:['Tenez-vous par la main en cercle.','Le cerceau doit passer autour de chaque corps sans lâcher les mains.','Chronométrez! Battez votre propre record.'], variante:'Deux cerceaux dans des sens opposés se croisent au milieu du cercle.' }
+    ],
+    jeu: [
+      { id:'co_j_01', nom:'L\'ile aux trésors coopérative', duree:12, cycles:['1er cycle','2e cycle'], description:'L\'équipe doit traverser le gymnase en utilisant seulement des cerceaux comme pierres. Tout le monde doit traverser.', materiel:['Cerceaux (moins que le nombre d\'élèves)'], consignes:['Vous devez tous traverser le gymnase en marchant seulement dans les cerceaux.','Un cerceau vide peut être déplacé pour aider le groupe.','Personne ne doit toucher le sol "océan".'], variante:'Version chronométrée: combien de temps pour que toute l\'équipe traverse?' },
+      { id:'co_j_02', nom:'Ballon prisonnier coopératif', duree:12, cycles:['1er cycle','2e cycle','3e cycle'], description:'Version coopérative du ballon chasseur. Tout le monde dans la même équipe contre un chronomètre. Objectif: tout le monde est touché dans le plus court délai.', materiel:['3-4 balles de mousse'], consignes:['Cette fois, vous êtes TOUS dans la même équipe.','Les lanceurs essaient de toucher tout le monde.','Une fois touché, tu prends une balle et tu aides à toucher les autres.'], variante:'Record de classe: en combien de secondes peut-on toucher tout le monde?' },
+      { id:'co_j_03', nom:'Défi collectif 100 passes', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'Toute la classe doit faire 100 passes sans faire tomber le ballon. Chaque groupe fait ses passes en parallèle et les totaux sont additionnés.', materiel:['1 ballon par groupe de 6'], consignes:['Groupes de 6. Faites le maximum de passes sans interruption.','Comptez vos passes à voix haute.','Toute la classe additionne ses passes: objectif 100!'], variante:'Défi 1000 passes sur la semaine: tenir un tableau de bord de classe.' }
+    ],
+    retour_au_calme: [
+      { id:'co_rc_01', nom:'Cercle de gratitude', duree:5, cycles:['Préscolaire','1er cycle','2e cycle','3e cycle'], description:'Assis en cercle, chaque élève complète la phrase "Aujourd\'hui, j\'ai apprécié quand [prénom] a..." en nommant un camarade et une action positive.', materiel:[], consignes:['Asseyez-vous en cercle sur le plancher.','Chacun complète la phrase "J\'ai apprécié quand [prénom] a..."','Nommez quelqu\'un de différent de votre voisin.'], variante:'Écrire le compliment sur un post-it et le donner à la personne nommée.' },
+      { id:'co_rc_02', nom:'Discussion stratégies d\'équipe', duree:4, cycles:['3e cycle','Secondaire'], description:'L\'enseignant demande aux élèves d\'analyser les stratégies qui ont fonctionné. Quelles formations, communications, décisions ont aidé l\'équipe?', materiel:[], consignes:['Qu\'est-ce qui a bien fonctionné pour votre équipe aujourd\'hui?','Quelle stratégie pourriez-vous améliorer?','Comment la communication de l\'équipe pourrait-elle être meilleure?'], variante:'Les équipes dessinent leur stratégie sur une feuille et la partagent à la classe.' }
+    ]
+  },
 
-  expression: [
-    {
-      id:"EXP_E1", categorie:"echauffement", nom:"🔥 Miroir en Mouvement",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:[],
-      description:"En paires, un élève fait des mouvements lents que l'autre imite comme un miroir. Échange des rôles.",
-      etapes:["En paires face à face","Leader fait des mouvements très lents","Miroir suit simultanément","Changer de leader après 2 min","Difficile: les deux ensemble, sans leader désigné"],
-      variantes:["Avec musique slow","En groupe de 4 (2 miroirs)","Mouvements thématiques (nature, sport, travail)"],
-    },
-    {
-      id:"EXP_P1", categorie:"principal", nom:"⭐ Création Chorégraphique",
-      durees:[15,18,20], cycles:["2e cycle","3e cycle"],
-      materiel:["Musique variée","Lecteur audio"],
-      description:"Les élèves créent en groupes une chorégraphie de 16 temps sur une musique choisie. Contraintes créatives imposées.",
-      etapes:["Former des groupes de 4-5","Écouter la musique (1 min)","Créer 8 mouvements au minimum","Répétition (5 min)","Présentation au groupe (30s par équipe)"],
-      variantes:["Thème imposé (animaux, sports, nature)","Contrainte: niveau au sol obligatoire","Contrainte: formation symétrique","Contrainte: 1 élément acrobatique"],
-    },
-    {
-      id:"EXP_P2", categorie:"principal", nom:"⭐ Danse Culturelle du Monde",
-      durees:[15,18,20], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Musique authentique du pays","Foulards optionnels"],
-      description:"Apprentissage d'éléments d'une danse d'une culture du monde: haka (Nouvelle-Zélande), samba (Brésil), tinikling (Philippines), etc.",
-      etapes:["Présentation culturelle (2 min, images si possible)","Apprentissage progressif des pas (8 min)","Pratique en groupe (5 min)","Danse complète","Discussion: que retiens-tu de cette culture?"],
-      variantes:["Haka (Nouvelle-Zélande)","Samba (Brésil)","Tinikling aux bâtons (Philippines)","Danse autochtone québécoise","Capoeira de base (Brésil)"],
-    },
-    {
-      id:"EXP_J1", categorie:"jeu", nom:"🎮 Freeze Danse Expressif",
-      durees:[8,10], cycles:["Préscolaire","1er cycle"],
-      materiel:["Musique variée (différents styles)"],
-      description:"Les élèves dansent sur la musique et doivent s'arrêter dans une pose expressive quand elle s'arrête. L'enseignant commente les poses créatives.",
-      etapes:["Musique joue: danse libre","Musique stop: pose expressive immédiate","L'enseignant nomme 2-3 poses originales","Recommencer avec musique différente","Thème: 'Cette fois, bougez comme si vous étiez sous l'eau'"],
-      variantes:["Thèmes: bonheur, tristesse, surprise, colère (émotions)","Bougez comme un robot","Bougez en slow-motion","Bougez comme votre animal préféré"],
-    },
-    {
-      id:"EXP_R1", categorie:"retour", nom:"🧘 Relaxation Guidée",
-      durees:[5,7,8], cycles:["Préscolaire","1er cycle","2e cycle","3e cycle"],
-      materiel:["Tapis","Musique douce ou nature"],
-      description:"Allongés sur le dos, les élèves suivent une courte relaxation guidée par la voix de l'enseignant. Images positives et respiration.",
-      etapes:["S'allonger sur le dos","Fermer les yeux","Respiration: inspire 4 temps, expire 4 temps","Visualisation: 'Tu es sur une plage calme...'","Retour progressif: bouger les doigts, les orteils, s'étirer"],
-      variantes:["En position assise (si pas de tapis)","Guidé par un élève","Thèmes: forêt, plage, montagne, espace"],
-    },
-  ],
+  opposition: {
+    mise_en_train: [
+      { id:'op_mt_01', nom:'Pierre-papier-ciseaux express', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Variante physique du pierre-papier-ciseaux. Les élèves se déplacent et jouent contre n\'importe qui. Le gagnant récupère le dossard du perdant.', materiel:['Petits objets ou dossards'], consignes:['Déplacez-vous dans le gymnase.','Croisez quelqu\'un, jouez pierre-papier-ciseaux.','Le gagnant prend l\'objet du perdant. Qui en a le plus?'], variante:'Version physique: le perdant fait 3 sauts avant de rejouer.' },
+      { id:'op_mt_02', nom:'Sumo de pouce', duree:5, cycles:['2e cycle','3e cycle','Secondaire'], description:'En duo, les élèves s\'agrippent mutuellement les 4 doigts sauf les pouces et jouent au sumo de pouce. Développe la réactivité et la stratégie.', materiel:[], consignes:['Tenez la main de votre partenaire en pliant les 4 doigts.','Essayez d\'appuyer votre pouce sur la main de l\'autre 3 fois.','Meilleur des 5 manches gagne.'], variante:'Jouer en simultané avec les deux mains!' },
+      { id:'op_mt_03', nom:'La guerre des queues', duree:6, cycles:['1er cycle','2e cycle','3e cycle'], description:'Chaque élève a un foulard dans son dos. Les élèves tentent de prendre les foulards des autres. Des zones safe permettent une récupération de 5 secondes.', materiel:['Foulards ou lanières','Cônes pour zones safe'], consignes:['Prenez les foulards des autres tout en gardant le vôtre.','Les zones bleues sont "safe": tu peux t\'y reposer 5 secondes.','Celui avec le plus de foulards à la fin gagne.'], variante:'Version équipe: 2 couleurs de foulards, l\'équipe qui perd tous ses foulards a perdu.' },
+      { id:'op_mt_04', nom:'Poussée de mains', duree:5, cycles:['3e cycle','Secondaire'], description:'Face à face, paumes contre paumes. L\'objectif est de faire perdre l\'équilibre à l\'adversaire en le poussant ou en esquivant, sans agripper.', materiel:[], consignes:['Paumes contre paumes, pieds écartés à la largeur des épaules.','Essayez de faire bouger les pieds de votre adversaire.','Pas d\'agrippement, seulement des poussées et des esquives.'], variante:'Variante: un pied surélevé (équilibre encore plus difficile).' }
+    ],
+    partie_principale: [
+      { id:'op_pp_01', nom:'Badminton singulier technique', duree:20, cycles:['3e cycle','Secondaire'], description:'Tournoi de badminton singulier. Matchs de 5 minutes ou 9 points. Accent sur la tactique et la lecture de l\'adversaire.', materiel:['Raquettes','Volants','Filet'], consignes:['Matchs jusqu\'à 9 points ou 5 minutes.','Service diagonal, alternance des services.','Après chaque manche, changez d\'adversaire.'], variante:'Zone bonus sur le terrain: si le volant atterrit dans la zone, 2 points.' },
+      { id:'op_pp_02', nom:'Lutte douce debout', duree:20, cycles:['3e cycle','Secondaire'], description:'Duels debout dans un cercle délimité. L\'objectif est de faire sortir l\'adversaire du cercle. Prises de bras et d\'épaules seulement.', materiel:['Cerceaux ou ruban adhésif','Tapis autour'], consignes:['Tu dois rester dans le cercle et faire sortir l\'adversaire.','Prises de bras et d\'épaules seulement, pas au cou.','Si tu tombes ou sors du cercle, ton adversaire marque un point.'], variante:'Version lente: les deux joueurs doivent bouger à demi-vitesse.' },
+      { id:'op_pp_03', nom:'Stratégie 2 contre 1', duree:20, cycles:['3e cycle','Secondaire'], description:'Exercice tactique 2 contre 1. Les 2 attaquants progressent vers la zone de but défendue par 1 défenseur. Rotation toutes les 3 minutes.', materiel:['Ballon','Cônes','Dossards'], consignes:['2 attaquants essaient de marquer contre 1 défenseur.','Les attaquants ne peuvent pas courir avec le ballon.','Si le défenseur intercepte, il devient attaquant.'], variante:'Évoluer vers 3 contre 2 quand les élèves maîtrisent le 2 contre 1.' }
+    ],
+    jeu: [
+      { id:'op_j_01', nom:'Tournoi de poules express', duree:15, cycles:['3e cycle','Secondaire'], description:'Tournoi express en poules de 4. Matchs de 3-4 minutes dans le sport du jour. Les 2 premiers de chaque poule en demi-finale.', materiel:['Matériel du sport choisi','Tableau de poules'], consignes:['4 équipes par poule. Vous jouez contre les 3 autres équipes.','Victoire = 2 pts, Nul = 1 pt, Défaite = 0 pt.','Les 2 premiers de chaque poule en demi-finale.'], variante:'Attribution des points différente: victoire écrasante = 3 pts.' },
+      { id:'op_j_02', nom:'Duel à la balle', duree:12, cycles:['2e cycle','3e cycle'], description:'En duo avec chacun une balle, ils lancent simultanément et tentent de frapper la balle de l\'adversaire. Réflexe et précision.', materiel:['2 balles par duo','Zone délimitée'], consignes:['Placez-vous à 4 mètres face à face, chacun avec une balle.','Au signal, lancez vos balles simultanément pour toucher celle de l\'autre.','Si vos balles se touchent, le but est atteint ensemble!'], variante:'Version coopérative: faire se toucher les 2 balles le plus souvent possible.' }
+    ],
+    retour_au_calme: [
+      { id:'op_rc_01', nom:'Analyse du duel', duree:5, cycles:['3e cycle','Secondaire'], description:'Discussion guidée sur les stratégies de duel. L\'enseignant demande aux élèves d\'identifier ce qui a fonctionné et comment s\'améliorer.', materiel:[], consignes:['Asseyez-vous avec votre dernier adversaire.','Discutez: qu\'est-ce qui t\'a posé problème?','Donnez-vous mutuellement 1 conseil d\'amélioration.'], variante:'Écrire le conseil dans son journal d\'entraînement.' },
+      { id:'op_rc_02', nom:'Sportsmanship moment', duree:3, cycles:['1er cycle','2e cycle','3e cycle','Secondaire'], description:'Chaque élève serre la main de tous ses adversaires de la séance en leur disant quelque chose de positif. Développe l\'esprit sportif.', materiel:[], consignes:['Trouvez chaque personne contre qui vous avez joué aujourd\'hui.','Serrez-lui la main et dites-lui quelque chose de positif.','Exemple: "Bon match", "Tu es rapide", "Super stratégie".'], variante:'Écrire le compliment sur un bout de papier et le remettre à la personne.' }
+    ]
+  },
 
-  manipulation_engins: [
-    {
-      id:"MEG_E1", categorie:"echauffement", nom:"🔥 Maîtrise de la Raquette",
-      durees:[5,7], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["1 raquette par élève","1 volant/balle par élève"],
-      description:"Exercices de prise en main et contrôle de la raquette: équilibre du volant, frappes douces en l'air.",
-      etapes:["Tenir la raquette correctement (démo)","Équilibrer le volant sur la raquette (30s)","Frapper doucement vers le haut (10 fois)","Marcher en équilibrant le volant","Jongler: alterner raquette avant/arrière"],
-      variantes:["Raquette non-dominante","Yeux fermés (équilibrer)","Compétition amicale de jonglage"],
-    },
-    {
-      id:"MEG_P1", categorie:"principal", nom:"⭐ Échanges Progressifs",
-      durees:[10,12,15], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["1 raquette par élève","1 volant/balle pour 2"],
-      description:"En paires, progression des échanges: filet imaginaire, filet réel. Distance et complexité augmentent.",
-      etapes:["À 2m: frapper vers le haut (10 échanges)","À 3m: échanges directs","Introduire un filet ou une ligne","10 échanges consécutifs comme défi","Tournoi amical (5 points)"],
-      variantes:["Coup droit seulement","Alterner coup droit / revers","Placement (viser les côtés du terrain)"],
-    },
-    {
-      id:"MEG_P2", categorie:"principal", nom:"⭐ Hockey Doux",
-      durees:[12,15,18], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Bâtons de hockey mousse","Balles ou rondelles légères","Buts","Dossards"],
-      description:"Apprentissage du hockey adapté: contrôle de la rondelle, passes, jeu avec filets. En équipes de 3-4.",
-      etapes:["Contrôle de la rondelle (3 min)","Passes en paires (3 min)","Mini-jeu 3v3 (5 min)","Rotation des équipes","Tournoi final"],
-      variantes:["Sans gardien (but ouvert)","Obligation de 3 passes avant de tirer","Hockey assis (accessibilité)"],
-    },
-    {
-      id:"MEG_R1", categorie:"retour", nom:"🧘 Étirements des Avant-Bras",
-      durees:[4,5], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:[],
-      description:"Étirements ciblés sur les muscles sollicités par la manipulation d'engins: avant-bras, poignets, épaules.",
-      etapes:["Tendre le bras, plier le poignet vers le bas (20s)","Plier le poignet vers le haut (20s)","Rotation complète des poignets (10×)","Étirement de l'épaule (croiser le bras)","Respiration finale"],
-      variantes:["Guidé par un élève","Ajouter l'étirement du cou","Massage des avant-bras"],
-    },
-  ],
+  expression_corporelle: {
+    mise_en_train: [
+      { id:'ec_mt_01', nom:'Météo corporelle', duree:5, cycles:['Préscolaire','1er cycle','2e cycle'], description:'L\'enseignant dit une météo et les élèves expriment comment leur corps se sent: vent = tourbillonner, soleil = s\'étirer, pluie = petits pas rapides, neige = mouvements lents.', materiel:[], consignes:['Écoutez la météo et montrez-la avec votre corps.','Vent: tourbillonnez doucement. Soleil: étirez-vous vers le haut en souriant.','Neige: bougez très lentement comme au ralenti.'], variante:'Les élèves proposent leur propre météo et le groupe l\'exprime.' },
+      { id:'ec_mt_02', nom:'Stop danse', duree:6, cycles:['Préscolaire','1er cycle','2e cycle','3e cycle'], description:'Quand la musique joue, les élèves dansent librement. Quand elle s\'arrête, ils font une pose créative thématique et la maintiennent.', materiel:['Système de son','Musique variée'], consignes:['Dansez librement pendant la musique.','Quand la musique s\'arrête, créez une pose originale et tenez-la.','Restez dans votre pose jusqu\'à ce que la musique reprenne.'], variante:'Thème imposé: pose d\'un sport, d\'un animal, d\'un super-héros.' },
+      { id:'ec_mt_03', nom:'L\'écho corporel', duree:5, cycles:['Préscolaire','1er cycle'], description:'L\'enseignant fait un mouvement simple, les élèves le répètent exactement. Progressivement les mouvements deviennent plus complexes et plus rapides.', materiel:[], consignes:['Regardez-moi et copiez exactement mon mouvement.','Je fais → vous faites, comme un écho de mouvement.','Les mouvements vont devenir plus rapides et plus complexes.'], variante:'Un élève devient le meneur à tour de rôle.' },
+      { id:'ec_mt_04', nom:'Improv corporelle', duree:6, cycles:['2e cycle','3e cycle','Secondaire'], description:'L\'enseignant nomme un mot et les élèves l\'expriment immédiatement avec leur corps: joie, tristesse, vitesse, pesanteur, légèreté.', materiel:['Liste de mots'], consignes:['Dès que j\'annonce le mot, exprimez-le avec votre corps.','Utilisez tout votre corps: visage, bras, jambes, niveau dans l\'espace.','Pas de bon ou mauvais, votre interprétation est unique.'], variante:'Jouer en duo: un dit le mot, l\'autre l\'exprime.' }
+    ],
+    partie_principale: [
+      { id:'ec_pp_01', nom:'Chorégraphie en groupe', duree:25, cycles:['2e cycle','3e cycle','Secondaire'], description:'Groupes de 5-6. Créer une chorégraphie de 30 secondes incluant: 1 entrée, 3 enchaînements, 1 fin spectaculaire. Présentation à la classe.', materiel:['Système de son','Musique de différents genres'], consignes:['20 minutes de création en groupe.','Votre chorégraphie doit avoir un début, un milieu et une fin.','Incluez au moins 3 formations spatiales différentes.'], variante:'Thème imposé: une époque musicale, un pays, un film ou un sport.' },
+      { id:'ec_pp_02', nom:'Danse des émotions', duree:20, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Exploration guidée de 5 émotions par le mouvement. Pour chaque émotion, les élèves dansent librement pendant 2 minutes.', materiel:['Musique adaptée à chaque émotion','Système de son'], consignes:['Bougez en ressentant l\'émotion du moment.','Joie: léger, sauts, sourires. Colère: fort, saccadé. Peur: rapide, recroquevillé.','L\'enseignant annonce l\'émotion et la musique change.'], variante:'Les élèves choisissent une émotion et les autres doivent deviner laquelle.' },
+      { id:'ec_pp_03', nom:'Hip-hop initiation', duree:20, cycles:['3e cycle','Secondaire'], description:'Apprentissage de 6 moves de base: running man, deux-pas, krump, wave, robot, moonwalk simplifié. Puis création d\'une séquence personnelle.', materiel:['Système de son','Musique hip-hop'], consignes:['Apprenez chaque mouvement de base séparément.','Pratiquez chaque move 30 secondes.','Assemblez 3 moves de votre choix pour créer votre signature.'], variante:'Battle en duo: chacun présente sa signature et le groupe vote pour l\'ambiance.' }
+    ],
+    jeu: [
+      { id:'ec_j_01', nom:'Danse des statues créative', duree:10, cycles:['1er cycle','2e cycle','3e cycle'], description:'Pendant la musique, les élèves dansent librement. Quand elle s\'arrête, l\'enseignant donne un thème et les élèves créent une statue liée au thème.', materiel:['Système de son','Musique variée'], consignes:['Dansez librement pendant la musique.','Stop! Créez une statue de: (sport, animal, super-héros...).','Vous avez 5 secondes pour créer votre statue.'], variante:'Duo: deux personnes forment ensemble une sculpture thématique.' },
+      { id:'ec_j_02', nom:'Flashmob classe', duree:15, cycles:['2e cycle','3e cycle','Secondaire'], description:'La classe apprend une courte chorégraphie (8 temps × 4 séquences). Au signal secret, tous entament la chorégraphie ensemble.', materiel:['Système de son','Chorégraphie simple préparée'], consignes:['Apprenez les 4 séquences de 8 temps.','Pratiquez jusqu\'à mémorisation complète.','Au signal (coup de sifflet), lancez la chorégraphie sans préavis!'], variante:'Présenter le flashmob à une autre classe ou dans la cour.' }
+    ],
+    retour_au_calme: [
+      { id:'ec_rc_01', nom:'Danse lente du retour', duree:4, cycles:['Préscolaire','1er cycle','2e cycle','3e cycle'], description:'Musique douce et lente. Les élèves bougent au ralenti en explorant des mouvements fluides. Transition progressive vers l\'immobilité complète.', materiel:['Musique douce (classique, ambient)'], consignes:['Bougez très lentement au rythme de la musique douce.','Explorez des mouvements fluides comme dans l\'eau.','Progressivement, vos mouvements deviennent plus petits jusqu\'à l\'immobilité.'], variante:'Terminer allongé au sol, les yeux fermés, 1 minute de silence total.' },
+      { id:'ec_rc_02', nom:'Journal de mouvement', duree:5, cycles:['3e cycle','Secondaire'], description:'Chaque élève note dans son journal: 1 mouvement découvert, 1 émotion exprimée, 1 point à améliorer.', materiel:['Journal de mouvement','Crayons'], consignes:['Ouvrez votre journal à la page d\'aujourd\'hui.','Notez 1 mouvement découvert, 1 émotion exprimée, 1 point à améliorer.','5 minutes de réflexion personnelle en silence.'], variante:'Dessiner plutôt qu\'écrire pour les cycles plus jeunes.' }
+    ]
+  },
 
-  plein_air: [
-    {
-      id:"PA_E1", categorie:"echauffement", nom:"🔥 Marche Active en Nature",
-      durees:[5,8,10], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Terrain extérieur"],
-      description:"Marche rapide dans la cour en observant la nature. L'enseignant pose des défis d'observation.",
-      etapes:["Marche normale (2 min)","Marche rapide avec bras actifs (2 min)","Arrêts d'observation (1 min): trouver 3 choses vertes","Course légère (1 min)","Retour à la marche"],
-      variantes:["Course d'orientation simple (trouver des balises)","Marche en silence (écouter la nature)","Marche avec défis d'équilibre naturels (branches, roches)"],
-    },
-    {
-      id:"PA_P1", categorie:"principal", nom:"⭐ Initiation à l'Orientation",
-      durees:[15,18,20], cycles:["2e cycle","3e cycle"],
-      materiel:["Carte simple de la cour","Boussoles","Balises numérotées"],
-      description:"Trouver des balises cachées dans la cour à l'aide d'une carte et d'une boussole simplifiée.",
-      etapes:["Présentation de la carte et boussole (5 min)","Trouver les points cardinaux sur le terrain","Chercher 5 balises en équipe de 2","Récupérer le code de chaque balise","Équipe avec tous les codes gagne"],
-      variantes:["Balises avec défis sportifs","Avec QR codes sur balises","Course d'orientation chronométrée"],
-    },
-    {
-      id:"PA_J1", categorie:"jeu", nom:"🎮 Jeux Traditionnels Extérieurs",
-      durees:[12,15,18], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Craie pour tracer","Matériaux naturels"],
-      description:"Jeux de cour traditionnels québécois et du monde: marelle, élastique, tague, billes adaptées.",
-      etapes:["Choisir 2-3 jeux avec vote","Tracer les zones si nécessaire","Jeu par rotation (5 min chacun)","Discussion: d'où viennent ces jeux?","Créer une variante"],
-      variantes:["Marelle québécoise","Élastique (comptines)","Poison (tag avancé)","Jeu autochtone: lancé de mocassin adapté"],
-    },
-    {
-      id:"PA_R1", categorie:"retour", nom:"🧘 Cercle de la Nature",
-      durees:[5,7], cycles:["1er cycle","2e cycle","3e cycle"],
-      materiel:["Terrain naturel"],
-      description:"Assis en cercle dans la nature, les élèves partagent une observation naturelle et font des respirations profondes en plein air.",
-      etapes:["S'asseoir en cercle sur l'herbe ou pavement","Chacun partage 1 chose observée dans la nature","3 respirations profondes ensemble","Qu'as-tu aimé aujourd'hui en plein air?","Ramasser tout déchet visible (responsabilité)"],
-      variantes:["Écrire une observation dans le journal","Dessiner rapidement la nature observée","Méditation courte en plein air"],
-    },
-  ],
+  plein_air: {
+    mise_en_train: [
+      { id:'pa_mt_01', nom:'Exploration sensorielle', duree:6, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Dans la cour ou la nature, les élèves explorent en silence pendant 3 minutes. Ils observent, touchent, écoutent et sentent leur environnement. Puis partagent leurs découvertes.', materiel:[], consignes:['Pendant 3 minutes, explorez en silence.','Trouvez quelque chose que vous pouvez observer, toucher, écouter, sentir.','Retournez au groupe et partagez votre découverte préférée.'], variante:'Créer une carte sensorielle avec des dessins de leurs découvertes.' },
+      { id:'pa_mt_02', nom:'Marche d\'échauffement nature', duree:6, cycles:['Préscolaire','1er cycle','2e cycle','3e cycle'], description:'Marche active dans le terrain naturel. L\'enseignant nomme des actions à accomplir en marchant: franchir un obstacle, tourner autour d\'un arbre, avancer à reculons.', materiel:[], consignes:['Suivez-moi en marchant rapidement.','Quand je dis "arbre", touchez-en un le plus vite possible.','Quand je dis "sol": asseyez-vous et relevez-vous.'], variante:'Les élèves à tour de rôle deviennent meneurs et inventent les défis.' },
+      { id:'pa_mt_03', nom:'Kim nature', duree:5, cycles:['1er cycle','2e cycle'], description:'L\'enseignant dispose 10 éléments naturels sur une surface. Les élèves observent 30 secondes, puis se retournent. L\'enseignant enlève un objet. Qui manque?', materiel:['10 objets naturels'], consignes:['Regardez bien les 10 objets pendant 30 secondes.','Fermez les yeux.','Ouvrez les yeux: quel objet a disparu?'], variante:'Ajouter un objet au lieu d\'en enlever un.' },
+      { id:'pa_mt_04', nom:'Départ pistage', duree:6, cycles:['2e cycle','3e cycle'], description:'L\'enseignant laisse une piste de symboles naturels (flèches de brindilles, cercles de pierres). Les élèves la suivent pour trouver le point de départ de l\'activité principale.', materiel:['Éléments naturels pour la piste'], consignes:['Suivez les symboles naturels au sol.','Flèche de brindilles = direction, cercle de pierres = tournez, etc.','La piste vous mènera au point de départ de l\'activité!'], variante:'Les élèves créent leur propre piste pour un autre groupe.' }
+    ],
+    partie_principale: [
+      { id:'pa_pp_01', nom:'Course d\'orientation niveau 1', duree:25, cycles:['2e cycle','3e cycle'], description:'Course d\'orientation avec carte de la cour. 8-10 postes à trouver dans l\'ordre. Travail en duo. Accent sur la lecture de carte et l\'utilisation des points de repère.', materiel:['Cartes de la cour','Postes numérotés','Poinçons ou tampons'], consignes:['En duo, trouvez les postes dans l\'ordre avec votre carte.','À chaque poste, poinçonnez votre carte.','Retournez en moins de 20 minutes avec tous les poinçons.'], variante:'Ordre libre: choisissez votre propre itinéraire le plus efficace.' },
+      { id:'pa_pp_02', nom:'Survie douce - défis nature', duree:25, cycles:['3e cycle','Secondaire'], description:'Stations de compétences nature: construire un abri de branches, faire un noeud marin, estimer une distance en pas, identifier 5 plantes.', materiel:['Branches','Cordes','Plantes identifiées','Feuillet d\'identification'], consignes:['Visitez les 5 stations dans l\'ordre.','À chaque station, lisez la consigne et réalisez le défi.','Prenez une photo ou dessinez votre réalisation.'], variante:'Version compétitive: l\'équipe qui réussit le mieux chaque défi gagne des points.' },
+      { id:'pa_pp_03', nom:'Sportif en nature', duree:25, cycles:['2e cycle','3e cycle','Secondaire'], description:'Parcours sportif adapté à l\'environnement naturel: sprint entre deux arbres, sauts de bûches, grimper une butte, équilibre sur tronc.', materiel:['Environnement naturel','Cônes si nécessaire'], consignes:['Complétez le parcours de nature dans l\'ordre.','Chaque obstacle doit être réussi avant de passer au suivant.','Respectez l\'environnement: rien ne doit être cassé ou arraché.'], variante:'Créer votre propre obstacle de nature avant de compléter le parcours.' }
+    ],
+    jeu: [
+      { id:'pa_j_01', nom:'Chasse au trésor coopérative', duree:20, cycles:['1er cycle','2e cycle','3e cycle'], description:'Chasse au trésor en plein air avec indices écrits menant d\'un poste à l\'autre. Accent sur la collaboration.', materiel:['Indices écrits','Boîte trésor','Cachettes dans la nature'], consignes:['Le premier indice vous est donné au départ.','Chaque indice trouvé mène au suivant.','Travaillez ensemble pour déchiffrer les indices.'], variante:'Indices en images pour les non-lecteurs.' },
+      { id:'pa_j_02', nom:'Camp de base', duree:20, cycles:['2e cycle','3e cycle','Secondaire'], description:'Chaque équipe établit un camp de base: délimiter une zone, nommer le camp, construire un drapeau de branches, réaliser 3 défis pour gagner des ressources.', materiel:['Branches','Ficelles','Dossards de couleur'], consignes:['Établissez votre camp de base dans votre zone assignée.','Réalisez les 3 défis pour obtenir des "ressources".','Protégez vos ressources des autres équipes.'], variante:'Version alliance: deux camps peuvent s\'allier contre un troisième.' },
+      { id:'pa_j_03', nom:'La grande randonnée', duree:20, cycles:['Préscolaire','1er cycle','2e cycle'], description:'Marche thématique avec arrêts thématiques: observer un insecte, nommer 3 plantes, imiter un animal observé. Feuille de bingo nature optionnelle.', materiel:['Liste d\'observations','Feuille de bingo nature (optionnel)'], consignes:['Nous marchons ensemble en observant la nature.','À chaque arrêt, réalisez le défi d\'observation.','Cochez votre bingo nature au fur et à mesure.'], variante:'Photographier avec une tablette les éléments du bingo nature.' }
+    ],
+    retour_au_calme: [
+      { id:'pa_rc_01', nom:'Cercle d\'observations', duree:5, cycles:['Préscolaire','1er cycle','2e cycle','3e cycle'], description:'Assis en cercle dehors, chaque élève partage une chose observée dans la nature. L\'enseignant fait des liens avec les apprentissages du programme.', materiel:[], consignes:['Asseyez-vous confortablement en cercle.','Chacun partage 1 observation de la nature d\'aujourd\'hui.','L\'enseignant fait des liens avec le PFEQ et les apprentissages.'], variante:'Écrire les observations dans un carnet d\'explorateur de classe.' },
+      { id:'pa_rc_02', nom:'Minute de silence nature', duree:3, cycles:['Préscolaire','1er cycle','2e cycle','3e cycle','Secondaire'], description:'2 minutes de silence complet pour écouter les sons de l\'environnement. Puis partage de ce que chacun a entendu. Développe la pleine conscience.', materiel:[], consignes:['Trouvez un endroit confortable, assis ou allongé.','Fermez les yeux pendant 2 minutes et écoutez.','Qu\'est-ce que vous avez entendu?'], variante:'Après le silence, dessiner ou écrire les sons entendus.' }
+    ]
+  }
 };
 
-const DUREES_PERIODE = [30, 35, 40, 45, 50, 55, 60, 75, 90];
-const NB_PERIODES = [1,2,3,4,5,6,7,8,9,10,12,15,20];
-
-const TEMPS_PAR_CATEGORIE = {
-  echauffement: { min: 5, max: 15, pct: 0.20 },
-  principal:    { min: 15, max: 45, pct: 0.65 },
-  jeu:          { min: 8, max: 25, pct: 0.0  },
-  retour:       { min: 3, max: 10, pct: 0.15 },
+const EVAL_GRILLES = {
+  manipulation_balles: { titre:'Grille d\'évaluation — Manipulation de balles et ballons', criteres:[ { critere:'Exécute les habiletés motrices de base (lancer, attraper, botter)', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Adapte ses gestes selon les situations de jeu', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Collabore et communique avec ses coéquipiers', niveaux:['Peu','Parfois','Bien','Très bien'] }, { critere:'Respecte les règles du jeu et l\'esprit sportif', niveaux:['Jamais','Rarement','Souvent','Toujours'] }, { critere:'S\'investit pleinement dans l\'activité', niveaux:['Minimal','Partiel','Bon','Excellent'] } ] },
+  manipulation_engins: { titre:'Grille d\'évaluation — Manipulation d\'engins', criteres:[ { critere:'Manie l\'engin avec contrôle et sécurité', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Dirige l\'engin vers une cible ou un partenaire', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Respecte l\'espace et la sécurité des autres', niveaux:['Jamais','Rarement','Souvent','Toujours'] } ] },
+  locomotion: { titre:'Grille d\'évaluation — Locomotion et déplacements', criteres:[ { critere:'Maîtrise différents modes de déplacement', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Adapte son déplacement selon la situation', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Réagit rapidement aux signaux', niveaux:['Lent','Acceptable','Rapide','Très rapide'] } ] },
+  stabilisation: { titre:'Grille d\'évaluation — Stabilisation et équilibre', criteres:[ { critere:'Maintient son équilibre dans diverses positions', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Enchaîne des éléments de manière fluide', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Respecte les consignes de sécurité', niveaux:['Jamais','Rarement','Souvent','Toujours'] } ] },
+  cooperation: { titre:'Grille d\'évaluation — Coopération', criteres:[ { critere:'Communique et écoute ses coéquipiers', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Contribue à l\'atteinte des objectifs collectifs', niveaux:['Peu','Parfois','Bien','Très bien'] }, { critere:'Adopte une attitude inclusive et respectueuse', niveaux:['Jamais','Parfois','Souvent','Toujours'] } ] },
+  opposition: { titre:'Grille d\'évaluation — Opposition et duels', criteres:[ { critere:'Lit et analyse les actions de l\'adversaire', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Crée et exploite des déséquilibres', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Fait preuve d\'esprit sportif en toutes situations', niveaux:['Jamais','Rarement','Souvent','Toujours'] } ] },
+  expression_corporelle: { titre:'Grille d\'évaluation — Expression corporelle', criteres:[ { critere:'Exprime des idées et émotions par le mouvement', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Crée des séquences originales et variées', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Synchronise ses mouvements avec un partenaire ou groupe', niveaux:['Difficulté','Parfois','Bien','Très bien'] } ] },
+  plein_air: { titre:'Grille d\'évaluation — Plein air et nature', criteres:[ { critere:'S\'oriente et se repère dans l\'environnement extérieur', niveaux:['Rarement','Parfois','Souvent','Toujours'] }, { critere:'Adapte ses comportements au milieu naturel', niveaux:['Niveau 1','Niveau 2','Niveau 3','Niveau 4'] }, { critere:'Respecte l\'environnement et la sécurité collective', niveaux:['Jamais','Rarement','Souvent','Toujours'] } ] }
 };
 
-if (typeof module !== 'undefined') module.exports = { MOYENS_ACTION, OBJECTIFS_PFEQ, EDUCATIFS, DUREES_PERIODE, NB_PERIODES };
+if (typeof module !== 'undefined') {
+  module.exports = { MOYENS_ACTION, OBJECTIFS_PFEQ, EDUCATIFS, EVAL_GRILLES };
+}
