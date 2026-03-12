@@ -17,11 +17,44 @@
 
     /* ── PRINT ── */
     @media print {
-      .no-print{display:none!important}
-      body{background:#fff;font-size:10pt}
-      .seance-block{page-break-inside:avoid;break-inside:avoid;page-break-after:always}
-      .phase-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-      .activite-detail{display:block!important}
+      .no-print { display: none !important; }
+      body { background: #fff; font-size: 10pt; color: #000; margin: 0; }
+
+      /* Page header for print */
+      .print-header { display: block !important; }
+
+      .seance-block {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        border: 2pt solid #000 !important;
+        margin-bottom: 1cm;
+        box-shadow: none !important;
+      }
+
+      .phase-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .phase-label { font-size: 11pt; }
+
+      .activite-detail { display: block !important; }
+      .activite-consignes { background: #f5f5f5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .activite-materiel { background: #fffde7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .activite-variante { background: #f0fff4 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      .plan-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-after: avoid; }
+      .seance-nav { display: none; }
+
+      .eval-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .eval-table tr:nth-child(even) td { background: #f8f8f8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      /* Show all séances when printing */
+      #seances-container .seance-block { display: block !important; }
+
+      h1, h2, h3 { page-break-after: avoid; }
+
+      /* Footer on each page */
+      @page {
+        margin: 1.5cm;
+        @bottom-center { content: "Zone Total Sport — Planificateur SAÉ PFEQ — zonetotalsport.github.io"; font-size: 8pt; color: #666; }
+      }
     }
 
     /* ── HEADER ── */
@@ -124,6 +157,11 @@
 </head>
 <body>
 
+<div class="print-header" style="display:none;text-align:center;margin-bottom:1cm;border-bottom:2pt solid #000;padding-bottom:0.5cm">
+  <div style="font-family:serif;font-size:18pt;font-weight:bold">⚡ PLAN ÉPS — ZONE TOTAL SPORT</div>
+  <div style="font-size:10pt;color:#444">Programme de Formation de l'École Québécoise (PFEQ) · zonetotalsport.github.io</div>
+</div>
+
 <header class="app-header no-print">
   <div>
     <div class="app-title">⚡ PLANIFICATEUR SAÉ PFEQ</div>
@@ -131,7 +169,7 @@
   </div>
   <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
     <button class="btn btn-yellow no-print" id="btn-reset" onclick="resetAll()" style="display:none">🔄 RECOMMENCER</button>
-    <button class="btn btn-blue no-print" id="btn-print" onclick="window.print()" style="display:none">🖨️ IMPRIMER PDF</button>
+    <button class="btn btn-blue no-print" id="btn-print" onclick="showAllSeances(); setTimeout(() => window.print(), 300)" style="display:none">🖨️ IMPRIMER / PDF</button>
     <button class="btn btn-blue no-print" id="btn-tbi" onclick="toggleTBI()" style="display:none">📺 MODE TBI</button>
     <a href="../index.html" class="btn btn-yellow no-print">← ACCUEIL</a>
   </div>
@@ -167,6 +205,7 @@
           <option value="1er cycle">1er cycle (1re — 2e année)</option>
           <option value="2e cycle" selected>2e cycle (3e — 4e année)</option>
           <option value="3e cycle">3e cycle (5e — 6e année)</option>
+          <option value="Secondaire">Secondaire (12-18 ans)</option>
         </select>
       </div>
       <div class="param-block">
@@ -239,6 +278,15 @@
     </div>
 
     <div class="seance-nav no-print" id="seance-nav"></div>
+
+    <div class="no-print" id="save-section" style="background:var(--yellow);border:4px solid var(--navy);padding:1rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+      <button class="btn btn-blue" onclick="savePlan()">💾 SAUVEGARDER CE PLAN</button>
+      <span id="save-feedback" style="font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy)"></span>
+      <details style="margin-top:0;flex:1;min-width:250px">
+        <summary style="font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;cursor:pointer;color:var(--navy)">📂 MES PLANS SAUVEGARDÉS</summary>
+        <div id="saved-plans-list" style="margin-top:0.5rem"></div>
+      </details>
+    </div>
 
     <div id="seances-container"></div>
     <div id="eval-section" style="margin-top:2rem"></div>
@@ -385,11 +433,25 @@ function buildCustomSelector() {
             <div style="font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:${ph.phase.color};margin-bottom:0.6rem;display:flex;justify-content:space-between">
               <span>${ph.phase.label}</span><span style="color:var(--navy)">~${ph.phase.duration} min</span>
             </div>
+            <input type="text" placeholder="🔍 Filtrer les activités..."
+              oninput="filterPool(this, '${si}', '${pi}')"
+              style="width:100%;padding:0.5rem;border:3px solid var(--navy);font-family:Nunito,sans-serif;font-weight:700;margin-bottom:0.5rem">
             <div class="select-pool" id="pool-${si}-${pi}">
               ${ph.pool.map((act,ai)=>`
                 <div class="pool-card ${ph.activite&&ph.activite.id===act.id?'picked':''}" id="pc-${si}-${pi}-${ai}" onclick="pickActivity(${si},${pi},${ai})">
-                  <div style="font-family:Bangers,cursive;font-size:0.95rem;letter-spacing:1px;color:var(--navy)">${act.nom}</div>
-                  <div style="font-size:0.75rem;color:#556;margin-top:0.2rem">${act.duree} min — ${(act.description||'').substring(0,70)}…</div>
+                  <div style="font-family:Bangers,cursive;font-size:1rem;letter-spacing:1px;color:var(--navy);margin-bottom:0.3rem">${act.nom}</div>
+                  <div style="display:inline-block;background:var(--navy);color:var(--yellow);font-family:Bangers,cursive;font-size:0.8rem;letter-spacing:1px;padding:0.1rem 0.5rem;margin-bottom:0.4rem">${act.duree} min</div>
+                  <div style="font-size:0.78rem;color:#556;margin-bottom:0.4rem">${(act.description||'').substring(0,120)}${(act.description||'').length>120?'…':''}</div>
+                  <details style="font-size:0.78rem">
+                    <summary style="cursor:pointer;font-family:Bangers,cursive;letter-spacing:1px;color:var(--blue);font-size:0.82rem">▼ VOIR DÉTAILS</summary>
+                    <div style="margin-top:0.4rem">
+                      ${act.description?`<div style="color:#223;line-height:1.5;margin-bottom:0.4rem">${act.description}</div>`:''}
+                      ${act.consignes&&act.consignes.length?`<div style="background:#f0f8ff;border-left:3px solid var(--blue);padding:0.4rem 0.6rem;margin-bottom:0.3rem"><strong>📢 Consignes :</strong><ol style="margin-left:1rem">${act.consignes.map(c=>`<li>${c}</li>`).join('')}</ol></div>`:''}
+                      ${act.materiel&&act.materiel.length?`<div style="background:#fffde7;border-left:3px solid var(--yellow);padding:0.4rem 0.6rem;margin-bottom:0.3rem">📦 <strong>Matériel :</strong> ${Array.isArray(act.materiel)?act.materiel.join(', '):act.materiel}</div>`:''}
+                      ${act.variante?`<div style="background:#f0fff4;border-left:3px solid var(--green);padding:0.4rem 0.6rem">🔀 <strong>Variante :</strong> ${act.variante}</div>`:''}
+                    </div>
+                  </details>
+                  ${ph.activite&&ph.activite.id===act.id?`<div style="font-family:Bangers,cursive;font-size:0.9rem;color:var(--green);margin-top:0.4rem;letter-spacing:1px">✓ SÉLECTIONNÉ</div>`:''}
                 </div>`).join('')}
             </div>
           </div>`).join('')}
@@ -407,6 +469,13 @@ function pickActivity(si,pi,ai) {
   document.querySelectorAll(`#pool-${si}-${pi} .pool-card`).forEach((c,i)=>c.classList.toggle('picked',i===ai));
 }
 
+function filterPool(input, si, pi) {
+  const q = input.value.toLowerCase();
+  document.querySelectorAll(`#pool-${si}-${pi} .pool-card`).forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
 // ── RENDER PLAN ──
 function renderPlan() {
   goStep(4);
@@ -415,6 +484,7 @@ function renderPlan() {
   buildSeanceNav();
   switchSeance(0);
   buildEvalSection();
+  renderSavedPlans();
 }
 
 function updatePlanHeader() {
@@ -568,6 +638,65 @@ function buildEvalSection() {
         </div>
       </div>
     </div>`;
+}
+
+// ── SAVE / LOAD PLANS ──
+function savePlan() {
+  const titre = state.titre || `Plan ${new Date().toLocaleDateString('fr-CA')}`;
+  const saved = JSON.parse(localStorage.getItem('zts_plans') || '[]');
+  const plan = {
+    id: Date.now(),
+    titre,
+    moyen: state.moyen,
+    cycle: state.cycle,
+    duree: state.duree,
+    nbSeances: state.nbSeances,
+    date: new Date().toLocaleDateString('fr-CA'),
+    planData: JSON.stringify(state.plan)
+  };
+  saved.unshift(plan);
+  if (saved.length > 20) saved.pop(); // max 20 plans
+  localStorage.setItem('zts_plans', JSON.stringify(saved));
+  renderSavedPlans();
+  document.getElementById('save-feedback').textContent = '✅ Plan sauvegardé!';
+  setTimeout(() => { const el = document.getElementById('save-feedback'); if(el) el.textContent=''; }, 3000);
+}
+
+function renderSavedPlans() {
+  const saved = JSON.parse(localStorage.getItem('zts_plans') || '[]');
+  const el = document.getElementById('saved-plans-list');
+  if (!el) return;
+  if (!saved.length) { el.innerHTML = '<div style="color:#888;font-style:italic;padding:0.5rem">Aucun plan sauvegardé.</div>'; return; }
+  el.innerHTML = saved.map(p => `
+    <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem;border:2px solid var(--navy);margin-bottom:0.4rem;background:#fff">
+      <div style="flex:1">
+        <div style="font-family:Bangers,cursive;font-size:0.95rem;letter-spacing:1px;color:var(--navy)">${p.titre}</div>
+        <div style="font-size:0.75rem;color:#667">${p.cycle} · ${p.duree}min · ${p.nbSeances} séances · ${p.date}</div>
+      </div>
+      <button class="btn btn-yellow btn-sm" onclick="loadSavedPlan(${p.id})">📂 CHARGER</button>
+      <button class="btn btn-sm" style="background:#c00;color:#fff;border-color:#900" onclick="deleteSavedPlan(${p.id})">🗑️</button>
+    </div>`).join('');
+}
+
+function loadSavedPlan(id) {
+  const saved = JSON.parse(localStorage.getItem('zts_plans') || '[]');
+  const plan = saved.find(p => p.id === id);
+  if (!plan) return;
+  state.moyen = plan.moyen;
+  state.cycle = plan.cycle;
+  state.duree = plan.duree;
+  state.nbSeances = plan.nbSeances;
+  state.titre = plan.titre;
+  state.plan = JSON.parse(plan.planData);
+  state.mode = 'auto';
+  renderPlan();
+}
+
+function deleteSavedPlan(id) {
+  let saved = JSON.parse(localStorage.getItem('zts_plans') || '[]');
+  saved = saved.filter(p => p.id !== id);
+  localStorage.setItem('zts_plans', JSON.stringify(saved));
+  renderSavedPlans();
 }
 
 // ── MISC ──
