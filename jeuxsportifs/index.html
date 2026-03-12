@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Zone Total Sport — Jeux Sportifs Mondiaux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../comic.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div id="loading" class="loading-screen">
+  <div class="loading-burst">⚡</div>
+  <div class="loading-title">JEUX SPORTIFS</div>
+  <div class="loading-sub">CHARGEMENT EN COURS...</div>
+  <div class="loading-bar-wrap"><div class="loading-bar-fill" id="loadBar"></div></div>
+</div>
+
+<div id="app" class="app-wrapper hidden">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div>
+          <div class="site-title">🎮 JEUX SPORTIFS</div>
+          <div class="site-sub">ZONE TOTAL SPORT · RÉFÉRENCE MONDIALE EN ÉPS</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center">
+        <div class="header-badge" id="badge-total">0<span>JEUX</span></div>
+        <div class="header-badge" id="badge-pays">0<span>PAYS</span></div>
+        <a href="../index.html" style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:var(--yellow);background:var(--blue);border:3px solid var(--yellow);padding:0.4rem 0.9rem;text-decoration:none;box-shadow:3px 3px 0 var(--yellow)">← ACCUEIL</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <div class="section-hero hero-bg-jeux">
+      <div class="hero-icon">🌍</div>
+      <div>
+        <div class="hero-title">BANQUE MONDIALE DE JEUX SPORTIFS</div>
+        <div class="hero-sub">1000+ jeux de tous les continents · Maternelle → Secondaire 5 · Prêts pour le gymnase</div>
+      </div>
+    </div>
+
+    <!-- Filtres catégories rapides -->
+    <div id="cat-pills-bar" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem"></div>
+
+    <div class="controls-bar">
+      <input type="text" id="search" class="search-input" placeholder="🔍 Rechercher un jeu...">
+      <select id="f-cat" class="filter-select">
+        <option value="">Toutes les catégories</option>
+        <option value="ballon_chasseur">🎯 Ballon Chasseur</option>
+        <option value="poursuite">🏃 Poursuite</option>
+        <option value="cooperation">🤝 Coopération</option>
+        <option value="opposition">⚔️ Opposition/Duel</option>
+        <option value="sports_collectifs">🏅 Sports Collectifs</option>
+        <option value="sans_materiel">🙌 Sans Matériel</option>
+        <option value="exterieur">🌿 Extérieur</option>
+        <option value="traditionnels">🌍 Jeux Traditionnels</option>
+        <option value="individuels">🏆 Sports Individuels</option>
+        <option value="avec_materiel">🎒 Avec Matériel</option>
+        <option value="prescolaire">🌱 Préscolaire</option>
+      </select>
+      <select id="f-niveau" class="filter-select">
+        <option value="">Tous les niveaux</option>
+        <option value="prescolaire">🌱 Préscolaire (3-6 ans)</option>
+        <option value="primaire">📖 Primaire (6-12 ans)</option>
+        <option value="secondaire">🎓 Secondaire (12-18 ans)</option>
+      </select>
+      <select id="f-espace" class="filter-select">
+        <option value="">Tous les espaces</option>
+        <option value="Gymnase">🏟️ Gymnase</option>
+        <option value="Extérieur">🌿 Extérieur</option>
+        <option value="Classe">🏫 Classe</option>
+      </select>
+      <select id="f-intensite" class="filter-select">
+        <option value="">Toutes les intensités</option>
+        <option value="Élevé">🔴 Élevé</option>
+        <option value="Modéré">🟡 Modéré</option>
+        <option value="Faible">🟢 Faible</option>
+      </select>
+    </div>
+
+    <div class="stats-bar">
+      <span class="stat-pill pill-yellow" id="count-total">0 jeux</span>
+      <span class="stat-pill pill-blue" id="count-pays">0 origines</span>
+      <span class="stat-pill pill-navy" id="count-cat">0 catégories</span>
+    </div>
+
+    <div id="grid" class="cards-grid"></div>
+
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-box">
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="../comic-bg.js"></script>
+<script src="jeux-app.js"></script>
+</body>
+</html>

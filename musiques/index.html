@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎵 Zone Total Sport — Musiques Libres</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../comic.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div id="loading" class="loading-screen">
+  <div class="loading-burst">🎵</div>
+  <div class="loading-title">MUSIQUES LIBRES</div>
+  <div class="loading-sub">CHARGEMENT EN COURS...</div>
+  <div class="loading-bar-wrap"><div class="loading-bar-fill" id="loadBar"></div></div>
+</div>
+
+<div id="app" class="app-wrapper hidden">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div>
+          <div class="site-title">🎵 MUSIQUES LIBRES</div>
+          <div class="site-sub">BIBLIOTHÈQUE MUSICALE POUR L'ÉPS · LIBRES DE DROITS</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center">
+        <div class="header-badge" id="badge-total">0<span>PISTES</span></div>
+        <div class="header-badge" id="badge-bpm">0<span>GENRES</span></div>
+        <a href="../index.html" style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:var(--yellow);background:var(--blue);border:3px solid var(--yellow);padding:0.4rem 0.9rem;text-decoration:none;box-shadow:3px 3px 0 var(--yellow)">← ACCUEIL</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <div class="section-hero hero-bg-musique">
+      <div class="hero-icon">🎶</div>
+      <div>
+        <div class="hero-title">1000+ MUSIQUES LIBRES POUR L'ÉPS</div>
+        <div class="hero-sub">Toutes 100% gratuites · Classées par BPM et activité · Prêtes pour le gymnase</div>
+      </div>
+    </div>
+
+    <!-- Filtres rapides BPM -->
+    <div id="bpm-pills" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem"></div>
+
+    <div class="controls-bar">
+      <input type="text" id="search" class="search-input" placeholder="🔍 Titre, artiste, genre...">
+      <select id="f-activite" class="filter-select">
+        <option value="">Toutes les activités</option>
+        <option value="échauffement">🔥 Échauffement</option>
+        <option value="cardio">💪 Cardio / Haute intensité</option>
+        <option value="collectif">🏀 Sports collectifs</option>
+        <option value="poursuite">🏃 Poursuite</option>
+        <option value="cooperation">🤝 Coopération</option>
+        <option value="retour_calme">🧘 Retour au calme</option>
+        <option value="yoga">☮️ Yoga / Méditation</option>
+        <option value="danse">💃 Danse / Expression</option>
+        <option value="circuits">⚡ Circuits / Stations</option>
+        <option value="prescolaire">🌱 Préscolaire</option>
+      </select>
+      <select id="f-bpm" class="filter-select">
+        <option value="">Tous les BPM</option>
+        <option value="40-70">🧘 40-70 BPM (Calme)</option>
+        <option value="70-100">😌 70-100 BPM (Doux)</option>
+        <option value="100-130">🚶 100-130 BPM (Modéré)</option>
+        <option value="130-155">🏃 130-155 BPM (Actif)</option>
+        <option value="155-180">⚡ 155-180 BPM (Intense)</option>
+      </select>
+      <select id="f-licence" class="filter-select">
+        <option value="">Toutes les licences</option>
+        <option value="CC0">✅ CC0 (Domaine public)</option>
+        <option value="CC">📄 Creative Commons</option>
+        <option value="Gratuit">🆓 Gratuit</option>
+      </select>
+      <select id="f-genre" class="filter-select">
+        <option value="">Tous les genres</option>
+        <option value="Electronic">⚡ Electronic</option>
+        <option value="Hip-Hop">🎤 Hip-Hop</option>
+        <option value="Pop">🎵 Pop</option>
+        <option value="Rock">🎸 Rock</option>
+        <option value="Classique">🎻 Classique</option>
+        <option value="Ambient">🌊 Ambient</option>
+        <option value="Latin">💃 Latin</option>
+        <option value="World">🌍 World Music</option>
+      </select>
+    </div>
+
+    <div class="stats-bar">
+      <span class="stat-pill pill-yellow" id="count-total">0 pistes</span>
+      <span class="stat-pill pill-blue"   id="count-free">0 gratuites CC0</span>
+      <span class="stat-pill pill-navy"   id="count-genres">0 genres</span>
+    </div>
+
+    <!-- Onglets: Pistes | Guide BPM | Sources -->
+    <div style="display:flex;gap:0;margin-bottom:1.5rem;border:var(--border-fat);">
+      <button class="music-tab active" data-mtab="pistes"  onclick="switchMusicTab('pistes')"  style="font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;padding:0.7rem 1.5rem;border:none;border-right:3px solid var(--navy);background:var(--navy);color:var(--yellow);cursor:pointer;flex:1">🎵 PISTES</button>
+      <button class="music-tab"        data-mtab="guide"   onclick="switchMusicTab('guide')"   style="font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;padding:0.7rem 1.5rem;border:none;border-right:3px solid var(--navy);background:var(--yellow);color:var(--navy);cursor:pointer;flex:1">⏱️ GUIDE BPM</button>
+      <button class="music-tab"        data-mtab="sources" onclick="switchMusicTab('sources')" style="font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;padding:0.7rem 1.5rem;border:none;background:var(--yellow);color:var(--navy);cursor:pointer;flex:1">🔗 SOURCES</button>
+    </div>
+
+    <div id="tab-pistes">
+      <div id="grid" class="cards-grid"></div>
+    </div>
+
+    <div id="tab-guide" class="hidden">
+      <div id="guide-content"></div>
+    </div>
+
+    <div id="tab-sources" class="hidden">
+      <div id="sources-content"></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-box">
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="../comic-bg.js"></script>
+<script src="musique-app.js"></script>
+</body>
+</html>
