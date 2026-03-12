@@ -165,7 +165,10 @@ function renderGrid() {
         ${licence ? `<div style="font-size:0.78rem;color:#1a7f3c;font-weight:bold">✅ ${licence}</div>` : ''}
         ${m.description ? `<div style="font-size:0.8rem;color:#446;line-height:1.4;margin-top:0.4rem">${m.description.substring(0,80)}…</div>` : ''}
       </div>
-      <div style="background:var(--yellow);border-top:3px solid var(--navy);padding:0.5rem 1rem;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);text-align:center">🎵 DÉTAILS & SOURCE</div>
+      <div style="display:flex;border-top:3px solid var(--navy)">
+        <div style="flex:1;background:#1a7f3c;padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:#fff;text-align:center">▶ JOUER</div>
+        <div style="flex:1;background:var(--yellow);padding:0.5rem;font-family:Bangers,cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);text-align:center;border-left:3px solid var(--navy)">🎵 DÉTAILS</div>
+      </div>
     </div>`;
   }).join('');
 
@@ -174,7 +177,91 @@ function renderGrid() {
   }
 }
 
+// Jamendo public API — client_id b6747d04 is their documented public demo key
+const JAMENDO_CLIENT = 'b6747d04';
+
+// Map genres to Jamendo tags for better search results
+const GENRE_TO_JAMENDO = {
+  'Electronic': 'electronic+energetic',
+  'Hip-Hop':    'hiphop',
+  'Pop':        'pop+upbeat',
+  'Rock':       'rock+energetic',
+  'Classique':  'classical+orchestral',
+  'Ambient':    'ambient+relaxing',
+  'Latin':      'latin+dance',
+  'World':      'world+ethnic',
+  'Jazz':       'jazz+instrumental',
+  'Funk':       'funk+groove',
+  'Reggae':     'reggae',
+  'Country':    'country',
+  'Folk':       'folk+acoustic',
+  'R&B':        'rnb+soul',
+  'Metal':      'metal+hard',
+};
+
+let currentAudio = null;
+
+function stopCurrentAudio() {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    currentAudio = null;
+  }
+}
+
+async function searchAndPlay(genre, bpm, containerId, btnEl) {
+  stopCurrentAudio();
+  btnEl.disabled = true;
+  btnEl.innerHTML = '⏳ RECHERCHE EN COURS...';
+
+  const tags = GENRE_TO_JAMENDO[genre] || 'instrumental';
+  // Determine mood from BPM
+  let mood = '';
+  if (bpm < 80)       mood = 'calm+relaxing';
+  else if (bpm < 110) mood = 'happy';
+  else if (bpm < 140) mood = 'energetic';
+  else                mood = 'energetic+powerful';
+
+  const url = `https://api.jamendo.com/v3.0/tracks/?client_id=${JAMENDO_CLIENT}&format=json&limit=10&tags=${tags}&audioformat=mp32&order=popularity_total&include=musicinfo`;
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('API unavailable');
+    const data = await res.json();
+    const results = (data.results || []).filter(t => t.audio);
+
+    if (results.length === 0) throw new Error('No results');
+
+    // Pick a random track from results
+    const track = results[Math.floor(Math.random() * results.length)];
+
+    const container = document.getElementById(containerId);
+    container.innerHTML = `
+      <div style="background:#f0f8ff;border:3px solid var(--navy);padding:1rem;margin-top:0.8rem;box-shadow:3px 3px 0 var(--navy)">
+        <div style="font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;color:var(--navy);margin-bottom:0.5rem">
+          🎵 ${track.name} — <span style="color:#1a7f3c">${track.artist_name}</span>
+          <span style="font-size:0.75rem;background:#e8f5e9;color:#1a7f3c;padding:0.1rem 0.4rem;margin-left:0.3rem;border:1px solid #1a7f3c">CC BY-NC-SA · Jamendo</span>
+        </div>
+        <audio id="audio-el-${containerId}" controls style="width:100%;display:block" autoplay>
+          <source src="${track.audio}" type="audio/mpeg">
+        </audio>
+        <a href="${track.shareurl}" target="_blank" rel="noopener"
+           style="display:inline-block;margin-top:0.5rem;font-size:0.8rem;color:var(--blue);text-decoration:none">
+          ↗ Voir sur Jamendo
+        </a>
+      </div>
+    `;
+    currentAudio = document.getElementById(`audio-el-${containerId}`);
+  } catch(e) {
+    btnEl.disabled = false;
+    btnEl.innerHTML = '▶ RÉESSAYER';
+    const container = document.getElementById(containerId);
+    container.innerHTML = `<div style="color:#c0392b;font-size:0.85rem;margin-top:0.5rem">⚠️ Connexion impossible. <a href="https://www.jamendo.com/search?q=${encodeURIComponent(genre)}" target="_blank" rel="noopener" style="color:var(--blue)">Rechercher sur Jamendo</a></div>`;
+  }
+}
+
 function openModal(idx) {
+  stopCurrentAudio();
   const m = filtered[idx];
   if (!m) return;
   const genre = m.genre || 'Autre';
@@ -186,6 +273,25 @@ function openModal(idx) {
   const activs = Array.isArray(m.activite) ? m.activite : [m.activite].filter(Boolean);
   const tags   = Array.isArray(m.tags) ? m.tags : [m.tags].filter(Boolean);
   const src    = m.source || m.url || '';
+  const audioUrl = m.audio_url || (src.match(/\.(mp3|ogg|wav)(\?|$)/i) ? src : null);
+  const containerId = 'audio-container-' + idx;
+
+  const audioSection = audioUrl
+    ? `<div class="modal-section">
+        <div class="modal-section-title">▶️ ÉCOUTER DIRECTEMENT</div>
+        <audio id="audio-el-direct" controls style="width:100%;margin-top:0.5rem" autoplay>
+          <source src="${audioUrl}" type="audio/mpeg">
+        </audio>
+       </div>`
+    : `<div class="modal-section">
+        <div class="modal-section-title">▶️ ÉCOUTER UNE PISTE SIMILAIRE</div>
+        <div style="font-size:0.82rem;color:#557;margin-bottom:0.6rem">Recherche une piste <strong>${genre}</strong> · ${bpm} BPM sur Jamendo (libre de droits)</div>
+        <button id="play-btn-${idx}" onclick="searchAndPlay('${genre}',${bpmNum},'${containerId}',this)"
+          style="font-family:Bangers,cursive;font-size:1.2rem;letter-spacing:3px;background:#1a7f3c;color:#fff;border:3px solid var(--navy);padding:0.6rem 2rem;cursor:pointer;box-shadow:4px 4px 0 var(--navy)">
+          ▶ JOUER
+        </button>
+        <div id="${containerId}"></div>
+       </div>`;
 
   document.getElementById('modal-body').innerHTML = `
     <div style="background:${col};padding:1.5rem 2rem;border-bottom:4px solid var(--navy);position:relative">
@@ -201,24 +307,30 @@ function openModal(idx) {
       <button onclick="closeModal()" style="position:absolute;top:1rem;right:1rem;font-family:Bangers,cursive;font-size:1.2rem;background:rgba(255,255,255,0.2);color:#fff;border:2px solid #fff;padding:0.2rem 0.8rem;cursor:pointer">✕ FERMER</button>
     </div>
     <div style="padding:1.5rem 2rem;overflow-y:auto;max-height:70vh">
+      ${audioSection}
       ${m.description ? `<div class="modal-section"><div class="modal-section-title">📝 DESCRIPTION</div><p style="margin:0;line-height:1.6;color:#223">${m.description}</p></div>` : ''}
       ${activs.length ? `<div class="modal-section"><div class="modal-section-title">🏃 ACTIVITÉS ÉPS</div><div style="display:flex;gap:0.4rem;flex-wrap:wrap">${activs.map(a=>`<span style="font-family:Bangers,cursive;font-size:0.9rem;letter-spacing:1px;padding:0.2rem 0.6rem;background:var(--blue);color:#fff">${a}</span>`).join('')}</div></div>` : ''}
       ${tags.length ? `<div class="modal-section"><div class="modal-section-title">🏷️ TAGS</div><div style="display:flex;gap:0.3rem;flex-wrap:wrap">${tags.map(t=>`<span style="font-size:0.82rem;padding:0.15rem 0.5rem;background:#f0f4ff;border:1px solid #cce;color:#334">${t}</span>`).join('')}</div></div>` : ''}
       ${m.ambiance ? `<div class="modal-section"><div class="modal-section-title">💫 AMBIANCE</div><p style="margin:0;color:#223">${m.ambiance}</p></div>` : ''}
       ${m.niveau_scolaire ? `<div class="modal-section"><div class="modal-section-title">🎓 NIVEAU SCOLAIRE</div><p style="margin:0;color:#223">${Array.isArray(m.niveau_scolaire)?m.niveau_scolaire.join(', '):m.niveau_scolaire}</p></div>` : ''}
-      ${src ? `<div class="modal-section"><div class="modal-section-title">🔗 SOURCE / TÉLÉCHARGEMENT</div>
+      ${src ? `<div class="modal-section"><div class="modal-section-title">🔗 SOURCE</div>
         <a href="${src}" target="_blank" rel="noopener" style="display:inline-block;font-family:Bangers,cursive;font-size:1rem;letter-spacing:2px;background:var(--blue);color:var(--yellow);padding:0.5rem 1.2rem;border:3px solid var(--navy);text-decoration:none;box-shadow:4px 4px 0 var(--navy)">→ ACCÉDER À LA PISTE</a>
-        <div style="margin-top:0.5rem;font-size:0.8rem;color:#667;word-break:break-all">${src}</div>
       </div>` : ''}
       ${m.notes ? `<div class="modal-section"><div class="modal-section-title">📌 NOTES</div><p style="margin:0;color:#223">${m.notes}</p></div>` : ''}
     </div>
   `;
+
+  if (audioUrl) {
+    const el = document.getElementById('audio-el-direct');
+    if (el) currentAudio = el;
+  }
 
   document.getElementById('modal').classList.remove('hidden');
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
+  stopCurrentAudio();
   document.getElementById('modal').classList.add('hidden');
   document.body.style.overflow = '';
 }

@@ -25,6 +25,17 @@ const SAE_FILES = [
   '../data/sae/sae_mobilite.json',
   '../data/sae/sae_expression_danse.json',
   '../data/sae/sae_poursuite_tous.json',
+  // 458 SAÉ détaillées par domaine (manipulation, locomotion, coopération, etc.)
+  '../data/sae/sae_domaines_01.json',
+  '../data/sae/sae_domaines_02.json',
+  '../data/sae/sae_domaines_03.json',
+  '../data/sae/sae_domaines_04.json',
+  '../data/sae/sae_domaines_05.json',
+  '../data/sae/sae_domaines_06.json',
+  '../data/sae/sae_domaines_07.json',
+  '../data/sae/sae_domaines_08.json',
+  '../data/sae/sae_domaines_09.json',
+  '../data/sae/sae_domaines_10.json',
 ];
 
 const CYCLE_COLORS = {
