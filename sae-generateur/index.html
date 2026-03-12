@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Zone Total Sport — Générateur de SAÉ PFEQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#004EBF; --navy:#001D6E; --yellow:#FFE000;
+      --white:#fff; --border:3px solid var(--navy);
+      --shadow:5px 5px 0 var(--navy);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Nunito',sans-serif;font-weight:700;background:#f0f4ff;color:var(--navy);min-height:100vh}
+
+    /* ── PRINT & TBI OVERRIDES ── */
+    @media print {
+      .no-print,.step-nav,.header-btns,#wizard{display:none!important}
+      #sae-output{display:block!important}
+      body{background:#fff;font-size:11pt}
+      .print-period{page-break-inside:avoid;break-inside:avoid}
+      .print-header{background:#001D6E!important;color:#FFE000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
+    body.tbi-mode{font-size:1.4rem}
+    body.tbi-mode .sae-card{font-size:1.3rem}
+    body.tbi-mode .edu-step{font-size:1.1rem}
+
+    /* ── HEADER ── */
+    .app-header{background:var(--navy);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;position:sticky;top:0;z-index:100}
+    .app-title{font-family:'Bangers',cursive;font-size:clamp(1.5rem,4vw,2.5rem);color:var(--yellow);letter-spacing:4px}
+    .app-sub{font-family:'Bangers',cursive;font-size:0.9rem;color:#88aaff;letter-spacing:2px}
+    .header-btns{display:flex;gap:0.5rem;flex-wrap:wrap}
+    .btn{font-family:'Bangers',cursive;letter-spacing:2px;padding:0.5rem 1.2rem;border:3px solid;cursor:pointer;font-size:1rem;transition:all 0.15s}
+    .btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--navy)}
+    .btn-blue{background:var(--blue);color:var(--yellow);border-color:var(--yellow)}
+    .btn-white{background:#fff;color:var(--navy);border-color:var(--navy)}
+    .btn-red{background:#e53935;color:#fff;border-color:#fff}
+    .btn:hover{transform:scale(1.05)}
+
+    /* ── STEPPER ── */
+    .stepper{display:flex;background:var(--blue);padding:0.7rem 1.5rem;gap:0;overflow-x:auto}
+    .step-tab{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:2px;padding:0.5rem 1.2rem;cursor:pointer;color:#aac;border:none;background:transparent;white-space:nowrap;transition:all 0.2s;border-bottom:4px solid transparent}
+    .step-tab.active{color:var(--yellow);border-bottom-color:var(--yellow)}
+    .step-tab.done{color:#88ffbb}
+    .step-tab:disabled{opacity:0.4;cursor:not-allowed}
+
+    /* ── MAIN ── */
+    .app-main{max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
+    .section-title{font-family:'Bangers',cursive;font-size:2rem;letter-spacing:3px;color:var(--navy);margin-bottom:1.5rem;border-bottom:5px solid var(--yellow);padding-bottom:0.5rem}
+
+    /* ── STEP 1: MOYEN D'ACTION ── */
+    .ma-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+    .ma-card{border:4px solid var(--navy);padding:1.5rem 1rem;text-align:center;cursor:pointer;background:#fff;box-shadow:var(--shadow);transition:all 0.2s;position:relative;overflow:hidden}
+    .ma-card:hover,.ma-card.selected{transform:scale(1.05);box-shadow:8px 8px 0 var(--navy)}
+    .ma-card.selected::after{content:'✓';position:absolute;top:0.5rem;right:0.7rem;font-family:'Bangers',cursive;font-size:1.5rem;color:var(--yellow);background:var(--navy);padding:0 0.3rem}
+    .ma-icon{font-size:3.5rem;margin-bottom:0.6rem;display:block}
+    .ma-label{font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:2px}
+    .ma-sub{font-size:0.75rem;color:#556;margin-top:0.3rem;line-height:1.4}
+
+    /* ── STEP 2: PARAMÈTRES ── */
+    .params-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+    .param-block{background:#fff;border:4px solid var(--navy);padding:1.2rem;box-shadow:var(--shadow)}
+    .param-label{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;color:var(--navy);margin-bottom:0.8rem;display:block}
+    .param-select,.param-input{width:100%;font-family:'Bangers',cursive;font-size:1.1rem;padding:0.6rem 0.8rem;border:3px solid var(--navy);background:var(--yellow);color:var(--navy);cursor:pointer}
+    .duree-btns{display:flex;flex-wrap:wrap;gap:0.4rem}
+    .duree-btn{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;padding:0.4rem 0.8rem;border:3px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;transition:all 0.15s}
+    .duree-btn.active{background:var(--navy);color:var(--yellow)}
+    .duree-btn:hover{background:var(--blue);color:#fff}
+
+    /* ── STEP 3: OBJECTIFS ── */
+    .obj-list{display:flex;flex-direction:column;gap:0.6rem}
+    .obj-item{display:flex;align-items:flex-start;gap:0.8rem;background:#fff;border:3px solid var(--navy);padding:0.8rem 1rem;cursor:pointer;transition:background 0.15s}
+    .obj-item:hover{background:#fffde0}
+    .obj-item.selected{background:var(--yellow);border-color:var(--navy)}
+    .obj-check{width:22px;height:22px;border:3px solid var(--navy);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-top:0.1rem}
+    .obj-item.selected .obj-check::after{content:'✓';font-weight:900;color:var(--navy)}
+    .obj-text{font-size:0.95rem;line-height:1.5}
+
+    /* ── STEP 4: PLANIFICATION PÉRIODES ── */
+    .periode-tabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:1.5rem;border:4px solid var(--navy)}
+    .periode-tab{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;padding:0.6rem 1.2rem;border:none;border-right:3px solid var(--navy);background:var(--yellow);color:var(--navy);cursor:pointer;transition:all 0.15s;flex:1;min-width:60px}
+    .periode-tab:last-child{border-right:none}
+    .periode-tab.active{background:var(--navy);color:var(--yellow)}
+
+    .planner-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    @media(max-width:768px){.planner-layout{grid-template-columns:1fr}}
+
+    .banque-panel,.periode-panel{background:#fff;border:4px solid var(--navy);box-shadow:var(--shadow)}
+    .panel-header{background:var(--navy);padding:0.7rem 1rem;font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;color:var(--yellow)}
+
+    .cat-section{border-bottom:2px solid #eef}
+    .cat-header{font-family:'Bangers',cursive;font-size:0.9rem;letter-spacing:2px;padding:0.5rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .cat-header.echauffement{background:#fff3cd;color:#856404}
+    .cat-header.principal{background:#d1ecf1;color:#0c5460}
+    .cat-header.jeu{background:#d4edda;color:#155724}
+    .cat-header.retour{background:#f8d7da;color:#721c24}
+
+    .edu-card{padding:0.7rem 1rem;border-bottom:1px solid #eee;cursor:pointer;transition:background 0.15s;display:flex;justify-content:space-between;align-items:center;gap:0.5rem}
+    .edu-card:hover{background:#fffde0}
+    .edu-card.added{background:#d4edda;opacity:0.7}
+    .edu-name{font-size:0.9rem;font-weight:900}
+    .edu-duree-tag{font-family:'Bangers',cursive;font-size:0.8rem;background:var(--navy);color:var(--yellow);padding:0.1rem 0.5rem;white-space:nowrap}
+    .edu-add-btn{font-family:'Bangers',cursive;font-size:0.8rem;letter-spacing:1px;background:var(--blue);color:var(--yellow);border:none;padding:0.2rem 0.6rem;cursor:pointer}
+
+    .slot-section{padding:0.8rem 1rem;border-bottom:2px solid #eee}
+    .slot-label{font-family:'Bangers',cursive;font-size:0.85rem;letter-spacing:2px;margin-bottom:0.4rem}
+    .slot-label.echauffement{color:#856404}
+    .slot-label.principal{color:#0c5460}
+    .slot-label.jeu{color:#155724}
+    .slot-label.retour{color:#721c24}
+
+    .slot-item{display:flex;justify-content:space-between;align-items:center;background:#f8f9fa;border:2px solid #dde;padding:0.4rem 0.7rem;margin-bottom:0.3rem;font-size:0.85rem;gap:0.5rem}
+    .slot-remove{background:#e53935;color:#fff;border:none;padding:0.1rem 0.5rem;cursor:pointer;font-weight:900;font-size:0.9rem;flex-shrink:0}
+    .slot-empty{font-size:0.82rem;color:#999;font-style:italic;padding:0.3rem 0}
+
+    .time-bar{background:var(--yellow);border:3px solid var(--navy);padding:0.5rem 1rem;margin:0.5rem 1rem;display:flex;justify-content:space-between;align-items:center}
+    .time-total{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px}
+    .time-ok{color:#1a7f3c}
+    .time-over{color:#e53935}
+    .time-bar-fill{height:10px;background:var(--navy);margin-top:0.3rem;transition:width 0.3s}
+
+    /* ── SAÉ OUTPUT ── */
+    #sae-output{display:none}
+    .sae-header{background:var(--navy);color:var(--yellow);padding:2rem;border:5px solid var(--navy)}
+    .sae-title-big{font-family:'Bangers',cursive;font-size:2.5rem;letter-spacing:4px;margin-bottom:0.5rem}
+    .sae-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+    .sae-chip{font-family:'Bangers',cursive;font-size:0.9rem;letter-spacing:1px;padding:0.3rem 0.8rem;background:rgba(255,224,0,0.2);border:2px solid var(--yellow)}
+
+    .sae-section{margin:1.5rem 0;border:3px solid var(--navy);background:#fff}
+    .sae-sec-head{background:var(--blue);color:#fff;font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:3px;padding:0.6rem 1.2rem}
+    .sae-sec-body{padding:1rem 1.2rem}
+
+    .print-period{border:4px solid var(--navy);margin-bottom:2rem;background:#fff;break-inside:avoid}
+    .print-header{background:var(--navy);color:var(--yellow);padding:1rem 1.5rem;font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:3px;display:flex;justify-content:space-between;align-items:center}
+    .edu-step{padding:0.8rem 1.2rem;border-bottom:1px solid #eee;display:flex;gap:1rem;align-items:flex-start}
+    .edu-step:last-child{border-bottom:none}
+    .edu-step-cat{font-family:'Bangers',cursive;font-size:0.8rem;letter-spacing:2px;padding:0.2rem 0.6rem;flex-shrink:0;min-width:100px;text-align:center}
+    .cat-pill-e{background:#fff3cd;color:#856404;border:2px solid #856404}
+    .cat-pill-p{background:#d1ecf1;color:#0c5460;border:2px solid #0c5460}
+    .cat-pill-j{background:#d4edda;color:#155724;border:2px solid #155724}
+    .cat-pill-r{background:#f8d7da;color:#721c24;border:2px solid #721c24}
+
+    .edu-step-content{flex:1}
+    .edu-step-name{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:1px;margin-bottom:0.3rem}
+    .edu-step-desc{font-size:0.88rem;color:#334;line-height:1.5}
+    .edu-step-etapes{margin-top:0.5rem;padding-left:1rem}
+    .edu-step-etapes li{font-size:0.85rem;color:#445;margin-bottom:0.2rem}
+    .edu-step-mat{font-size:0.8rem;color:#667;margin-top:0.4rem;font-style:italic}
+    .edu-step-time{font-family:'Bangers',cursive;font-size:1rem;color:var(--navy);flex-shrink:0;text-align:right;min-width:60px}
+
+    .grille-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+    .grille-table th{background:var(--navy);color:var(--yellow);font-family:'Bangers',cursive;letter-spacing:1px;padding:0.5rem;text-align:left}
+    .grille-table td{padding:0.5rem;border:1px solid #dde;vertical-align:top}
+    .grille-table tr:nth-child(even) td{background:#f5f7ff}
+
+    .obj-tag{display:inline-block;font-family:'Bangers',cursive;font-size:0.85rem;letter-spacing:1px;padding:0.2rem 0.7rem;background:var(--yellow);border:2px solid var(--navy);margin:0.2rem}
+
+    /* ── STEP NAV ── */
+    .step-nav{display:flex;justify-content:space-between;margin-top:2rem;padding-top:1rem;border-top:4px solid var(--yellow)}
+
+    /* ── TBI MODE ── */
+    .tbi-period-nav{display:none;text-align:center;margin:1rem 0}
+    body.tbi-mode .tbi-period-nav{display:flex;justify-content:center;gap:1rem;align-items:center}
+    body.tbi-mode .print-period{display:none}
+    body.tbi-mode .print-period.tbi-active{display:block!important}
+
+    /* ── MATERIEL LIST ── */
+    .materiel-grid{display:flex;flex-wrap:wrap;gap:0.5rem}
+    .mat-tag{background:var(--blue);color:#fff;font-family:'Bangers',cursive;font-size:0.85rem;letter-spacing:1px;padding:0.2rem 0.7rem;border:2px solid var(--navy)}
+  </style>
+</head>
+<body>
+
+<div class="app-header no-print">
+  <div>
+    <div class="app-title">⚡ GÉNÉRATEUR DE SAÉ PFEQ</div>
+    <div class="app-sub">ZONE TOTAL SPORT · ÉPS PRIMAIRE QUÉBEC</div>
+  </div>
+  <div class="header-btns">
+    <button class="btn btn-yellow" onclick="window.print()">🖨️ IMPRIMER</button>
+    <button class="btn btn-blue" id="btn-tbi" onclick="toggleTBI()">📺 MODE TBI</button>
+    <a href="../index.html" class="btn btn-white">← ACCUEIL</a>
+  </div>
+</div>
+
+<!-- STEPPER -->
+<div class="stepper no-print" id="stepper">
+  <button class="step-tab active" id="stab-1" onclick="goStep(1)">1 · MOYEN D'ACTION</button>
+  <button class="step-tab" id="stab-2" onclick="goStep(2)" disabled>2 · PARAMÈTRES</button>
+  <button class="step-tab" id="stab-3" onclick="goStep(3)" disabled>3 · OBJECTIFS PFEQ</button>
+  <button class="step-tab" id="stab-4" onclick="goStep(4)" disabled>4 · PLANIFICATION</button>
+  <button class="step-tab" id="stab-5" onclick="goStep(5)" disabled>5 · SAÉ COMPLÈTE</button>
+</div>
+
+<div id="wizard" class="app-main">
+
+  <!-- ════ ÉTAPE 1 ════ -->
+  <div id="step-1">
+    <div class="section-title">🎯 CHOISIR UN MOYEN D'ACTION</div>
+    <div class="ma-grid" id="ma-grid"></div>
+    <div class="step-nav">
+      <div></div>
+      <button class="btn btn-yellow" onclick="goStep(2)" id="btn-next-1" disabled>SUIVANT → PARAMÈTRES</button>
+    </div>
+  </div>
+
+  <!-- ════ ÉTAPE 2 ════ -->
+  <div id="step-2" class="hidden">
+    <div class="section-title">⚙️ PARAMÈTRES DE LA SAÉ</div>
+    <div class="params-grid">
+      <div class="param-block">
+        <label class="param-label">📚 CYCLE SCOLAIRE</label>
+        <select class="param-select" id="sel-cycle">
+          <option value="">-- Choisir --</option>
+          <option value="Préscolaire">🌱 Préscolaire (4-5 ans)</option>
+          <option value="1er cycle">📗 1er cycle (6-8 ans)</option>
+          <option value="2e cycle">📘 2e cycle (8-10 ans)</option>
+          <option value="3e cycle">📙 3e cycle (10-12 ans)</option>
+        </select>
+      </div>
+      <div class="param-block">
+        <label class="param-label">⏱️ DURÉE PAR PÉRIODE</label>
+        <div class="duree-btns" id="duree-btns"></div>
+      </div>
+      <div class="param-block">
+        <label class="param-label">📅 NOMBRE DE PÉRIODES</label>
+        <select class="param-select" id="sel-periodes">
+          <option value="">-- Choisir --</option>
+        </select>
+      </div>
+      <div class="param-block">
+        <label class="param-label">✏️ TITRE DE LA SAÉ (optionnel)</label>
+        <input type="text" class="param-input" id="sae-titre" placeholder="Ex: À la conquête du ballon!">
+      </div>
+    </div>
+    <div class="step-nav">
+      <button class="btn btn-white" onclick="goStep(1)">← RETOUR</button>
+      <button class="btn btn-yellow" onclick="goStep(3)" id="btn-next-2" disabled>SUIVANT → OBJECTIFS</button>
+    </div>
+  </div>
+
+  <!-- ════ ÉTAPE 3 ════ -->
+  <div id="step-3" class="hidden">
+    <div class="section-title">🎯 OBJECTIFS PFEQ</div>
+    <p style="margin-bottom:1rem;font-size:0.9rem">Sélectionne les objectifs visés par cette SAÉ. Minimum 2, maximum 5 recommandés.</p>
+    <div class="obj-list" id="obj-list"></div>
+    <div style="margin-top:1rem;font-size:0.85rem;color:#667" id="obj-count">0 objectif(s) sélectionné(s)</div>
+    <div class="step-nav">
+      <button class="btn btn-white" onclick="goStep(2)">← RETOUR</button>
+      <button class="btn btn-yellow" onclick="goStep(4)">SUIVANT → PLANIFICATION</button>
+    </div>
+  </div>
+
+  <!-- ════ ÉTAPE 4 ════ -->
+  <div id="step-4" class="hidden">
+    <div class="section-title">📋 PLANIFIER LES PÉRIODES</div>
+    <div class="periode-tabs" id="periode-tabs"></div>
+    <div class="planner-layout">
+      <div class="banque-panel">
+        <div class="panel-header">📚 BANQUE D'ÉDUCATIFS</div>
+        <div id="banque-content"></div>
+      </div>
+      <div class="periode-panel">
+        <div class="panel-header" id="periode-panel-title">📅 PÉRIODE 1</div>
+        <div class="time-bar">
+          <span class="time-total" id="time-display">0 min / <span id="time-target">0</span> min</span>
+          <span id="time-status" style="font-family:'Bangers',cursive;font-size:0.9rem;letter-spacing:1px"></span>
+        </div>
+        <div id="periode-slots"></div>
+      </div>
+    </div>
+    <div class="step-nav">
+      <button class="btn btn-white" onclick="goStep(3)">← RETOUR</button>
+      <button class="btn btn-yellow" onclick="generateSAE()">✅ GÉNÉRER LA SAÉ COMPLÈTE</button>
+    </div>
+  </div>
+
+  <!-- ════ ÉTAPE 5 ════ -->
+  <div id="step-5" class="hidden">
+    <div class="section-title">✅ SAÉ GÉNÉRÉE</div>
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:1.5rem" class="no-print">
+      <button class="btn btn-yellow" onclick="window.print()">🖨️ IMPRIMER / PDF</button>
+      <button class="btn btn-blue" onclick="toggleTBI()">📺 MODE TBI (GRAND ÉCRAN)</button>
+      <button class="btn btn-white" onclick="goStep(4)">← MODIFIER</button>
+      <button class="btn btn-red" onclick="resetApp()">🔄 NOUVELLE SAÉ</button>
+    </div>
+    <!-- TBI navigation -->
+    <div class="tbi-period-nav no-print" id="tbi-nav">
+      <button class="btn btn-white" onclick="tbiPrev()">← PÉRIODE PRÉCÉDENTE</button>
+      <span style="font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:2px" id="tbi-label">PÉRIODE 1</span>
+      <button class="btn btn-yellow" onclick="tbiNext()">PÉRIODE SUIVANTE →</button>
+    </div>
+    <div id="sae-output" style="display:block"></div>
+    <div class="step-nav no-print">
+      <button class="btn btn-white" onclick="goStep(4)">← MODIFIER</button>
+      <button class="btn btn-red" onclick="resetApp()">🔄 NOUVELLE SAÉ</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="educatifs-data.js"></script>
+<script>
+/* ════════════════════════════════════
+   APP STATE
+═══════════════════════════════════════ */
+let state = {
+  moyen: null,
+  cycle: null,
+  duree: null,
+  nbPeriodes: null,
+  titre: '',
+  objectifs: [],
+  // periodes[i] = { echauffement:[], principal:[], jeu:[], retour:[] }
+  periodes: [],
+  currentPeriode: 0,
+  tbiPeriode: 0,
+  tbiMode: false,
+};
+
+/* ════ INIT ════ */
+window.onload = () => {
+  renderMoyenGrid();
+  renderDureeButtons();
+  renderNbPeriodes();
+};
+
+/* ════ STEP NAVIGATION ════ */
+function goStep(n) {
+  document.querySelectorAll('[id^="step-"]').forEach(el => el.classList.add('hidden'));
+  document.getElementById('step-' + n).classList.remove('hidden');
+  document.querySelectorAll('.step-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('stab-' + n).classList.add('active');
+  window.scrollTo(0,0);
+  if (n === 4) renderPlanner();
+}
+
+function unlockStep(n) {
+  const tab = document.getElementById('stab-' + n);
+  if (tab) { tab.disabled = false; tab.classList.add('done'); }
+}
+
+/* ════ STEP 1: MOYEN D'ACTION ════ */
+function renderMoyenGrid() {
+  const grid = document.getElementById('ma-grid');
+  grid.innerHTML = Object.entries(MOYENS_ACTION).map(([key, ma]) => `
+    <div class="ma-card" id="ma-${key}" onclick="selectMoyen('${key}')"
+         style="border-top:6px solid ${ma.color}">
+      <span class="ma-icon">${ma.icon}</span>
+      <div class="ma-label" style="color:${ma.color}">${ma.label}</div>
+      <div class="ma-sub">${ma.subtitle}</div>
+    </div>
+  `).join('');
+}
+
+function selectMoyen(key) {
+  state.moyen = key;
+  document.querySelectorAll('.ma-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('ma-' + key).classList.add('selected');
+  document.getElementById('ma-' + key).style.background = '#fffde0';
+  document.getElementById('btn-next-1').disabled = false;
+  unlockStep(2);
+}
+
+/* ════ STEP 2: PARAMÈTRES ════ */
+function renderDureeButtons() {
+  const container = document.getElementById('duree-btns');
+  container.innerHTML = DUREES_PERIODE.map(d =>
+    `<button class="duree-btn" onclick="selectDuree(${d},this)">${d} MIN</button>`
+  ).join('');
+}
+
+function renderNbPeriodes() {
+  const sel = document.getElementById('sel-periodes');
+  sel.innerHTML = '<option value="">-- Choisir --</option>' +
+    NB_PERIODES.map(n => `<option value="${n}">${n} période${n>1?'s':''}</option>`).join('');
+  sel.onchange = () => checkStep2();
+}
+
+function selectDuree(d, btn) {
+  state.duree = d;
+  document.querySelectorAll('.duree-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  checkStep2();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('sel-cycle').onchange = () => checkStep2();
+});
+
+function checkStep2() {
+  const cycle = document.getElementById('sel-cycle').value;
+  const periodes = document.getElementById('sel-periodes').value;
+  if (cycle && state.duree && periodes) {
+    state.cycle = cycle;
+    state.nbPeriodes = parseInt(periodes);
+    state.titre = document.getElementById('sae-titre').value;
+    // Initialize periodes array
+    if (state.periodes.length !== state.nbPeriodes) {
+      state.periodes = Array.from({length: state.nbPeriodes}, () =>
+        ({echauffement:[], principal:[], jeu:[], retour:[]})
+      );
+    }
+    document.getElementById('btn-next-2').disabled = false;
+    unlockStep(3);
+    renderObjectifs();
+  }
+}
+
+/* ════ STEP 3: OBJECTIFS ════ */
+function renderObjectifs() {
+  const list = document.getElementById('obj-list');
+  const objs = (OBJECTIFS_PFEQ[state.moyen] || {})[state.cycle] || [];
+  if (!objs.length) {
+    list.innerHTML = '<div style="padding:1rem;color:#667">Aucun objectif spécifique disponible — utiliser les objectifs généraux du PFEQ.</div>';
+    return;
+  }
+  list.innerHTML = objs.map((obj, i) => `
+    <div class="obj-item" id="obj-${i}" onclick="toggleObj(${i}, '${obj.replace(/'/g,"\\'")}')">
+      <div class="obj-check" id="obj-check-${i}"></div>
+      <div class="obj-text">${obj}</div>
+    </div>
+  `).join('');
+  unlockStep(4);
+}
+
+function toggleObj(i, text) {
+  const item = document.getElementById('obj-' + i);
+  const idx = state.objectifs.indexOf(text);
+  if (idx > -1) {
+    state.objectifs.splice(idx, 1);
+    item.classList.remove('selected');
+  } else {
+    state.objectifs.push(text);
+    item.classList.add('selected');
+  }
+  document.getElementById('obj-count').textContent = state.objectifs.length + ' objectif(s) sélectionné(s)';
+}
+
+/* ════ STEP 4: PLANIFICATION ════ */
+function renderPlanner() {
+  state.titre = document.getElementById('sae-titre').value || state.titre;
+  const ma = MOYENS_ACTION[state.moyen];
+
+  // Tabs
+  const tabs = document.getElementById('periode-tabs');
+  tabs.innerHTML = Array.from({length: state.nbPeriodes}, (_, i) =>
+    `<button class="periode-tab ${i===state.currentPeriode?'active':''}"
+      onclick="switchPeriode(${i})">P.${i+1}</button>`
+  ).join('');
+
+  renderBanque();
+  renderPeriodeSlots();
+}
+
+function switchPeriode(i) {
+  state.currentPeriode = i;
+  document.querySelectorAll('.periode-tab').forEach((t,j) =>
+    t.classList.toggle('active', j===i)
+  );
+  document.getElementById('periode-panel-title').textContent = `📅 PÉRIODE ${i+1}`;
+  renderPeriodeSlots();
+}
+
+function renderBanque() {
+  const panel = document.getElementById('banque-content');
+  const eduAll = EDUCATIFS[state.moyen] || [];
+  const cats = ['echauffement','principal','jeu','retour'];
+  const catLabels = {echauffement:'🔥 ÉCHAUFFEMENT', principal:'⭐ PARTIE PRINCIPALE', jeu:'🎮 JEU', retour:'🧘 RETOUR AU CALME'};
+
+  panel.innerHTML = cats.map(cat => {
+    const items = eduAll.filter(e => e.categorie === cat &&
+      (e.cycles.includes(state.cycle) || e.cycles.includes('Tous cycles')));
+    if (!items.length) return '';
+    return `
+      <div class="cat-section">
+        <div class="cat-header ${cat}" onclick="toggleCat(this)">
+          ${catLabels[cat]} <span>${items.length} éducatifs ▾</span>
+        </div>
+        <div class="cat-items">
+          ${items.map(edu => `
+            <div class="edu-card" id="edu-card-${edu.id}" onclick="addEdu('${edu.id}','${cat}')">
+              <div>
+                <div class="edu-name">${edu.nom}</div>
+                <div style="font-size:0.78rem;color:#556;margin-top:0.2rem">${edu.materiel.join(' · ').substring(0,60)}</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.4rem;flex-shrink:0">
+                <span class="edu-duree-tag">${edu.durees[0]}-${edu.durees[edu.durees.length-1]} min</span>
+                <button class="edu-add-btn">+ AJOUTER</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function toggleCat(header) {
+  const items = header.nextElementSibling;
+  items.style.display = items.style.display === 'none' ? '' : 'none';
+}
+
+function addEdu(eduId, cat) {
+  const edu = findEdu(eduId);
+  if (!edu) return;
+  const p = state.periodes[state.currentPeriode];
+  // Prevent duplicates in same period
+  const allInPeriod = [...p.echauffement,...p.principal,...p.jeu,...p.retour];
+  if (allInPeriod.find(e => e.id === eduId)) return;
+  // Use median duration
+  const duree = edu.durees[Math.floor(edu.durees.length/2)];
+  p[cat].push({id: eduId, nom: edu.nom, duree, cat});
+  renderPeriodeSlots();
+}
+
+function removeEdu(cat, idx) {
+  state.periodes[state.currentPeriode][cat].splice(idx, 1);
+  renderPeriodeSlots();
+}
+
+function changeDuree(cat, idx, val) {
+  state.periodes[state.currentPeriode][cat][idx].duree = parseInt(val);
+  renderPeriodeSlots();
+}
+
+function renderPeriodeSlots() {
+  const p = state.periodes[state.currentPeriode];
+  const slots = document.getElementById('periode-slots');
+  const cats = ['echauffement','principal','jeu','retour'];
+  const catLabels = {echauffement:'🔥 ÉCHAUFFEMENT', principal:'⭐ PARTIE PRINCIPALE', jeu:'🎮 JEU', retour:'🧘 RETOUR AU CALME'};
+
+  let totalUsed = 0;
+
+  slots.innerHTML = cats.map(cat => {
+    const items = p[cat];
+    const catTime = items.reduce((s,e) => s+e.duree, 0);
+    totalUsed += catTime;
+    return `
+      <div class="slot-section">
+        <div class="slot-label ${cat}">${catLabels[cat]} <small style="font-weight:normal">(${catTime} min)</small></div>
+        ${items.length === 0
+          ? '<div class="slot-empty">Cliquer sur un éducatif dans la banque pour l\'ajouter ici</div>'
+          : items.map((item, idx) => {
+              const edu = findEdu(item.id);
+              const durees = edu ? edu.durees : [item.duree];
+              return `<div class="slot-item">
+                <span style="flex:1">${item.nom}</span>
+                <select onchange="changeDuree('${cat}',${idx},this.value)"
+                  style="font-family:'Bangers',cursive;border:2px solid var(--navy);padding:0.1rem 0.3rem;font-size:0.85rem;background:var(--yellow)">
+                  ${durees.map(d => `<option value="${d}" ${d===item.duree?'selected':''}>${d} min</option>`).join('')}
+                </select>
+                <button class="slot-remove" onclick="removeEdu('${cat}',${idx})">✕</button>
+              </div>`;
+            }).join('')
+        }
+      </div>`;
+  }).join('');
+
+  // Time bar
+  const remaining = state.duree - totalUsed;
+  const pct = Math.min(100, (totalUsed / state.duree) * 100);
+  document.getElementById('time-display').textContent = `${totalUsed} min / ${state.duree} min`;
+  document.getElementById('time-target').textContent = state.duree;
+  const status = document.getElementById('time-status');
+  if (remaining > 0) { status.textContent = `⏳ ${remaining} min restantes`; status.style.color='#e67e22'; }
+  else if (remaining === 0) { status.textContent = '✅ PARFAIT!'; status.style.color='#1a7f3c'; }
+  else { status.textContent = `⚠️ ${Math.abs(remaining)} min de trop!`; status.style.color='#e53935'; }
+}
+
+function findEdu(id) {
+  for (const arr of Object.values(EDUCATIFS)) {
+    const e = arr.find(e => e.id === id);
+    if (e) return e;
+  }
+  return null;
+}
+
+/* ════ GENERATE SAÉ ════ */
+function generateSAE() {
+  unlockStep(5);
+  const ma = MOYENS_ACTION[state.moyen];
+  const titre = state.titre || `SAÉ ${ma.label} — ${state.cycle}`;
+
+  // Collect all materiel
+  const allMat = new Set();
+  state.periodes.forEach(p => {
+    ['echauffement','principal','jeu','retour'].forEach(cat => {
+      p[cat].forEach(item => {
+        const edu = findEdu(item.id);
+        if (edu) edu.materiel.forEach(m => allMat.add(m));
+      });
+    });
+  });
+
+  const output = document.getElementById('sae-output');
+  output.innerHTML = `
+    <!-- EN-TÊTE SAÉ -->
+    <div class="sae-header print-header">
+      <div class="sae-title-big">⚡ ${titre.toUpperCase()}</div>
+      <div class="sae-chips">
+        <span class="sae-chip">${ma.icon} ${ma.label}</span>
+        <span class="sae-chip">📚 ${state.cycle}</span>
+        <span class="sae-chip">⏱️ ${state.duree} min / période</span>
+        <span class="sae-chip">📅 ${state.nbPeriodes} période${state.nbPeriodes>1?'s':''}</span>
+        <span class="sae-chip">🗓️ ${new Date().toLocaleDateString('fr-CA')}</span>
+      </div>
+    </div>
+
+    <!-- OBJECTIFS -->
+    ${state.objectifs.length ? `
+    <div class="sae-section">
+      <div class="sae-sec-head">🎯 OBJECTIFS DE LA SAÉ</div>
+      <div class="sae-sec-body">
+        ${state.objectifs.map(o => `<span class="obj-tag">▸ ${o}</span>`).join('')}
+      </div>
+    </div>` : ''}
+
+    <!-- MATÉRIEL TOTAL -->
+    ${allMat.size ? `
+    <div class="sae-section">
+      <div class="sae-sec-head">📦 MATÉRIEL NÉCESSAIRE (toute la SAÉ)</div>
+      <div class="sae-sec-body">
+        <div class="materiel-grid">
+          ${[...allMat].map(m => `<span class="mat-tag">📌 ${m}</span>`).join('')}
+        </div>
+      </div>
+    </div>` : ''}
+
+    <!-- PÉRIODES -->
+    ${state.periodes.map((p, pi) => {
+      const cats = ['echauffement','principal','jeu','retour'];
+      const catLabels = {echauffement:'🔥 ÉCHAUFFEMENT', principal:'⭐ PARTIE PRINCIPALE', jeu:'🎮 JEU / SITUATION COMPLEXE', retour:'🧘 RETOUR AU CALME'};
+      const catPill = {echauffement:'cat-pill-e', principal:'cat-pill-p', jeu:'cat-pill-j', retour:'cat-pill-r'};
+      const totalTime = cats.reduce((s,c) => s + p[c].reduce((ss,e) => ss+e.duree, 0), 0);
+      const allItems = cats.flatMap(cat => p[cat].map(item => ({...item, catLabel: catLabels[cat], catPill: catPill[cat]})));
+
+      return `
+      <div class="print-period ${pi===0?'tbi-active':''}" id="period-${pi}">
+        <div class="print-header">
+          <span>PÉRIODE ${pi+1} sur ${state.nbPeriodes}</span>
+          <span>${totalTime} min / ${state.duree} min</span>
+        </div>
+        ${allItems.length === 0
+          ? '<div style="padding:1.5rem;text-align:center;color:#667">Aucun éducatif planifié pour cette période</div>'
+          : allItems.map(item => {
+              const edu = findEdu(item.id);
+              if (!edu) return '';
+              return `
+              <div class="edu-step">
+                <span class="edu-step-cat ${item.catPill}">${item.catLabel}</span>
+                <div class="edu-step-content">
+                  <div class="edu-step-name">${edu.nom}</div>
+                  <div class="edu-step-desc">${edu.description}</div>
+                  <ul class="edu-step-etapes">${edu.etapes.map(e=>`<li>${e}</li>`).join('')}</ul>
+                  ${edu.variantes.length ? `
+                    <div style="margin-top:0.4rem;font-size:0.82rem;color:#557">
+                      💡 <strong>Variantes:</strong> ${edu.variantes.join(' · ')}
+                    </div>` : ''}
+                  ${edu.materiel.length ? `<div class="edu-step-mat">📦 ${edu.materiel.join(' · ')}</div>` : ''}
+                </div>
+                <div class="edu-step-time">${item.duree} min</div>
+              </div>`;
+            }).join('')
+        }
+      </div>`;
+    }).join('')}
+
+    <!-- GRILLE D'ÉVALUATION -->
+    <div class="sae-section">
+      <div class="sae-sec-head">📊 GRILLE D'ÉVALUATION — ${titre}</div>
+      <div class="sae-sec-body">
+        <table class="grille-table">
+          <thead>
+            <tr>
+              <th style="width:30%">Critère d'évaluation</th>
+              <th style="width:23%">A — Très bien<br><small>Dépasse les attentes</small></th>
+              <th style="width:23%">B — Bien<br><small>Répond aux attentes</small></th>
+              <th style="width:24%">C — En développement<br><small>Partiellement atteint</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            ${generateGrille()}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- NOTES PÉDAGOGIQUES -->
+    <div class="sae-section">
+      <div class="sae-sec-head">📝 NOTES PÉDAGOGIQUES</div>
+      <div class="sae-sec-body" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div>
+          <strong>Différenciation:</strong>
+          <ul style="margin-top:0.4rem;padding-left:1.2rem;font-size:0.88rem;line-height:1.7">
+            <li>Adapter la distance ou la taille du matériel selon le niveau</li>
+            <li>Proposer des rôles alternatifs (observateur, arbitre)</li>
+            <li>Offrir du soutien visuel (fiches illustrées)</li>
+            <li>Permettre le travail avec un partenaire de soutien</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Connexion culturelle:</strong>
+          <ul style="margin-top:0.4rem;padding-left:1.2rem;font-size:0.88rem;line-height:1.7">
+            <li>Lien avec les cultures du monde (voir éducatifs)</li>
+            <li>Discussion sur les pratiques sportives globales</li>
+            <li>Valoriser les expériences sportives des familles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  `;
+
+  goStep(5);
+}
+
+function generateGrille() {
+  const ma = state.moyen;
+  const criteres = {
+    manipulation_balles: [
+      ['Précision du lancer', 'Lance avec grande précision dans des situations variées', 'Lance avec précision dans des situations simples', 'Précision en développement'],
+      ['Contrôle à la réception', 'Attrape avec contrôle dans des situations complexes', 'Attrape bien dans des situations simples', 'Travaille à contrôler la réception'],
+      ['Participation et engagement', 'Participe activement avec enthousiasme et aide ses pairs', 'Participe régulièrement', 'Participation à encourager'],
+    ],
+    locomotion: [
+      ['Efficacité du déplacement', 'Se déplace avec grande efficacité et technique', 'Se déplace efficacement', 'Efficacité en développement'],
+      ['Variété des modes de déplacement', 'Maîtrise tous les modes de déplacement demandés', 'Maîtrise la plupart des modes demandés', 'Quelques modes maîtrisés'],
+      ['Engagement et persévérance', 'Donne le maximum et persévère toujours', 'Persévère généralement', 'Persévérance à développer'],
+    ],
+    stabilisation: [
+      ['Qualité de l\'équilibre', 'Maintient des positions d\'équilibre complexes avec aisance', 'Maintient des positions simples', 'Équilibre en développement'],
+      ['Contrôle corporel', 'Contrôle parfaitement son corps dans toutes les situations', 'Bon contrôle général', 'Contrôle en progression'],
+      ['Créativité et expression', 'Fait preuve de grande créativité dans ses enchaînements', 'Apporte des idées créatives', 'Créativité à encourager'],
+    ],
+    cooperation: [
+      ['Communication avec l\'équipe', 'Communique efficacement et positivement avec tous', 'Communique bien en général', 'Communication à développer'],
+      ['Contribution collective', 'Contribue activement au succès de l\'équipe', 'Bonne contribution générale', 'Contribution à encourager'],
+      ['Fair-play et respect', 'Démontre toujours un excellent fair-play', 'Fair-play généralement démontré', 'Fair-play en développement'],
+    ],
+    opposition: [
+      ['Habiletés offensives', 'Utilise des stratégies offensives variées et efficaces', 'Utilise quelques stratégies offensives', 'Stratégies offensives de base'],
+      ['Habiletés défensives', 'Défend efficacement dans toutes les situations', 'Bonne défense en général', 'Défense en développement'],
+      ['Respect des règles', 'Respecte toujours toutes les règles', 'Respecte généralement les règles', 'Apprentissage des règles en cours'],
+    ],
+    expression: [
+      ['Qualité de l\'expression', 'S\'exprime avec grande originalité et aisance', 'S\'exprime clairement', 'Expression en développement'],
+      ['Respect du rythme et de la musique', 'Parfaitement synchronisé(e) avec la musique', 'Bonne synchronisation générale', 'Synchronisation en progression'],
+      ['Créativité chorégraphique', 'Crée des séquences très originales', 'Apporte des éléments créatifs', 'Créativité à encourager'],
+    ],
+    manipulation_engins: [
+      ['Contrôle de l\'engin', 'Contrôle parfaitement l\'engin dans toutes les situations', 'Bon contrôle en général', 'Contrôle en développement'],
+      ['Précision des frappes', 'Frappe avec précision dans des situations variées', 'Précision dans les situations simples', 'Précision en développement'],
+      ['Engagement sportif', 'Très engagé(e) et aide ses coéquipiers', 'Bon niveau d\'engagement', 'Engagement à développer'],
+    ],
+    plein_air: [
+      ['Sécurité et autonomie', 'Démontre une grande autonomie en respectant toutes les règles de sécurité', 'Respecte généralement les règles de sécurité', 'Règles de sécurité en apprentissage'],
+      ['Habiletés motrices en plein air', 'Maîtrise tous les déplacements propres à l\'activité', 'Maîtrise la plupart des déplacements', 'Habiletés en développement'],
+      ['Respect de l\'environnement', 'Respecte et valorise toujours l\'environnement naturel', 'Respecte généralement l\'environnement', 'Sensibilisation en cours'],
+    ],
+  };
+
+  const rows = criteres[ma] || [
+    ['Participation', 'Participe activement en tout temps', 'Participe régulièrement', 'Participation à encourager'],
+    ['Habiletés techniques', 'Maîtrise technique excellente', 'Bonne maîtrise technique', 'Habiletés en développement'],
+    ['Respect des consignes', 'Respecte toujours les consignes', 'Respecte généralement', 'Consignes en apprentissage'],
+  ];
+
+  return rows.map(([critere, A, B, C]) => `
+    <tr>
+      <td><strong>${critere}</strong></td>
+      <td style="background:#e8f5e9">${A}</td>
+      <td style="background:#fff8e1">${B}</td>
+      <td style="background:#fce4ec">${C}</td>
+    </tr>`).join('');
+}
+
+/* ════ TBI MODE ════ */
+let tbiCurrentPeriod = 0;
+function toggleTBI() {
+  state.tbiMode = !state.tbiMode;
+  document.body.classList.toggle('tbi-mode', state.tbiMode);
+  document.getElementById('btn-tbi').textContent = state.tbiMode ? '❌ QUITTER TBI' : '📺 MODE TBI';
+  if (state.tbiMode) {
+    tbiCurrentPeriod = 0;
+    updateTBIView();
+  } else {
+    document.querySelectorAll('.print-period').forEach(el => {
+      el.style.display = '';
+    });
+  }
+}
+
+function updateTBIView() {
+  const periods = document.querySelectorAll('.print-period');
+  periods.forEach((el, i) => {
+    el.style.display = i === tbiCurrentPeriod ? 'block' : 'none';
+  });
+  document.getElementById('tbi-label').textContent = `PÉRIODE ${tbiCurrentPeriod+1} / ${state.nbPeriodes}`;
+}
+
+function tbiNext() {
+  if (tbiCurrentPeriod < state.nbPeriodes - 1) { tbiCurrentPeriod++; updateTBIView(); }
+}
+function tbiPrev() {
+  if (tbiCurrentPeriod > 0) { tbiCurrentPeriod--; updateTBIView(); }
+}
+
+/* ════ RESET ════ */
+function resetApp() {
+  if (!confirm('Créer une nouvelle SAÉ? Toute la planification actuelle sera perdue.')) return;
+  state = {moyen:null, cycle:null, duree:null, nbPeriodes:null, titre:'', objectifs:[], periodes:[], currentPeriode:0, tbiPeriode:0, tbiMode:false};
+  document.querySelectorAll('.step-tab').forEach((t,i) => { t.disabled = i>0; t.classList.remove('done','active'); });
+  document.getElementById('stab-1').classList.add('active');
+  document.getElementById('sae-output').innerHTML = '';
+  renderMoyenGrid();
+  document.getElementById('sel-cycle').value = '';
+  document.getElementById('sae-titre').value = '';
+  document.querySelectorAll('.duree-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-next-1').disabled = true;
+  document.getElementById('btn-next-2').disabled = true;
+  goStep(1);
+}
+
+// Watch cycle & periodes selects after DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('sel-cycle').addEventListener('change', checkStep2);
+  document.getElementById('sel-periodes').addEventListener('change', checkStep2);
+  document.getElementById('sae-titre').addEventListener('input', () => { state.titre = document.getElementById('sae-titre').value; });
+});
+</script>
+
+</body>
+</html>
