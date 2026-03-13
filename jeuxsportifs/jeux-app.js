@@ -595,6 +595,7 @@ function renderGrid() {
   const grid = document.getElementById('grid');
   if (filtered.length === 0) {
     grid.innerHTML = '<div style="text-align:center;padding:3rem;font-family:Bangers,cursive;font-size:1.5rem;color:var(--navy);letter-spacing:3px">AUCUN JEU TROUVÉ 😅</div>';
+    if (window.ZTS) window.ZTS.shakeElement(grid);
     return;
   }
 
@@ -642,6 +643,10 @@ function renderGrid() {
 
   if (filtered.length > 200) {
     grid.innerHTML += `<div style="text-align:center;padding:2rem;font-family:Bangers,cursive;font-size:1.1rem;color:var(--navy);letter-spacing:2px;grid-column:1/-1">... ET ${filtered.length - 200} AUTRES JEUX — AFFINEZ VOTRE RECHERCHE</div>`;
+  }
+  if (window.ZTS) {
+    window.ZTS.restaggerCards(grid);
+    window.ZTS.animateStatPills();
   }
 }
 
