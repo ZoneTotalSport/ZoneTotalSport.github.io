@@ -301,7 +301,9 @@ body::after {
 
 /* ===== CARD ===== */
 .zts-card {
-  background: var(--white);
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: var(--border-fat);
   box-shadow: var(--shadow);
   cursor: pointer;
