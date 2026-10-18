@@ -15,6 +15,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 var(--body);-webkit-tap-highlight-color:transparent}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
 .wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -201,7 +202,7 @@ async function refresh(){
 
 function setStatus(kind,text){ $("dot").className="dot"+(kind?" "+kind:""); $("status").textContent=text||""; }
 const v=$("v");
-const native=v.canPlayType("application/vnd.apple.mpegurl");
+const native=/Apple/.test(navigator.vendor)&&!!v.canPlayType("application/vnd.apple.mpegurl");
 
 function play(i){
   const c=shown[i]; if(!c) return;
