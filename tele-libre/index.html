@@ -1,0 +1,245 @@
+<title>Télé Libre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Télé Libre">
+<meta name="theme-color" content="#0b1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: lecteur collé en haut, liste de chaînes en dessous (guide télé). Thème sombre assumé. */
+:root{
+  --bg:#0b1220; --panel:#131c2e; --line:#22304a; --fg:#e8eef8; --muted:#8a9ab5;
+  --accent:#ffb020; --live:#ff4d5e; --ok:#3ccf91;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 var(--body);-webkit-tap-highlight-color:transparent}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-block:12px 8px}
+h1{font:700 26px/1 var(--display);letter-spacing:.02em;margin:0;text-transform:uppercase}
+h1 b{color:var(--accent)}
+.count{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+
+.player{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-bottom:10px}
+.screen{position:relative;aspect-ratio:16/9;max-width:100%;background:#000;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+video{width:100%;height:100%;display:block;background:#000}
+.idle{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--muted);padding:16px;pointer-events:none}
+.idle strong{display:block;font:700 22px var(--display);color:var(--fg);text-transform:uppercase;letter-spacing:.03em}
+.bar{display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap}
+.now{flex:1;min-width:0;display:flex;align-items:center;gap:8px}
+.now .name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none}
+.dot.live{background:var(--live);box-shadow:0 0 0 4px rgba(255,77,94,.2)}
+.dot.err{background:var(--accent)}
+.status{color:var(--muted);font-size:13px}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-weight:600;font-size:14px}
+.btn:focus-visible,.chip:focus-visible,.ch:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn.cast{background:var(--accent);color:#1a1200;border-color:var(--accent)}
+
+.controls{display:flex;flex-direction:column;gap:8px;padding-block:6px 10px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--muted);white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg);font-weight:600}
+.chips.groups .chip{font-size:13px;padding:4px 10px}
+input[type=search]{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:var(--fg);font:inherit;font-size:16px}
+
+.list{display:flex;flex-direction:column;padding-bottom:40px}
+.ch{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;padding:8px 4px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;width:100%;content-visibility:auto;contain-intrinsic-size:auto 60px}
+.ch:hover{background:var(--panel)}
+.ch.on{background:var(--panel);box-shadow:inset 3px 0 0 var(--accent)}
+.ch.dead{opacity:.4}
+.logo{width:52px;height:36px;border-radius:6px;background:#fff1;display:grid;place-items:center;overflow:hidden;font:700 13px var(--display);color:var(--muted)}
+.logo img{max-width:100%;max-height:100%;object-fit:contain}
+.meta{min-width:0}
+.meta .n{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta .g{color:var(--muted);font-size:12px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{border:1px solid var(--line);border-radius:4px;padding:0 5px;font-size:11px}
+.fav{background:none;border:0;font-size:20px;color:var(--muted);padding:6px 8px;line-height:1}
+.fav.on{color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+.note{color:var(--muted);font-size:12px;padding-block:0 30px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Télé <b>Libre</b></h1>
+    <span class="count" id="count">—</span>
+  </header>
+
+  <section class="player" aria-label="Lecteur">
+    <div class="screen">
+      <video id="v" playsinline controls x-webkit-airplay="allow" preload="none"></video>
+      <div class="idle" id="idle"><div><strong>Choisis une chaîne</strong>Touche une chaîne dans la liste. Le bouton AirPlay l'envoie sur ta télé.</div></div>
+    </div>
+    <div class="bar">
+      <div class="now"><span class="dot" id="dot"></span><span class="name" id="nowName">Aucune chaîne</span><span class="status" id="status"></span></div>
+      <button class="btn" id="prev" aria-label="Chaîne précédente">◀</button>
+      <button class="btn" id="next" aria-label="Chaîne suivante">▶</button>
+      <button class="btn cast" id="airplay" hidden>Télé (AirPlay)</button>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="chips" id="sources" role="group" aria-label="Listes"></div>
+    <input type="search" id="q" placeholder="Chercher une chaîne (ex. MTV, nouvelles, Radio-Canada)" autocomplete="off">
+    <div class="chips groups" id="groups" role="group" aria-label="Catégories"></div>
+  </div>
+
+  <div class="list" id="list"><div class="empty">Chargement des chaînes…</div></div>
+  <p class="note">Chaînes publiques et gratuites répertoriées par le projet iptv-org (GitHub). Certaines peuvent être hors ligne ou bloquées selon le pays.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"></script>
+<script>
+const BASE = "https://iptv-org.github.io/iptv/";
+const SOURCES = [
+  {id:"ca", label:"Canada", path:"countries/ca.m3u"},
+  {id:"fr", label:"En français", path:"languages/fra.m3u"},
+  {id:"music", label:"Musique", path:"categories/music.m3u"},
+  {id:"sports", label:"Sports", path:"categories/sports.m3u"},
+  {id:"kids", label:"Enfants", path:"categories/kids.m3u"},
+  {id:"news", label:"Nouvelles", path:"categories/news.m3u"},
+  {id:"us", label:"États-Unis", path:"countries/us.m3u"},
+  {id:"fav", label:"★ Favoris"}
+];
+const GROUP_FR = {Music:"Musique",Series:"Séries",Entertainment:"Divertissement",General:"Général",Religious:"Religion",News:"Nouvelles",Kids:"Enfants",Sports:"Sports",Culture:"Culture",Movies:"Films",Animation:"Animation",Legislative:"Législatif",Classic:"Classiques",Outdoor:"Plein air",Documentary:"Documentaires",Comedy:"Humour",Lifestyle:"Style de vie",Undefined:"Autres",Cooking:"Cuisine",Business:"Affaires",Education:"Éducation",Family:"Famille",Travel:"Voyage",Weather:"Météo",Science:"Science",Shop:"Magasinage",Auto:"Auto",Relax:"Détente",Public:"Public",Interactive:"Interactif"};
+
+const $ = id => document.getElementById(id);
+const store = {
+  get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+let favs = store.get("tl_favs", {});          // url -> channel
+let state = {src: store.get("tl_src","ca"), group:"Tout", q:""};
+const cache = {}, dead = new Set();
+let shown = [], current = null, hls = null, timer = null;
+
+function parseM3U(text){
+  const out=[]; const lines=text.split(/\r?\n/); let info=null;
+  for(const raw of lines){
+    const l=raw.trim(); if(!l) continue;
+    if(l.startsWith("#EXTINF")){
+      const attr=k=>{const m=l.match(new RegExp(k+'="([^"]*)"'));return m?m[1]:""};
+      const full=l.slice(l.lastIndexOf(",")+1).trim();
+      const tags=[...full.matchAll(/\[([^\]]+)\]/g)].map(m=>m[1]);
+      const res=(full.match(/\((\d{3,4}p)\)/)||[])[1]||"";
+      const name=full.replace(/\[[^\]]*\]/g,"").replace(/\(\d{3,4}p\)/,"").replace(/\s+/g," ").trim();
+      info={name, logo:attr("tvg-logo"), groups:(attr("group-title")||"Undefined").split(";"), res, tags};
+    } else if(!l.startsWith("#") && info){ out.push({...info,url:l}); info=null; }
+  }
+  return out;
+}
+
+async function load(src){
+  if(src==="fav") return Object.values(favs);
+  if(cache[src]) return cache[src];
+  const s=SOURCES.find(x=>x.id===src);
+  const r=await fetch(BASE+s.path,{cache:"no-cache"});
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  return cache[src]=parseM3U(await r.text());
+}
+
+function chip(label, pressed, onClick){
+  const b=document.createElement("button"); b.className="chip"; b.type="button";
+  b.textContent=label; b.setAttribute("aria-pressed",pressed); b.onclick=onClick; return b;
+}
+function renderSources(){
+  const box=$("sources"); box.replaceChildren();
+  SOURCES.forEach(s=>box.append(chip(s.label, s.id===state.src, ()=>{state.src=s.id;state.group="Tout";store.set("tl_src",s.id);refresh()})));
+}
+function renderGroups(all){
+  const counts={}; all.forEach(c=>c.groups.forEach(g=>counts[g]=(counts[g]||0)+1));
+  const keys=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+  const box=$("groups"); box.replaceChildren(chip("Tout", state.group==="Tout", ()=>{state.group="Tout";draw(all)}));
+  keys.forEach(g=>box.append(chip(`${GROUP_FR[g]||g} ${counts[g]}`, state.group===g, ()=>{state.group=g;draw(all)})));
+}
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+
+function draw(all){
+  renderGroups(all);
+  const q=norm(state.q);
+  shown=all.filter(c=>(state.group==="Tout"||c.groups.includes(state.group)) && (!q||norm(c.name).includes(q)||c.groups.some(g=>norm(GROUP_FR[g]||g).includes(q))));
+  $("count").textContent=`${shown.length} chaîne${shown.length>1?"s":""}`;
+  const list=$("list"); list.replaceChildren();
+  if(!shown.length){list.innerHTML=`<div class="empty">${state.src==="fav"?"Aucun favori. Touche ☆ à côté d'une chaîne pour l'ajouter.":"Aucune chaîne trouvée."}</div>`;return}
+  const frag=document.createDocumentFragment();
+  shown.forEach((c,i)=>{
+    const row=document.createElement("div"); row.className="ch"+(current&&current.url===c.url?" on":"")+(dead.has(c.url)?" dead":"");
+    row.tabIndex=0; row.setAttribute("role","button"); row.dataset.i=i;
+    const logo=document.createElement("div"); logo.className="logo";
+    if(c.logo){const im=new Image(); im.loading="lazy"; im.alt=""; im.referrerPolicy="no-referrer"; im.src=c.logo; im.onerror=()=>{logo.textContent=c.name.slice(0,2).toUpperCase()}; logo.append(im)} else logo.textContent=c.name.slice(0,2).toUpperCase();
+    const meta=document.createElement("div"); meta.className="meta";
+    const n=document.createElement("div"); n.className="n"; n.textContent=c.name;
+    const g=document.createElement("div"); g.className="g";
+    g.append(c.groups.map(x=>GROUP_FR[x]||x).join(" · "));
+    if(c.res){const t=document.createElement("span");t.className="tag";t.textContent=c.res;g.append(t)}
+    c.tags.forEach(x=>{const t=document.createElement("span");t.className="tag";t.textContent=x==="Not 24/7"?"Pas 24/7":x==="Geo-blocked"?"Bloqué hors pays":x;g.append(t)});
+    meta.append(n,g);
+    const f=document.createElement("button"); f.className="fav"+(favs[c.url]?" on":""); f.type="button";
+    f.textContent=favs[c.url]?"★":"☆"; f.setAttribute("aria-label","Favori");
+    f.onclick=e=>{e.stopPropagation(); if(favs[c.url]) delete favs[c.url]; else favs[c.url]=c; store.set("tl_favs",favs); f.classList.toggle("on"); f.textContent=favs[c.url]?"★":"☆"; if(state.src==="fav") refresh()};
+    row.append(logo,meta,f);
+    row.onclick=()=>play(i);
+    row.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();play(i)}};
+    frag.append(row);
+  });
+  list.append(frag);
+}
+
+async function refresh(){
+  renderSources();
+  $("list").innerHTML='<div class="empty">Chargement des chaînes…</div>';
+  try{ draw(await load(state.src)); }
+  catch(e){ $("list").innerHTML='<div class="empty">Impossible de charger la liste. Vérifie ta connexion et réessaie.</div>'; $("count").textContent="—"; }
+}
+
+function setStatus(kind,text){ $("dot").className="dot"+(kind?" "+kind:""); $("status").textContent=text||""; }
+const v=$("v");
+const native=v.canPlayType("application/vnd.apple.mpegurl");
+
+function play(i){
+  const c=shown[i]; if(!c) return;
+  current=c; store.set("tl_last",c);
+  $("idle").hidden=true; $("nowName").textContent=c.name; setStatus("","Connexion…");
+  document.querySelectorAll(".ch.on").forEach(r=>r.classList.remove("on"));
+  const row=document.querySelector(`.ch[data-i="${i}"]`); if(row){row.classList.add("on");row.scrollIntoView({block:"nearest"})}
+  if(hls){hls.destroy();hls=null}
+  clearTimeout(timer);
+  timer=setTimeout(()=>fail(c),15000);
+  if(native || !window.Hls || !Hls.isSupported() || !/\.m3u8?(\?|$)/i.test(c.url) && !/jmp2\.uk/.test(c.url)){
+    v.src=c.url;
+  } else {
+    hls=new Hls({maxBufferLength:20});
+    hls.on(Hls.Events.ERROR,(_,d)=>{if(d.fatal) fail(c)});
+    hls.loadSource(c.url); hls.attachMedia(v);
+  }
+  v.play().catch(()=>{});
+}
+function fail(c){
+  if(current!==c) return;
+  clearTimeout(timer); dead.add(c.url);
+  setStatus("err","Hors ligne, essaie une autre chaîne");
+  const row=document.querySelector(".ch.on"); if(row) row.classList.add("dead");
+}
+v.addEventListener("playing",()=>{clearTimeout(timer); if(current){dead.delete(current.url); setStatus("live","En direct"); const r=document.querySelector(".ch.on"); if(r) r.classList.remove("dead")}});
+v.addEventListener("waiting",()=>{if(current) setStatus("","Chargement…")});
+v.addEventListener("error",()=>{if(current) fail(current)});
+
+const step=d=>{ if(!shown.length) return; const i=current?shown.findIndex(c=>c.url===current.url):-1; play((i+d+shown.length)%shown.length) };
+$("prev").onclick=()=>step(-1); $("next").onclick=()=>step(1);
+
+// AirPlay (Safari iPhone / Mac)
+if(window.WebKitPlaybackTargetAvailabilityEvent){
+  v.addEventListener("webkitplaybacktargetavailabilitychanged",e=>{$("airplay").hidden=e.availability!=="available"});
+  $("airplay").onclick=()=>v.webkitShowPlaybackTargetPicker();
+}
+
+let qt; $("q").addEventListener("input",e=>{clearTimeout(qt); qt=setTimeout(()=>{state.q=e.target.value; if(cache[state.src]||state.src==="fav") load(state.src).then(draw)},150)});
+refresh();
+</script>
